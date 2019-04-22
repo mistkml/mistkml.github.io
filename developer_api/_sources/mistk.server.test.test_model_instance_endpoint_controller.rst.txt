@@ -1,0 +1,7 @@
+mistk.server.test.test\_model\_instance\_endpoint\_controller module
+====================================================================
+
+.. automodule:: mistk.server.test.test_model_instance_endpoint_controller
+    :members:
+    :undoc-members:
+    :show-inheritance:

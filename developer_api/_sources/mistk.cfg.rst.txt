@@ -1,0 +1,10 @@
+mistk.cfg package
+=================
+
+Module contents
+---------------
+
+.. automodule:: mistk.cfg
+    :members:
+    :undoc-members:
+    :show-inheritance:

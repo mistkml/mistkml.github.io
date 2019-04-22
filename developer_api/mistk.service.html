@@ -1,0 +1,424 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>mistk.service module &#8212; MISTK Model Developer API 0.3.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="mistk.abstract_model module" href="mistk.abstract_model.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-mistk.service">
+<span id="mistk-service-module"></span><h1>mistk.service module<a class="headerlink" href="#module-mistk.service" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="mistk.service.ModelInstanceEndpoint">
+<em class="property">class </em><code class="descclassname">mistk.service.</code><code class="descname">ModelInstanceEndpoint</code><a class="reference internal" href="_modules/mistk/service.html#ModelInstanceEndpoint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mistk.service.ModelInstanceEndpoint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="mistk.service.ModelInstanceEndpoint.add_task">
+<code class="descname">add_task</code><span class="sig-paren">(</span><em>task</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mistk/service.html#ModelInstanceEndpoint.add_task"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mistk.service.ModelInstanceEndpoint.add_task" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a task to this ModelEndpointService and starts it using a pool of worker threads</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>task</strong> – The Task to register and start</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The running task</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mistk.service.ModelInstanceEndpoint.build_model">
+<code class="descname">build_model</code><span class="sig-paren">(</span><em>modelPath=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mistk/service.html#ModelInstanceEndpoint.build_model"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mistk.service.ModelInstanceEndpoint.build_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates and returns a Task which builds the model using the modelPath provided</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>modelPath</strong> – The path to where the model image can be found</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The created Task object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mistk.service.ModelInstanceEndpoint.delete_task">
+<code class="descname">delete_task</code><span class="sig-paren">(</span><em>task</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mistk/service.html#ModelInstanceEndpoint.delete_task"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mistk.service.ModelInstanceEndpoint.delete_task" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes the specified Task.
+This function is currently not supported</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>task</strong> – The task to delete</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mistk.service.ModelInstanceEndpoint.get_status">
+<code class="descname">get_status</code><span class="sig-paren">(</span><em>watch=None</em>, <em>resourceVersion=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mistk/service.html#ModelInstanceEndpoint.get_status"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mistk.service.ModelInstanceEndpoint.get_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves the status of this ModelEndpointService</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>watch</strong> – Optional flag indicating whether state changes should be monitored</li>
+<li><strong>resourceVersion</strong> – Optional version id that will be used as the minimum version number
+for watched status changes.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The current status of this ModelEndpointService</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mistk.service.ModelInstanceEndpoint.initialize_model">
+<code class="descname">initialize_model</code><span class="sig-paren">(</span><em>initializationParameters</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mistk/service.html#ModelInstanceEndpoint.initialize_model"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mistk.service.ModelInstanceEndpoint.initialize_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates and returns an Task which initializes the model with the 
+optional parameters provided</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>initializationParameters</strong> – The parameters used for initialization</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The created Task object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mistk.service.ModelInstanceEndpoint.load_data">
+<code class="descname">load_data</code><span class="sig-paren">(</span><em>datasets</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mistk/service.html#ModelInstanceEndpoint.load_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mistk.service.ModelInstanceEndpoint.load_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates and returns a Task which loads data into a model using the bindings provided</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>datasets</strong> – dictionary mapping dataset function to dataset</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The create Task object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="mistk.service.ModelInstanceEndpoint.model">
+<code class="descname">model</code><a class="headerlink" href="#mistk.service.ModelInstanceEndpoint.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves the model associated with this ModelEndpointService</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">the model</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mistk.service.ModelInstanceEndpoint.pause">
+<code class="descname">pause</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mistk/service.html#ModelInstanceEndpoint.pause"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mistk.service.ModelInstanceEndpoint.pause" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pauses the model during its current operation
+This operation is currently not supported.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="mistk.service.ModelInstanceEndpoint.predict">
+<code class="descname">predict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mistk/service.html#ModelInstanceEndpoint.predict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mistk.service.ModelInstanceEndpoint.predict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates and returns a Task which kicks off a prediction activity</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The created Task object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mistk.service.ModelInstanceEndpoint.put_response">
+<code class="descname">put_response</code><span class="sig-paren">(</span><em>response</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mistk/service.html#ModelInstanceEndpoint.put_response"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mistk.service.ModelInstanceEndpoint.put_response" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a response to the response queue</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="mistk.service.ModelInstanceEndpoint.reset">
+<code class="descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mistk/service.html#ModelInstanceEndpoint.reset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mistk.service.ModelInstanceEndpoint.reset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resets the model</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="mistk.service.ModelInstanceEndpoint.resume_predict">
+<code class="descname">resume_predict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mistk/service.html#ModelInstanceEndpoint.resume_predict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mistk.service.ModelInstanceEndpoint.resume_predict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resumes a paused model into its prediction operation
+This operation is currently not supported.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="mistk.service.ModelInstanceEndpoint.resume_training">
+<code class="descname">resume_training</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mistk/service.html#ModelInstanceEndpoint.resume_training"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mistk.service.ModelInstanceEndpoint.resume_training" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resumes a paused model into its training operation
+This operation is currently not supported.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="mistk.service.ModelInstanceEndpoint.save_model">
+<code class="descname">save_model</code><span class="sig-paren">(</span><em>modelPath</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mistk/service.html#ModelInstanceEndpoint.save_model"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mistk.service.ModelInstanceEndpoint.save_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates and returns a Task which saves the model to the path provided</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>modelPath</strong> – The path where the model will be saved.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The created Task object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mistk.service.ModelInstanceEndpoint.save_predictions">
+<code class="descname">save_predictions</code><span class="sig-paren">(</span><em>dataset</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mistk/service.html#ModelInstanceEndpoint.save_predictions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mistk.service.ModelInstanceEndpoint.save_predictions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates and returns a Task which saves the predictions generated by a model
+to the path specified</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dataPath</strong> – The location in which to save the model predictions</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The created Task object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mistk.service.ModelInstanceEndpoint.start_server">
+<code class="descname">start_server</code><span class="sig-paren">(</span><em>port=8080</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mistk/service.html#ModelInstanceEndpoint.start_server"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mistk.service.ModelInstanceEndpoint.start_server" title="Permalink to this definition">¶</a></dt>
+<dd><p>Starts the http server of the Service</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>port</strong> – The port on which to start the server, defaults to 8080</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="mistk.service.ModelInstanceEndpoint.state_machine">
+<code class="descname">state_machine</code><a class="headerlink" href="#mistk.service.ModelInstanceEndpoint.state_machine" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves the state machine associated with this ModelEndpointService</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">the state machine</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mistk.service.ModelInstanceEndpoint.stream_predict">
+<code class="descname">stream_predict</code><span class="sig-paren">(</span><em>dataMap</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mistk/service.html#ModelInstanceEndpoint.stream_predict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mistk.service.ModelInstanceEndpoint.stream_predict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a Task which kicks off a stream prediction activity</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dataMap</strong> – Dictionary of IDs to b64 encoded data</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Dictionary of IDs to predictions</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mistk.service.ModelInstanceEndpoint.terminate">
+<code class="descname">terminate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mistk/service.html#ModelInstanceEndpoint.terminate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mistk.service.ModelInstanceEndpoint.terminate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shuts down the model and the endpoint service</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="mistk.service.ModelInstanceEndpoint.train">
+<code class="descname">train</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mistk/service.html#ModelInstanceEndpoint.train"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mistk.service.ModelInstanceEndpoint.train" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates and returns a Task which kicks off a training activity</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The created Task object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mistk.service.ModelInstanceEndpoint.update_state">
+<code class="descname">update_state</code><span class="sig-paren">(</span><em>state=None</em>, <em>payload=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mistk/service.html#ModelInstanceEndpoint.update_state"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mistk.service.ModelInstanceEndpoint.update_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates the state of the ModelEndpointService</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>state</strong> – The new state. If not given, the current state will be used.</li>
+<li><strong>payload</strong> – Additional data to attach to the state</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="mistk.service.ModelInstanceTask">
+<em class="property">class </em><code class="descclassname">mistk.service.</code><code class="descname">ModelInstanceTask</code><span class="sig-paren">(</span><em>operation</em>, <em>parameters=None</em>, <em>submitted=None</em>, <em>completed=None</em>, <em>status=None</em>, <em>message=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mistk/service.html#ModelInstanceTask"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mistk.service.ModelInstanceTask" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A task to be submitted to the Model Instance that will be performed and report status of.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="mistk.service.initializeEndpointController">
+<code class="descclassname">mistk.service.</code><code class="descname">initializeEndpointController</code><span class="sig-paren">(</span><em>handler</em>, <em>*modules</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mistk/service.html#initializeEndpointController"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mistk.service.initializeEndpointController" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method iterates over the functions defined in the auto-generated flask modules
+And creates a function in this package which points bound member methods of the 
+handler</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>handler</strong> – The handler object which must implement bound member methods which
+otherwise have the same signature as those defined in the controller_modules</li>
+<li><strong>modules</strong> – These are the autogenerated swagger controller modules</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">MISTK Model Developer API</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="mistk.html">mistk package</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="mistk.html#subpackages">Subpackages</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="mistk.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="mistk.abstract_model.html">mistk.abstract_model module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">mistk.service module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mistk.html#module-mistk">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="mistk.html">mistk package</a><ul>
+      <li>Previous: <a href="mistk.abstract_model.html" title="previous chapter">mistk.abstract_model module</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Asif Dipon, Andrew Shilliday, Jason Isabel, Tom Damiano.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      |
+      <a href="_sources/mistk.service.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

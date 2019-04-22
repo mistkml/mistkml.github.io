@@ -1,0 +1,7 @@
+mistk.server.models.mistk\_watch\_event module
+==============================================
+
+.. automodule:: mistk.server.models.mistk_watch_event
+    :members:
+    :undoc-members:
+    :show-inheritance:

@@ -1,0 +1,213 @@
+Testing
+=======
+
+Running the Model
+-----------------
+
+All models are ultimately run as web services with endpoints corresponding to the
+implemented `AbstractModel` methods. The model endpoint service is supplied by
+the `mistk` module. To run the model endpoint service, call::
+
+    python -m mistk [module] [class]
+
+where 'module' is the python module being loaded and 'class' is the class which implements AbstractModel as
+described above.  This will start the endpoint service listening on the localhost at
+port 8080.  You can view the endpoint API by browsing to http://localhost:8080/v1/mistk/ui.
+
+You must ensure that the module  files are on the PYTHONPATH or are executing the command
+model's project base directory. An example of executing the linear regression model previously referenced:
+
+    python -m mistk scikit_learn.logistic_regression ScikitLearnLogisticRegressionModel
+
+You can then use the UI to manually kick off instructions to the model.
+
+Running in Eclipse and PyDev
+----------------------------
+
+The following steps assume that Eclipse has been installed, along with the PyDev
+Eclipse plugin, the MISTK library has been installed in your python environment,
+developer has familiarity with Eclipse debugging tools, and your Python path
+has been properly configured.
+
+Create a new Python run configuration similar to the example below and update
+the highlighted fields with your project specific values.
+
+.. image:: images/Run_Config_1.png
+
+.. image:: images/Run_Config_2.png
+
+Running the program should produce the following output in Eclipse (along with
+any additional logging you perform):
+
+.. image:: images/Run_Output.png
+
+You should also be able to access the Model Instance Endpoint Swagger UI through
+web browser at http://localhost:8080/v1/mistk/ui/
+
+.. image:: images/MISTK_Model_Swagger_UI.png
+
+Test and Validation Harness
+---------------------------
+
+Model implementations can also be validated using the Test Harness application,
+instead of manually accessing the RESTful endpoints.
+The Test Harness is a command-line application that can exercise model implementations
+via the model endpoints, launching the model within its Docker container
+(see `Containerization` section), or launching the model within the test harness itself.
+The Test Harness should be used by model developers to ensure that their model
+implementations properly implement all interfaces and can be integrated into the
+MISTK framework. It provides streamlined testing for model implementations.
+The Test Harness can be installed via pip from the same PyPi repository as the core `mistk` package::
+
+  pip install mistk_test_harness
+
+The Test Harness accepts a number of optional parameters to specify which model activities
+should be run (i.e. training, testing, evaluation, etc.) and can
+be used to exercise all model endpoints except pause, resume, and terminate. The parameters and
+example usage are below, and can also be retrieved by running the Test Harness
+with the '-h' option::
+
+  usage: python -m mistk_test_harness [-h] [--train PATH] [--predict PATH]
+                                      [--evaluate TYPE]
+                                      [--predictions-path PATH]
+                                      [--ground-truth-path PATH]
+                                      [--model-path PATH] [--model-props FILE]
+                                      [--hyperparams FILE]
+                                      [--stream-predict FILE] [--logs]
+                                      MODEL
+
+  Test harness for validating model implementations
+
+  positional arguments:
+    MODEL                 model module/package, service endpoint URL, or Docker
+                          image
+
+  optional arguments:
+    -h, --help            show this help message and exit
+    --train PATH          Train over the dataset at the local path (requires
+                          --model-path)
+    --predict PATH        Run predictions over the dataset at the local path
+    --evaluate TYPE       Evaluate model predictions as one of:
+                          BinaryClassification, MultilabelClassification,
+                          MulticlassClassification, Regression (requires
+                          --predictions-path, --ground-truth-path)
+    --predictions-path PATH
+                          Local folder path to save/load model predictions
+    --ground-truth-path PATH
+                          Local folder path containing dataset ground truth
+    --model-path PATH     Local folder path to save/load model checkpoints
+    --model-props FILE    Local file containing json dictionary of model
+                          properties
+    --hyperparams FILE    Local file containing json dictionary of model
+                          hyperparameters
+    --stream-predict FILE
+                          Local file containing json dictionary of ids to base64
+                          encoded input data
+    --logs                Show all MISTK log output (debug)
+
+  Examples:
+  python -m mistk_test_harness --train /my/dataset/folder --model-path /my/model/folder mymodel.MyImplementedModel
+  python -m mistk_test_harness --train /my/dataset/folder --model-path /my/model/folder http://localhost:8080
+  python -m mistk_test_harness --train /my/dataset/folder --model-path /my/model/folder repo/mymodelimpl
+  python -m mistk_test_harness --predict /my/dataset/folder --model-path /my/model/folder --predictions-path /my/predictions/folder
+  	--ground-truth-path /ground/truth/folder --evaluate BinaryClassification mymodel.MyImplementedModel
+
+The '--train' and '--predict' parameters take a path to a folder containing the data
+for training and testing, respectively. These paths will be passed to the model
+during the `load_data` stage.
+
+The '--predictions-path' is a folder that will be
+passed to the model during the `save_predictions` stage.
+The '--ground-truth-path' is a folder containing dataset ground truth. Ground truth should be formatted
+in accordance with the `Predictions and Ground Truth` section and be named
+ground_truth.csv.
+
+The '--model-path' parameter is a folder for model checkpoints.
+This path is passed to the model during the `save_model` and `build_model` stages.
+
+The '--stream-predict' parameter points to a JSON file containing key-value pairs
+of ids and base64 encoded values for prediction.
+
+Finally, the '--model-props' and '--hyperparams' parameters point to JSON files
+containing key-value pairs of any variables specific to the model. These variables
+and values will be passed to the model during the `initialize` stage. Below are some
+examples of valid json:
+
+.. code-block:: json
+
+   {
+     "samples_fit": 768,
+     "learning_rate": 0.01,
+     "arch": "densenet"
+   }
+
+The Test Harness accepts three types of parameters for MODEL. The first is to simply
+pass the model class directly in the format of `package.module.ClassName`. The model
+must be loadable from the system path. The second is to pass the URL for an
+already running model instance. The standard URL would be of the form
+`http://localhost:8080`. Finally, the third option for passing a model is to pass
+a built Docker image. In this case, the Test Harness will start the container and
+connect to it. The format to use for this method is `[<registry-host:port>/]repo/name[:tag]`.
+
+Example output from validating a train/predict workflow is below::
+
+  Called 'initialize' on model, waiting for state change to 'initialized'
+  Model state: initialized
+  Called 'build_model' on model, waiting for state change to 'initialized'
+  Model state: initialized
+  Called 'load_data' on model, waiting for state change to 'ready'
+  Model state: ready
+  Called 'train' on model, waiting for state change to 'ready'
+  Model state: training ({'samples_fit': 768})
+  Model state: ready
+  Called 'save_model' on model, waiting for state change to 'ready'
+  Model state: ready
+  Called 'predict' on model, waiting for state change to 'ready'
+  Model state: predicting ({'samples_predicted': 768})
+  Model state: ready
+  Called 'save_predictions' on model, waiting for state change to 'ready'
+  Model state: ready
+  Validation completed
+
+Of note, the Test Harness application suppresses standard python logging output by default.
+Pass the '--logs' parameter to show all logging output on the console.
+
+Validation Metrics
+------------------
+
+The Test Harness runs various metrics against model predictions when passed the
+'--evaluate' flag to aid the developer in determining model correctness and
+performance. The evaluation output will be saved in JSON format at the same path
+as the model predictions (specified with the '--predictions-path' flag).
+
+Binary Classification:
+
+* Accuracy
+* Matthews Correlation Coefficient
+* Hamming Loss
+* F1 Score
+* Log Loss
+* F-beta Score
+* Recall
+* Precision
+* Brier Score
+* ROC
+* ROC AUC
+
+Multiclass/Multilabel Classification:
+
+* Accuracy
+* Hamming Loss
+* F1 Score
+* Log Loss
+* F-beta Score
+* Recall
+* Precision
+
+Regression:
+
+* Explained Variance
+* Mean Absolute Error
+* Mean Squared Error
+* Mean Squared Log Error
+* R2 Score

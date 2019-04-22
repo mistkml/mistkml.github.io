@@ -1,0 +1,302 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>mistk.server.test.test_model_instance_endpoint_controller &#8212; MISTK Model Developer API 0.3.1 documentation</title>
+    <link rel="stylesheet" href="../../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+   
+  <link rel="stylesheet" href="../../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Source code for mistk.server.test.test_model_instance_endpoint_controller</h1><div class="highlight"><pre>
+<span></span><span class="c1"># coding: utf-8</span>
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">absolute_import</span>
+
+<span class="kn">from</span> <span class="nn">flask</span> <span class="k">import</span> <span class="n">json</span>
+<span class="kn">from</span> <span class="nn">six</span> <span class="k">import</span> <span class="n">BytesIO</span>
+
+<span class="kn">from</span> <span class="nn">mistk.server.models.mistk_dataset</span> <span class="k">import</span> <span class="n">MistkDataset</span>  <span class="c1"># noqa: E501</span>
+<span class="kn">from</span> <span class="nn">mistk.server.models.model_instance_init_params</span> <span class="k">import</span> <span class="n">ModelInstanceInitParams</span>  <span class="c1"># noqa: E501</span>
+<span class="kn">from</span> <span class="nn">mistk.server.models.model_instance_status</span> <span class="k">import</span> <span class="n">ModelInstanceStatus</span>  <span class="c1"># noqa: E501</span>
+<span class="kn">from</span> <span class="nn">mistk.server.models.service_error</span> <span class="k">import</span> <span class="n">ServiceError</span>  <span class="c1"># noqa: E501</span>
+<span class="kn">from</span> <span class="nn">mistk.server.test</span> <span class="k">import</span> <span class="n">BaseTestCase</span>
+
+
+<div class="viewcode-block" id="TestModelInstanceEndpointController"><a class="viewcode-back" href="../../../../mistk.server.test.test_model_instance_endpoint_controller.html#mistk.server.test.test_model_instance_endpoint_controller.TestModelInstanceEndpointController">[docs]</a><span class="k">class</span> <span class="nc">TestModelInstanceEndpointController</span><span class="p">(</span><span class="n">BaseTestCase</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;ModelInstanceEndpointController integration test stubs&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="TestModelInstanceEndpointController.test_build_model"><a class="viewcode-back" href="../../../../mistk.server.test.test_model_instance_endpoint_controller.html#mistk.server.test.test_model_instance_endpoint_controller.TestModelInstanceEndpointController.test_build_model">[docs]</a>    <span class="k">def</span> <span class="nf">test_build_model</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Test case for build_model</span>
+
+<span class="sd">        Build the model</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">query_string</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;modelPath&#39;</span><span class="p">,</span> <span class="s1">&#39;modelPath_example&#39;</span><span class="p">)]</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">open</span><span class="p">(</span>
+            <span class="s1">&#39;/v1/mistk/buildModel&#39;</span><span class="p">,</span>
+            <span class="n">method</span><span class="o">=</span><span class="s1">&#39;POST&#39;</span><span class="p">,</span>
+            <span class="n">content_type</span><span class="o">=</span><span class="s1">&#39;application/json&#39;</span><span class="p">,</span>
+            <span class="n">query_string</span><span class="o">=</span><span class="n">query_string</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert200</span><span class="p">(</span><span class="n">response</span><span class="p">,</span>
+                       <span class="s1">&#39;Response body is : &#39;</span> <span class="o">+</span> <span class="n">response</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="TestModelInstanceEndpointController.test_get_status"><a class="viewcode-back" href="../../../../mistk.server.test.test_model_instance_endpoint_controller.html#mistk.server.test.test_model_instance_endpoint_controller.TestModelInstanceEndpointController.test_get_status">[docs]</a>    <span class="k">def</span> <span class="nf">test_get_status</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Test case for get_status</span>
+
+<span class="sd">        Get the status of the model</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">query_string</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;watch&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
+                        <span class="p">(</span><span class="s1">&#39;resourceVersion&#39;</span><span class="p">,</span> <span class="mi">56</span><span class="p">)]</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">open</span><span class="p">(</span>
+            <span class="s1">&#39;/v1/mistk/status&#39;</span><span class="p">,</span>
+            <span class="n">method</span><span class="o">=</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span>
+            <span class="n">content_type</span><span class="o">=</span><span class="s1">&#39;application/json&#39;</span><span class="p">,</span>
+            <span class="n">query_string</span><span class="o">=</span><span class="n">query_string</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert200</span><span class="p">(</span><span class="n">response</span><span class="p">,</span>
+                       <span class="s1">&#39;Response body is : &#39;</span> <span class="o">+</span> <span class="n">response</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="TestModelInstanceEndpointController.test_initialize_model"><a class="viewcode-back" href="../../../../mistk.server.test.test_model_instance_endpoint_controller.html#mistk.server.test.test_model_instance_endpoint_controller.TestModelInstanceEndpointController.test_initialize_model">[docs]</a>    <span class="k">def</span> <span class="nf">test_initialize_model</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Test case for initialize_model</span>
+
+<span class="sd">        Initialize the model</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">initializationParameters</span> <span class="o">=</span> <span class="n">ModelInstanceInitParams</span><span class="p">()</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">open</span><span class="p">(</span>
+            <span class="s1">&#39;/v1/mistk/initialize&#39;</span><span class="p">,</span>
+            <span class="n">method</span><span class="o">=</span><span class="s1">&#39;POST&#39;</span><span class="p">,</span>
+            <span class="n">data</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">initializationParameters</span><span class="p">),</span>
+            <span class="n">content_type</span><span class="o">=</span><span class="s1">&#39;application/json&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert200</span><span class="p">(</span><span class="n">response</span><span class="p">,</span>
+                       <span class="s1">&#39;Response body is : &#39;</span> <span class="o">+</span> <span class="n">response</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="TestModelInstanceEndpointController.test_load_data"><a class="viewcode-back" href="../../../../mistk.server.test.test_model_instance_endpoint_controller.html#mistk.server.test.test_model_instance_endpoint_controller.TestModelInstanceEndpointController.test_load_data">[docs]</a>    <span class="k">def</span> <span class="nf">test_load_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Test case for load_data</span>
+
+<span class="sd">        Loads data for the model</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">datasets</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">open</span><span class="p">(</span>
+            <span class="s1">&#39;/v1/mistk/loadData&#39;</span><span class="p">,</span>
+            <span class="n">method</span><span class="o">=</span><span class="s1">&#39;POST&#39;</span><span class="p">,</span>
+            <span class="n">data</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">datasets</span><span class="p">),</span>
+            <span class="n">content_type</span><span class="o">=</span><span class="s1">&#39;application/json&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert200</span><span class="p">(</span><span class="n">response</span><span class="p">,</span>
+                       <span class="s1">&#39;Response body is : &#39;</span> <span class="o">+</span> <span class="n">response</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="TestModelInstanceEndpointController.test_pause"><a class="viewcode-back" href="../../../../mistk.server.test.test_model_instance_endpoint_controller.html#mistk.server.test.test_model_instance_endpoint_controller.TestModelInstanceEndpointController.test_pause">[docs]</a>    <span class="k">def</span> <span class="nf">test_pause</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Test case for pause</span>
+
+<span class="sd">        Pause the model</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">open</span><span class="p">(</span>
+            <span class="s1">&#39;/v1/mistk/pause&#39;</span><span class="p">,</span>
+            <span class="n">method</span><span class="o">=</span><span class="s1">&#39;POST&#39;</span><span class="p">,</span>
+            <span class="n">content_type</span><span class="o">=</span><span class="s1">&#39;application/json&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert200</span><span class="p">(</span><span class="n">response</span><span class="p">,</span>
+                       <span class="s1">&#39;Response body is : &#39;</span> <span class="o">+</span> <span class="n">response</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="TestModelInstanceEndpointController.test_predict"><a class="viewcode-back" href="../../../../mistk.server.test.test_model_instance_endpoint_controller.html#mistk.server.test.test_model_instance_endpoint_controller.TestModelInstanceEndpointController.test_predict">[docs]</a>    <span class="k">def</span> <span class="nf">test_predict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Test case for predict</span>
+
+<span class="sd">        Perform predictions with the model</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">open</span><span class="p">(</span>
+            <span class="s1">&#39;/v1/mistk/predict&#39;</span><span class="p">,</span>
+            <span class="n">method</span><span class="o">=</span><span class="s1">&#39;POST&#39;</span><span class="p">,</span>
+            <span class="n">content_type</span><span class="o">=</span><span class="s1">&#39;application/json&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert200</span><span class="p">(</span><span class="n">response</span><span class="p">,</span>
+                       <span class="s1">&#39;Response body is : &#39;</span> <span class="o">+</span> <span class="n">response</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="TestModelInstanceEndpointController.test_reset"><a class="viewcode-back" href="../../../../mistk.server.test.test_model_instance_endpoint_controller.html#mistk.server.test.test_model_instance_endpoint_controller.TestModelInstanceEndpointController.test_reset">[docs]</a>    <span class="k">def</span> <span class="nf">test_reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Test case for reset</span>
+
+<span class="sd">        Resets the model</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">open</span><span class="p">(</span>
+            <span class="s1">&#39;/v1/mistk/reset&#39;</span><span class="p">,</span>
+            <span class="n">method</span><span class="o">=</span><span class="s1">&#39;POST&#39;</span><span class="p">,</span>
+            <span class="n">content_type</span><span class="o">=</span><span class="s1">&#39;application/json&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert200</span><span class="p">(</span><span class="n">response</span><span class="p">,</span>
+                       <span class="s1">&#39;Response body is : &#39;</span> <span class="o">+</span> <span class="n">response</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="TestModelInstanceEndpointController.test_resume_predict"><a class="viewcode-back" href="../../../../mistk.server.test.test_model_instance_endpoint_controller.html#mistk.server.test.test_model_instance_endpoint_controller.TestModelInstanceEndpointController.test_resume_predict">[docs]</a>    <span class="k">def</span> <span class="nf">test_resume_predict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Test case for resume_predict</span>
+
+<span class="sd">        Resume predicitons on a paused model</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">open</span><span class="p">(</span>
+            <span class="s1">&#39;/v1/mistk/resumePredict&#39;</span><span class="p">,</span>
+            <span class="n">method</span><span class="o">=</span><span class="s1">&#39;POST&#39;</span><span class="p">,</span>
+            <span class="n">content_type</span><span class="o">=</span><span class="s1">&#39;application/json&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert200</span><span class="p">(</span><span class="n">response</span><span class="p">,</span>
+                       <span class="s1">&#39;Response body is : &#39;</span> <span class="o">+</span> <span class="n">response</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="TestModelInstanceEndpointController.test_resume_training"><a class="viewcode-back" href="../../../../mistk.server.test.test_model_instance_endpoint_controller.html#mistk.server.test.test_model_instance_endpoint_controller.TestModelInstanceEndpointController.test_resume_training">[docs]</a>    <span class="k">def</span> <span class="nf">test_resume_training</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Test case for resume_training</span>
+
+<span class="sd">        Resume training on a paused model</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">open</span><span class="p">(</span>
+            <span class="s1">&#39;/v1/mistk/resumeTraining&#39;</span><span class="p">,</span>
+            <span class="n">method</span><span class="o">=</span><span class="s1">&#39;POST&#39;</span><span class="p">,</span>
+            <span class="n">content_type</span><span class="o">=</span><span class="s1">&#39;application/json&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert200</span><span class="p">(</span><span class="n">response</span><span class="p">,</span>
+                       <span class="s1">&#39;Response body is : &#39;</span> <span class="o">+</span> <span class="n">response</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="TestModelInstanceEndpointController.test_save_model"><a class="viewcode-back" href="../../../../mistk.server.test.test_model_instance_endpoint_controller.html#mistk.server.test.test_model_instance_endpoint_controller.TestModelInstanceEndpointController.test_save_model">[docs]</a>    <span class="k">def</span> <span class="nf">test_save_model</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Test case for save_model</span>
+
+<span class="sd">        Save the model snapshot</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">query_string</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;modelPath&#39;</span><span class="p">,</span> <span class="s1">&#39;modelPath_example&#39;</span><span class="p">)]</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">open</span><span class="p">(</span>
+            <span class="s1">&#39;/v1/mistk/saveModel&#39;</span><span class="p">,</span>
+            <span class="n">method</span><span class="o">=</span><span class="s1">&#39;POST&#39;</span><span class="p">,</span>
+            <span class="n">content_type</span><span class="o">=</span><span class="s1">&#39;application/json&#39;</span><span class="p">,</span>
+            <span class="n">query_string</span><span class="o">=</span><span class="n">query_string</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert200</span><span class="p">(</span><span class="n">response</span><span class="p">,</span>
+                       <span class="s1">&#39;Response body is : &#39;</span> <span class="o">+</span> <span class="n">response</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="TestModelInstanceEndpointController.test_save_predictions"><a class="viewcode-back" href="../../../../mistk.server.test.test_model_instance_endpoint_controller.html#mistk.server.test.test_model_instance_endpoint_controller.TestModelInstanceEndpointController.test_save_predictions">[docs]</a>    <span class="k">def</span> <span class="nf">test_save_predictions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Test case for save_predictions</span>
+
+<span class="sd">        Save the model&#39;s predictions</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">dataset</span> <span class="o">=</span> <span class="n">MistkDataset</span><span class="p">()</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">open</span><span class="p">(</span>
+            <span class="s1">&#39;/v1/mistk/savePredictions&#39;</span><span class="p">,</span>
+            <span class="n">method</span><span class="o">=</span><span class="s1">&#39;POST&#39;</span><span class="p">,</span>
+            <span class="n">data</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">dataset</span><span class="p">),</span>
+            <span class="n">content_type</span><span class="o">=</span><span class="s1">&#39;application/json&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert200</span><span class="p">(</span><span class="n">response</span><span class="p">,</span>
+                       <span class="s1">&#39;Response body is : &#39;</span> <span class="o">+</span> <span class="n">response</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="TestModelInstanceEndpointController.test_stream_predict"><a class="viewcode-back" href="../../../../mistk.server.test.test_model_instance_endpoint_controller.html#mistk.server.test.test_model_instance_endpoint_controller.TestModelInstanceEndpointController.test_stream_predict">[docs]</a>    <span class="k">def</span> <span class="nf">test_stream_predict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Test case for stream_predict</span>
+
+<span class="sd">        Perform streaming predictions with the model</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">dataMap</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">open</span><span class="p">(</span>
+            <span class="s1">&#39;/v1/mistk/streamPredict&#39;</span><span class="p">,</span>
+            <span class="n">method</span><span class="o">=</span><span class="s1">&#39;POST&#39;</span><span class="p">,</span>
+            <span class="n">data</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">dataMap</span><span class="p">),</span>
+            <span class="n">content_type</span><span class="o">=</span><span class="s1">&#39;application/json&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert200</span><span class="p">(</span><span class="n">response</span><span class="p">,</span>
+                       <span class="s1">&#39;Response body is : &#39;</span> <span class="o">+</span> <span class="n">response</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="TestModelInstanceEndpointController.test_terminate"><a class="viewcode-back" href="../../../../mistk.server.test.test_model_instance_endpoint_controller.html#mistk.server.test.test_model_instance_endpoint_controller.TestModelInstanceEndpointController.test_terminate">[docs]</a>    <span class="k">def</span> <span class="nf">test_terminate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Test case for terminate</span>
+
+<span class="sd">        Shut down the model</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">open</span><span class="p">(</span>
+            <span class="s1">&#39;/v1/mistk/shutdown&#39;</span><span class="p">,</span>
+            <span class="n">method</span><span class="o">=</span><span class="s1">&#39;POST&#39;</span><span class="p">,</span>
+            <span class="n">content_type</span><span class="o">=</span><span class="s1">&#39;application/json&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert200</span><span class="p">(</span><span class="n">response</span><span class="p">,</span>
+                       <span class="s1">&#39;Response body is : &#39;</span> <span class="o">+</span> <span class="n">response</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="TestModelInstanceEndpointController.test_train"><a class="viewcode-back" href="../../../../mistk.server.test.test_model_instance_endpoint_controller.html#mistk.server.test.test_model_instance_endpoint_controller.TestModelInstanceEndpointController.test_train">[docs]</a>    <span class="k">def</span> <span class="nf">test_train</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Test case for train</span>
+
+<span class="sd">        Train the model</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">open</span><span class="p">(</span>
+            <span class="s1">&#39;/v1/mistk/train&#39;</span><span class="p">,</span>
+            <span class="n">method</span><span class="o">=</span><span class="s1">&#39;POST&#39;</span><span class="p">,</span>
+            <span class="n">content_type</span><span class="o">=</span><span class="s1">&#39;application/json&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert200</span><span class="p">(</span><span class="n">response</span><span class="p">,</span>
+                       <span class="s1">&#39;Response body is : &#39;</span> <span class="o">+</span> <span class="n">response</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span></div></div>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">unittest</span>
+    <span class="n">unittest</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../../index.html">MISTK Model Developer API</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../mistk.html">mistk package</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../../index.html">Module code</a><ul>
+  <li><a href="../test.html">mistk.server.test</a><ul>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Asif Dipon, Andrew Shilliday, Jason Isabel, Tom Damiano.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

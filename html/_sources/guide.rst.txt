@@ -1,0 +1,158 @@
+Guide
+==========
+
+Model Interface
+---------------
+
+A MISTK model implements the `AbstractModel` class. This class
+provides a set of abstract methods that represent the model lifecycle and
+must be implemented by the new model. Ultimately, these methods form the core of
+the web endpoint service that is made available for every model implementation.
+
+**do_initialize** (objectives: list, props: dict, hparams: dict)
+    Called once the endpoint service has launched.  This would typically be the
+    first call made to the service. Perform any general setup and initialization.
+
+    :param objectives: A list of model objectives intended to aid in its
+        setup and initialization. Possible values are:
+        'training', 'prediction', 'streaming_prediction', 'transfer_learning'.
+    :param props: A dictionary of settings or configuration values that are passed
+        from the ecosystem, but are not considered model hyperparameters.
+    :param hparams: A dictionary of hyperparameters that are used by the model.
+
+**do_load_data** (dataset_map: dict)
+    Instructs the container to load training and/or testing data (or at least
+    record in memory where the data is) from the supplied paths.
+
+    :param dataset_map: A dictionary that maps string keys {train, test} to a
+        MistkDataset object that contains information on the dataset to load.
+        The `objectives` values for this model determines which keys are present in
+        the map (i.e. a model with only a training objective should not depend on
+        a 'test' key to be present).
+
+        The MistkDataset values will contain at least the following fields:
+
+            data_path: A string containing the path to the dataset root folder
+
+            modality: A string with value image, audio, video, or text
+
+            format: A string containing the name of the format of this dataset
+
+**do_build_model** (path=None)
+    Instructs the service to build all necessary data structures given the
+    architecture and selected hyperparameters.
+
+    :param path: The path to the model file or checkpoint that should be loaded.
+        Defaults to None if no file was specified in this model's definition.
+
+**do_train** ()
+    Perform training with the previously supplied data.
+
+**do_predict** ()
+    Perform predictions with the previously supplied data.
+
+**do_pause** ()
+    Pause the current training or testing.
+
+**do_resume_training** ()
+    Resume the previously paused training.
+
+**do_resume_predict** ()
+    Resume the previously paused predictions.
+
+**do_save_predictions** (dataPath)
+    Save the model predictions to the supplied data path. The predictions should
+    be saved as CSV with each row in the following format:
+
+    id,label[,confidence][,bounds]
+
+    :param dataPath: The path to which the predictions should be saved.
+
+**do_stream_predict** (data_map: dict)
+    Perform predictions on the input dict of id's to base64 encoded data and
+    return a dict of id's to predicted values.
+    The underlying format of the base64 encoded data should be the native
+    input format for the model.
+
+    :param data_map: A dict of id's to base64 encoded data.
+    :return: A dict of id's to predicted values.
+
+**do_save_model** (path)
+    Save a checkpoint of the model to the supplied data path. Format of the saved
+    file(s) is at the discretion of the model. The infrastructure associates
+    this checkpoint with this model.
+
+    :param path: The path to which the model should be saved.
+
+**do_terminate** ()
+    Prepare for application termination.
+
+The Model State Machine
+---------------------------
+
+Model implementations follow a workflow lifecycle based on state machine
+transitions. The underlying MISTK infrastructure ensures that only legal
+transitions from one state to another can be made and that the appropriate
+model methods are called during those transitions. The image below illustrates
+the high-level state machine transitions and the model methods that may be
+called between them.
+
+.. image:: images/state_machine.png
+
+The 'Terminated' state (and associated method 'do_terminate') is not
+pictured but is a valid transition from any of the states depicted above.
+Note that an internal 'Failed' state will be entered if the model
+implementation throws an exception. No further model activities are permitted
+from the 'Failed' state.
+
+Model Status
+------------
+
+Model implementations are encouraged to report status pertaining to their
+current workflow state back to the MISTK infrastructure by calling the
+**update_status(dict)** method inherited from `AbstractModel` (note this method
+is intended to be called by the model, not overridden as the methods above).
+This method takes a dictionary object of key-value pairs defined by the model.
+For example, the logistic regression model below updates it status with the number of
+samples fit during training and the number of samples predicted during testing.
+
+Predictions and Ground Truth
+----------------------------
+
+Model prediction output from the **do_save_predictions** method as well as
+corresponding dataset ground truth should be CSV-formatted as follows::
+
+  id,label[,confidence][,bounds]
+
+The `id` field can be arbitrary as long as predictions and ground truth use the
+same values.
+All columns except `id` may contain whitespace-separated values as necessary.
+The confidence probabilities and bounds values are optional.
+
+Example
+-------
+
+The following example code implements a logistic regression algorithm
+from scikit-learn with the MISTK model interface which operates on a common public dataset:
+
+.. literalinclude:: sample_code_files/logistic_regression.py
+    :linenos:
+    :language: python
+
+Transfer learning
+-----------------
+
+Model support of transfer learning is independent to each model implementation.
+Model developers that use the MISTK library need to incorporate their implementation
+features for transfer learning into their build_model and train methods. The PyTorch
+implementation below builds their model with specific configurations when performing
+transfer learning.
+
+.. literalinclude:: sample_code_files/pytorch_model.py
+    :lines: 85-171
+    :emphasize-lines: 62-69, 79-82
+    :linenos:
+    :language: python
+
+Model developers will need to specify in their model properties that they are performing
+transfer learning when using this model for that purpose.

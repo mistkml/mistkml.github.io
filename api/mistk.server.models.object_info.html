@@ -1,0 +1,458 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>mistk.server.models.object_info module &mdash; MISTK  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="mistk.server.models.object_reference module" href="mistk.server.models.object_reference.html" />
+    <link rel="prev" title="mistk.server.models.model_instance_status module" href="mistk.server.models.model_instance_status.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> MISTK
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guide.html">Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testing.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../deployment.html">Deployment</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">MISTK API</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="mistk.html">mistk package</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="mistk.html#submodules">Submodules</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="mistk.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="mistk.cfg.html">mistk.cfg package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mistk.data.html">mistk.data package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mistk.log.html">mistk.log package</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="mistk.server.html">mistk.server package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mistk.watch.html">mistk.watch package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.html#module-mistk">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MISTK</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">MISTK API</a> &raquo;</li>
+        
+          <li><a href="mistk.html">mistk package</a> &raquo;</li>
+        
+          <li><a href="mistk.server.html">mistk.server package</a> &raquo;</li>
+        
+          <li><a href="mistk.server.models.html">mistk.server.models package</a> &raquo;</li>
+        
+      <li>mistk.server.models.object_info module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/mistk.server.models.object_info.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-mistk.server.models.object_info">
+<span id="mistk-server-models-object-info-module"></span><h1>mistk.server.models.object_info module<a class="headerlink" href="#module-mistk.server.models.object_info" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="mistk.server.models.object_info.ObjectInfo">
+<em class="property">class </em><code class="descclassname">mistk.server.models.object_info.</code><code class="descname">ObjectInfo</code><span class="sig-paren">(</span><em>kind: str = None</em>, <em>id: str = None</em>, <em>name: str = None</em>, <em>description: str = None</em>, <em>summary: str = None</em>, <em>owner: str = None</em>, <em>labels: object = None</em>, <em>resources: List[str] = None</em>, <em>resource_version: int = None</em>, <em>creation_time: datetime.datetime = None</em>, <em>modification_time: datetime.datetime = None</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.server.models.object_info.ObjectInfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="mistk.server.models.base_model_.html#mistk.server.models.base_model_.Model" title="mistk.server.models.base_model_.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">mistk.server.models.base_model_.Model</span></code></a></p>
+<p>NOTE: This class is auto generated by the swagger code generator program.</p>
+<p>Do not edit the class manually.</p>
+<dl class="attribute">
+<dt id="mistk.server.models.object_info.ObjectInfo.creation_time">
+<code class="descname">creation_time</code><a class="headerlink" href="#mistk.server.models.object_info.ObjectInfo.creation_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the creation_time of this ObjectInfo.</p>
+<p>The date time at which this object was initially created. This will be auto generated by the underlying database. Any user input for this field will be ignored. This will be in the isoformat of ‘YYYY-MM-DDTHH:MM:SS.ffffff’   # noqa: E501</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The creation_time of this ObjectInfo.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">datetime</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="mistk.server.models.object_info.ObjectInfo.description">
+<code class="descname">description</code><a class="headerlink" href="#mistk.server.models.object_info.ObjectInfo.description" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the description of this ObjectInfo.</p>
+<p>A documentation description of the resource.  This string can be in Markdown form.   # noqa: E501</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The description of this ObjectInfo.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">str</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="mistk.server.models.object_info.ObjectInfo.from_dict">
+<em class="property">classmethod </em><code class="descname">from_dict</code><span class="sig-paren">(</span><em>dikt</em><span class="sig-paren">)</span> &#x2192; mistk.server.models.object_info.ObjectInfo<a class="headerlink" href="#mistk.server.models.object_info.ObjectInfo.from_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the dict as a model</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dikt</strong> – A dict.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Type:</th><td class="field-body">dict</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The ObjectInfo of this ObjectInfo.  # noqa: E501</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#mistk.server.models.object_info.ObjectInfo" title="mistk.server.models.object_info.ObjectInfo">ObjectInfo</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="mistk.server.models.object_info.ObjectInfo.id">
+<code class="descname">id</code><a class="headerlink" href="#mistk.server.models.object_info.ObjectInfo.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the id of this ObjectInfo.</p>
+<p>The unique identifier of the object.  This will be generated automatically.   # noqa: E501</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The id of this ObjectInfo.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">str</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="mistk.server.models.object_info.ObjectInfo.kind">
+<code class="descname">kind</code><a class="headerlink" href="#mistk.server.models.object_info.ObjectInfo.kind" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the kind of this ObjectInfo.</p>
+<p>This is the type of the resource (e.g., Model, Dataset). The field is primarily used when returning watch events, where the type of the field will be unknown.  When submitting resources, this field will often simply be inferred from the context of the submission.   # noqa: E501</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The kind of this ObjectInfo.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">str</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="mistk.server.models.object_info.ObjectInfo.labels">
+<code class="descname">labels</code><a class="headerlink" href="#mistk.server.models.object_info.ObjectInfo.labels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the labels of this ObjectInfo.</p>
+<p>Key-value pairs of annotations associate with the object.   # noqa: E501</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The labels of this ObjectInfo.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="mistk.server.models.object_info.ObjectInfo.modification_time">
+<code class="descname">modification_time</code><a class="headerlink" href="#mistk.server.models.object_info.ObjectInfo.modification_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the modification_time of this ObjectInfo.</p>
+<p>The date time at which this object was last modified. This will be auto generated by the underlying database. Any user input for this field will be ignored. This will be in the isoformat of ‘YYYY-MM-DDTHH:MM:SS.ffffff’   # noqa: E501</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The modification_time of this ObjectInfo.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">datetime</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="mistk.server.models.object_info.ObjectInfo.name">
+<code class="descname">name</code><a class="headerlink" href="#mistk.server.models.object_info.ObjectInfo.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the name of this ObjectInfo.</p>
+<p>The unique name of the object. Names of SML resources should be up to maximum length of 253 characters and consist of lower case alphanumeric characters, -, and .   # noqa: E501</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The name of this ObjectInfo.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">str</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="mistk.server.models.object_info.ObjectInfo.owner">
+<code class="descname">owner</code><a class="headerlink" href="#mistk.server.models.object_info.ObjectInfo.owner" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the owner of this ObjectInfo.</p>
+<p>The owner/creator of this object.   # noqa: E501</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The owner of this ObjectInfo.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">str</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="mistk.server.models.object_info.ObjectInfo.resource_version">
+<code class="descname">resource_version</code><a class="headerlink" href="#mistk.server.models.object_info.ObjectInfo.resource_version" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the resource_version of this ObjectInfo.</p>
+<p>This is the server-managed version for the object.  It is used  to support monitoring of resources.  This should not be set by the client (and will likely be ignored if it is)   # noqa: E501</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The resource_version of this ObjectInfo.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="mistk.server.models.object_info.ObjectInfo.resources">
+<code class="descname">resources</code><a class="headerlink" href="#mistk.server.models.object_info.ObjectInfo.resources" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the resources of this ObjectInfo.</p>
+<p>An array of resources/reference URIs   # noqa: E501</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The resources of this ObjectInfo.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">List[str]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="mistk.server.models.object_info.ObjectInfo.summary">
+<code class="descname">summary</code><a class="headerlink" href="#mistk.server.models.object_info.ObjectInfo.summary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the summary of this ObjectInfo.</p>
+<p>A short description of this object   # noqa: E501</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The summary of this ObjectInfo.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">str</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mistk.server.models.object_reference.html" class="btn btn-neutral float-right" title="mistk.server.models.object_reference module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mistk.server.models.model_instance_status.html" class="btn btn-neutral" title="mistk.server.models.model_instance_status module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

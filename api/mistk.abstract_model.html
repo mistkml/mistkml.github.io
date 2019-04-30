@@ -1,0 +1,407 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>mistk.abstract_model module &mdash; MISTK  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="mistk.service module" href="mistk.service.html" />
+    <link rel="prev" title="mistk package" href="mistk.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> MISTK
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guide.html">Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testing.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../deployment.html">Deployment</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">MISTK API</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="mistk.html">mistk package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="mistk.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">mistk.abstract_model module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mistk.service.html">mistk.service module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.html#subpackages">Subpackages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.html#module-mistk">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MISTK</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">MISTK API</a> &raquo;</li>
+        
+          <li><a href="mistk.html">mistk package</a> &raquo;</li>
+        
+      <li>mistk.abstract_model module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/mistk.abstract_model.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-mistk.abstract_model">
+<span id="mistk-abstract-model-module"></span><h1>mistk.abstract_model module<a class="headerlink" href="#module-mistk.abstract_model" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="mistk.abstract_model.AbstractModel">
+<em class="property">class </em><code class="descclassname">mistk.abstract_model.</code><code class="descname">AbstractModel</code><a class="headerlink" href="#mistk.abstract_model.AbstractModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The definition of an abstract Model to be implemented by Model developers.</p>
+<dl class="method">
+<dt id="mistk.abstract_model.AbstractModel.do_build_model">
+<code class="descname">do_build_model</code><span class="sig-paren">(</span><em>path=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.abstract_model.AbstractModel.do_build_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Instructs the service to build all necessary data structures given the architecture and selected hyperparameters.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>path</strong> – The path to the model file</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mistk.abstract_model.AbstractModel.do_initialize">
+<code class="descname">do_initialize</code><span class="sig-paren">(</span><em>objectives: list</em>, <em>props: dict</em>, <em>hparams: dict</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.abstract_model.AbstractModel.do_initialize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called once the endpoint service has launched.  This would typically be the first call made to the service.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>objective</strong> – The objectives for the model.</li>
+<li><strong>props</strong> – A dictionary that is parsed from a JSON string. These are settings that are passed from the ecosystem, 
+but are not really considered hyperparameters.  They are not used by the model, but rather the endpoint itself 
+(e.g., where should heartbeats be sent and how often, etc).</li>
+<li><strong>hparams</strong> – A dictionary that is parsed from a JSON string. These are the hyperparameters that are used by the model.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mistk.abstract_model.AbstractModel.do_load_data">
+<code class="descname">do_load_data</code><span class="sig-paren">(</span><em>dataset_map: dict</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.abstract_model.AbstractModel.do_load_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Instructs the container to load data (or at least record in memory where the data is, if it’s actually to be loaded during training).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dataset_map</strong> – A dictionary that maps string keys {training_data, test_data} to a
+Dataset object that contains information on the dataset to load</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mistk.abstract_model.AbstractModel.do_pause">
+<code class="descname">do_pause</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.abstract_model.AbstractModel.do_pause" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pauses the current activity (training or prediction).
+This operation is currently not supported.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="mistk.abstract_model.AbstractModel.do_predict">
+<code class="descname">do_predict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.abstract_model.AbstractModel.do_predict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Executes/resumes the prediction activity
+This operation is currently not supported.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="mistk.abstract_model.AbstractModel.do_reset">
+<code class="descname">do_reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.abstract_model.AbstractModel.do_reset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resets the model into its initial state</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="mistk.abstract_model.AbstractModel.do_resume_predict">
+<code class="descname">do_resume_predict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.abstract_model.AbstractModel.do_resume_predict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Executes/resumes the prediction activity</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="mistk.abstract_model.AbstractModel.do_resume_training">
+<code class="descname">do_resume_training</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.abstract_model.AbstractModel.do_resume_training" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unpauses the current activity (training or prediction).
+This operation is currently not supported.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="mistk.abstract_model.AbstractModel.do_save_model">
+<code class="descname">do_save_model</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.abstract_model.AbstractModel.do_save_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save the model to an agreed upon location. It will be up to some other process to make sure 
+the saved model ends up back in the repository. This call could be a NOOP if, for instance, 
+the model is saved periodically throughout the training process.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>path</strong> – The path to which the model should be saved.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mistk.abstract_model.AbstractModel.do_save_predictions">
+<code class="descname">do_save_predictions</code><span class="sig-paren">(</span><em>dataPath</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.abstract_model.AbstractModel.do_save_predictions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves the current prediction to the location specified</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dataPath</strong> – The location on the local file system or distributed 
+file system where the predictions will be saved</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mistk.abstract_model.AbstractModel.do_stream_predict">
+<code class="descname">do_stream_predict</code><span class="sig-paren">(</span><em>data_map: dict</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.abstract_model.AbstractModel.do_stream_predict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Executes/resumes the prediction activity</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="mistk.abstract_model.AbstractModel.do_terminate">
+<code class="descname">do_terminate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.abstract_model.AbstractModel.do_terminate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stops all processing and releases any resources that are in use in
+preparation for being shut down.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="mistk.abstract_model.AbstractModel.do_train">
+<code class="descname">do_train</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.abstract_model.AbstractModel.do_train" title="Permalink to this definition">¶</a></dt>
+<dd><p>Executes/resumes the training activity</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="mistk.abstract_model.AbstractModel.fail">
+<code class="descname">fail</code><span class="sig-paren">(</span><em>reason</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.abstract_model.AbstractModel.fail" title="Permalink to this definition">¶</a></dt>
+<dd><p>Triggers the model to enter the failed state.
+This method should not be implemented or overwritten by subclasses.  It will be 
+created by the state machine.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>reason</strong> – The reason why the state machine is transitioned into the failure state</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mistk.abstract_model.AbstractModel.update_status">
+<code class="descname">update_status</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.abstract_model.AbstractModel.update_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Provides additional details to the current state of the model.  If the model is 
+training, then this might contain the number of records that have been trained.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>payload</strong> – Extra information regarding the status update</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mistk.service.html" class="btn btn-neutral float-right" title="mistk.service module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mistk.html" class="btn btn-neutral" title="mistk package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

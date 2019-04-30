@@ -1,0 +1,17 @@
+mistk.watch package
+===================
+
+Submodules
+----------
+
+.. toctree::
+
+   mistk.watch.watch_manager
+
+Module contents
+---------------
+
+.. automodule:: mistk.watch
+    :members:
+    :undoc-members:
+    :show-inheritance:

@@ -1,0 +1,30 @@
+mistk package
+=============
+
+Submodules
+----------
+
+.. toctree::
+
+   mistk.abstract_model
+   mistk.service
+
+Subpackages
+-----------
+
+.. toctree::
+
+    mistk.cfg
+    mistk.data
+    mistk.log
+    mistk.server
+    mistk.watch
+
+
+Module contents
+---------------
+
+.. automodule:: mistk
+    :members:
+    :undoc-members:
+    :show-inheritance:

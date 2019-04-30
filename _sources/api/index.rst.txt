@@ -1,0 +1,14 @@
+.. MISTK Model Developer API documentation master file, created by
+   sphinx-quickstart on Mon Apr 29 10:42:57 2019.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+MISTK API
+=========
+
+.. toctree::
+   :maxdepth: 4
+   :caption: Contents:
+
+   mistk
+

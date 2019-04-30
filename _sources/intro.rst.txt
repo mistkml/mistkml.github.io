@@ -1,0 +1,60 @@
+Getting Started
+===============
+
+Prerequisites
+-------------
+
+* Python 3.6
+* Python Pip
+* Docker
+
+Pip repository
+----------------------
+
+The python dependencies are deployed to a PyPi repository. To
+access them, you must add the repository to your pip environment.
+
+Installation
+------------
+
+In order to develop algorithms to be integrated into MISTK, the
+MISTK Core Library (and its dependencies) must be available on
+PYTHONPATH.
+
+You can download them down from the MISTK Github Repository `Releases page`__
+and install the wheel files `pip` with::
+
+    pip install mistk-*-py3-none-any.whl
+
+.. __: https://github.com/mistkml/mistk/releases
+
+Verify that mistk is now installed on PYTHON PATH by running::
+
+    >>> import mistk
+
+
+Assumptions
+-----------
+
+MISTK developers are assumed to understand:
+
+* How to install Python 3.6 (`More Information`__)
+
+.. __: https://www.python.org/downloads/release/python-368/
+
+* How to install packages via Python Pip (`Guide Available Here`__)
+
+.. __: https://packaging.python.org/tutorials/installing-packages/
+
+* How to package Python projects via setuptools (`Guide Available Here`__)
+
+.. __: https://setuptools.readthedocs.io/en/latest/
+
+* How build/run docker images (`Guide Available Here`__)
+
+.. __: https://docs.docker.com/get-started/
+
+It is helpful to also be familiar with Anaconda for managing Python distributions
+packages. (`More Info Here`__)
+
+.. __: https://docs.anaconda.com/anaconda/install/

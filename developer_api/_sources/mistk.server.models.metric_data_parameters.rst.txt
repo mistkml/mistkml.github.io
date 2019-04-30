@@ -1,7 +1,0 @@
-mistk.server.models.metric\_data\_parameters module
-===================================================
-
-.. automodule:: mistk.server.models.metric_data_parameters
-    :members:
-    :undoc-members:
-    :show-inheritance:

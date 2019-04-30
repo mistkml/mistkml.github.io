@@ -1,7 +1,0 @@
-mistk.server.encoder module
-===========================
-
-.. automodule:: mistk.server.encoder
-    :members:
-    :undoc-members:
-    :show-inheritance:

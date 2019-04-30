@@ -1,7 +1,0 @@
-mistk.data.utils module
-=======================
-
-.. automodule:: mistk.data.utils
-    :members:
-    :undoc-members:
-    :show-inheritance:

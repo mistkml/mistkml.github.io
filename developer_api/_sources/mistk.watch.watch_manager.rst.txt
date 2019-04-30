@@ -1,7 +1,0 @@
-mistk.watch.watch\_manager module
-=================================
-
-.. automodule:: mistk.watch.watch_manager
-    :members:
-    :undoc-members:
-    :show-inheritance:

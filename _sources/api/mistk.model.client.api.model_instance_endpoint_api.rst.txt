@@ -1,0 +1,7 @@
+mistk.model.client.api.model\_instance\_endpoint\_api module
+============================================================
+
+.. automodule:: mistk.model.client.api.model_instance_endpoint_api
+    :members:
+    :undoc-members:
+    :show-inheritance:

@@ -1,10 +1,11 @@
+*****
 Guide
-==========
+*****
 
 Model Interface
----------------
+===============
 
-A MISTK model implements the `AbstractModel` class. This class
+A MISTK model implements the `mistk.model.AbstractModel` class. This class
 provides a set of abstract methods that represent the model lifecycle and
 must be implemented by the new model. Ultimately, these methods form the core of
 the web endpoint service that is made available for every model implementation.
@@ -30,7 +31,11 @@ the web endpoint service that is made available for every model implementation.
         the map (i.e. a model with only a training objective should not depend on
         a 'test' key to be present).
 
-        The MistkDataset values will contain at least the following fields:
+        The MistkDataset values will require the following fields:
+
+            object_info: A dictionary that stores metadata information for the
+            dataset. Only the 'name' and 'kind' fields are required, all other
+            fields are optional.
 
             data_path: A string containing the path to the dataset root folder
 
@@ -88,7 +93,7 @@ the web endpoint service that is made available for every model implementation.
     Prepare for application termination.
 
 The Model State Machine
----------------------------
+-----------------------
 
 Model implementations follow a workflow lifecycle based on state machine
 transitions. The underlying MISTK infrastructure ensures that only legal
@@ -105,6 +110,78 @@ Note that an internal 'Failed' state will be entered if the model
 implementation throws an exception. No further model activities are permitted
 from the 'Failed' state.
 
+If a model workflow enters the 'Failed' state, then the workflow will need to be restarted
+from the beginning. This is required in order to support various machine learning
+technologies (ie. Tensorflow) that may not have a methodology to reset/resume their state
+after a critical failure.
+
+Initializing a Model
+--------------------
+
+Initialization of a model loads the hyperparameters and model properties associated
+with the model. Hyperparameters are defined by the algorithm that a model is based on.
+Model properties are defined by a specific implementation of an algorithm (ie. a
+PyTorch implementation of Densenet may have different properties than a
+Tensorflow implementation). Below are sample hyperparameters and model properties
+dictionaries that can be passed to a model implementation's 'do_initialize' method.
+
+Hyperparameters
+::
+  {
+    'learning_rate': 0.001,
+    'weight_decay': 0.004
+    'momentum': 0.9
+  }
+
+Model Properties
+::
+  {
+    'arch': 'densenet',
+    'num_labels': 1000,
+    'model_load_file': 'checkpoint.pth'
+  }
+
+
+
+
+Loading Data
+------------
+
+When loading data into a model instance using the **do_load_data(dataset_map)**
+method inherited from 'AbstractModel', the dataset_map parameter must include
+sufficient information for each dataset mapped to an objective {train, test}.
+The required fields include 'object_info', 'data_path', 'modality', and 'format'
+(Described in the Model API method documentation previously)
+An example dataset map is provided below:
+
+::
+
+  {
+    "train": {
+       "object_info": {
+         "name": "image_training_set",
+         "kind": "MistkDataset"
+       },
+       "data_path": "/path/to/data",
+       "modality": "image",
+       "format": "jpg"
+    },
+    "test": {
+       "object_info": {
+         "name": "image_testing_set",
+         "kind": "MistkDataset"
+       },
+       "data_path": "/path/to/data",
+       "modality": "image",
+       "format": "jpg"
+    }
+  }
+
+
+Please note, that when using the RESTful API directly, where the user would be
+submitting the JSON via the 'load_data' API call, the JSON keys would need to be
+in camelcase format rather than underscored (ie. object_info becomes objectInfo).
+
 Model Status
 ------------
 
@@ -113,7 +190,7 @@ current workflow state back to the MISTK infrastructure by calling the
 **update_status(dict)** method inherited from `AbstractModel` (note this method
 is intended to be called by the model, not overridden as the methods above).
 This method takes a dictionary object of key-value pairs defined by the model.
-For example, the logistic regression model below updates it status with the number of
+For example, the logistic regression model below updates its status with the number of
 samples fit during training and the number of samples predicted during testing.
 
 Predictions and Ground Truth
@@ -146,13 +223,53 @@ Model support of transfer learning is independent to each model implementation.
 Model developers that use the MISTK library need to incorporate their implementation
 features for transfer learning into their build_model and train methods. The PyTorch
 implementation below builds their model with specific configurations when performing
-transfer learning.
+transfer learning. The highlighted lines are relevant lines for transfer learning
+in this PyTorch implementation. 
 
 .. literalinclude:: sample_code_files/pytorch_model.py
-    :lines: 85-171
     :emphasize-lines: 62-69, 79-82
     :linenos:
     :language: python
 
 Model developers will need to specify in their model properties that they are performing
 transfer learning when using this model for that purpose.
+
+
+Data Transformation Interface
+=============================
+
+The MISTK API provides an interface for creating data transformation plugins. These
+plugins run within docker containers similar to models. A MISTK data transform
+implements the 'mistk.transform.AbstractTransformPlugin' abstract class. This class
+provides a set of abstract methods that represent the data transform lifecycle and
+must be implemented by the new data transform plugin. Ultimately, these methods form the core of
+the web endpoint service that is made available for every data transform implementation.
+
+**do_transform** (inputDirs: list, outputDir: string, properties: dict)
+  Performs a data transformation using the data provided in the input directories
+  and stores the resulting dataset(s) in the output directory.
+
+  :param inputDirs: A list of directory paths from which to load input datasets from.
+  :param outputDir: The directory path where the output dataset will be stored
+  :param props: A dictionary of settings or configuration values that are passed
+      to the transformation.
+
+**do_terminate** ()
+    Prepare for application termination.
+
+The Transformation State Machine
+--------------------------------
+
+Data transformation plugin implementations follow a workflow lifecycle based on state machine
+transitions. The underlying MISTK infrastructure ensures that only legal
+transitions from one state to another can be made and that the appropriate
+model methods are called during those transitions. The image below illustrates
+the high-level state machine transitions and the data transform plugin methods
+that may be called between them.
+
+.. image:: images/transform_state_machine.png
+
+A data transform plugin instance will automatically go to the Ready state if its
+container instance successfully starts up. After completing a transformation, it
+will return to the Ready state so that multiple transformations can be executed
+using the same container instance.

@@ -1,7 +1,0 @@
-mistk.server.util module
-========================
-
-.. automodule:: mistk.server.util
-    :members:
-    :undoc-members:
-    :show-inheritance:

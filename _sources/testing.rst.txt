@@ -46,6 +46,37 @@ web browser at http://localhost:8080/v1/mistk/ui/
 
 .. image:: images/MISTK_Model_Swagger_UI.png
 
+Testing through the RESTful API
+-------------------------------
+
+The RESTful API for a running model can be accessed at http://localhost:8080/v1/mistk/ui.
+The RESTful API endpoints correspond to the Pythonic API endpoints (ie. MISTK
+model methods beginning with 'do_') in terms of their input parameters and
+return values. The primary difference is that parameter names are in camelcase
+format rather than underscored (ie. datasetMap vs. dataset_map). The API method call
+examples below include sample input arguments when running the PyTorch model.
+
+Initialize Model
+^^^^^^^^^^^^^^^^
+.. image:: images/swagger_initialize.png
+
+Build Model
+^^^^^^^^^^^^^^^^
+.. image:: images/swagger_buildModel.png
+
+Load Data
+^^^^^^^^^
+.. image:: images/swagger_loadData.png
+
+Save Predictions
+^^^^^^^^^^^^^^^^
+.. image:: images/swagger_savePredictions.png
+
+Save Model Checkpoint
+^^^^^^^^^^^^^^^^^^^^^
+.. image:: images/swagger_saveModel.png
+
+
 Test and Validation Harness
 ---------------------------
 
@@ -57,9 +88,12 @@ via the model endpoints, launching the model within its Docker container
 The Test Harness should be used by model developers to ensure that their model
 implementations properly implement all interfaces and can be integrated into the
 MISTK framework. It provides streamlined testing for model implementations.
-The Test Harness can be installed via pip from the same PyPi repository as the core `mistk` package::
+The Test Harness Python wheel files can be downloaded from the MISTK
+Github Repository `Releases page`__ and installed with `pip`::
 
-  pip install mistk_test_harness
+      pip install mistk-test-harness-*-py3-none-any.whl
+
+.. __: https://github.com/mistkml/mistk/releases
 
 The Test Harness accepts a number of optional parameters to specify which model activities
 should be run (i.e. training, testing, evaluation, etc.) and can
@@ -67,11 +101,15 @@ be used to exercise all model endpoints except pause, resume, and terminate. The
 example usage are below, and can also be retrieved by running the Test Harness
 with the '-h' option::
 
-  usage: python -m mistk_test_harness [-h] [--train PATH] [--predict PATH]
+  usage: python -m mistk_test_harness [-h]
+                                      [--train PATH]
+                                      [--predict PATH]
                                       [--evaluate TYPE]
                                       [--predictions-path PATH]
                                       [--ground-truth-path PATH]
-                                      [--model-path PATH] [--model-props FILE]
+                                      [--model-path PATH]
+                                      [--model-save-path PATH]
+                                      [--model-props FILE]
                                       [--hyperparams FILE]
                                       [--stream-predict FILE] [--logs]
                                       MODEL
@@ -84,8 +122,7 @@ with the '-h' option::
 
   optional arguments:
     -h, --help            show this help message and exit
-    --train PATH          Train over the dataset at the local path (requires
-                          --model-path)
+    --train PATH          Train over the dataset at the local path
     --predict PATH        Run predictions over the dataset at the local path
     --evaluate TYPE       Evaluate model predictions as one of:
                           BinaryClassification, MultilabelClassification,
@@ -95,7 +132,9 @@ with the '-h' option::
                           Local folder path to save/load model predictions
     --ground-truth-path PATH
                           Local folder path containing dataset ground truth
-    --model-path PATH     Local folder path to save/load model checkpoints
+    --model-path PATH     Local folder path to load model checkpoints, used with the --train or --predict options
+    --model-save-path PATH
+                          Local folder path to save model checkpoints, used with the --train option
     --model-props FILE    Local file containing json dictionary of model
                           properties
     --hyperparams FILE    Local file containing json dictionary of model
@@ -106,8 +145,8 @@ with the '-h' option::
     --logs                Show all MISTK log output (debug)
 
   Examples:
-  python -m mistk_test_harness --train /my/dataset/folder --model-path /my/model/folder mymodel.MyImplementedModel
-  python -m mistk_test_harness --train /my/dataset/folder --model-path /my/model/folder http://localhost:8080
+  python -m mistk_test_harness --train /my/dataset/folder --model-path /my/model/folder --model-save-path /my/model/checkpoint_folder mymodel.MyImplementedModel
+  python -m mistk_test_harness --train /my/dataset/folder --model-path /my/model/folder --model-save-path /my/model/checkpoint_folder http://localhost:8080
   python -m mistk_test_harness --train /my/dataset/folder --model-path /my/model/folder repo/mymodelimpl
   python -m mistk_test_harness --predict /my/dataset/folder --model-path /my/model/folder --predictions-path /my/predictions/folder
   	--ground-truth-path /ground/truth/folder --evaluate BinaryClassification mymodel.MyImplementedModel
@@ -122,8 +161,11 @@ The '--ground-truth-path' is a folder containing dataset ground truth. Ground tr
 in accordance with the `Predictions and Ground Truth` section and be named
 ground_truth.csv.
 
-The '--model-path' parameter is a folder for model checkpoints.
-This path is passed to the model during the `save_model` and `build_model` stages.
+The '--model-path' parameter is a folder for loading model checkpoints.
+This path is passed to the model during the `build_model` stage.
+
+The '--model-save-path' parameter is a folder for saving model checkpoints after
+training. This path is passed to the model during the 'save_model' stage.
 
 The '--stream-predict' parameter points to a JSON file containing key-value pairs
 of ids and base64 encoded values for prediction.
@@ -182,32 +224,56 @@ as the model predictions (specified with the '--predictions-path' flag).
 
 Binary Classification:
 
-* Accuracy
-* Matthews Correlation Coefficient
-* Hamming Loss
-* F1 Score
-* Log Loss
-* F-beta Score
-* Recall
-* Precision
-* Brier Score
-* ROC
-* ROC AUC
+* Accuracy - The percentage of samples predicted correctly.
+* Matthews Correlation Coefficient - The Matthews correlation coefficient is used
+  in machine learning as a measure of the quality of binary and multiclass classifications.
+  It takes into account true and false positives and negatives and is generally regarded as
+  a balanced measure which can be used even if the classes are of very different sizes.
+* Hamming Loss - The fraction of labels that are incorrectly predicted.
+* F1 Score - Metric measuring the weighted average of the precision and recall,
+  where an F1 score reaches its best value at 1 and worst score at 0.
+* Log Loss - This is the loss function used in (multinomial) logistic regression and
+  extensions of it such as neural networks, defined as the negative log-likelihood
+  of the true labels given a probabilistic classifier’s predictions.
+* F-beta Score - Metric measuring the weighted harmonic mean of precision and recall,
+  reaching its optimal value at 1 and its worst value at 0.
+* Recall - The ratio of true positions to the sum of true positives and false negatives.
+* Precision - The ratio of true positions to the sum of true positives and false positives.
+* Brier Score - A proper score function that measures the accuracy of probabilistic predictions.
+  It is applicable to tasks in which predictions must assign probabilities to a set
+  of mutually exclusive discrete outcomes.
+* ROC - A receiver operating characteristic (ROC), or simply ROC curve, is a graphical
+  plot which illustrates the performance of a binary classifier system as its
+  discrimination threshold is varied. It is created by plotting the fraction of true
+  positives out of the positives (TPR = true positive rate) vs. the fraction of false positives
+  out of the negatives (FPR = false positive rate), at various threshold settings.
+  TPR is also known as sensitivity, and FPR is one minus the specificity or true negative rate.
+* ROC AUC - Metric computing the area under the receiver operating characteristic (ROC) curve,
+  which is also denoted by AUC or AUROC. By computing the area under the roc curve,
+  the curve information is summarized in one number.
 
 Multiclass/Multilabel Classification:
 
-* Accuracy
-* Hamming Loss
-* F1 Score
-* Log Loss
-* F-beta Score
-* Recall
-* Precision
+* Accuracy - The percentage of samples predicted correctly.
+* Hamming Loss - The fraction of labels that are incorrectly predicted.
+* F1 Score - Metric measuring the weighted average of the precision and recall,
+  where an F1 score reaches its best value at 1 and worst score at 0.
+* Log Loss - This is the loss function used in (multinomial) logistic regression and
+  extensions of it such as neural networks, defined as the negative log-likelihood
+  of the true labels given a probabilistic classifier’s predictions.
+* F-beta Score - Metric measuring the weighted harmonic mean of precision and recall,
+  reaching its optimal value at 1 and its worst value at 0.
+* Recall - The ratio of true positions to the sum of true positives and false negatives.
+* Precision - The ratio of true positions to the sum of true positives and false positives.
 
 Regression:
 
-* Explained Variance
-* Mean Absolute Error
-* Mean Squared Error
-* Mean Squared Log Error
-* R2 Score
+* Explained Variance - The explained variance regression score.
+* Mean Absolute Error - A risk metric corresponding to the expected value of the
+  absolute error loss or l1-norm loss.
+* Mean Squared Error - A risk metric corresponding to the expected value of the
+  squared (quadratic) error or loss.
+* Mean Squared Log Error - A risk metric corresponding to the expected value of
+  the squared logarithmic (quadratic) error or loss.
+* R2 Score - The coefficient of determination, representing the proportion of
+  variance (of y) that has been explained by the independent variables in the model

@@ -1,8 +1,7 @@
 mistk.abstract\_model module
 ============================
 
-.. automodule:: mistk.abstract_model
-    :members: 
+.. automodule:: mistk.model.abstract_model
+    :members:
     :undoc-members:
     :show-inheritance:
-    :exclude-members: endpoint_service, new_state_entered, initialize, initialized, load_data, build_model, ready, train, pause, paused, unpause, save_model, predict, stream_predict, save_predictions, report_failure, terminated, reset

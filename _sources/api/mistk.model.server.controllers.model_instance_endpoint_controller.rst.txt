@@ -1,0 +1,7 @@
+mistk.model.server.controllers.model\_instance\_endpoint\_controller module
+===========================================================================
+
+.. automodule:: mistk.model.server.controllers.model_instance_endpoint_controller
+    :members:
+    :undoc-members:
+    :show-inheritance:

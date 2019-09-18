@@ -28,7 +28,7 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="mistk.abstract_model module" href="mistk.abstract_model.html" />
+    <link rel="next" title="mistk.cfg package" href="mistk.cfg.html" />
     <link rel="prev" title="MISTK API" href="index.html" /> 
 
   
@@ -86,17 +86,17 @@
 <li class="toctree-l1"><a class="reference internal" href="../deployment.html">Deployment</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">MISTK API</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">mistk package</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="mistk.abstract_model.html">mistk.abstract_model module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="mistk.service.html">mistk.service module</a></li>
-</ul>
-</li>
 <li class="toctree-l3"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="mistk.cfg.html">mistk.cfg package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mistk.data.html">mistk.data package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mistk.log.html">mistk.log package</a></li>
-<li class="toctree-l4"><a class="reference internal" href="mistk.server.html">mistk.server package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mistk.model.html">mistk.model package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mistk.transform.html">mistk.transform package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mistk.watch.html">mistk.watch package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mistk.abstract_model.html">mistk.abstract_model module</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#module-mistk">Module contents</a></li>
@@ -172,15 +172,6 @@
             
   <div class="section" id="mistk-package">
 <h1>mistk package<a class="headerlink" href="#mistk-package" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="mistk.abstract_model.html">mistk.abstract_model module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mistk.service.html">mistk.service module</a></li>
-</ul>
-</div>
-</div>
 <div class="section" id="subpackages">
 <h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
@@ -201,53 +192,198 @@
 <li class="toctree-l2"><a class="reference internal" href="mistk.log.html#module-mistk.log">Module contents</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="mistk.server.html">mistk.server package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="mistk.server.html#subpackages">Subpackages</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="mistk.server.controllers.html">mistk.server.controllers package</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="mistk.server.controllers.html#submodules">Submodules</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="mistk.server.controllers.model_instance_endpoint_controller.html">mistk.server.controllers.model_instance_endpoint_controller module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mistk.model.html">mistk.model package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mistk.model.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.html">mistk.model.client package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mistk.model.client.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.api.html">mistk.model.client.api package</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="mistk.model.client.api.html#submodules">Submodules</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="mistk.model.client.api.model_instance_endpoint_api.html">mistk.model.client.api.model_instance_endpoint_api module</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="mistk.server.controllers.html#module-mistk.server.controllers">Module contents</a></li>
+<li class="toctree-l6"><a class="reference internal" href="mistk.model.client.api.html#module-mistk.model.client.api">Module contents</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="mistk.server.models.html">mistk.server.models package</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="mistk.server.models.html#submodules">Submodules</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="mistk.server.models.base_model_.html">mistk.server.models.base_model_ module</a></li>
-<li class="toctree-l5"><a class="reference internal" href="mistk.server.models.dataset.html">mistk.server.models.dataset module</a></li>
-<li class="toctree-l5"><a class="reference internal" href="mistk.server.models.dataset_statistics.html">mistk.server.models.dataset_statistics module</a></li>
-<li class="toctree-l5"><a class="reference internal" href="mistk.server.models.metric.html">mistk.server.models.metric module</a></li>
-<li class="toctree-l5"><a class="reference internal" href="mistk.server.models.metric_data_parameters.html">mistk.server.models.metric_data_parameters module</a></li>
-<li class="toctree-l5"><a class="reference internal" href="mistk.server.models.mistk_dataset.html">mistk.server.models.mistk_dataset module</a></li>
-<li class="toctree-l5"><a class="reference internal" href="mistk.server.models.mistk_metric.html">mistk.server.models.mistk_metric module</a></li>
-<li class="toctree-l5"><a class="reference internal" href="mistk.server.models.mistk_watch_event.html">mistk.server.models.mistk_watch_event module</a></li>
-<li class="toctree-l5"><a class="reference internal" href="mistk.server.models.model_instance_init_params.html">mistk.server.models.model_instance_init_params module</a></li>
-<li class="toctree-l5"><a class="reference internal" href="mistk.server.models.model_instance_status.html">mistk.server.models.model_instance_status module</a></li>
-<li class="toctree-l5"><a class="reference internal" href="mistk.server.models.object_info.html">mistk.server.models.object_info module</a></li>
-<li class="toctree-l5"><a class="reference internal" href="mistk.server.models.object_reference.html">mistk.server.models.object_reference module</a></li>
-<li class="toctree-l5"><a class="reference internal" href="mistk.server.models.service_error.html">mistk.server.models.service_error module</a></li>
-<li class="toctree-l5"><a class="reference internal" href="mistk.server.models.watch_event.html">mistk.server.models.watch_event module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.html">mistk.model.client.models package</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="mistk.model.client.models.html#submodules">Submodules</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="mistk.model.client.models.dataset.html">mistk.model.client.models.dataset module</a></li>
+<li class="toctree-l7"><a class="reference internal" href="mistk.model.client.models.dataset_statistics.html">mistk.model.client.models.dataset_statistics module</a></li>
+<li class="toctree-l7"><a class="reference internal" href="mistk.model.client.models.metric.html">mistk.model.client.models.metric module</a></li>
+<li class="toctree-l7"><a class="reference internal" href="mistk.model.client.models.metric_data_parameters.html">mistk.model.client.models.metric_data_parameters module</a></li>
+<li class="toctree-l7"><a class="reference internal" href="mistk.model.client.models.mistk_dataset.html">mistk.model.client.models.mistk_dataset module</a></li>
+<li class="toctree-l7"><a class="reference internal" href="mistk.model.client.models.mistk_metric.html">mistk.model.client.models.mistk_metric module</a></li>
+<li class="toctree-l7"><a class="reference internal" href="mistk.model.client.models.mistk_watch_event.html">mistk.model.client.models.mistk_watch_event module</a></li>
+<li class="toctree-l7"><a class="reference internal" href="mistk.model.client.models.model_instance_init_params.html">mistk.model.client.models.model_instance_init_params module</a></li>
+<li class="toctree-l7"><a class="reference internal" href="mistk.model.client.models.model_instance_status.html">mistk.model.client.models.model_instance_status module</a></li>
+<li class="toctree-l7"><a class="reference internal" href="mistk.model.client.models.object_info.html">mistk.model.client.models.object_info module</a></li>
+<li class="toctree-l7"><a class="reference internal" href="mistk.model.client.models.object_reference.html">mistk.model.client.models.object_reference module</a></li>
+<li class="toctree-l7"><a class="reference internal" href="mistk.model.client.models.service_error.html">mistk.model.client.models.service_error module</a></li>
+<li class="toctree-l7"><a class="reference internal" href="mistk.model.client.models.watch_event.html">mistk.model.client.models.watch_event module</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="mistk.server.models.html#module-mistk.server.models">Module contents</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="mistk.server.test.html">mistk.server.test package</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="mistk.server.test.html#submodules">Submodules</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="mistk.server.test.test_model_instance_endpoint_controller.html">mistk.server.test.test_model_instance_endpoint_controller module</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="mistk.server.test.html#module-mistk.server.test">Module contents</a></li>
+<li class="toctree-l6"><a class="reference internal" href="mistk.model.client.models.html#module-mistk.model.client.models">Module contents</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="mistk.server.html#submodules">Submodules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="mistk.server.encoder.html">mistk.server.encoder module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mistk.server.util.html">mistk.server.util module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mistk.model.client.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.api_client.html">mistk.model.client.api_client module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.configuration.html">mistk.model.client.configuration module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.rest.html">mistk.model.client.rest module</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="mistk.server.html#module-mistk.server">Module contents</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mistk.model.client.html#module-mistk.model.client">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.model.server.html">mistk.model.server package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mistk.model.server.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.server.controllers.html">mistk.model.server.controllers package</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="mistk.model.server.controllers.html#submodules">Submodules</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="mistk.model.server.controllers.model_instance_endpoint_controller.html">mistk.model.server.controllers.model_instance_endpoint_controller module</a></li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="mistk.model.server.controllers.html#module-mistk.model.server.controllers">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.server.models.html">mistk.model.server.models package</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="mistk.model.server.models.html#submodules">Submodules</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="mistk.model.server.models.base_model_.html">mistk.model.server.models.base_model_ module</a></li>
+<li class="toctree-l7"><a class="reference internal" href="mistk.model.server.models.dataset.html">mistk.model.server.models.dataset module</a></li>
+<li class="toctree-l7"><a class="reference internal" href="mistk.model.server.models.dataset_statistics.html">mistk.model.server.models.dataset_statistics module</a></li>
+<li class="toctree-l7"><a class="reference internal" href="mistk.model.server.models.metric.html">mistk.model.server.models.metric module</a></li>
+<li class="toctree-l7"><a class="reference internal" href="mistk.model.server.models.metric_data_parameters.html">mistk.model.server.models.metric_data_parameters module</a></li>
+<li class="toctree-l7"><a class="reference internal" href="mistk.model.server.models.mistk_dataset.html">mistk.model.server.models.mistk_dataset module</a></li>
+<li class="toctree-l7"><a class="reference internal" href="mistk.model.server.models.mistk_metric.html">mistk.model.server.models.mistk_metric module</a></li>
+<li class="toctree-l7"><a class="reference internal" href="mistk.model.server.models.mistk_watch_event.html">mistk.model.server.models.mistk_watch_event module</a></li>
+<li class="toctree-l7"><a class="reference internal" href="mistk.model.server.models.model_instance_init_params.html">mistk.model.server.models.model_instance_init_params module</a></li>
+<li class="toctree-l7"><a class="reference internal" href="mistk.model.server.models.model_instance_status.html">mistk.model.server.models.model_instance_status module</a></li>
+<li class="toctree-l7"><a class="reference internal" href="mistk.model.server.models.object_info.html">mistk.model.server.models.object_info module</a></li>
+<li class="toctree-l7"><a class="reference internal" href="mistk.model.server.models.object_reference.html">mistk.model.server.models.object_reference module</a></li>
+<li class="toctree-l7"><a class="reference internal" href="mistk.model.server.models.service_error.html">mistk.model.server.models.service_error module</a></li>
+<li class="toctree-l7"><a class="reference internal" href="mistk.model.server.models.watch_event.html">mistk.model.server.models.watch_event module</a></li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="mistk.model.server.models.html#module-mistk.model.server.models">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.server.test.html">mistk.model.server.test package</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="mistk.model.server.test.html#submodules">Submodules</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="mistk.model.server.test.test_model_instance_endpoint_controller.html">mistk.model.server.test.test_model_instance_endpoint_controller module</a></li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="mistk.model.server.test.html#module-mistk.model.server.test">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="mistk.model.server.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.server.encoder.html">mistk.model.server.encoder module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.server.util.html">mistk.model.server.util module</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="mistk.model.server.html#module-mistk.model.server">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mistk.model.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mistk.model.abstract_model.html">mistk.model.abstract_model module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.model.service.html">mistk.model.service module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mistk.model.html#module-mistk.model">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mistk.transform.html">mistk.transform package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mistk.transform.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mistk.transform.client.html">mistk.transform.client package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mistk.transform.client.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="mistk.transform.client.api.html">mistk.transform.client.api package</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="mistk.transform.client.api.html#submodules">Submodules</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="mistk.transform.client.api.transform_plugin_endpoint_api.html">mistk.transform.client.api.transform_plugin_endpoint_api module</a></li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="mistk.transform.client.api.html#module-mistk.transform.client.api">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.transform.client.models.html">mistk.transform.client.models package</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="mistk.transform.client.models.html#submodules">Submodules</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="mistk.transform.client.models.dataset.html">mistk.transform.client.models.dataset module</a></li>
+<li class="toctree-l7"><a class="reference internal" href="mistk.transform.client.models.dataset_statistics.html">mistk.transform.client.models.dataset_statistics module</a></li>
+<li class="toctree-l7"><a class="reference internal" href="mistk.transform.client.models.mistk_dataset.html">mistk.transform.client.models.mistk_dataset module</a></li>
+<li class="toctree-l7"><a class="reference internal" href="mistk.transform.client.models.object_info.html">mistk.transform.client.models.object_info module</a></li>
+<li class="toctree-l7"><a class="reference internal" href="mistk.transform.client.models.object_reference.html">mistk.transform.client.models.object_reference module</a></li>
+<li class="toctree-l7"><a class="reference internal" href="mistk.transform.client.models.service_error.html">mistk.transform.client.models.service_error module</a></li>
+<li class="toctree-l7"><a class="reference internal" href="mistk.transform.client.models.transform_instance_status.html">mistk.transform.client.models.transform_instance_status module</a></li>
+<li class="toctree-l7"><a class="reference internal" href="mistk.transform.client.models.transform_specification_init_params.html">mistk.transform.client.models.transform_specification_init_params module</a></li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="mistk.transform.client.models.html#module-mistk.transform.client.models">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="mistk.transform.client.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="mistk.transform.client.api_client.html">mistk.transform.client.api_client module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.transform.client.configuration.html">mistk.transform.client.configuration module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.transform.client.rest.html">mistk.transform.client.rest module</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="mistk.transform.client.html#module-mistk.transform.client">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.transform.server.html">mistk.transform.server package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mistk.transform.server.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="mistk.transform.server.controllers.html">mistk.transform.server.controllers package</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="mistk.transform.server.controllers.html#submodules">Submodules</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="mistk.transform.server.controllers.transform_plugin_endpoint_controller.html">mistk.transform.server.controllers.transform_plugin_endpoint_controller module</a></li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="mistk.transform.server.controllers.html#module-mistk.transform.server.controllers">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.transform.server.models.html">mistk.transform.server.models package</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="mistk.transform.server.models.html#submodules">Submodules</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="mistk.transform.server.models.base_model_.html">mistk.transform.server.models.base_model_ module</a></li>
+<li class="toctree-l7"><a class="reference internal" href="mistk.transform.server.models.dataset.html">mistk.transform.server.models.dataset module</a></li>
+<li class="toctree-l7"><a class="reference internal" href="mistk.transform.server.models.dataset_statistics.html">mistk.transform.server.models.dataset_statistics module</a></li>
+<li class="toctree-l7"><a class="reference internal" href="mistk.transform.server.models.mistk_dataset.html">mistk.transform.server.models.mistk_dataset module</a></li>
+<li class="toctree-l7"><a class="reference internal" href="mistk.transform.server.models.object_info.html">mistk.transform.server.models.object_info module</a></li>
+<li class="toctree-l7"><a class="reference internal" href="mistk.transform.server.models.object_reference.html">mistk.transform.server.models.object_reference module</a></li>
+<li class="toctree-l7"><a class="reference internal" href="mistk.transform.server.models.service_error.html">mistk.transform.server.models.service_error module</a></li>
+<li class="toctree-l7"><a class="reference internal" href="mistk.transform.server.models.transform_instance_status.html">mistk.transform.server.models.transform_instance_status module</a></li>
+<li class="toctree-l7"><a class="reference internal" href="mistk.transform.server.models.transform_specification_init_params.html">mistk.transform.server.models.transform_specification_init_params module</a></li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="mistk.transform.server.models.html#module-mistk.transform.server.models">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.transform.server.test.html">mistk.transform.server.test package</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="mistk.transform.server.test.html#submodules">Submodules</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="mistk.transform.server.test.test_transform_plugin_endpoint_controller.html">mistk.transform.server.test.test_transform_plugin_endpoint_controller module</a></li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="mistk.transform.server.test.html#module-mistk.transform.server.test">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="mistk.transform.server.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="mistk.transform.server.encoder.html">mistk.transform.server.encoder module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.transform.server.util.html">mistk.transform.server.util module</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="mistk.transform.server.html#module-mistk.transform.server">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mistk.transform.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mistk.transform.abstract_transform_plugin.html">mistk.transform.abstract_transform_plugin module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.transform.service.html">mistk.transform.service module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mistk.transform.html#module-mistk.transform">Module contents</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="mistk.watch.html">mistk.watch package</a><ul>
@@ -258,6 +394,14 @@
 <li class="toctree-l2"><a class="reference internal" href="mistk.watch.html#module-mistk.watch">Module contents</a></li>
 </ul>
 </li>
+</ul>
+</div>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mistk.abstract_model.html">mistk.abstract_model module</a></li>
 </ul>
 </div>
 </div>
@@ -274,7 +418,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="mistk.abstract_model.html" class="btn btn-neutral float-right" title="mistk.abstract_model module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="mistk.cfg.html" class="btn btn-neutral float-right" title="mistk.cfg package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="index.html" class="btn btn-neutral" title="MISTK API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

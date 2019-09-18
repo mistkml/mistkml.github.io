@@ -1,7 +1,0 @@
-mistk.server.models.metric module
-=================================
-
-.. automodule:: mistk.server.models.metric
-    :members:
-    :undoc-members:
-    :show-inheritance:

@@ -1,0 +1,397 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>mistk.model.client.models.dataset module &mdash; MISTK  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="mistk.model.client.models.dataset_statistics module" href="mistk.model.client.models.dataset_statistics.html" />
+    <link rel="prev" title="mistk.model.client.models package" href="mistk.model.client.models.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> MISTK
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guide.html">Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testing.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../deployment.html">Deployment</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">MISTK API</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="mistk.html">mistk package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="mistk.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="mistk.cfg.html">mistk.cfg package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mistk.data.html">mistk.data package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mistk.log.html">mistk.log package</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="mistk.model.html">mistk.model package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mistk.transform.html">mistk.transform package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mistk.watch.html">mistk.watch package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.html#module-mistk">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MISTK</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">MISTK API</a> &raquo;</li>
+        
+          <li><a href="mistk.html">mistk package</a> &raquo;</li>
+        
+          <li><a href="mistk.model.html">mistk.model package</a> &raquo;</li>
+        
+          <li><a href="mistk.model.client.html">mistk.model.client package</a> &raquo;</li>
+        
+          <li><a href="mistk.model.client.models.html">mistk.model.client.models package</a> &raquo;</li>
+        
+      <li>mistk.model.client.models.dataset module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/mistk.model.client.models.dataset.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-mistk.model.client.models.dataset">
+<span id="mistk-model-client-models-dataset-module"></span><h1>mistk.model.client.models.dataset module<a class="headerlink" href="#module-mistk.model.client.models.dataset" title="Permalink to this headline">¶</a></h1>
+<p>Model Integration Software ToolKit</p>
+<p>No description provided (generated by Swagger Codegen <a class="reference external" href="https://github.com/swagger-api/swagger-codegen">https://github.com/swagger-api/swagger-codegen</a>)  # noqa: E501</p>
+<p>OpenAPI spec version: 1.0.0</p>
+<p>Generated by: <a class="reference external" href="https://github.com/swagger-api/swagger-codegen.git">https://github.com/swagger-api/swagger-codegen.git</a></p>
+<dl class="class">
+<dt id="mistk.model.client.models.dataset.Dataset">
+<em class="property">class </em><code class="descclassname">mistk.model.client.models.dataset.</code><code class="descname">Dataset</code><span class="sig-paren">(</span><em>object_info=None</em>, <em>datastash_id=None</em>, <em>datastash_sub_dir=None</em>, <em>modality=None</em>, <em>format=None</em>, <em>statistics=None</em>, <em>default_ground_truth_set_reference=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.models.dataset.Dataset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>NOTE: This class is auto generated by the swagger code generator program.</p>
+<p>Do not edit the class manually.</p>
+<dl class="attribute">
+<dt id="mistk.model.client.models.dataset.Dataset.attribute_map">
+<code class="descname">attribute_map</code><em class="property"> = {'datastash_id': 'datastashId', 'datastash_sub_dir': 'datastashSubDir', 'default_ground_truth_set_reference': 'defaultGroundTruthSetReference', 'format': 'format', 'modality': 'modality', 'object_info': 'objectInfo', 'statistics': 'statistics'}</em><a class="headerlink" href="#mistk.model.client.models.dataset.Dataset.attribute_map" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mistk.model.client.models.dataset.Dataset.datastash_id">
+<code class="descname">datastash_id</code><a class="headerlink" href="#mistk.model.client.models.dataset.Dataset.datastash_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the datastash_id of this Dataset.  # noqa: E501</p>
+<p>The id of the datastash associated with this dataset where all of its files will be stored.   # noqa: E501</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The datastash_id of this Dataset.  # noqa: E501</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">str</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="mistk.model.client.models.dataset.Dataset.datastash_sub_dir">
+<code class="descname">datastash_sub_dir</code><a class="headerlink" href="#mistk.model.client.models.dataset.Dataset.datastash_sub_dir" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the datastash_sub_dir of this Dataset.  # noqa: E501</p>
+<p>This field denotes the sub path within the datastash where this dataset’s data resides.   # noqa: E501</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The datastash_sub_dir of this Dataset.  # noqa: E501</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">str</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="mistk.model.client.models.dataset.Dataset.default_ground_truth_set_reference">
+<code class="descname">default_ground_truth_set_reference</code><a class="headerlink" href="#mistk.model.client.models.dataset.Dataset.default_ground_truth_set_reference" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the default_ground_truth_set_reference of this Dataset.  # noqa: E501</p>
+<p>A reference to the default ground truth set that is associated with this dataset        # noqa: E501</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The default_ground_truth_set_reference of this Dataset.  # noqa: E501</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="mistk.model.client.models.object_reference.html#mistk.model.client.models.object_reference.ObjectReference" title="mistk.model.client.models.object_reference.ObjectReference">ObjectReference</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="mistk.model.client.models.dataset.Dataset.format">
+<code class="descname">format</code><a class="headerlink" href="#mistk.model.client.models.dataset.Dataset.format" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the format of this Dataset.  # noqa: E501</p>
+<p>A string representing the name of the format of the dataset. This should be sufficient to ensure that models and transforms  are able to read and parse the data.   # noqa: E501</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The format of this Dataset.  # noqa: E501</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">str</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="mistk.model.client.models.dataset.Dataset.modality">
+<code class="descname">modality</code><a class="headerlink" href="#mistk.model.client.models.dataset.Dataset.modality" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the modality of this Dataset.  # noqa: E501</p>
+<p>The type of the data, one of image, audio, video, text.  This does not specify the format of the data.   # noqa: E501</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The modality of this Dataset.  # noqa: E501</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">str</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="mistk.model.client.models.dataset.Dataset.object_info">
+<code class="descname">object_info</code><a class="headerlink" href="#mistk.model.client.models.dataset.Dataset.object_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the object_info of this Dataset.  # noqa: E501</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The object_info of this Dataset.  # noqa: E501</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="mistk.model.client.models.object_info.html#mistk.model.client.models.object_info.ObjectInfo" title="mistk.model.client.models.object_info.ObjectInfo">ObjectInfo</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="mistk.model.client.models.dataset.Dataset.statistics">
+<code class="descname">statistics</code><a class="headerlink" href="#mistk.model.client.models.dataset.Dataset.statistics" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the statistics of this Dataset.  # noqa: E501</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The statistics of this Dataset.  # noqa: E501</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="mistk.model.client.models.dataset_statistics.html#mistk.model.client.models.dataset_statistics.DatasetStatistics" title="mistk.model.client.models.dataset_statistics.DatasetStatistics">DatasetStatistics</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="mistk.model.client.models.dataset.Dataset.swagger_types">
+<code class="descname">swagger_types</code><em class="property"> = {'datastash_id': 'str', 'datastash_sub_dir': 'str', 'default_ground_truth_set_reference': 'ObjectReference', 'format': 'str', 'modality': 'str', 'object_info': 'ObjectInfo', 'statistics': 'DatasetStatistics'}</em><a class="headerlink" href="#mistk.model.client.models.dataset.Dataset.swagger_types" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mistk.model.client.models.dataset.Dataset.to_dict">
+<code class="descname">to_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.models.dataset.Dataset.to_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the model properties as a dict</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="mistk.model.client.models.dataset.Dataset.to_str">
+<code class="descname">to_str</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.models.dataset.Dataset.to_str" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the string representation of the model</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mistk.model.client.models.dataset_statistics.html" class="btn btn-neutral float-right" title="mistk.model.client.models.dataset_statistics module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mistk.model.client.models.html" class="btn btn-neutral" title="mistk.model.client.models package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

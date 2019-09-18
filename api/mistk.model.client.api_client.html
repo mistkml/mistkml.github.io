@@ -1,0 +1,493 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>mistk.model.client.api_client module &mdash; MISTK  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="mistk.model.client.configuration module" href="mistk.model.client.configuration.html" />
+    <link rel="prev" title="mistk.model.client.models.watch_event module" href="mistk.model.client.models.watch_event.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> MISTK
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guide.html">Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testing.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../deployment.html">Deployment</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">MISTK API</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="mistk.html">mistk package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="mistk.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="mistk.cfg.html">mistk.cfg package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mistk.data.html">mistk.data package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mistk.log.html">mistk.log package</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="mistk.model.html">mistk.model package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mistk.transform.html">mistk.transform package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mistk.watch.html">mistk.watch package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.html#module-mistk">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MISTK</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">MISTK API</a> &raquo;</li>
+        
+          <li><a href="mistk.html">mistk package</a> &raquo;</li>
+        
+          <li><a href="mistk.model.html">mistk.model package</a> &raquo;</li>
+        
+          <li><a href="mistk.model.client.html">mistk.model.client package</a> &raquo;</li>
+        
+      <li>mistk.model.client.api_client module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/mistk.model.client.api_client.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-mistk.model.client.api_client">
+<span id="mistk-model-client-api-client-module"></span><h1>mistk.model.client.api_client module<a class="headerlink" href="#module-mistk.model.client.api_client" title="Permalink to this headline">¶</a></h1>
+<p>Model Integration Software ToolKit</p>
+<p>No description provided (generated by Swagger Codegen <a class="reference external" href="https://github.com/swagger-api/swagger-codegen">https://github.com/swagger-api/swagger-codegen</a>)  # noqa: E501</p>
+<p>OpenAPI spec version: 1.0.0</p>
+<p>Generated by: <a class="reference external" href="https://github.com/swagger-api/swagger-codegen.git">https://github.com/swagger-api/swagger-codegen.git</a></p>
+<dl class="class">
+<dt id="mistk.model.client.api_client.ApiClient">
+<em class="property">class </em><code class="descclassname">mistk.model.client.api_client.</code><code class="descname">ApiClient</code><span class="sig-paren">(</span><em>configuration=None</em>, <em>header_name=None</em>, <em>header_value=None</em>, <em>cookie=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api_client.ApiClient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Generic API client for Swagger client library builds.</p>
+<p>Swagger generic API client. This client handles the client-
+server communication, and is invariant across implementations. Specifics of
+the methods and models for each application are generated from the Swagger
+templates.</p>
+<p>NOTE: This class is auto generated by the swagger code generator program.
+Ref: <a class="reference external" href="https://github.com/swagger-api/swagger-codegen">https://github.com/swagger-api/swagger-codegen</a>
+Do not edit the class manually.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>configuration</strong> – .Configuration object for this client</li>
+<li><strong>header_name</strong> – a header to pass when making calls to the API.</li>
+<li><strong>header_value</strong> – a header value to pass when making calls to
+the API.</li>
+<li><strong>cookie</strong> – a cookie to include in the header when making calls
+to the API</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="mistk.model.client.api_client.ApiClient.NATIVE_TYPES_MAPPING">
+<code class="descname">NATIVE_TYPES_MAPPING</code><em class="property"> = {'bool': &lt;class 'bool'&gt;, 'date': &lt;class 'datetime.date'&gt;, 'datetime': &lt;class 'datetime.datetime'&gt;, 'float': &lt;class 'float'&gt;, 'int': &lt;class 'int'&gt;, 'long': &lt;class 'int'&gt;, 'object': &lt;class 'object'&gt;, 'str': &lt;class 'str'&gt;}</em><a class="headerlink" href="#mistk.model.client.api_client.ApiClient.NATIVE_TYPES_MAPPING" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mistk.model.client.api_client.ApiClient.PRIMITIVE_TYPES">
+<code class="descname">PRIMITIVE_TYPES</code><em class="property"> = (&lt;class 'float'&gt;, &lt;class 'bool'&gt;, &lt;class 'bytes'&gt;, &lt;class 'str'&gt;, &lt;class 'int'&gt;)</em><a class="headerlink" href="#mistk.model.client.api_client.ApiClient.PRIMITIVE_TYPES" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mistk.model.client.api_client.ApiClient.call_api">
+<code class="descname">call_api</code><span class="sig-paren">(</span><em>resource_path</em>, <em>method</em>, <em>path_params=None</em>, <em>query_params=None</em>, <em>header_params=None</em>, <em>body=None</em>, <em>post_params=None</em>, <em>files=None</em>, <em>response_type=None</em>, <em>auth_settings=None</em>, <em>async=None</em>, <em>_return_http_data_only=None</em>, <em>collection_formats=None</em>, <em>_preload_content=True</em>, <em>_request_timeout=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api_client.ApiClient.call_api" title="Permalink to this definition">¶</a></dt>
+<dd><p>Makes the HTTP request (synchronous) and returns deserialized data.</p>
+<p>To make an async request, set the async parameter.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>resource_path</strong> – Path to method endpoint.</li>
+<li><strong>method</strong> – Method to call.</li>
+<li><strong>path_params</strong> – Path parameters in the url.</li>
+<li><strong>query_params</strong> – Query parameters in the url.</li>
+<li><strong>header_params</strong> – Header parameters to be
+placed in the request header.</li>
+<li><strong>body</strong> – Request body.</li>
+<li><strong>dict</strong> (<em>files</em>) – Request post form parameters,
+for <cite>application/x-www-form-urlencoded</cite>, <cite>multipart/form-data</cite>.</li>
+<li><strong>list</strong> (<em>auth_settings</em>) – Auth Settings names for the request.</li>
+<li><strong>response</strong> – Response data type.</li>
+<li><strong>dict</strong> – key -&gt; filename, value -&gt; filepath,
+for <cite>multipart/form-data</cite>.</li>
+<li><strong>bool</strong> (<em>async</em>) – execute request asynchronously</li>
+<li><strong>_return_http_data_only</strong> – response data without head status code
+and headers</li>
+<li><strong>collection_formats</strong> – dict of collection formats for path, query,
+header, and post parameters.</li>
+<li><strong>_preload_content</strong> – if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.</li>
+<li><strong>_request_timeout</strong> – timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">If async parameter is True,
+the request will be called asynchronously.
+The method will return the request thread.
+If parameter async is False or missing,
+then the method will return the response directly.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mistk.model.client.api_client.ApiClient.deserialize">
+<code class="descname">deserialize</code><span class="sig-paren">(</span><em>response</em>, <em>response_type</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api_client.ApiClient.deserialize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deserializes response into an object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>response</strong> – RESTResponse object to be deserialized.</li>
+<li><strong>response_type</strong> – class literal for
+deserialized object, or string of class name.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">deserialized object.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mistk.model.client.api_client.ApiClient.parameters_to_tuples">
+<code class="descname">parameters_to_tuples</code><span class="sig-paren">(</span><em>params</em>, <em>collection_formats</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api_client.ApiClient.parameters_to_tuples" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get parameters as list of tuples, formatting collections.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>params</strong> – Parameters as dict or list of two-tuples</li>
+<li><strong>collection_formats</strong> (<em>dict</em>) – Parameter collection formats</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Parameters as list of tuples, collections formatted</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mistk.model.client.api_client.ApiClient.prepare_post_parameters">
+<code class="descname">prepare_post_parameters</code><span class="sig-paren">(</span><em>post_params=None</em>, <em>files=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api_client.ApiClient.prepare_post_parameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Builds form parameters.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>post_params</strong> – Normal form parameters.</li>
+<li><strong>files</strong> – File parameters.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Form parameters with files.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mistk.model.client.api_client.ApiClient.request">
+<code class="descname">request</code><span class="sig-paren">(</span><em>method</em>, <em>url</em>, <em>query_params=None</em>, <em>headers=None</em>, <em>post_params=None</em>, <em>body=None</em>, <em>_preload_content=True</em>, <em>_request_timeout=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api_client.ApiClient.request" title="Permalink to this definition">¶</a></dt>
+<dd><p>Makes the HTTP request using RESTClient.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="mistk.model.client.api_client.ApiClient.sanitize_for_serialization">
+<code class="descname">sanitize_for_serialization</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api_client.ApiClient.sanitize_for_serialization" title="Permalink to this definition">¶</a></dt>
+<dd><p>Builds a JSON POST object.</p>
+<p>If obj is None, return None.
+If obj is str, int, long, float, bool, return directly.
+If obj is datetime.datetime, datetime.date</p>
+<blockquote>
+<div>convert to string in iso8601 format.</div></blockquote>
+<p>If obj is list, sanitize each element in the list.
+If obj is dict, return the dict.
+If obj is swagger model, return the properties dict.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> – The data to serialize.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The serialized form of data.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mistk.model.client.api_client.ApiClient.select_header_accept">
+<code class="descname">select_header_accept</code><span class="sig-paren">(</span><em>accepts</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api_client.ApiClient.select_header_accept" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns <cite>Accept</cite> based on an array of accepts provided.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>accepts</strong> – List of headers.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Accept (e.g. application/json).</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mistk.model.client.api_client.ApiClient.select_header_content_type">
+<code class="descname">select_header_content_type</code><span class="sig-paren">(</span><em>content_types</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api_client.ApiClient.select_header_content_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns <cite>Content-Type</cite> based on an array of content_types provided.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>content_types</strong> – List of content-types.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Content-Type (e.g. application/json).</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mistk.model.client.api_client.ApiClient.set_default_header">
+<code class="descname">set_default_header</code><span class="sig-paren">(</span><em>header_name</em>, <em>header_value</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api_client.ApiClient.set_default_header" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mistk.model.client.api_client.ApiClient.update_params_for_auth">
+<code class="descname">update_params_for_auth</code><span class="sig-paren">(</span><em>headers</em>, <em>querys</em>, <em>auth_settings</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api_client.ApiClient.update_params_for_auth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates header and query params based on authentication setting.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>headers</strong> – Header parameters dict to be updated.</li>
+<li><strong>querys</strong> – Query parameters tuple list to be updated.</li>
+<li><strong>auth_settings</strong> – Authentication setting identifiers list.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="mistk.model.client.api_client.ApiClient.user_agent">
+<code class="descname">user_agent</code><a class="headerlink" href="#mistk.model.client.api_client.ApiClient.user_agent" title="Permalink to this definition">¶</a></dt>
+<dd><p>User agent for this API client</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mistk.model.client.configuration.html" class="btn btn-neutral float-right" title="mistk.model.client.configuration module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mistk.model.client.models.watch_event.html" class="btn btn-neutral" title="mistk.model.client.models.watch_event module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

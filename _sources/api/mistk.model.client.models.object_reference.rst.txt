@@ -1,0 +1,7 @@
+mistk.model.client.models.object\_reference module
+==================================================
+
+.. automodule:: mistk.model.client.models.object_reference
+    :members:
+    :undoc-members:
+    :show-inheritance:

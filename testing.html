@@ -85,6 +85,14 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Testing</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#running-the-model">Running the Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#running-in-eclipse-and-pydev">Running in Eclipse and PyDev</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#testing-through-the-restful-api">Testing through the RESTful API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#initialize-model">Initialize Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build-model">Build Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#load-data">Load Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#save-predictions">Save Predictions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#save-model-checkpoint">Save Model Checkpoint</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#test-and-validation-harness">Test and Validation Harness</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#validation-metrics">Validation Metrics</a></li>
 </ul>
@@ -191,6 +199,35 @@ any additional logging you perform):</p>
 web browser at <a class="reference external" href="http://localhost:8080/v1/mistk/ui/">http://localhost:8080/v1/mistk/ui/</a></p>
 <img alt="_images/MISTK_Model_Swagger_UI.png" src="_images/MISTK_Model_Swagger_UI.png" />
 </div>
+<div class="section" id="testing-through-the-restful-api">
+<h2>Testing through the RESTful API<a class="headerlink" href="#testing-through-the-restful-api" title="Permalink to this headline">¶</a></h2>
+<p>The RESTful API for a running model can be accessed at <a class="reference external" href="http://localhost:8080/v1/mistk/ui">http://localhost:8080/v1/mistk/ui</a>.
+The RESTful API endpoints correspond to the Pythonic API endpoints (ie. MISTK
+model methods beginning with ‘<a href="#id2"><span class="problematic" id="id3">do_</span></a>’) in terms of their input parameters and
+return values. The primary difference is that parameter names are in camelcase
+format rather than underscored (ie. datasetMap vs. dataset_map). The API method call
+examples below include sample input arguments when running the PyTorch model.</p>
+<div class="section" id="initialize-model">
+<h3>Initialize Model<a class="headerlink" href="#initialize-model" title="Permalink to this headline">¶</a></h3>
+<img alt="_images/swagger_initialize.png" src="_images/swagger_initialize.png" />
+</div>
+<div class="section" id="build-model">
+<h3>Build Model<a class="headerlink" href="#build-model" title="Permalink to this headline">¶</a></h3>
+<img alt="_images/swagger_buildModel.png" src="_images/swagger_buildModel.png" />
+</div>
+<div class="section" id="load-data">
+<h3>Load Data<a class="headerlink" href="#load-data" title="Permalink to this headline">¶</a></h3>
+<img alt="_images/swagger_loadData.png" src="_images/swagger_loadData.png" />
+</div>
+<div class="section" id="save-predictions">
+<h3>Save Predictions<a class="headerlink" href="#save-predictions" title="Permalink to this headline">¶</a></h3>
+<img alt="_images/swagger_savePredictions.png" src="_images/swagger_savePredictions.png" />
+</div>
+<div class="section" id="save-model-checkpoint">
+<h3>Save Model Checkpoint<a class="headerlink" href="#save-model-checkpoint" title="Permalink to this headline">¶</a></h3>
+<img alt="_images/swagger_saveModel.png" src="_images/swagger_saveModel.png" />
+</div>
+</div>
 <div class="section" id="test-and-validation-harness">
 <h2>Test and Validation Harness<a class="headerlink" href="#test-and-validation-harness" title="Permalink to this headline">¶</a></h2>
 <p>Model implementations can also be validated using the Test Harness application,
@@ -201,8 +238,9 @@ via the model endpoints, launching the model within its Docker container
 The Test Harness should be used by model developers to ensure that their model
 implementations properly implement all interfaces and can be integrated into the
 MISTK framework. It provides streamlined testing for model implementations.
-The Test Harness can be installed via pip from the same PyPi repository as the core <cite>mistk</cite> package:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">mistk_test_harness</span>
+The Test Harness Python wheel files can be downloaded from the MISTK
+Github Repository <a class="reference external" href="https://github.com/mistkml/mistk/releases">Releases page</a> and installed with <cite>pip</cite>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">mistk</span><span class="o">-</span><span class="n">test</span><span class="o">-</span><span class="n">harness</span><span class="o">-*-</span><span class="n">py3</span><span class="o">-</span><span class="n">none</span><span class="o">-</span><span class="nb">any</span><span class="o">.</span><span class="n">whl</span>
 </pre></div>
 </div>
 <p>The Test Harness accepts a number of optional parameters to specify which model activities
@@ -210,11 +248,15 @@ should be run (i.e. training, testing, evaluation, etc.) and can
 be used to exercise all model endpoints except pause, resume, and terminate. The parameters and
 example usage are below, and can also be retrieved by running the Test Harness
 with the ‘-h’ option:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">mistk_test_harness</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">train</span> <span class="n">PATH</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">predict</span> <span class="n">PATH</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">mistk_test_harness</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span>
+                                    <span class="p">[</span><span class="o">--</span><span class="n">train</span> <span class="n">PATH</span><span class="p">]</span>
+                                    <span class="p">[</span><span class="o">--</span><span class="n">predict</span> <span class="n">PATH</span><span class="p">]</span>
                                     <span class="p">[</span><span class="o">--</span><span class="n">evaluate</span> <span class="n">TYPE</span><span class="p">]</span>
                                     <span class="p">[</span><span class="o">--</span><span class="n">predictions</span><span class="o">-</span><span class="n">path</span> <span class="n">PATH</span><span class="p">]</span>
                                     <span class="p">[</span><span class="o">--</span><span class="n">ground</span><span class="o">-</span><span class="n">truth</span><span class="o">-</span><span class="n">path</span> <span class="n">PATH</span><span class="p">]</span>
-                                    <span class="p">[</span><span class="o">--</span><span class="n">model</span><span class="o">-</span><span class="n">path</span> <span class="n">PATH</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">model</span><span class="o">-</span><span class="n">props</span> <span class="n">FILE</span><span class="p">]</span>
+                                    <span class="p">[</span><span class="o">--</span><span class="n">model</span><span class="o">-</span><span class="n">path</span> <span class="n">PATH</span><span class="p">]</span>
+                                    <span class="p">[</span><span class="o">--</span><span class="n">model</span><span class="o">-</span><span class="n">save</span><span class="o">-</span><span class="n">path</span> <span class="n">PATH</span><span class="p">]</span>
+                                    <span class="p">[</span><span class="o">--</span><span class="n">model</span><span class="o">-</span><span class="n">props</span> <span class="n">FILE</span><span class="p">]</span>
                                     <span class="p">[</span><span class="o">--</span><span class="n">hyperparams</span> <span class="n">FILE</span><span class="p">]</span>
                                     <span class="p">[</span><span class="o">--</span><span class="n">stream</span><span class="o">-</span><span class="n">predict</span> <span class="n">FILE</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">logs</span><span class="p">]</span>
                                     <span class="n">MODEL</span>
@@ -227,8 +269,7 @@ with the ‘-h’ option:</p>
 
 <span class="n">optional</span> <span class="n">arguments</span><span class="p">:</span>
   <span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="o">--</span><span class="n">help</span>            <span class="n">show</span> <span class="n">this</span> <span class="n">help</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span>
-  <span class="o">--</span><span class="n">train</span> <span class="n">PATH</span>          <span class="n">Train</span> <span class="n">over</span> <span class="n">the</span> <span class="n">dataset</span> <span class="n">at</span> <span class="n">the</span> <span class="n">local</span> <span class="n">path</span> <span class="p">(</span><span class="n">requires</span>
-                        <span class="o">--</span><span class="n">model</span><span class="o">-</span><span class="n">path</span><span class="p">)</span>
+  <span class="o">--</span><span class="n">train</span> <span class="n">PATH</span>          <span class="n">Train</span> <span class="n">over</span> <span class="n">the</span> <span class="n">dataset</span> <span class="n">at</span> <span class="n">the</span> <span class="n">local</span> <span class="n">path</span>
   <span class="o">--</span><span class="n">predict</span> <span class="n">PATH</span>        <span class="n">Run</span> <span class="n">predictions</span> <span class="n">over</span> <span class="n">the</span> <span class="n">dataset</span> <span class="n">at</span> <span class="n">the</span> <span class="n">local</span> <span class="n">path</span>
   <span class="o">--</span><span class="n">evaluate</span> <span class="n">TYPE</span>       <span class="n">Evaluate</span> <span class="n">model</span> <span class="n">predictions</span> <span class="k">as</span> <span class="n">one</span> <span class="n">of</span><span class="p">:</span>
                         <span class="n">BinaryClassification</span><span class="p">,</span> <span class="n">MultilabelClassification</span><span class="p">,</span>
@@ -238,7 +279,9 @@ with the ‘-h’ option:</p>
                         <span class="n">Local</span> <span class="n">folder</span> <span class="n">path</span> <span class="n">to</span> <span class="n">save</span><span class="o">/</span><span class="n">load</span> <span class="n">model</span> <span class="n">predictions</span>
   <span class="o">--</span><span class="n">ground</span><span class="o">-</span><span class="n">truth</span><span class="o">-</span><span class="n">path</span> <span class="n">PATH</span>
                         <span class="n">Local</span> <span class="n">folder</span> <span class="n">path</span> <span class="n">containing</span> <span class="n">dataset</span> <span class="n">ground</span> <span class="n">truth</span>
-  <span class="o">--</span><span class="n">model</span><span class="o">-</span><span class="n">path</span> <span class="n">PATH</span>     <span class="n">Local</span> <span class="n">folder</span> <span class="n">path</span> <span class="n">to</span> <span class="n">save</span><span class="o">/</span><span class="n">load</span> <span class="n">model</span> <span class="n">checkpoints</span>
+  <span class="o">--</span><span class="n">model</span><span class="o">-</span><span class="n">path</span> <span class="n">PATH</span>     <span class="n">Local</span> <span class="n">folder</span> <span class="n">path</span> <span class="n">to</span> <span class="n">load</span> <span class="n">model</span> <span class="n">checkpoints</span><span class="p">,</span> <span class="n">used</span> <span class="k">with</span> <span class="n">the</span> <span class="o">--</span><span class="n">train</span> <span class="ow">or</span> <span class="o">--</span><span class="n">predict</span> <span class="n">options</span>
+  <span class="o">--</span><span class="n">model</span><span class="o">-</span><span class="n">save</span><span class="o">-</span><span class="n">path</span> <span class="n">PATH</span>
+                        <span class="n">Local</span> <span class="n">folder</span> <span class="n">path</span> <span class="n">to</span> <span class="n">save</span> <span class="n">model</span> <span class="n">checkpoints</span><span class="p">,</span> <span class="n">used</span> <span class="k">with</span> <span class="n">the</span> <span class="o">--</span><span class="n">train</span> <span class="n">option</span>
   <span class="o">--</span><span class="n">model</span><span class="o">-</span><span class="n">props</span> <span class="n">FILE</span>    <span class="n">Local</span> <span class="n">file</span> <span class="n">containing</span> <span class="n">json</span> <span class="n">dictionary</span> <span class="n">of</span> <span class="n">model</span>
                         <span class="n">properties</span>
   <span class="o">--</span><span class="n">hyperparams</span> <span class="n">FILE</span>    <span class="n">Local</span> <span class="n">file</span> <span class="n">containing</span> <span class="n">json</span> <span class="n">dictionary</span> <span class="n">of</span> <span class="n">model</span>
@@ -249,8 +292,8 @@ with the ‘-h’ option:</p>
   <span class="o">--</span><span class="n">logs</span>                <span class="n">Show</span> <span class="nb">all</span> <span class="n">MISTK</span> <span class="n">log</span> <span class="n">output</span> <span class="p">(</span><span class="n">debug</span><span class="p">)</span>
 
 <span class="n">Examples</span><span class="p">:</span>
-<span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">mistk_test_harness</span> <span class="o">--</span><span class="n">train</span> <span class="o">/</span><span class="n">my</span><span class="o">/</span><span class="n">dataset</span><span class="o">/</span><span class="n">folder</span> <span class="o">--</span><span class="n">model</span><span class="o">-</span><span class="n">path</span> <span class="o">/</span><span class="n">my</span><span class="o">/</span><span class="n">model</span><span class="o">/</span><span class="n">folder</span> <span class="n">mymodel</span><span class="o">.</span><span class="n">MyImplementedModel</span>
-<span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">mistk_test_harness</span> <span class="o">--</span><span class="n">train</span> <span class="o">/</span><span class="n">my</span><span class="o">/</span><span class="n">dataset</span><span class="o">/</span><span class="n">folder</span> <span class="o">--</span><span class="n">model</span><span class="o">-</span><span class="n">path</span> <span class="o">/</span><span class="n">my</span><span class="o">/</span><span class="n">model</span><span class="o">/</span><span class="n">folder</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">8080</span>
+<span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">mistk_test_harness</span> <span class="o">--</span><span class="n">train</span> <span class="o">/</span><span class="n">my</span><span class="o">/</span><span class="n">dataset</span><span class="o">/</span><span class="n">folder</span> <span class="o">--</span><span class="n">model</span><span class="o">-</span><span class="n">path</span> <span class="o">/</span><span class="n">my</span><span class="o">/</span><span class="n">model</span><span class="o">/</span><span class="n">folder</span> <span class="o">--</span><span class="n">model</span><span class="o">-</span><span class="n">save</span><span class="o">-</span><span class="n">path</span> <span class="o">/</span><span class="n">my</span><span class="o">/</span><span class="n">model</span><span class="o">/</span><span class="n">checkpoint_folder</span> <span class="n">mymodel</span><span class="o">.</span><span class="n">MyImplementedModel</span>
+<span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">mistk_test_harness</span> <span class="o">--</span><span class="n">train</span> <span class="o">/</span><span class="n">my</span><span class="o">/</span><span class="n">dataset</span><span class="o">/</span><span class="n">folder</span> <span class="o">--</span><span class="n">model</span><span class="o">-</span><span class="n">path</span> <span class="o">/</span><span class="n">my</span><span class="o">/</span><span class="n">model</span><span class="o">/</span><span class="n">folder</span> <span class="o">--</span><span class="n">model</span><span class="o">-</span><span class="n">save</span><span class="o">-</span><span class="n">path</span> <span class="o">/</span><span class="n">my</span><span class="o">/</span><span class="n">model</span><span class="o">/</span><span class="n">checkpoint_folder</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">8080</span>
 <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">mistk_test_harness</span> <span class="o">--</span><span class="n">train</span> <span class="o">/</span><span class="n">my</span><span class="o">/</span><span class="n">dataset</span><span class="o">/</span><span class="n">folder</span> <span class="o">--</span><span class="n">model</span><span class="o">-</span><span class="n">path</span> <span class="o">/</span><span class="n">my</span><span class="o">/</span><span class="n">model</span><span class="o">/</span><span class="n">folder</span> <span class="n">repo</span><span class="o">/</span><span class="n">mymodelimpl</span>
 <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">mistk_test_harness</span> <span class="o">--</span><span class="n">predict</span> <span class="o">/</span><span class="n">my</span><span class="o">/</span><span class="n">dataset</span><span class="o">/</span><span class="n">folder</span> <span class="o">--</span><span class="n">model</span><span class="o">-</span><span class="n">path</span> <span class="o">/</span><span class="n">my</span><span class="o">/</span><span class="n">model</span><span class="o">/</span><span class="n">folder</span> <span class="o">--</span><span class="n">predictions</span><span class="o">-</span><span class="n">path</span> <span class="o">/</span><span class="n">my</span><span class="o">/</span><span class="n">predictions</span><span class="o">/</span><span class="n">folder</span>
       <span class="o">--</span><span class="n">ground</span><span class="o">-</span><span class="n">truth</span><span class="o">-</span><span class="n">path</span> <span class="o">/</span><span class="n">ground</span><span class="o">/</span><span class="n">truth</span><span class="o">/</span><span class="n">folder</span> <span class="o">--</span><span class="n">evaluate</span> <span class="n">BinaryClassification</span> <span class="n">mymodel</span><span class="o">.</span><span class="n">MyImplementedModel</span>
@@ -264,8 +307,10 @@ passed to the model during the <cite>save_predictions</cite> stage.
 The ‘–ground-truth-path’ is a folder containing dataset ground truth. Ground truth should be formatted
 in accordance with the <cite>Predictions and Ground Truth</cite> section and be named
 ground_truth.csv.</p>
-<p>The ‘–model-path’ parameter is a folder for model checkpoints.
-This path is passed to the model during the <cite>save_model</cite> and <cite>build_model</cite> stages.</p>
+<p>The ‘–model-path’ parameter is a folder for loading model checkpoints.
+This path is passed to the model during the <cite>build_model</cite> stage.</p>
+<p>The ‘–model-save-path’ parameter is a folder for saving model checkpoints after
+training. This path is passed to the model during the ‘save_model’ stage.</p>
 <p>The ‘–stream-predict’ parameter points to a JSON file containing key-value pairs
 of ids and base64 encoded values for prediction.</p>
 <p>Finally, the ‘–model-props’ and ‘–hyperparams’ parameters point to JSON files
@@ -317,35 +362,59 @@ performance. The evaluation output will be saved in JSON format at the same path
 as the model predictions (specified with the ‘–predictions-path’ flag).</p>
 <p>Binary Classification:</p>
 <ul class="simple">
-<li>Accuracy</li>
-<li>Matthews Correlation Coefficient</li>
-<li>Hamming Loss</li>
-<li>F1 Score</li>
-<li>Log Loss</li>
-<li>F-beta Score</li>
-<li>Recall</li>
-<li>Precision</li>
-<li>Brier Score</li>
-<li>ROC</li>
-<li>ROC AUC</li>
+<li>Accuracy - The percentage of samples predicted correctly.</li>
+<li>Matthews Correlation Coefficient - The Matthews correlation coefficient is used
+in machine learning as a measure of the quality of binary and multiclass classifications.
+It takes into account true and false positives and negatives and is generally regarded as
+a balanced measure which can be used even if the classes are of very different sizes.</li>
+<li>Hamming Loss - The fraction of labels that are incorrectly predicted.</li>
+<li>F1 Score - Metric measuring the weighted average of the precision and recall,
+where an F1 score reaches its best value at 1 and worst score at 0.</li>
+<li>Log Loss - This is the loss function used in (multinomial) logistic regression and
+extensions of it such as neural networks, defined as the negative log-likelihood
+of the true labels given a probabilistic classifier’s predictions.</li>
+<li>F-beta Score - Metric measuring the weighted harmonic mean of precision and recall,
+reaching its optimal value at 1 and its worst value at 0.</li>
+<li>Recall - The ratio of true positions to the sum of true positives and false negatives.</li>
+<li>Precision - The ratio of true positions to the sum of true positives and false positives.</li>
+<li>Brier Score - A proper score function that measures the accuracy of probabilistic predictions.
+It is applicable to tasks in which predictions must assign probabilities to a set
+of mutually exclusive discrete outcomes.</li>
+<li>ROC - A receiver operating characteristic (ROC), or simply ROC curve, is a graphical
+plot which illustrates the performance of a binary classifier system as its
+discrimination threshold is varied. It is created by plotting the fraction of true
+positives out of the positives (TPR = true positive rate) vs. the fraction of false positives
+out of the negatives (FPR = false positive rate), at various threshold settings.
+TPR is also known as sensitivity, and FPR is one minus the specificity or true negative rate.</li>
+<li>ROC AUC - Metric computing the area under the receiver operating characteristic (ROC) curve,
+which is also denoted by AUC or AUROC. By computing the area under the roc curve,
+the curve information is summarized in one number.</li>
 </ul>
 <p>Multiclass/Multilabel Classification:</p>
 <ul class="simple">
-<li>Accuracy</li>
-<li>Hamming Loss</li>
-<li>F1 Score</li>
-<li>Log Loss</li>
-<li>F-beta Score</li>
-<li>Recall</li>
-<li>Precision</li>
+<li>Accuracy - The percentage of samples predicted correctly.</li>
+<li>Hamming Loss - The fraction of labels that are incorrectly predicted.</li>
+<li>F1 Score - Metric measuring the weighted average of the precision and recall,
+where an F1 score reaches its best value at 1 and worst score at 0.</li>
+<li>Log Loss - This is the loss function used in (multinomial) logistic regression and
+extensions of it such as neural networks, defined as the negative log-likelihood
+of the true labels given a probabilistic classifier’s predictions.</li>
+<li>F-beta Score - Metric measuring the weighted harmonic mean of precision and recall,
+reaching its optimal value at 1 and its worst value at 0.</li>
+<li>Recall - The ratio of true positions to the sum of true positives and false negatives.</li>
+<li>Precision - The ratio of true positions to the sum of true positives and false positives.</li>
 </ul>
 <p>Regression:</p>
 <ul class="simple">
-<li>Explained Variance</li>
-<li>Mean Absolute Error</li>
-<li>Mean Squared Error</li>
-<li>Mean Squared Log Error</li>
-<li>R2 Score</li>
+<li>Explained Variance - The explained variance regression score.</li>
+<li>Mean Absolute Error - A risk metric corresponding to the expected value of the
+absolute error loss or l1-norm loss.</li>
+<li>Mean Squared Error - A risk metric corresponding to the expected value of the
+squared (quadratic) error or loss.</li>
+<li>Mean Squared Log Error - A risk metric corresponding to the expected value of
+the squared logarithmic (quadratic) error or loss.</li>
+<li>R2 Score - The coefficient of determination, representing the proportion of
+variance (of y) that has been explained by the independent variables in the model</li>
 </ul>
 </div>
 </div>

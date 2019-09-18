@@ -28,7 +28,7 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="mistk.server package" href="mistk.server.html" />
+    <link rel="next" title="mistk.model package" href="mistk.model.html" />
     <link rel="prev" title="mistk.data.utils module" href="mistk.data.utils.html" /> 
 
   
@@ -86,15 +86,16 @@
 <li class="toctree-l1"><a class="reference internal" href="../deployment.html">Deployment</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">MISTK API</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="mistk.html">mistk package</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="mistk.html#submodules">Submodules</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="mistk.html#subpackages">Subpackages</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="mistk.cfg.html">mistk.cfg package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mistk.data.html">mistk.data package</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">mistk.log package</a></li>
-<li class="toctree-l4"><a class="reference internal" href="mistk.server.html">mistk.server package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mistk.model.html">mistk.model package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mistk.transform.html">mistk.transform package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mistk.watch.html">mistk.watch package</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.html#submodules">Submodules</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mistk.html#module-mistk">Module contents</a></li>
 </ul>
 </li>
@@ -176,7 +177,7 @@
 MISTK architecture.</p>
 <dl class="function">
 <dt id="mistk.log.config">
-<code class="descclassname">mistk.log.</code><code class="descname">config</code><span class="sig-paren">(</span><em>component</em>, <em>file='/anaconda3/lib/python3.6/site-packages/mistk/log/../../conf/log_config.json'</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.log.config" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">mistk.log.</code><code class="descname">config</code><span class="sig-paren">(</span><em>component</em>, <em>file='/Users/adipon/repos/SML/streamlined-ml/mistk/mistk/log/../../conf/log_config.json'</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.log.config" title="Permalink to this definition">¶</a></dt>
 <dd><p>Loads the logging configuration file for the component.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -209,6 +210,12 @@ Defaults to the file location defined in the ConfigParser property mistk.log.con
 </table>
 </dd></dl>
 
+<dl class="function">
+<dt id="mistk.log.mkdir_p">
+<code class="descclassname">mistk.log.</code><code class="descname">mkdir_p</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.log.mkdir_p" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference external" href="http://stackoverflow.com/a/600612/190597">http://stackoverflow.com/a/600612/190597</a> (tzot)</p>
+</dd></dl>
+
 </div>
 </div>
 
@@ -220,7 +227,7 @@ Defaults to the file location defined in the ConfigParser property mistk.log.con
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="mistk.server.html" class="btn btn-neutral float-right" title="mistk.server package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="mistk.model.html" class="btn btn-neutral float-right" title="mistk.model package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="mistk.data.utils.html" class="btn btn-neutral" title="mistk.data.utils module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

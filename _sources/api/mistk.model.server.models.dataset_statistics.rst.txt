@@ -1,0 +1,7 @@
+mistk.model.server.models.dataset\_statistics module
+====================================================
+
+.. automodule:: mistk.model.server.models.dataset_statistics
+    :members:
+    :undoc-members:
+    :show-inheritance:

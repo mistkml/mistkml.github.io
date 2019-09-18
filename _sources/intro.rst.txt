@@ -8,11 +8,13 @@ Prerequisites
 * Python Pip
 * Docker
 
-Pip repository
-----------------------
+MISTK Python Library
+--------------------
 
-The python dependencies are deployed to a PyPi repository. To
-access them, you must add the repository to your pip environment.
+The MISTK python library is available as both source code and Python
+wheel files at the `MISTK Github Repository`__.
+
+.. __: https://github.com/mistkml/mistk/releases
 
 Installation
 ------------
@@ -22,7 +24,7 @@ MISTK Core Library (and its dependencies) must be available on
 PYTHONPATH.
 
 You can download them down from the MISTK Github Repository `Releases page`__
-and install the wheel files `pip` with::
+and install the wheel files with `pip`::
 
     pip install mistk-*-py3-none-any.whl
 

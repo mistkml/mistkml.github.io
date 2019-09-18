@@ -19,8 +19,8 @@ argument (`scikit_learn.logistic_regression`) is the package/module of our model
 and the fourth argument (`ScikitLearnLogisticRegressionModel`) is the model class name.
 
 To update this Dockerfile for a new model, a model developer would update the install path
-on lines 11-13 and the model path and name on line 18. The MISTK package
-repository URL denoted by <package-repo> must also be updated on line 5.
+on lines 14-16 and the model path and name on line 21. The MISTK package
+version denoted by <VERSION> must also be updated on line 6.
 
 The setup.py script referenced above is a standard python setup install script
 which lists the python package dependencies for the model:

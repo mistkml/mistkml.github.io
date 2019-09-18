@@ -1,0 +1,27 @@
+mistk.model.server package
+==========================
+
+Subpackages
+-----------
+
+.. toctree::
+
+    mistk.model.server.controllers
+    mistk.model.server.models
+    mistk.model.server.test
+
+Submodules
+----------
+
+.. toctree::
+
+   mistk.model.server.encoder
+   mistk.model.server.util
+
+Module contents
+---------------
+
+.. automodule:: mistk.model.server
+    :members:
+    :undoc-members:
+    :show-inheritance:

@@ -1,14 +1,6 @@
 mistk package
 =============
 
-Submodules
-----------
-
-.. toctree::
-
-   mistk.abstract_model
-   mistk.service
-
 Subpackages
 -----------
 
@@ -17,9 +9,16 @@ Subpackages
     mistk.cfg
     mistk.data
     mistk.log
-    mistk.server
+    mistk.model
+    mistk.transform
     mistk.watch
 
+Submodules
+----------
+
+.. toctree::
+
+   mistk.abstract_model
 
 Module contents
 ---------------

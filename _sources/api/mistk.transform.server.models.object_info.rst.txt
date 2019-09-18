@@ -1,0 +1,7 @@
+mistk.transform.server.models.object\_info module
+=================================================
+
+.. automodule:: mistk.transform.server.models.object_info
+    :members:
+    :undoc-members:
+    :show-inheritance:

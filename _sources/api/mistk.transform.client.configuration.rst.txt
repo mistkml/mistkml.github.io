@@ -1,0 +1,7 @@
+mistk.transform.client.configuration module
+===========================================
+
+.. automodule:: mistk.transform.client.configuration
+    :members:
+    :undoc-members:
+    :show-inheritance:

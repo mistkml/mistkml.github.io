@@ -1,0 +1,7 @@
+mistk.transform.client.models.dataset module
+============================================
+
+.. automodule:: mistk.transform.client.models.dataset
+    :members:
+    :undoc-members:
+    :show-inheritance:

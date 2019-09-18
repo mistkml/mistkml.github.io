@@ -1,0 +1,17 @@
+mistk.model.client.api package
+==============================
+
+Submodules
+----------
+
+.. toctree::
+
+   mistk.model.client.api.model_instance_endpoint_api
+
+Module contents
+---------------
+
+.. automodule:: mistk.model.client.api
+    :members:
+    :undoc-members:
+    :show-inheritance:

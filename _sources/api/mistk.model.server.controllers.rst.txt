@@ -1,0 +1,17 @@
+mistk.model.server.controllers package
+======================================
+
+Submodules
+----------
+
+.. toctree::
+
+   mistk.model.server.controllers.model_instance_endpoint_controller
+
+Module contents
+---------------
+
+.. automodule:: mistk.model.server.controllers
+    :members:
+    :undoc-members:
+    :show-inheritance:

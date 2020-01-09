@@ -97,44 +97,51 @@ Github Repository `Releases page`__ and installed with `pip`::
 
 The Test Harness accepts a number of optional parameters to specify which model activities
 should be run (i.e. training, testing, evaluation, etc.) and can
-be used to exercise all model endpoints except pause, resume, and terminate. The parameters and
-example usage are below, and can also be retrieved by running the Test Harness
+be used to exercise all model endpoints except pause, resume, and terminate. The Test Harness
+also has the capabilities to perform data transformations.  
+The parameters and example usage are below, and can also be retrieved by running the Test Harness
 with the '-h' option::
 
-  usage: python -m mistk_test_harness [-h]
-                                      [--train PATH]
-                                      [--predict PATH]
-                                      [--evaluate TYPE]
-                                      [--predictions-path PATH]
-                                      [--ground-truth-path PATH]
-                                      [--model-path PATH]
-                                      [--model-save-path PATH]
-                                      [--model-props FILE]
-                                      [--hyperparams FILE]
-                                      [--stream-predict FILE] [--logs]
-                                      MODEL
+  usage: python -m mistk_test_harness [-h] [--model MODEL] [--train PATH]
+                                    [--transfer-learning] [--predict PATH]
+                                    [--evaluate TYPE]
+                                    [--predictions-path PATH]
+                                    [--ground-truth-path PATH]
+                                    [--model-path PATH]
+                                    [--model-save-path PATH]
+                                    [--model-props FILE] [--hyperparams FILE]
+                                    [--stream-predict FILE]
+                                    [--transform TRANSFORM]
+                                    [--transform-output-path PATH]
+                                    [--transform-input-paths PATH [PATH ...]]
+                                    [--transform-properties FILE]
+                                    [--disable-container-shutdown] [--logs]
 
   Test harness for validating model implementations
-
-  positional arguments:
-    MODEL                 model module/package, service endpoint URL, or Docker
-                          image
-
+  
   optional arguments:
     -h, --help            show this help message and exit
+    --model MODEL         Model module/package, service endpoint URL, or Docker
+                          image
     --train PATH          Train over the dataset at the local path
+    --transfer-learning   Flag indicating that the training operation will be
+                          performing transfer learning
     --predict PATH        Run predictions over the dataset at the local path
     --evaluate TYPE       Evaluate model predictions as one of:
                           BinaryClassification, MultilabelClassification,
                           MulticlassClassification, Regression (requires
                           --predictions-path, --ground-truth-path)
     --predictions-path PATH
-                          Local folder path to save/load model predictions
+                          Local folder path to save/load model predictions, used
+                          with the --predict and --evaluate options
     --ground-truth-path PATH
-                          Local folder path containing dataset ground truth
-    --model-path PATH     Local folder path to load model checkpoints, used with the --train or --predict options
+                          Local folder path containing dataset ground truth,
+                          used with the --evaluate option
+    --model-path PATH     Local folder path to load model checkpoints, used with
+                          the --train or --predict options
     --model-save-path PATH
-                          Local folder path to save model checkpoints, used with the --train option
+                          Local folder path to save model checkpoints, used with
+                          the --train option
     --model-props FILE    Local file containing json dictionary of model
                           properties
     --hyperparams FILE    Local file containing json dictionary of model
@@ -142,14 +149,34 @@ with the '-h' option::
     --stream-predict FILE
                           Local file containing json dictionary of ids to base64
                           encoded input data
+    --transform TRANSFORM
+                          Transform module/package, service endpoint URL, or
+                          Docker image
+    --transform-output-path PATH
+                          Local folder path to save results of transformation
+    --transform-input-paths PATH [PATH ...]
+                          One or more local folder paths to be used as input
+                          directories when performing a transformation
+    --transform-properties FILE
+                          Local file containing json dictionary of transform
+                          properties
+    --disable-container-shutdown
+                          Disables automatic shutdown of the model or transform
+                          docker container
     --logs                Show all MISTK log output (debug)
-
-  Examples:
-  python -m mistk_test_harness --train /my/dataset/folder --model-path /my/model/folder --model-save-path /my/model/checkpoint_folder mymodel.MyImplementedModel
-  python -m mistk_test_harness --train /my/dataset/folder --model-path /my/model/folder --model-save-path /my/model/checkpoint_folder http://localhost:8080
-  python -m mistk_test_harness --train /my/dataset/folder --model-path /my/model/folder repo/mymodelimpl
+  
+  Examples: 
+  python -m mistk_test_harness --train /my/dataset/folder --model-path /my/model/folder --model-save-path /my/trained/model/folder --model mymodel.MyImplementedModel
+  python -m mistk_test_harness --train /my/dataset/folder --model-path /my/model/folder --model-save-path /my/trained/model/folder --model http://localhost:8080
+  python -m mistk_test_harness --train /my/dataset/folder --model-path /my/model/folder --model-save-path /my/trained/model/folder --model repo/mymodelimpl
   python -m mistk_test_harness --predict /my/dataset/folder --model-path /my/model/folder --predictions-path /my/predictions/folder
-  	--ground-truth-path /ground/truth/folder --evaluate BinaryClassification mymodel.MyImplementedModel
+    --ground-truth-path /ground/truth/folder --evaluate BinaryClassification --model mymodel.MyImplementedModel
+  python -m mistk_test_harness --predictions-path /my/predictions/folder --ground-truth-path /ground/truth/folder --evaluate BinaryClassification
+  
+  python -m mistk_test_harness --transform-output-path /tmp/ --transform-input-paths /my/input/folder/1 /my/input/folder/2 ... /my/input/folder/n
+    --transform-properties /my/properties/file --transform mytransform.MyTransformImplementation
+  python -m mistk_test_harness --transform-output-path /tmp/ --transform-input-paths /my/input/folder --transform http://localhost:8080
+  python -m mistk_test_harness --transform-output-path /tmp/ --transform-input-paths /my/input/folder --transform repo/mytransformimpl
 
 The '--train' and '--predict' parameters take a path to a folder containing the data
 for training and testing, respectively. These paths will be passed to the model
@@ -170,7 +197,7 @@ training. This path is passed to the model during the 'save_model' stage.
 The '--stream-predict' parameter points to a JSON file containing key-value pairs
 of ids and base64 encoded values for prediction.
 
-Finally, the '--model-props' and '--hyperparams' parameters point to JSON files
+The '--model-props' and '--hyperparams' parameters point to JSON files
 containing key-value pairs of any variables specific to the model. These variables
 and values will be passed to the model during the `initialize` stage. Below are some
 examples of valid json:

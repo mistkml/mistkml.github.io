@@ -218,7 +218,8 @@ created by the state machine.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>objective</strong> – The objectives for the model.</li>
+<li><strong>objective</strong> – The objectives for the model. Possible values include ‘training’, ‘prediction’, 
+‘streaming_prediction’, and ‘transfer_learning’.</li>
 <li><strong>props</strong> – A dictionary that is parsed from a JSON string. These are settings that are passed from the ecosystem, 
 but are not really considered hyperparameters.  They are not used by the model, but rather the endpoint itself 
 (e.g., where should heartbeats be sent and how often, etc).</li>
@@ -362,7 +363,8 @@ created by the state machine.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>objectives</strong> – The objectives of this model.</li>
+<li><strong>objectives</strong> – The objectives of this model. Possible values include ‘training’, ‘prediction’, 
+‘streaming_prediction’, and ‘transfer_learning’.</li>
 <li><strong>props</strong> – A dictionary that is parsed from a JSON string. These are settings that are passed from the ecosystem, 
 but are not really considered hyperparameters.  They are not used by the model, but rather the endpoint itself 
 (e.g., where should heartbeats be sent and how often, etc).</li>

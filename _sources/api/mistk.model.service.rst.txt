@@ -2,6 +2,6 @@ mistk.model.service module
 ==========================
 
 .. automodule:: mistk.model.service
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :undoc-members:
+   :show-inheritance:

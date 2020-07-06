@@ -2,6 +2,6 @@ mistk.transform.service module
 ==============================
 
 .. automodule:: mistk.transform.service
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :undoc-members:
+   :show-inheritance:

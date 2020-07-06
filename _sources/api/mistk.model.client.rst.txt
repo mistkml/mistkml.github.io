@@ -6,8 +6,8 @@ Subpackages
 
 .. toctree::
 
-    mistk.model.client.api
-    mistk.model.client.models
+   mistk.model.client.api
+   mistk.model.client.models
 
 Submodules
 ----------
@@ -22,6 +22,6 @@ Module contents
 ---------------
 
 .. automodule:: mistk.model.client
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :undoc-members:
+   :show-inheritance:

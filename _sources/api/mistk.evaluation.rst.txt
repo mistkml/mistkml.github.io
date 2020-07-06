@@ -1,0 +1,28 @@
+mistk.evaluation package
+========================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   mistk.evaluation.client
+   mistk.evaluation.server
+   mistk.evaluation.util
+
+Submodules
+----------
+
+.. toctree::
+
+   mistk.evaluation.abstract_evaluation_plugin
+   mistk.evaluation.plugin_manager
+   mistk.evaluation.service
+
+Module contents
+---------------
+
+.. automodule:: mistk.evaluation
+   :members:
+   :undoc-members:
+   :show-inheritance:

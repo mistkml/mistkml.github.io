@@ -98,15 +98,12 @@ Github Repository `Releases page`__ and installed with `pip`::
 The Test Harness accepts a number of optional parameters to specify which model activities
 should be run (i.e. training, testing, evaluation, etc.) and can
 be used to exercise all model endpoints except pause, resume, and terminate. The Test Harness
-also has the capabilities to perform data transformations.  
+also has the capabilities to perform data transformations as well as evaluating a model with different metrics. 
 The parameters and example usage are below, and can also be retrieved by running the Test Harness
 with the '-h' option::
 
   usage: python -m mistk_test_harness [-h] [--model MODEL] [--train PATH]
                                     [--transfer-learning] [--predict PATH]
-                                    [--evaluate TYPE]
-                                    [--predictions-path PATH]
-                                    [--ground-truth-path PATH]
                                     [--model-path PATH]
                                     [--model-save-path PATH]
                                     [--model-props FILE] [--hyperparams FILE]
@@ -115,6 +112,13 @@ with the '-h' option::
                                     [--transform-output-path PATH]
                                     [--transform-input-paths PATH [PATH ...]]
                                     [--transform-properties FILE]
+                                    [--evaluate TYPE]
+                                    [--evaluation EVALUATION]
+                                    [--predictions-path PATH]
+                                    [--ground-truth-path PATH]
+                                    [--evaluation-output-path PATH]
+                                    [--evaluation-properties FILE]
+                                    [--metrics METRIC]
                                     [--disable-container-shutdown] [--logs]
 
   Test harness for validating model implementations
@@ -160,6 +164,16 @@ with the '-h' option::
     --transform-properties FILE
                           Local file containing json dictionary of transform
                           properties
+    --evaluation EVALUATION
+                          Evaluation module/package, service endpoint URL, or
+                          Docker image
+    --evaluation-output-path PATH
+                          Local folder path to save results of evaluation
+    --evaluation-properties FILE
+                          Local file containing json dictionary of evaluation
+                          properties
+    --metrics METRIC      Comma delimited list of metric names for metrics to be
+                          evaluated.
     --disable-container-shutdown
                           Disables automatic shutdown of the model or transform
                           docker container
@@ -171,8 +185,14 @@ with the '-h' option::
   python -m mistk_test_harness --train /my/dataset/folder --model-path /my/model/folder --model-save-path /my/trained/model/folder --model repo/mymodelimpl
   python -m mistk_test_harness --predict /my/dataset/folder --model-path /my/model/folder --predictions-path /my/predictions/folder
     --ground-truth-path /ground/truth/folder --evaluate BinaryClassification --model mymodel.MyImplementedModel
-  python -m mistk_test_harness --predictions-path /my/predictions/folder --ground-truth-path /ground/truth/folder --evaluate BinaryClassification
-  
+  python -m mistk_test_harness --evaluate BinaryClassification --predictions-path /my/predictions/folder --ground-truth-path /ground/truth/folder 
+    --evaluation-output-path /evaluation/output/folder
+  python -m mistk_test_harness --evaluate BinaryClassification --predictions-path /my/predictions/folder --ground-truth-path /ground/truth/folder 
+    --evaluation-output-path /evaluation/output/folder --evaluation myevaluation.MyImplementedEvaluation
+  python -m mistk_test_harness --evaluate MulticlassClassification --predictions-path /my/predictions/folder --ground-truth-path /ground/truth/folder
+    --evaluation-output-path /evaluation/output/folder --evaluation http://localhost:8080
+  python -m mistk_test_harness --evaluate MulticlassClassification --predictions-path /my/predictions/folder --ground-truth-path /ground/truth/folder
+    --evaluation-output-path /evaluation/output/folder --evaluation http://localhost:8080 --metrics sklearn.metrics.recall_score,sklearn.metrics.precision_score
   python -m mistk_test_harness --transform-output-path /tmp/ --transform-input-paths /my/input/folder/1 /my/input/folder/2 ... /my/input/folder/n
     --transform-properties /my/properties/file --transform mytransform.MyTransformImplementation
   python -m mistk_test_harness --transform-output-path /tmp/ --transform-input-paths /my/input/folder --transform http://localhost:8080
@@ -246,8 +266,12 @@ Validation Metrics
 
 The Test Harness runs various metrics against model predictions when passed the
 '--evaluate' flag to aid the developer in determining model correctness and
-performance. The evaluation output will be saved in JSON format at the same path
-as the model predictions (specified with the '--predictions-path' flag).
+performance. The evaluation output will be saved in JSON format at the path
+specified with the '--evaluations-output-path' flag. The Test Harness provides 
+default metrics to evaluate models, but additional metrics can be added through
+using an evaluation module/container with the '--evaluation' flag.
+
+The evaluation types and default metrics:
 
 Binary Classification:
 

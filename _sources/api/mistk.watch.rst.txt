@@ -12,6 +12,6 @@ Module contents
 ---------------
 
 .. automodule:: mistk.watch
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,7 @@
+mistk.evaluation.server.controllers.evaluation\_plugin\_endpoint\_controller module
+===================================================================================
+
+.. automodule:: mistk.evaluation.server.controllers.evaluation_plugin_endpoint_controller
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -2,6 +2,6 @@ mistk.model.client.models.mistk\_metric module
 ==============================================
 
 .. automodule:: mistk.model.client.models.mistk_metric
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,27 @@
+mistk.evaluation.server package
+===============================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   mistk.evaluation.server.controllers
+   mistk.evaluation.server.models
+   mistk.evaluation.server.test
+
+Submodules
+----------
+
+.. toctree::
+
+   mistk.evaluation.server.encoder
+   mistk.evaluation.server.util
+
+Module contents
+---------------
+
+.. automodule:: mistk.evaluation.server
+   :members:
+   :undoc-members:
+   :show-inheritance:

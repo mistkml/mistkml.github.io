@@ -1,0 +1,27 @@
+mistk.evaluation.client package
+===============================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   mistk.evaluation.client.api
+   mistk.evaluation.client.models
+
+Submodules
+----------
+
+.. toctree::
+
+   mistk.evaluation.client.api_client
+   mistk.evaluation.client.configuration
+   mistk.evaluation.client.rest
+
+Module contents
+---------------
+
+.. automodule:: mistk.evaluation.client
+   :members:
+   :undoc-members:
+   :show-inheritance:

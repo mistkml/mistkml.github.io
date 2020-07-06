@@ -2,6 +2,6 @@ mistk.model.client.models.metric\_data\_parameters module
 =========================================================
 
 .. automodule:: mistk.model.client.models.metric_data_parameters
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :undoc-members:
+   :show-inheritance:

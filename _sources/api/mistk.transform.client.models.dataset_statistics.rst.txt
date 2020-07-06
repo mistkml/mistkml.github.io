@@ -2,6 +2,6 @@ mistk.transform.client.models.dataset\_statistics module
 ========================================================
 
 .. automodule:: mistk.transform.client.models.dataset_statistics
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :undoc-members:
+   :show-inheritance:

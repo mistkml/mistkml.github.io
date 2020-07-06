@@ -1,0 +1,17 @@
+mistk.evaluation.server.controllers package
+===========================================
+
+Submodules
+----------
+
+.. toctree::
+
+   mistk.evaluation.server.controllers.evaluation_plugin_endpoint_controller
+
+Module contents
+---------------
+
+.. automodule:: mistk.evaluation.server.controllers
+   :members:
+   :undoc-members:
+   :show-inheritance:

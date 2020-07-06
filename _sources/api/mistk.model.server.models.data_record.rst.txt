@@ -1,0 +1,7 @@
+mistk.model.server.models.data\_record module
+=============================================
+
+.. automodule:: mistk.model.server.models.data_record
+   :members:
+   :undoc-members:
+   :show-inheritance:

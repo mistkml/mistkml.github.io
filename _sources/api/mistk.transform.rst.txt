@@ -6,8 +6,8 @@ Subpackages
 
 .. toctree::
 
-    mistk.transform.client
-    mistk.transform.server
+   mistk.transform.client
+   mistk.transform.server
 
 Submodules
 ----------
@@ -21,6 +21,6 @@ Module contents
 ---------------
 
 .. automodule:: mistk.transform
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :undoc-members:
+   :show-inheritance:

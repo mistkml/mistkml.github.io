@@ -1,0 +1,7 @@
+mistk.evaluation.client.rest module
+===================================
+
+.. automodule:: mistk.evaluation.client.rest
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,43 +11,47 @@
   
 
   
-  
-  
-  
-
-  
-
-  
-  
-    
-
-  
-
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="mistk.model.server.models.mistk_watch_event module" href="mistk.model.server.models.mistk_watch_event.html" />
-    <link rel="prev" title="mistk.model.server.models.mistk_dataset module" href="mistk.model.server.models.mistk_dataset.html" /> 
 
   
-  <script src="../_static/js/modernizr.min.js"></script>
+  
+  
+  
 
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="mistk.model.server.models.mistk_metric_list module" href="mistk.model.server.models.mistk_metric_list.html" />
+    <link rel="prev" title="mistk.model.server.models.mistk_dataset module" href="mistk.model.server.models.mistk_dataset.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
-            <a href="../index.html" class="icon icon-home"> MISTK
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> MISTK
           
 
           
@@ -71,6 +74,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -89,6 +93,7 @@
 <li class="toctree-l3 current"><a class="reference internal" href="mistk.html#subpackages">Subpackages</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="mistk.cfg.html">mistk.cfg package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mistk.data.html">mistk.data package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mistk.evaluation.html">mistk.evaluation package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mistk.log.html">mistk.log package</a></li>
 <li class="toctree-l4 current"><a class="reference internal" href="mistk.model.html">mistk.model package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mistk.transform.html">mistk.transform package</a></li>
@@ -106,6 +111,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -144,7 +150,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="index.html">MISTK API</a> &raquo;</li>
         
@@ -177,147 +183,147 @@
             
   <div class="section" id="module-mistk.model.server.models.mistk_metric">
 <span id="mistk-model-server-models-mistk-metric-module"></span><h1>mistk.model.server.models.mistk_metric module<a class="headerlink" href="#module-mistk.model.server.models.mistk_metric" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
+<dl class="py class">
 <dt id="mistk.model.server.models.mistk_metric.MistkMetric">
-<em class="property">class </em><code class="descclassname">mistk.model.server.models.mistk_metric.</code><code class="descname">MistkMetric</code><span class="sig-paren">(</span><em>object_info: mistk.model.server.models.object_info.ObjectInfo = None</em>, <em>package: str = None</em>, <em>method: str = None</em>, <em>default_args: object = None</em>, <em>data_parameters: mistk.model.server.models.metric_data_parameters.MetricDataParameters = None</em>, <em>assessment_types: List[str] = None</em>, <em>image_id: str = None</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.models.mistk_metric.MistkMetric" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">mistk.model.server.models.mistk_metric.</code><code class="sig-name descname">MistkMetric</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">object_info</span><span class="p">:</span> <span class="n"><a class="reference internal" href="mistk.model.server.models.object_info.html#mistk.model.server.models.object_info.ObjectInfo" title="mistk.model.server.models.object_info.ObjectInfo">mistk.model.server.models.object_info.ObjectInfo</a></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">implementation_reference</span><span class="p">:</span> <span class="n"><a class="reference internal" href="mistk.model.server.models.object_reference.html#mistk.model.server.models.object_reference.ObjectReference" title="mistk.model.server.models.object_reference.ObjectReference">mistk.model.server.models.object_reference.ObjectReference</a></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">package</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">method</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">default_args</span><span class="p">:</span> <span class="n">object</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">data_parameters</span><span class="p">:</span> <span class="n"><a class="reference internal" href="mistk.model.server.models.metric_data_parameters.html#mistk.model.server.models.metric_data_parameters.MetricDataParameters" title="mistk.model.server.models.metric_data_parameters.MetricDataParameters">mistk.model.server.models.metric_data_parameters.MetricDataParameters</a></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">assessment_types</span><span class="p">:</span> <span class="n">List<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">version</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.models.mistk_metric.MistkMetric" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="mistk.model.server.models.base_model_.html#mistk.model.server.models.base_model_.Model" title="mistk.model.server.models.base_model_.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">mistk.model.server.models.base_model_.Model</span></code></a></p>
 <p>NOTE: This class is auto generated by the swagger code generator program.</p>
 <p>Do not edit the class manually.</p>
-<dl class="attribute">
+<dl class="py method">
 <dt id="mistk.model.server.models.mistk_metric.MistkMetric.assessment_types">
-<code class="descname">assessment_types</code><a class="headerlink" href="#mistk.model.server.models.mistk_metric.MistkMetric.assessment_types" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">assessment_types</code><a class="headerlink" href="#mistk.model.server.models.mistk_metric.MistkMetric.assessment_types" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets the assessment_types of this MistkMetric.</p>
 <p>The types of assessments this metric can be used for.   # noqa: E501</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The assessment_types of this MistkMetric.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">List[str]</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The assessment_types of this MistkMetric.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>List[str]</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="py method">
 <dt id="mistk.model.server.models.mistk_metric.MistkMetric.data_parameters">
-<code class="descname">data_parameters</code><a class="headerlink" href="#mistk.model.server.models.mistk_metric.MistkMetric.data_parameters" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">data_parameters</code><a class="headerlink" href="#mistk.model.server.models.mistk_metric.MistkMetric.data_parameters" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets the data_parameters of this MistkMetric.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The data_parameters of this MistkMetric.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="mistk.model.client.models.metric_data_parameters.html#mistk.model.client.models.metric_data_parameters.MetricDataParameters" title="mistk.model.client.models.metric_data_parameters.MetricDataParameters">MetricDataParameters</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The data_parameters of this MistkMetric.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="mistk.evaluation.client.models.metric_data_parameters.html#mistk.evaluation.client.models.metric_data_parameters.MetricDataParameters" title="mistk.evaluation.client.models.metric_data_parameters.MetricDataParameters">MetricDataParameters</a></p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="py method">
 <dt id="mistk.model.server.models.mistk_metric.MistkMetric.default_args">
-<code class="descname">default_args</code><a class="headerlink" href="#mistk.model.server.models.mistk_metric.MistkMetric.default_args" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">default_args</code><a class="headerlink" href="#mistk.model.server.models.mistk_metric.MistkMetric.default_args" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets the default_args of this MistkMetric.</p>
 <p>The default arguments passed to the method when the metric is called.  These can be overwritten when the metric is associated with an assessment.   # noqa: E501</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The default_args of this MistkMetric.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">object</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The default_args of this MistkMetric.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>object</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="py method">
 <dt id="mistk.model.server.models.mistk_metric.MistkMetric.from_dict">
-<em class="property">classmethod </em><code class="descname">from_dict</code><span class="sig-paren">(</span><em>dikt</em><span class="sig-paren">)</span> &#x2192; mistk.model.server.models.mistk_metric.MistkMetric<a class="headerlink" href="#mistk.model.server.models.mistk_metric.MistkMetric.from_dict" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">from_dict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dikt</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#mistk.model.server.models.mistk_metric.MistkMetric" title="mistk.model.server.models.mistk_metric.MistkMetric">mistk.model.server.models.mistk_metric.MistkMetric</a><a class="headerlink" href="#mistk.model.server.models.mistk_metric.MistkMetric.from_dict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the dict as a model</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dikt</strong> – A dict.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Type:</th><td class="field-body">dict</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The MistkMetric of this MistkMetric.  # noqa: E501</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="mistk.model.client.models.mistk_metric.html#mistk.model.client.models.mistk_metric.MistkMetric" title="mistk.model.client.models.mistk_metric.MistkMetric">MistkMetric</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>dikt</strong> – A dict.</p>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The MistkMetric of this MistkMetric.  # noqa: E501</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="mistk.evaluation.client.models.mistk_metric.html#mistk.evaluation.client.models.mistk_metric.MistkMetric" title="mistk.evaluation.client.models.mistk_metric.MistkMetric">MistkMetric</a></p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="attribute">
-<dt id="mistk.model.server.models.mistk_metric.MistkMetric.image_id">
-<code class="descname">image_id</code><a class="headerlink" href="#mistk.model.server.models.mistk_metric.MistkMetric.image_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>Gets the image_id of this MistkMetric.</p>
-<p>The docker image ID used by the metric instance    # noqa: E501</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The image_id of this MistkMetric.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">str</td>
-</tr>
-</tbody>
-</table>
+<dl class="py method">
+<dt id="mistk.model.server.models.mistk_metric.MistkMetric.implementation_reference">
+<em class="property">property </em><code class="sig-name descname">implementation_reference</code><a class="headerlink" href="#mistk.model.server.models.mistk_metric.MistkMetric.implementation_reference" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the implementation_reference of this MistkMetric.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The implementation_reference of this MistkMetric.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="mistk.evaluation.client.models.object_reference.html#mistk.evaluation.client.models.object_reference.ObjectReference" title="mistk.evaluation.client.models.object_reference.ObjectReference">ObjectReference</a></p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="py method">
 <dt id="mistk.model.server.models.mistk_metric.MistkMetric.method">
-<code class="descname">method</code><a class="headerlink" href="#mistk.model.server.models.mistk_metric.MistkMetric.method" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">method</code><a class="headerlink" href="#mistk.model.server.models.mistk_metric.MistkMetric.method" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets the method of this MistkMetric.</p>
 <p>The name of the method to be called when applying the metric.   # noqa: E501</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The method of this MistkMetric.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">str</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The method of this MistkMetric.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="py method">
 <dt id="mistk.model.server.models.mistk_metric.MistkMetric.object_info">
-<code class="descname">object_info</code><a class="headerlink" href="#mistk.model.server.models.mistk_metric.MistkMetric.object_info" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">object_info</code><a class="headerlink" href="#mistk.model.server.models.mistk_metric.MistkMetric.object_info" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets the object_info of this MistkMetric.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The object_info of this MistkMetric.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="mistk.model.client.models.object_info.html#mistk.model.client.models.object_info.ObjectInfo" title="mistk.model.client.models.object_info.ObjectInfo">ObjectInfo</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The object_info of this MistkMetric.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="mistk.evaluation.client.models.object_info.html#mistk.evaluation.client.models.object_info.ObjectInfo" title="mistk.evaluation.client.models.object_info.ObjectInfo">ObjectInfo</a></p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="py method">
 <dt id="mistk.model.server.models.mistk_metric.MistkMetric.package">
-<code class="descname">package</code><a class="headerlink" href="#mistk.model.server.models.mistk_metric.MistkMetric.package" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">package</code><a class="headerlink" href="#mistk.model.server.models.mistk_metric.MistkMetric.package" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets the package of this MistkMetric.</p>
 <p>The name of the package containing the implementation of this metric.   # noqa: E501</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The package of this MistkMetric.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">str</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The package of this MistkMetric.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="mistk.model.server.models.mistk_metric.MistkMetric.version">
+<em class="property">property </em><code class="sig-name descname">version</code><a class="headerlink" href="#mistk.model.server.models.mistk_metric.MistkMetric.version" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the version of this MistkMetric.</p>
+<p>The version of this metric  # noqa: E501</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The version of this MistkMetric.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -332,10 +338,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="mistk.model.server.models.mistk_watch_event.html" class="btn btn-neutral float-right" title="mistk.model.server.models.mistk_watch_event module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="mistk.model.server.models.mistk_metric_list.html" class="btn btn-neutral float-right" title="mistk.model.server.models.mistk_metric_list module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="mistk.model.server.models.mistk_dataset.html" class="btn btn-neutral" title="mistk.model.server.models.mistk_dataset module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="mistk.model.server.models.mistk_dataset.html" class="btn btn-neutral float-left" title="mistk.model.server.models.mistk_dataset module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -347,7 +353,14 @@
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -359,33 +372,16 @@
   </div>
   
 
-
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

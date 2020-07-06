@@ -1,0 +1,7 @@
+mistk.evaluation.abstract\_evaluation\_plugin module
+====================================================
+
+.. automodule:: mistk.evaluation.abstract_evaluation_plugin
+   :members:
+   :undoc-members:
+   :show-inheritance:

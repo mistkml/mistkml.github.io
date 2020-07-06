@@ -12,6 +12,6 @@ Module contents
 ---------------
 
 .. automodule:: mistk.model.client.api
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :undoc-members:
+   :show-inheritance:

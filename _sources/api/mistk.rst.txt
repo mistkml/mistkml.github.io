@@ -6,12 +6,13 @@ Subpackages
 
 .. toctree::
 
-    mistk.cfg
-    mistk.data
-    mistk.log
-    mistk.model
-    mistk.transform
-    mistk.watch
+   mistk.cfg
+   mistk.data
+   mistk.evaluation
+   mistk.log
+   mistk.model
+   mistk.transform
+   mistk.watch
 
 Submodules
 ----------
@@ -24,6 +25,6 @@ Module contents
 ---------------
 
 .. automodule:: mistk
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :undoc-members:
+   :show-inheritance:

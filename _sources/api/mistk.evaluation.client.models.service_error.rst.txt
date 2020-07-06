@@ -1,0 +1,7 @@
+mistk.evaluation.client.models.service\_error module
+====================================================
+
+.. automodule:: mistk.evaluation.client.models.service_error
+   :members:
+   :undoc-members:
+   :show-inheritance:

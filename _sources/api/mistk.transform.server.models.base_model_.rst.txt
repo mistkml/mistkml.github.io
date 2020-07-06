@@ -2,6 +2,6 @@ mistk.transform.server.models.base\_model\_ module
 ==================================================
 
 .. automodule:: mistk.transform.server.models.base_model_
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -2,6 +2,6 @@ mistk.model.client.models.dataset module
 ========================================
 
 .. automodule:: mistk.model.client.models.dataset
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :undoc-members:
+   :show-inheritance:

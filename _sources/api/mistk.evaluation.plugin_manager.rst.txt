@@ -1,0 +1,7 @@
+mistk.evaluation.plugin\_manager module
+=======================================
+
+.. automodule:: mistk.evaluation.plugin_manager
+   :members:
+   :undoc-members:
+   :show-inheritance:

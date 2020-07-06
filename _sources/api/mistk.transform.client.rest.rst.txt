@@ -2,6 +2,6 @@ mistk.transform.client.rest module
 ==================================
 
 .. automodule:: mistk.transform.client.rest
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :undoc-members:
+   :show-inheritance:

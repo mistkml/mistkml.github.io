@@ -2,6 +2,6 @@ mistk.transform.server.util module
 ==================================
 
 .. automodule:: mistk.transform.server.util
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :undoc-members:
+   :show-inheritance:

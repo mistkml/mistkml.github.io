@@ -1,0 +1,24 @@
+mistk.evaluation.client.models package
+======================================
+
+Submodules
+----------
+
+.. toctree::
+
+   mistk.evaluation.client.models.evaluation_instance_status
+   mistk.evaluation.client.models.evaluation_specification_init_params
+   mistk.evaluation.client.models.metric
+   mistk.evaluation.client.models.metric_data_parameters
+   mistk.evaluation.client.models.mistk_metric
+   mistk.evaluation.client.models.object_info
+   mistk.evaluation.client.models.object_reference
+   mistk.evaluation.client.models.service_error
+
+Module contents
+---------------
+
+.. automodule:: mistk.evaluation.client.models
+   :members:
+   :undoc-members:
+   :show-inheritance:

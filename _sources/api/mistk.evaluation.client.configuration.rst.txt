@@ -1,0 +1,7 @@
+mistk.evaluation.client.configuration module
+============================================
+
+.. automodule:: mistk.evaluation.client.configuration
+   :members:
+   :undoc-members:
+   :show-inheritance:

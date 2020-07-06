@@ -6,9 +6,9 @@ Subpackages
 
 .. toctree::
 
-    mistk.transform.server.controllers
-    mistk.transform.server.models
-    mistk.transform.server.test
+   mistk.transform.server.controllers
+   mistk.transform.server.models
+   mistk.transform.server.test
 
 Submodules
 ----------
@@ -22,6 +22,6 @@ Module contents
 ---------------
 
 .. automodule:: mistk.transform.server
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :undoc-members:
+   :show-inheritance:

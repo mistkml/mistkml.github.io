@@ -1,0 +1,17 @@
+mistk.evaluation.util package
+=============================
+
+Submodules
+----------
+
+.. toctree::
+
+   mistk.evaluation.util.convert
+
+Module contents
+---------------
+
+.. automodule:: mistk.evaluation.util
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,43 +11,47 @@
   
 
   
-  
-  
-  
-
-  
-
-  
-  
-    
-
-  
-
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="mistk.transform.server.models.service_error module" href="mistk.transform.server.models.service_error.html" />
     <link rel="prev" title="mistk.transform.server.models.object_info module" href="mistk.transform.server.models.object_info.html" /> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
-            <a href="../index.html" class="icon icon-home"> MISTK
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> MISTK
           
 
           
@@ -71,6 +74,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -89,6 +93,7 @@
 <li class="toctree-l3 current"><a class="reference internal" href="mistk.html#subpackages">Subpackages</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="mistk.cfg.html">mistk.cfg package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mistk.data.html">mistk.data package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mistk.evaluation.html">mistk.evaluation package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mistk.log.html">mistk.log package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mistk.model.html">mistk.model package</a></li>
 <li class="toctree-l4 current"><a class="reference internal" href="mistk.transform.html">mistk.transform package</a></li>
@@ -106,6 +111,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -144,7 +150,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="index.html">MISTK API</a> &raquo;</li>
         
@@ -177,115 +183,105 @@
             
   <div class="section" id="module-mistk.transform.server.models.object_reference">
 <span id="mistk-transform-server-models-object-reference-module"></span><h1>mistk.transform.server.models.object_reference module<a class="headerlink" href="#module-mistk.transform.server.models.object_reference" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
+<dl class="py class">
 <dt id="mistk.transform.server.models.object_reference.ObjectReference">
-<em class="property">class </em><code class="descclassname">mistk.transform.server.models.object_reference.</code><code class="descname">ObjectReference</code><span class="sig-paren">(</span><em>kind: str = None</em>, <em>group: str = None</em>, <em>id: str = None</em>, <em>name: str = None</em>, <em>instance: object = None</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.transform.server.models.object_reference.ObjectReference" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">mistk.transform.server.models.object_reference.</code><code class="sig-name descname">ObjectReference</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">kind</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">project</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">id</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">instance</span><span class="p">:</span> <span class="n">object</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.transform.server.models.object_reference.ObjectReference" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="mistk.transform.server.models.base_model_.html#mistk.transform.server.models.base_model_.Model" title="mistk.transform.server.models.base_model_.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">mistk.transform.server.models.base_model_.Model</span></code></a></p>
 <p>NOTE: This class is auto generated by the swagger code generator program.</p>
 <p>Do not edit the class manually.</p>
-<dl class="classmethod">
+<dl class="py method">
 <dt id="mistk.transform.server.models.object_reference.ObjectReference.from_dict">
-<em class="property">classmethod </em><code class="descname">from_dict</code><span class="sig-paren">(</span><em>dikt</em><span class="sig-paren">)</span> &#x2192; mistk.transform.server.models.object_reference.ObjectReference<a class="headerlink" href="#mistk.transform.server.models.object_reference.ObjectReference.from_dict" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">from_dict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dikt</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#mistk.transform.server.models.object_reference.ObjectReference" title="mistk.transform.server.models.object_reference.ObjectReference">mistk.transform.server.models.object_reference.ObjectReference</a><a class="headerlink" href="#mistk.transform.server.models.object_reference.ObjectReference.from_dict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the dict as a model</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dikt</strong> – A dict.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Type:</th><td class="field-body">dict</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The ObjectReference of this ObjectReference.  # noqa: E501</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="mistk.model.client.models.object_reference.html#mistk.model.client.models.object_reference.ObjectReference" title="mistk.model.client.models.object_reference.ObjectReference">ObjectReference</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>dikt</strong> – A dict.</p>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The ObjectReference of this ObjectReference.  # noqa: E501</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="mistk.evaluation.client.models.object_reference.html#mistk.evaluation.client.models.object_reference.ObjectReference" title="mistk.evaluation.client.models.object_reference.ObjectReference">ObjectReference</a></p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="attribute">
-<dt id="mistk.transform.server.models.object_reference.ObjectReference.group">
-<code class="descname">group</code><a class="headerlink" href="#mistk.transform.server.models.object_reference.ObjectReference.group" title="Permalink to this definition">¶</a></dt>
-<dd><p>Gets the group of this ObjectReference.</p>
-<p>The group (namespace) of this object.   # noqa: E501</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The group of this ObjectReference.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">str</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="attribute">
+<dl class="py method">
 <dt id="mistk.transform.server.models.object_reference.ObjectReference.id">
-<code class="descname">id</code><a class="headerlink" href="#mistk.transform.server.models.object_reference.ObjectReference.id" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">id</code><a class="headerlink" href="#mistk.transform.server.models.object_reference.ObjectReference.id" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets the id of this ObjectReference.</p>
 <p>The unique identifier of the object.  # noqa: E501</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The id of this ObjectReference.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">str</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The id of this ObjectReference.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="py method">
 <dt id="mistk.transform.server.models.object_reference.ObjectReference.instance">
-<code class="descname">instance</code><a class="headerlink" href="#mistk.transform.server.models.object_reference.ObjectReference.instance" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">instance</code><a class="headerlink" href="#mistk.transform.server.models.object_reference.ObjectReference.instance" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets the instance of this ObjectReference.</p>
 <p>Optionally, the object reference can contain the complete object.  This is useful for unit testing where you don’t want to go out to the SRM to obtain the referenced object.   # noqa: E501</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The instance of this ObjectReference.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">object</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The instance of this ObjectReference.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>object</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="py method">
 <dt id="mistk.transform.server.models.object_reference.ObjectReference.kind">
-<code class="descname">kind</code><a class="headerlink" href="#mistk.transform.server.models.object_reference.ObjectReference.kind" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">kind</code><a class="headerlink" href="#mistk.transform.server.models.object_reference.ObjectReference.kind" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets the kind of this ObjectReference.</p>
 <p>The type of the object being referenced. This is often optional as it will be inferrred by the context.   # noqa: E501</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The kind of this ObjectReference.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">str</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The kind of this ObjectReference.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="py method">
 <dt id="mistk.transform.server.models.object_reference.ObjectReference.name">
-<code class="descname">name</code><a class="headerlink" href="#mistk.transform.server.models.object_reference.ObjectReference.name" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">name</code><a class="headerlink" href="#mistk.transform.server.models.object_reference.ObjectReference.name" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets the name of this ObjectReference.</p>
 <p>The unique name of the object.  # noqa: E501</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The name of this ObjectReference.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">str</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The name of this ObjectReference.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="mistk.transform.server.models.object_reference.ObjectReference.project">
+<em class="property">property </em><code class="sig-name descname">project</code><a class="headerlink" href="#mistk.transform.server.models.object_reference.ObjectReference.project" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the project of this ObjectReference.</p>
+<p>The project (namespace) of this object.   # noqa: E501</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The project of this ObjectReference.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -303,7 +299,7 @@
         <a href="mistk.transform.server.models.service_error.html" class="btn btn-neutral float-right" title="mistk.transform.server.models.service_error module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="mistk.transform.server.models.object_info.html" class="btn btn-neutral" title="mistk.transform.server.models.object_info module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="mistk.transform.server.models.object_info.html" class="btn btn-neutral float-left" title="mistk.transform.server.models.object_info module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -315,7 +311,14 @@
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -327,33 +330,16 @@
   </div>
   
 
-
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

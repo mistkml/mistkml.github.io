@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,43 +11,47 @@
   
 
   
-  
-  
-  
-
-  
-
-  
-  
-    
-
-  
-
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="mistk.model.server.models package" href="mistk.model.server.models.html" />
     <link rel="prev" title="mistk.model.server.controllers package" href="mistk.model.server.controllers.html" /> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
-            <a href="../index.html" class="icon icon-home"> MISTK
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> MISTK
           
 
           
@@ -71,6 +74,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -89,6 +93,7 @@
 <li class="toctree-l3 current"><a class="reference internal" href="mistk.html#subpackages">Subpackages</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="mistk.cfg.html">mistk.cfg package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mistk.data.html">mistk.data package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mistk.evaluation.html">mistk.evaluation package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mistk.log.html">mistk.log package</a></li>
 <li class="toctree-l4 current"><a class="reference internal" href="mistk.model.html">mistk.model package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mistk.transform.html">mistk.transform package</a></li>
@@ -106,6 +111,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -144,7 +150,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="index.html">MISTK API</a> &raquo;</li>
         
@@ -177,248 +183,235 @@
             
   <div class="section" id="module-mistk.model.server.controllers.model_instance_endpoint_controller">
 <span id="mistk-model-server-controllers-model-instance-endpoint-controller-module"></span><h1>mistk.model.server.controllers.model_instance_endpoint_controller module<a class="headerlink" href="#module-mistk.model.server.controllers.model_instance_endpoint_controller" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
+<dl class="py function">
 <dt id="mistk.model.server.controllers.model_instance_endpoint_controller.build_model">
-<code class="descclassname">mistk.model.server.controllers.model_instance_endpoint_controller.</code><code class="descname">build_model</code><span class="sig-paren">(</span><em>modelPath=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.controllers.model_instance_endpoint_controller.build_model" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mistk.model.server.controllers.model_instance_endpoint_controller.</code><code class="sig-name descname">build_model</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">modelPath</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.controllers.model_instance_endpoint_controller.build_model" title="Permalink to this definition">¶</a></dt>
 <dd><p>Build the model</p>
 <p>Instructs the container to construct the model # noqa: E501</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>modelPath</strong> (<em>str</em>) – The absolute path to the directory where the model's checkpoint/snapshot file can be found.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">None</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>modelPath</strong> (<em>str</em>) – The absolute path to the directory where the model's checkpoint/snapshot file can be found.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
+<dt id="mistk.model.server.controllers.model_instance_endpoint_controller.generate">
+<code class="sig-prename descclassname">mistk.model.server.controllers.model_instance_endpoint_controller.</code><code class="sig-name descname">generate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.controllers.model_instance_endpoint_controller.generate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Perform generations with the model</p>
+<p>Perform generations with the model # noqa: E501</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
 <dt id="mistk.model.server.controllers.model_instance_endpoint_controller.get_api_version">
-<code class="descclassname">mistk.model.server.controllers.model_instance_endpoint_controller.</code><code class="descname">get_api_version</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.controllers.model_instance_endpoint_controller.get_api_version" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mistk.model.server.controllers.model_instance_endpoint_controller.</code><code class="sig-name descname">get_api_version</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.controllers.model_instance_endpoint_controller.get_api_version" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the version of the MISTK API</p>
 <p>Returns the version of the MISTK API # noqa: E501</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="mistk.model.server.controllers.model_instance_endpoint_controller.get_status">
-<code class="descclassname">mistk.model.server.controllers.model_instance_endpoint_controller.</code><code class="descname">get_status</code><span class="sig-paren">(</span><em>watch=None</em>, <em>resourceVersion=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.controllers.model_instance_endpoint_controller.get_status" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mistk.model.server.controllers.model_instance_endpoint_controller.</code><code class="sig-name descname">get_status</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">watch</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">resourceVersion</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.controllers.model_instance_endpoint_controller.get_status" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the status of the model</p>
 <p>Retrieves the current status of the model # noqa: E501</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>watch</strong> (<em>bool</em>) – Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.</li>
-<li><strong>resourceVersion</strong> (<em>int</em>) – When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>watch</strong> (<em>bool</em>) – Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.</p></li>
+<li><p><strong>resourceVersion</strong> (<em>int</em>) – When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="mistk.model.client.models.model_instance_status.html#mistk.model.client.models.model_instance_status.ModelInstanceStatus" title="mistk.model.client.models.model_instance_status.ModelInstanceStatus">ModelInstanceStatus</a></p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="mistk.model.client.models.model_instance_status.html#mistk.model.client.models.model_instance_status.ModelInstanceStatus" title="mistk.model.client.models.model_instance_status.ModelInstanceStatus">ModelInstanceStatus</a></p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="mistk.model.server.controllers.model_instance_endpoint_controller.initialize_model">
-<code class="descclassname">mistk.model.server.controllers.model_instance_endpoint_controller.</code><code class="descname">initialize_model</code><span class="sig-paren">(</span><em>initializationParameters</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.controllers.model_instance_endpoint_controller.initialize_model" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mistk.model.server.controllers.model_instance_endpoint_controller.</code><code class="sig-name descname">initialize_model</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">initializationParameters</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.controllers.model_instance_endpoint_controller.initialize_model" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize the model</p>
 <p>Instructs the model instance to initialize. # noqa: E501</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>initializationParameters</strong> (<em>dict | bytes</em>) – Initialization parameters for the model including the objectives, properties, and hparams. Objectives are a list of objectives for this model instance from the following options { train, predict}. Properties are a dictionary of properties for this model instance.  Hparams are a dictionary of hyperparameters for this model instance.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">None</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>initializationParameters</strong> (<em>dict | bytes</em>) – Initialization parameters for the model including the objectives, properties, and hparams. Objectives are a list of objectives for this model instance from the following options  {train, predict, stream_predict, generate, transfer_learning}. Properties are a dictionary of properties for this model instance.  Hparams are a dictionary of hyperparameters for this model instance.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="mistk.model.server.controllers.model_instance_endpoint_controller.load_data">
-<code class="descclassname">mistk.model.server.controllers.model_instance_endpoint_controller.</code><code class="descname">load_data</code><span class="sig-paren">(</span><em>datasets</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.controllers.model_instance_endpoint_controller.load_data" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mistk.model.server.controllers.model_instance_endpoint_controller.</code><code class="sig-name descname">load_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">datasets</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.controllers.model_instance_endpoint_controller.load_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Loads data for the model</p>
 <p>Loads data onto a staging area for use by the model # noqa: E501</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>datasets</strong> – A dictionary mapping objectives to MistkDataset objects.  Dictionary keys must be one of the following {train, test}</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">None</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>datasets</strong> – A dictionary mapping objectives to MistkDataset objects.  Dictionary keys must be one of the following {train, test, generate}</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="mistk.model.server.controllers.model_instance_endpoint_controller.pause">
-<code class="descclassname">mistk.model.server.controllers.model_instance_endpoint_controller.</code><code class="descname">pause</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.controllers.model_instance_endpoint_controller.pause" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mistk.model.server.controllers.model_instance_endpoint_controller.</code><code class="sig-name descname">pause</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.controllers.model_instance_endpoint_controller.pause" title="Permalink to this definition">¶</a></dt>
 <dd><p>Pause the model</p>
 <p>Instructs the container to pause the current training or  prediction activity  # noqa: E501</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="mistk.model.server.controllers.model_instance_endpoint_controller.predict">
-<code class="descclassname">mistk.model.server.controllers.model_instance_endpoint_controller.</code><code class="descname">predict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.controllers.model_instance_endpoint_controller.predict" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mistk.model.server.controllers.model_instance_endpoint_controller.</code><code class="sig-name descname">predict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.controllers.model_instance_endpoint_controller.predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Perform predictions with the model</p>
 <p>Perform predictions with the test dataset previously loaded # noqa: E501</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="mistk.model.server.controllers.model_instance_endpoint_controller.reset">
-<code class="descclassname">mistk.model.server.controllers.model_instance_endpoint_controller.</code><code class="descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.controllers.model_instance_endpoint_controller.reset" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mistk.model.server.controllers.model_instance_endpoint_controller.</code><code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.controllers.model_instance_endpoint_controller.reset" title="Permalink to this definition">¶</a></dt>
 <dd><p>Resets the model</p>
 <p>Resets the model # noqa: E501</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="mistk.model.server.controllers.model_instance_endpoint_controller.resume_predict">
-<code class="descclassname">mistk.model.server.controllers.model_instance_endpoint_controller.</code><code class="descname">resume_predict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.controllers.model_instance_endpoint_controller.resume_predict" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mistk.model.server.controllers.model_instance_endpoint_controller.</code><code class="sig-name descname">resume_predict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.controllers.model_instance_endpoint_controller.resume_predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Resume predicitons on a paused model</p>
 <p>Resumes the training activity  # noqa: E501</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="mistk.model.server.controllers.model_instance_endpoint_controller.resume_training">
-<code class="descclassname">mistk.model.server.controllers.model_instance_endpoint_controller.</code><code class="descname">resume_training</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.controllers.model_instance_endpoint_controller.resume_training" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mistk.model.server.controllers.model_instance_endpoint_controller.</code><code class="sig-name descname">resume_training</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.controllers.model_instance_endpoint_controller.resume_training" title="Permalink to this definition">¶</a></dt>
 <dd><p>Resume training on a paused model</p>
 <p>Resumes the training activity  # noqa: E501</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
+<dt id="mistk.model.server.controllers.model_instance_endpoint_controller.save_generations">
+<code class="sig-prename descclassname">mistk.model.server.controllers.model_instance_endpoint_controller.</code><code class="sig-name descname">save_generations</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataPath</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.controllers.model_instance_endpoint_controller.save_generations" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save the generations made by the model</p>
+<p>Instructs the container to save the generations to the specified path  # noqa: E501</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>dataPath</strong> (<em>str</em>) – A path pointing to the directory where the generations are to be saved.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
 <dt id="mistk.model.server.controllers.model_instance_endpoint_controller.save_model">
-<code class="descclassname">mistk.model.server.controllers.model_instance_endpoint_controller.</code><code class="descname">save_model</code><span class="sig-paren">(</span><em>modelPath</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.controllers.model_instance_endpoint_controller.save_model" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mistk.model.server.controllers.model_instance_endpoint_controller.</code><code class="sig-name descname">save_model</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">modelPath</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.controllers.model_instance_endpoint_controller.save_model" title="Permalink to this definition">¶</a></dt>
 <dd><p>Save the model snapshot</p>
 <p>Instructs the container to serialize the model to the specified path  # noqa: E501</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>modelPath</strong> (<em>str</em>) – A path pointing to the directory where the model is to be saved.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">None</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>modelPath</strong> (<em>str</em>) – A path pointing to the directory where the model is to be saved.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="mistk.model.server.controllers.model_instance_endpoint_controller.save_predictions">
-<code class="descclassname">mistk.model.server.controllers.model_instance_endpoint_controller.</code><code class="descname">save_predictions</code><span class="sig-paren">(</span><em>dataPath</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.controllers.model_instance_endpoint_controller.save_predictions" title="Permalink to this definition">¶</a></dt>
-<dd><p>Save the model's predictions</p>
+<code class="sig-prename descclassname">mistk.model.server.controllers.model_instance_endpoint_controller.</code><code class="sig-name descname">save_predictions</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataPath</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.controllers.model_instance_endpoint_controller.save_predictions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save the predictions made by the model</p>
 <p>Instructs the container to save the predictions to the specified path  # noqa: E501</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dataPath</strong> (<em>str</em>) – A path pointing to the directory where the predictions are to be saved.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">None</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>dataPath</strong> (<em>str</em>) – A path pointing to the directory where the predictions are to be saved.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="mistk.model.server.controllers.model_instance_endpoint_controller.stream_predict">
-<code class="descclassname">mistk.model.server.controllers.model_instance_endpoint_controller.</code><code class="descname">stream_predict</code><span class="sig-paren">(</span><em>dataMap</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.controllers.model_instance_endpoint_controller.stream_predict" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mistk.model.server.controllers.model_instance_endpoint_controller.</code><code class="sig-name descname">stream_predict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataMap</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.controllers.model_instance_endpoint_controller.stream_predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Perform streaming predictions with the model</p>
 <p>Perform predictions with the test dataset previously loaded # noqa: E501</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dataMap</strong> – Dictionary of IDs to b64 encoded data</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">object</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>dataMap</strong> – Dictionary of IDs to b64 encoded data</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>object</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="mistk.model.server.controllers.model_instance_endpoint_controller.terminate">
-<code class="descclassname">mistk.model.server.controllers.model_instance_endpoint_controller.</code><code class="descname">terminate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.controllers.model_instance_endpoint_controller.terminate" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mistk.model.server.controllers.model_instance_endpoint_controller.</code><code class="sig-name descname">terminate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.controllers.model_instance_endpoint_controller.terminate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Shut down the model</p>
 <p>Shuts down the model # noqa: E501</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="mistk.model.server.controllers.model_instance_endpoint_controller.train">
-<code class="descclassname">mistk.model.server.controllers.model_instance_endpoint_controller.</code><code class="descname">train</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.controllers.model_instance_endpoint_controller.train" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mistk.model.server.controllers.model_instance_endpoint_controller.</code><code class="sig-name descname">train</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.controllers.model_instance_endpoint_controller.train" title="Permalink to this definition">¶</a></dt>
 <dd><p>Train the model</p>
 <p>Trains the model with the training dataset previously loaded # noqa: E501</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -434,7 +427,7 @@
         <a href="mistk.model.server.models.html" class="btn btn-neutral float-right" title="mistk.model.server.models package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="mistk.model.server.controllers.html" class="btn btn-neutral" title="mistk.model.server.controllers package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="mistk.model.server.controllers.html" class="btn btn-neutral float-left" title="mistk.model.server.controllers package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -446,7 +439,14 @@
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -458,33 +458,16 @@
   </div>
   
 
-
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

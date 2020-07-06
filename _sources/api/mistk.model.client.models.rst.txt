@@ -6,12 +6,15 @@ Submodules
 
 .. toctree::
 
+   mistk.model.client.models.data_record
    mistk.model.client.models.dataset
    mistk.model.client.models.dataset_statistics
    mistk.model.client.models.metric
    mistk.model.client.models.metric_data_parameters
+   mistk.model.client.models.mistk_data_record
    mistk.model.client.models.mistk_dataset
    mistk.model.client.models.mistk_metric
+   mistk.model.client.models.mistk_metric_list
    mistk.model.client.models.mistk_watch_event
    mistk.model.client.models.model_instance_init_params
    mistk.model.client.models.model_instance_status
@@ -24,6 +27,6 @@ Module contents
 ---------------
 
 .. automodule:: mistk.model.client.models
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :undoc-members:
+   :show-inheritance:

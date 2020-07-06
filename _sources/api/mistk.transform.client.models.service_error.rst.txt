@@ -2,6 +2,6 @@ mistk.transform.client.models.service\_error module
 ===================================================
 
 .. automodule:: mistk.transform.client.models.service_error
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :undoc-members:
+   :show-inheritance:

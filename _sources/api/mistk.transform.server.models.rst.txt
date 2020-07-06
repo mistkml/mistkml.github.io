@@ -20,6 +20,6 @@ Module contents
 ---------------
 
 .. automodule:: mistk.transform.server.models
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :undoc-members:
+   :show-inheritance:

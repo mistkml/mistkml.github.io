@@ -16,16 +16,16 @@ the web endpoint service that is made available for every model implementation.
 
     :param objectives: A list of model objectives intended to aid in its
         setup and initialization. Possible values are:
-        'training', 'prediction', 'streaming_prediction', 'transfer_learning'.
+        'training', 'prediction', 'streaming_prediction', 'generation', 'transfer_learning'.
     :param props: A dictionary of settings or configuration values that are passed
         from the ecosystem, but are not considered model hyperparameters.
     :param hparams: A dictionary of hyperparameters that are used by the model.
 
 **do_load_data** (dataset_map: dict)
-    Instructs the container to load training and/or testing data (or at least
+    Instructs the container to load training, testing, or generation data (or at least
     record in memory where the data is) from the supplied paths.
 
-    :param dataset_map: A dictionary that maps string keys {train, test} to a
+    :param dataset_map: A dictionary that maps string keys {train, test, generation} to a
         MistkDataset object that contains information on the dataset to load.
         The `objectives` values for this model determines which keys are present in
         the map (i.e. a model with only a training objective should not depend on
@@ -56,6 +56,9 @@ the web endpoint service that is made available for every model implementation.
 **do_predict** ()
     Perform predictions with the previously supplied data.
 
+**do_generate** ()
+	Perform generations with the previously supplied data.
+
 **do_pause** ()
     Pause the current training or testing.
 
@@ -72,6 +75,11 @@ the web endpoint service that is made available for every model implementation.
     id,label[,confidence][,bounds]
 
     :param dataPath: The path to which the predictions should be saved.
+    
+**do_save_generations** (dataPath)
+	Saves the generated media produced by the model to the supplied data path.
+	
+	:param dataPath: The path to which the generations should be saved. 
 
 **do_stream_predict** (data_map: dict)
     Perform predictions on the input dict of id's to base64 encoded data and
@@ -126,7 +134,7 @@ Tensorflow implementation). Below are sample hyperparameters and model propertie
 dictionaries that can be passed to a model implementation's 'do_initialize' method.
 
 Hyperparameters
-::
+:::::::::::::::
   {
     'learning_rate': 0.001,
     'weight_decay': 0.004
@@ -134,7 +142,7 @@ Hyperparameters
   }
 
 Model Properties
-::
+::::::::::::::::
   {
     'arch': 'densenet',
     'num_labels': 1000,
@@ -149,7 +157,7 @@ Loading Data
 
 When loading data into a model instance using the **do_load_data(dataset_map)**
 method inherited from 'AbstractModel', the dataset_map parameter must include
-sufficient information for each dataset mapped to an objective {train, test}.
+sufficient information for each dataset mapped to an objective {train, test, generate}.
 The required fields include 'object_info', 'data_path', 'modality', and 'format'
 (Described in the Model API method documentation previously)
 An example dataset map is provided below:
@@ -174,8 +182,19 @@ An example dataset map is provided below:
        "data_path": "/path/to/data",
        "modality": "image",
        "format": "jpg"
+    },
+    "generation": {
+       "object_info": {
+         "name": "image_generation_set",
+         "kind": "MistkDataset"
+       },
+       "data_path": "/path/to/data",
+       "modality": "text",
+       "format": "raw"
     }
   }
+
+The dataset for generations should contain files that indicate the targets for generation.
 
 
 Please note, that when using the RESTful API directly, where the user would be
@@ -273,3 +292,96 @@ A data transform plugin instance will automatically go to the Ready state if its
 container instance successfully starts up. After completing a transformation, it
 will return to the Ready state so that multiple transformations can be executed
 using the same container instance.
+
+Example
+-------
+
+The following example code implements a ground truth transform for an MNIST formatted dataset 
+with the MISTK data transformation interfacet:
+
+.. literalinclude:: sample_code_files/groundtruth_mnist_plugin.py
+    :linenos:
+    :language: python
+
+
+Evaluation Interface
+====================
+
+The MISTK API provides an interface for creating evaluation plugins to evaluate models
+against specific metrics. These plugins run within docker containers similar to models. 
+A MISTK evaluation implements the 'mistk.evaluation.AbstractEvaluationPlugin' abstract class. 
+This class provides a set of abstract methods that represent the evaluation lifecycle and
+must be implemented by the new evaluation plugin. Ultimately, these methods form the core of
+the web endpoint service that is made available for every evaluation implementation.
+
+**do_evaluate** (assessment_type: string, metrics: list, input_data_path: string, evaluation_input_format: string, ground_truth_path: string, evaluation_path: string, properties: dict)
+  Performs an evaluation using the ground truth data and predictions data for the assessment type and metrics
+  specified and stores the resulting evaluation in the output directory.
+
+  :param assessment_type: The evaluation type. One of {'BinaryClassification', 
+        'MultilabelClassification', 'MulticlassClassification', 'Regression'}
+  :param metrics: Specific metrics to evaluate against instead of all metrics defined by assessment_type
+  :param input_data_path: Path to input data for the evaluation
+  :param evaluation_input_format: The format of the input data. One of {predictions, generations}
+  :param ground_truth_path: The directory path where the ground_truth.csv file is located
+  :param evaluation_path: A directory path to where the evaluation.json output file will be stored
+  :param properties: A dictionary of key value pairs for evaluation plugin arguments. 
+
+**do_terminate** ()
+    Prepare for application termination.
+    
+Evaluation Metrics
+------------------
+Metrics are loaded for the evaluation container based on the metrics.json file. This JSON file contains a list
+of Metric objects to describe the metric and how it will be executed.
+
+The Metric values will require the following fields:
+
+            object_info: A dictionary that stores metadata information for the
+            dataset. Only the 'name' and 'kind' fields are required, all other
+            fields are optional.
+
+            image_id: The image id for the evaluation container to run.
+            
+            assessment_types: The assessment type for the metric, e.g. MulticlassClassification.
+
+
+An example for a metric:
+
+::
+
+	"objectInfo": {
+	      "kind": "Metric",
+	      "name": "sklearn.metrics.r2_score"
+	    },
+	    "imageId": "docker-registry:5000/sml-evaluators/sklearn",
+	    "assessmentTypes": ["Regression"]
+	  }
+
+
+The Evaluation State Machine
+----------------------------
+
+Evaluation plugin implementations follow a workflow lifecycle based on state machine
+transitions. The underlying MISTK infrastructure ensures that only legal
+transitions from one state to another can be made and that the appropriate
+model methods are called during those transitions. The image below illustrates
+the high-level state machine transitions and the evaluation plugin methods
+that may be called between them.
+
+.. image:: images/evaluation_state_machine.png
+
+A evaluation plugin instance will automatically go to the Started state if its
+container instance successfully starts up. After completing a evaluation, it
+will return to the Ready state so that multiple evaluations can be executed
+using the same container instance.
+
+Example
+-------
+
+The following example code implements a sklearn evaluation metrics with the MISTK evaluation metrics interfacet:
+
+.. literalinclude:: sample_code_files/sklearn_evaluation.py
+    :linenos:
+    :language: python
+

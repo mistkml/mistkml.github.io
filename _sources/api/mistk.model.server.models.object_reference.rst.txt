@@ -2,6 +2,6 @@ mistk.model.server.models.object\_reference module
 ==================================================
 
 .. automodule:: mistk.model.server.models.object_reference
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :undoc-members:
+   :show-inheritance:

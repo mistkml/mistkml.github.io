@@ -564,7 +564,25 @@ from scikit-learn with the MISTK model interface which operates on a common publ
 150
 151
 152
-153</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">##############################################################################</span>
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">##############################################################################</span>
 <span class="c1">#</span>
 <span class="c1">#    This program is free software: you can redistribute it and/or modify</span>
 <span class="c1">#    it under the terms of the GNU General Public License as published by</span>
@@ -711,6 +729,24 @@ from scikit-learn with the MISTK model interface which operates on a common publ
   <span class="k">def</span> <span class="nf">do_terminate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
       <span class="c1"># nothing to clean up for this model</span>
       <span class="k">pass</span>
+  
+  <span class="k">def</span> <span class="nf">do_generate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">      Executes/resumes the generate activity</span>
+<span class="sd">      This operation is currently not supported. </span>
+<span class="sd">      &quot;&quot;&quot;</span>
+      <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;this model doesn&#39;t support &#39;generate&#39;&quot;</span>
+      <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+    
+  <span class="k">def</span> <span class="nf">do_save_generations</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dataPath</span><span class="p">):</span>
+      <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">      Saves the current generations to the location specified</span>
+<span class="sd">        </span>
+<span class="sd">      :param dataPath: The location on the local file system or distributed</span>
+<span class="sd">          file system where the generations will be saved</span>
+<span class="sd">      &quot;&quot;&quot;</span>
+      <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;this model doesn&#39;t support &#39;save_generations&#39;&quot;</span>
+      <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
 
   <span class="k">def</span> <span class="nf">read_dataset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data_path</span><span class="p">):</span>
       <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Loading dataset from </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">data_path</span><span class="p">)</span>

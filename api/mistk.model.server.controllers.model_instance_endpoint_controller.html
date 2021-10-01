@@ -1,7 +1,8 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
@@ -11,18 +12,12 @@
   
 
   
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-
-  
   
   
   
 
   
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -34,6 +29,10 @@
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="mistk.model.server.models package" href="mistk.model.server.models.html" />
@@ -51,7 +50,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> MISTK
+            <a href="../index.html" class="icon icon-home"> MISTK
           
 
           
@@ -74,7 +73,6 @@
           
         </div>
 
-        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -97,6 +95,7 @@
 <li class="toctree-l4"><a class="reference internal" href="mistk.log.html">mistk.log package</a></li>
 <li class="toctree-l4 current"><a class="reference internal" href="mistk.model.html">mistk.model package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mistk.transform.html">mistk.transform package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mistk.utils.html">mistk.utils package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mistk.watch.html">mistk.watch package</a></li>
 </ul>
 </li>
@@ -111,7 +110,6 @@
             
           
         </div>
-        
       </div>
     </nav>
 
@@ -150,7 +148,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="../index.html">Docs</a> &raquo;</li>
         
           <li><a href="index.html">MISTK API</a> &raquo;</li>
         
@@ -183,9 +181,9 @@
             
   <div class="section" id="module-mistk.model.server.controllers.model_instance_endpoint_controller">
 <span id="mistk-model-server-controllers-model-instance-endpoint-controller-module"></span><h1>mistk.model.server.controllers.model_instance_endpoint_controller module<a class="headerlink" href="#module-mistk.model.server.controllers.model_instance_endpoint_controller" title="Permalink to this headline">¶</a></h1>
-<dl class="py function">
+<dl class="function">
 <dt id="mistk.model.server.controllers.model_instance_endpoint_controller.build_model">
-<code class="sig-prename descclassname">mistk.model.server.controllers.model_instance_endpoint_controller.</code><code class="sig-name descname">build_model</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">modelPath</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.controllers.model_instance_endpoint_controller.build_model" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mistk.model.server.controllers.model_instance_endpoint_controller.</code><code class="sig-name descname">build_model</code><span class="sig-paren">(</span><em class="sig-param">modelPath=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.controllers.model_instance_endpoint_controller.build_model" title="Permalink to this definition">¶</a></dt>
 <dd><p>Build the model</p>
 <p>Instructs the container to construct the model # noqa: E501</p>
 <dl class="field-list simple">
@@ -198,7 +196,7 @@
 </dl>
 </dd></dl>
 
-<dl class="py function">
+<dl class="function">
 <dt id="mistk.model.server.controllers.model_instance_endpoint_controller.generate">
 <code class="sig-prename descclassname">mistk.model.server.controllers.model_instance_endpoint_controller.</code><code class="sig-name descname">generate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.controllers.model_instance_endpoint_controller.generate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Perform generations with the model</p>
@@ -210,7 +208,7 @@
 </dl>
 </dd></dl>
 
-<dl class="py function">
+<dl class="function">
 <dt id="mistk.model.server.controllers.model_instance_endpoint_controller.get_api_version">
 <code class="sig-prename descclassname">mistk.model.server.controllers.model_instance_endpoint_controller.</code><code class="sig-name descname">get_api_version</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.controllers.model_instance_endpoint_controller.get_api_version" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the version of the MISTK API</p>
@@ -222,9 +220,9 @@
 </dl>
 </dd></dl>
 
-<dl class="py function">
+<dl class="function">
 <dt id="mistk.model.server.controllers.model_instance_endpoint_controller.get_status">
-<code class="sig-prename descclassname">mistk.model.server.controllers.model_instance_endpoint_controller.</code><code class="sig-name descname">get_status</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">watch</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">resourceVersion</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.controllers.model_instance_endpoint_controller.get_status" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mistk.model.server.controllers.model_instance_endpoint_controller.</code><code class="sig-name descname">get_status</code><span class="sig-paren">(</span><em class="sig-param">watch=None</em>, <em class="sig-param">resourceVersion=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.controllers.model_instance_endpoint_controller.get_status" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the status of the model</p>
 <p>Retrieves the current status of the model # noqa: E501</p>
 <dl class="field-list simple">
@@ -240,9 +238,9 @@
 </dl>
 </dd></dl>
 
-<dl class="py function">
+<dl class="function">
 <dt id="mistk.model.server.controllers.model_instance_endpoint_controller.initialize_model">
-<code class="sig-prename descclassname">mistk.model.server.controllers.model_instance_endpoint_controller.</code><code class="sig-name descname">initialize_model</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">initializationParameters</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.controllers.model_instance_endpoint_controller.initialize_model" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mistk.model.server.controllers.model_instance_endpoint_controller.</code><code class="sig-name descname">initialize_model</code><span class="sig-paren">(</span><em class="sig-param">initializationParameters</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.controllers.model_instance_endpoint_controller.initialize_model" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize the model</p>
 <p>Instructs the model instance to initialize. # noqa: E501</p>
 <dl class="field-list simple">
@@ -255,9 +253,9 @@
 </dl>
 </dd></dl>
 
-<dl class="py function">
+<dl class="function">
 <dt id="mistk.model.server.controllers.model_instance_endpoint_controller.load_data">
-<code class="sig-prename descclassname">mistk.model.server.controllers.model_instance_endpoint_controller.</code><code class="sig-name descname">load_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">datasets</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.controllers.model_instance_endpoint_controller.load_data" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mistk.model.server.controllers.model_instance_endpoint_controller.</code><code class="sig-name descname">load_data</code><span class="sig-paren">(</span><em class="sig-param">datasets</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.controllers.model_instance_endpoint_controller.load_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Loads data for the model</p>
 <p>Loads data onto a staging area for use by the model # noqa: E501</p>
 <dl class="field-list simple">
@@ -270,7 +268,7 @@
 </dl>
 </dd></dl>
 
-<dl class="py function">
+<dl class="function">
 <dt id="mistk.model.server.controllers.model_instance_endpoint_controller.pause">
 <code class="sig-prename descclassname">mistk.model.server.controllers.model_instance_endpoint_controller.</code><code class="sig-name descname">pause</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.controllers.model_instance_endpoint_controller.pause" title="Permalink to this definition">¶</a></dt>
 <dd><p>Pause the model</p>
@@ -282,7 +280,7 @@
 </dl>
 </dd></dl>
 
-<dl class="py function">
+<dl class="function">
 <dt id="mistk.model.server.controllers.model_instance_endpoint_controller.predict">
 <code class="sig-prename descclassname">mistk.model.server.controllers.model_instance_endpoint_controller.</code><code class="sig-name descname">predict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.controllers.model_instance_endpoint_controller.predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Perform predictions with the model</p>
@@ -294,7 +292,7 @@
 </dl>
 </dd></dl>
 
-<dl class="py function">
+<dl class="function">
 <dt id="mistk.model.server.controllers.model_instance_endpoint_controller.reset">
 <code class="sig-prename descclassname">mistk.model.server.controllers.model_instance_endpoint_controller.</code><code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.controllers.model_instance_endpoint_controller.reset" title="Permalink to this definition">¶</a></dt>
 <dd><p>Resets the model</p>
@@ -306,7 +304,7 @@
 </dl>
 </dd></dl>
 
-<dl class="py function">
+<dl class="function">
 <dt id="mistk.model.server.controllers.model_instance_endpoint_controller.resume_predict">
 <code class="sig-prename descclassname">mistk.model.server.controllers.model_instance_endpoint_controller.</code><code class="sig-name descname">resume_predict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.controllers.model_instance_endpoint_controller.resume_predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Resume predicitons on a paused model</p>
@@ -318,7 +316,7 @@
 </dl>
 </dd></dl>
 
-<dl class="py function">
+<dl class="function">
 <dt id="mistk.model.server.controllers.model_instance_endpoint_controller.resume_training">
 <code class="sig-prename descclassname">mistk.model.server.controllers.model_instance_endpoint_controller.</code><code class="sig-name descname">resume_training</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.controllers.model_instance_endpoint_controller.resume_training" title="Permalink to this definition">¶</a></dt>
 <dd><p>Resume training on a paused model</p>
@@ -330,9 +328,9 @@
 </dl>
 </dd></dl>
 
-<dl class="py function">
+<dl class="function">
 <dt id="mistk.model.server.controllers.model_instance_endpoint_controller.save_generations">
-<code class="sig-prename descclassname">mistk.model.server.controllers.model_instance_endpoint_controller.</code><code class="sig-name descname">save_generations</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataPath</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.controllers.model_instance_endpoint_controller.save_generations" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mistk.model.server.controllers.model_instance_endpoint_controller.</code><code class="sig-name descname">save_generations</code><span class="sig-paren">(</span><em class="sig-param">dataPath</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.controllers.model_instance_endpoint_controller.save_generations" title="Permalink to this definition">¶</a></dt>
 <dd><p>Save the generations made by the model</p>
 <p>Instructs the container to save the generations to the specified path  # noqa: E501</p>
 <dl class="field-list simple">
@@ -345,9 +343,9 @@
 </dl>
 </dd></dl>
 
-<dl class="py function">
+<dl class="function">
 <dt id="mistk.model.server.controllers.model_instance_endpoint_controller.save_model">
-<code class="sig-prename descclassname">mistk.model.server.controllers.model_instance_endpoint_controller.</code><code class="sig-name descname">save_model</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">modelPath</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.controllers.model_instance_endpoint_controller.save_model" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mistk.model.server.controllers.model_instance_endpoint_controller.</code><code class="sig-name descname">save_model</code><span class="sig-paren">(</span><em class="sig-param">modelPath</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.controllers.model_instance_endpoint_controller.save_model" title="Permalink to this definition">¶</a></dt>
 <dd><p>Save the model snapshot</p>
 <p>Instructs the container to serialize the model to the specified path  # noqa: E501</p>
 <dl class="field-list simple">
@@ -360,9 +358,9 @@
 </dl>
 </dd></dl>
 
-<dl class="py function">
+<dl class="function">
 <dt id="mistk.model.server.controllers.model_instance_endpoint_controller.save_predictions">
-<code class="sig-prename descclassname">mistk.model.server.controllers.model_instance_endpoint_controller.</code><code class="sig-name descname">save_predictions</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataPath</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.controllers.model_instance_endpoint_controller.save_predictions" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mistk.model.server.controllers.model_instance_endpoint_controller.</code><code class="sig-name descname">save_predictions</code><span class="sig-paren">(</span><em class="sig-param">dataPath</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.controllers.model_instance_endpoint_controller.save_predictions" title="Permalink to this definition">¶</a></dt>
 <dd><p>Save the predictions made by the model</p>
 <p>Instructs the container to save the predictions to the specified path  # noqa: E501</p>
 <dl class="field-list simple">
@@ -375,22 +373,25 @@
 </dl>
 </dd></dl>
 
-<dl class="py function">
+<dl class="function">
 <dt id="mistk.model.server.controllers.model_instance_endpoint_controller.stream_predict">
-<code class="sig-prename descclassname">mistk.model.server.controllers.model_instance_endpoint_controller.</code><code class="sig-name descname">stream_predict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataMap</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.controllers.model_instance_endpoint_controller.stream_predict" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mistk.model.server.controllers.model_instance_endpoint_controller.</code><code class="sig-name descname">stream_predict</code><span class="sig-paren">(</span><em class="sig-param">dataMap</em>, <em class="sig-param">details=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.controllers.model_instance_endpoint_controller.stream_predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Perform streaming predictions with the model</p>
 <p>Perform predictions with the test dataset previously loaded # noqa: E501</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>dataMap</strong> – Dictionary of IDs to b64 encoded data</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dataMap</strong> – Dictionary of IDs to b64 encoded data</p></li>
+<li><p><strong>details</strong> (<em>bool</em>) – Boolean flag to indicate whether prediction details (markdown) should be included in predictions dictionary.</p></li>
+</ul>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p>object</p>
+<dd class="field-even"><p>Dict[str, object]</p>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="py function">
+<dl class="function">
 <dt id="mistk.model.server.controllers.model_instance_endpoint_controller.terminate">
 <code class="sig-prename descclassname">mistk.model.server.controllers.model_instance_endpoint_controller.</code><code class="sig-name descname">terminate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.controllers.model_instance_endpoint_controller.terminate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Shut down the model</p>
@@ -402,7 +403,7 @@
 </dl>
 </dd></dl>
 
-<dl class="py function">
+<dl class="function">
 <dt id="mistk.model.server.controllers.model_instance_endpoint_controller.train">
 <code class="sig-prename descclassname">mistk.model.server.controllers.model_instance_endpoint_controller.</code><code class="sig-name descname">train</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.controllers.model_instance_endpoint_controller.train" title="Permalink to this definition">¶</a></dt>
 <dd><p>Train the model</p>
@@ -410,6 +411,21 @@
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="mistk.model.server.controllers.model_instance_endpoint_controller.update_stream_properties">
+<code class="sig-prename descclassname">mistk.model.server.controllers.model_instance_endpoint_controller.</code><code class="sig-name descname">update_stream_properties</code><span class="sig-paren">(</span><em class="sig-param">props</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.controllers.model_instance_endpoint_controller.update_stream_properties" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates streaming properties with the model</p>
+<p>Update streaming properties # noqa: E501</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>props</strong> – Dictionary of metadata properties to be used by the model</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
 </dd>
 </dl>
 </dd></dl>
@@ -439,14 +455,7 @@
 
     </p>
   </div>
-    
-    
-    
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -457,6 +466,7 @@
 
   </div>
   
+
 
   <script type="text/javascript">
       jQuery(function () {

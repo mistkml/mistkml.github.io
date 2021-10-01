@@ -8,16 +8,19 @@ All models are ultimately run as web services with endpoints corresponding to th
 implemented `AbstractModel` methods. The model endpoint service is supplied by
 the `mistk` module. To run the model endpoint service, call::
 
-    python -m mistk [module] [class]
+    python -m mistk [module] [class] [port, optional]
 
 where 'module' is the python module being loaded and 'class' is the class which implements AbstractModel as
 described above.  This will start the endpoint service listening on the localhost at
-port 8080.  You can view the endpoint API by browsing to http://localhost:8080/v1/mistk/ui.
+the specified 'port', which defaults to 8080. You can view the endpoint API by accessing 
+http://localhost:{port}/v1/mistk/ui.
+
+Note that the **SML system only uses port 8080** by default, any ports specified for MISTK are for testing purposes.
 
 You must ensure that the module  files are on the PYTHONPATH or are executing the command
 model's project base directory. An example of executing the linear regression model previously referenced:
 
-    python -m mistk scikit_learn.logistic_regression ScikitLearnLogisticRegressionModel
+    python -m mistk scikit_learn.logistic_regression ScikitLearnLogisticRegressionModel 8080
 
 You can then use the UI to manually kick off instructions to the model.
 
@@ -42,14 +45,14 @@ any additional logging you perform):
 .. image:: images/Run_Output.png
 
 You should also be able to access the Model Instance Endpoint Swagger UI through
-web browser at http://localhost:8080/v1/mistk/ui/
+web browser at http://localhost:{port}/v1/mistk/ui/
 
 .. image:: images/MISTK_Model_Swagger_UI.png
 
 Testing through the RESTful API
 -------------------------------
 
-The RESTful API for a running model can be accessed at http://localhost:8080/v1/mistk/ui.
+The RESTful API for a running model can be accessed at http://localhost:{port}/v1/mistk/ui.
 The RESTful API endpoints correspond to the Pythonic API endpoints (ie. MISTK
 model methods beginning with 'do_') in terms of their input parameters and
 return values. The primary difference is that parameter names are in camelcase
@@ -103,18 +106,22 @@ The parameters and example usage are below, and can also be retrieved by running
 with the '-h' option::
 
   usage: python -m mistk_test_harness [-h] [--model MODEL] [--train PATH]
-                                    [--transfer-learning] [--predict PATH]
+                                    [--transfer-learning] 
+                                    [--predict PATH] [--generate PATH]
+                                    [--predictions-path PATH]
                                     [--model-path PATH]
                                     [--model-save-path PATH]
                                     [--model-props FILE] [--hyperparams FILE]
                                     [--stream-predict FILE]
+                                    [--stream-properties FILE]
                                     [--transform TRANSFORM]
                                     [--transform-output-path PATH]
                                     [--transform-input-paths PATH [PATH ...]]
                                     [--transform-properties FILE]
                                     [--evaluate TYPE]
                                     [--evaluation EVALUATION]
-                                    [--predictions-path PATH]
+                                    [--evaluations-input-path PATH]
+                                    [--evaluations-input-format EVALUATION_INPUT_FORMAT]
                                     [--ground-truth-path PATH]
                                     [--evaluation-output-path PATH]
                                     [--evaluation-properties FILE]
@@ -131,16 +138,10 @@ with the '-h' option::
     --transfer-learning   Flag indicating that the training operation will be
                           performing transfer learning
     --predict PATH        Run predictions over the dataset at the local path
-    --evaluate TYPE       Evaluate model predictions as one of:
-                          BinaryClassification, MultilabelClassification,
-                          MulticlassClassification, Regression (requires
-                          --predictions-path, --ground-truth-path)
+    --generate            Run generations using the model
     --predictions-path PATH
                           Local folder path to save/load model predictions, used
                           with the --predict and --evaluate options
-    --ground-truth-path PATH
-                          Local folder path containing dataset ground truth,
-                          used with the --evaluate option
     --model-path PATH     Local folder path to load model checkpoints, used with
                           the --train or --predict options
     --model-save-path PATH
@@ -153,6 +154,9 @@ with the '-h' option::
     --stream-predict FILE
                           Local file containing json dictionary of ids to base64
                           encoded input data
+    --stream-properties FILE
+                          Local file containing json dictionary of streaming properties,
+                          used with --stream-predict options
     --transform TRANSFORM
                           Transform module/package, service endpoint URL, or
                           Docker image
@@ -164,16 +168,32 @@ with the '-h' option::
     --transform-properties FILE
                           Local file containing json dictionary of transform
                           properties
+    --evaluate TYPE       Evaluate model predictions as one of:
+                          BinaryClassification, MultilabelClassification,
+                          MulticlassClassification, Regression (requires
+                          --predictions-path, --ground-truth-path)
     --evaluation EVALUATION
                           Evaluation module/package, service endpoint URL, or
                           Docker image
+    --evaluations-input-path PATH
+                        Local folder path to load input for evaluation
+                        (predictions or generations), used with the --evaluate
+                        option
+    --evaluations-input-format EVALUATION_INPUT_FORMAT
+                        The format of the data within evaluations-input-path
+                        directory. One of {predictions, generations}. Used
+                        with the --evaluate option
+    --ground-truth-path PATH
+                          Local folder path containing dataset ground truth,
+                          used with the --evaluate option
     --evaluation-output-path PATH
                           Local folder path to save results of evaluation
     --evaluation-properties FILE
                           Local file containing json dictionary of evaluation
                           properties
     --metrics METRIC      Comma delimited list of metric names for metrics to be
-                          evaluated.
+                          evaluated
+    --port PORT           Web server port to use, defaults to 8080
     --disable-container-shutdown
                           Disables automatic shutdown of the model or transform
                           docker container

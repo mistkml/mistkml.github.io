@@ -1,7 +1,8 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
@@ -11,18 +12,12 @@
   
 
   
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-
-  
   
   
   
 
   
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -34,6 +29,10 @@
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="mistk.model package" href="mistk.model.html" />
@@ -51,7 +50,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> MISTK
+            <a href="../index.html" class="icon icon-home"> MISTK
           
 
           
@@ -74,7 +73,6 @@
           
         </div>
 
-        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -97,6 +95,7 @@
 <li class="toctree-l4 current"><a class="current reference internal" href="#">mistk.log package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mistk.model.html">mistk.model package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mistk.transform.html">mistk.transform package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mistk.utils.html">mistk.utils package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mistk.watch.html">mistk.watch package</a></li>
 </ul>
 </li>
@@ -111,7 +110,6 @@
             
           
         </div>
-        
       </div>
     </nav>
 
@@ -150,7 +148,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="../index.html">Docs</a> &raquo;</li>
         
           <li><a href="index.html">MISTK API</a> &raquo;</li>
         
@@ -181,9 +179,9 @@
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-mistk.log" title="Permalink to this headline">¶</a></h2>
 <p>Logging module that configures the logger used by a specific component in the
 MISTK architecture.</p>
-<dl class="py function">
+<dl class="function">
 <dt id="mistk.log.config">
-<code class="sig-prename descclassname">mistk.log.</code><code class="sig-name descname">config</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">component</span></em>, <em class="sig-param"><span class="n">file</span><span class="o">=</span><span class="default_value">'/Users/adipon/repos/sml/gitlab/streamlinedml/mistk/mistk/log/../../conf/log_config.json'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.log.config" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mistk.log.</code><code class="sig-name descname">config</code><span class="sig-paren">(</span><em class="sig-param">component</em>, <em class="sig-param">file='/home/tsiedlec/git/streamlinedml-master-git/mistk/mistk/log/../../conf/log_config.json'</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.log.config" title="Permalink to this definition">¶</a></dt>
 <dd><p>Loads the logging configuration file for the component.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -196,9 +194,9 @@ Defaults to the file location defined in the ConfigParser property mistk.log.con
 </dl>
 </dd></dl>
 
-<dl class="py function">
+<dl class="function">
 <dt id="mistk.log.get_logger">
-<code class="sig-prename descclassname">mistk.log.</code><code class="sig-name descname">get_logger</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.log.get_logger" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mistk.log.</code><code class="sig-name descname">get_logger</code><span class="sig-paren">(</span><em class="sig-param">name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.log.get_logger" title="Permalink to this definition">¶</a></dt>
 <dd><p>Retrieves the logger associated with the name provided.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -210,9 +208,9 @@ Defaults to the file location defined in the ConfigParser property mistk.log.con
 </dl>
 </dd></dl>
 
-<dl class="py function">
+<dl class="function">
 <dt id="mistk.log.mkdir_p">
-<code class="sig-prename descclassname">mistk.log.</code><code class="sig-name descname">mkdir_p</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.log.mkdir_p" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mistk.log.</code><code class="sig-name descname">mkdir_p</code><span class="sig-paren">(</span><em class="sig-param">path</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.log.mkdir_p" title="Permalink to this definition">¶</a></dt>
 <dd><p><a class="reference external" href="http://stackoverflow.com/a/600612/190597">http://stackoverflow.com/a/600612/190597</a> (tzot)</p>
 </dd></dl>
 
@@ -242,14 +240,7 @@ Defaults to the file location defined in the ConfigParser property mistk.log.con
 
     </p>
   </div>
-    
-    
-    
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -260,6 +251,7 @@ Defaults to the file location defined in the ConfigParser property mistk.log.con
 
   </div>
   
+
 
   <script type="text/javascript">
       jQuery(function () {

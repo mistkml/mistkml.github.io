@@ -1,7 +1,8 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
@@ -11,18 +12,12 @@
   
 
   
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-
-  
   
   
   
 
   
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -34,6 +29,10 @@
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="mistk.model.server.encoder module" href="mistk.model.server.encoder.html" />
@@ -51,7 +50,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> MISTK
+            <a href="../index.html" class="icon icon-home"> MISTK
           
 
           
@@ -74,7 +73,6 @@
           
         </div>
 
-        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -97,6 +95,7 @@
 <li class="toctree-l4"><a class="reference internal" href="mistk.log.html">mistk.log package</a></li>
 <li class="toctree-l4 current"><a class="reference internal" href="mistk.model.html">mistk.model package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mistk.transform.html">mistk.transform package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mistk.utils.html">mistk.utils package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mistk.watch.html">mistk.watch package</a></li>
 </ul>
 </li>
@@ -111,7 +110,6 @@
             
           
         </div>
-        
       </div>
     </nav>
 
@@ -150,7 +148,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="../index.html">Docs</a> &raquo;</li>
         
           <li><a href="index.html">MISTK API</a> &raquo;</li>
         
@@ -183,128 +181,135 @@
             
   <div class="section" id="module-mistk.model.server.test.test_model_instance_endpoint_controller">
 <span id="mistk-model-server-test-test-model-instance-endpoint-controller-module"></span><h1>mistk.model.server.test.test_model_instance_endpoint_controller module<a class="headerlink" href="#module-mistk.model.server.test.test_model_instance_endpoint_controller" title="Permalink to this headline">¶</a></h1>
-<dl class="py class">
+<dl class="class">
 <dt id="mistk.model.server.test.test_model_instance_endpoint_controller.TestModelInstanceEndpointController">
-<em class="property">class </em><code class="sig-prename descclassname">mistk.model.server.test.test_model_instance_endpoint_controller.</code><code class="sig-name descname">TestModelInstanceEndpointController</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">methodName</span><span class="o">=</span><span class="default_value">'runTest'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.test.test_model_instance_endpoint_controller.TestModelInstanceEndpointController" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">mistk.model.server.test.test_model_instance_endpoint_controller.</code><code class="sig-name descname">TestModelInstanceEndpointController</code><span class="sig-paren">(</span><em class="sig-param">methodName='runTest'</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.test.test_model_instance_endpoint_controller.TestModelInstanceEndpointController" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="mistk.model.server.test.html#mistk.model.server.test.BaseTestCase" title="mistk.model.server.test.BaseTestCase"><code class="xref py py-class docutils literal notranslate"><span class="pre">mistk.model.server.test.BaseTestCase</span></code></a></p>
 <p>ModelInstanceEndpointController integration test stubs</p>
-<dl class="py method">
+<dl class="method">
 <dt id="mistk.model.server.test.test_model_instance_endpoint_controller.TestModelInstanceEndpointController.test_build_model">
 <code class="sig-name descname">test_build_model</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.test.test_model_instance_endpoint_controller.TestModelInstanceEndpointController.test_build_model" title="Permalink to this definition">¶</a></dt>
 <dd><p>Test case for build_model</p>
 <p>Build the model</p>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="mistk.model.server.test.test_model_instance_endpoint_controller.TestModelInstanceEndpointController.test_generate">
 <code class="sig-name descname">test_generate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.test.test_model_instance_endpoint_controller.TestModelInstanceEndpointController.test_generate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Test case for generate</p>
 <p>Perform generations with the model</p>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="mistk.model.server.test.test_model_instance_endpoint_controller.TestModelInstanceEndpointController.test_get_api_version">
 <code class="sig-name descname">test_get_api_version</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.test.test_model_instance_endpoint_controller.TestModelInstanceEndpointController.test_get_api_version" title="Permalink to this definition">¶</a></dt>
 <dd><p>Test case for get_api_version</p>
 <p>Returns the version of the MISTK API</p>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="mistk.model.server.test.test_model_instance_endpoint_controller.TestModelInstanceEndpointController.test_get_status">
 <code class="sig-name descname">test_get_status</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.test.test_model_instance_endpoint_controller.TestModelInstanceEndpointController.test_get_status" title="Permalink to this definition">¶</a></dt>
 <dd><p>Test case for get_status</p>
 <p>Get the status of the model</p>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="mistk.model.server.test.test_model_instance_endpoint_controller.TestModelInstanceEndpointController.test_initialize_model">
 <code class="sig-name descname">test_initialize_model</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.test.test_model_instance_endpoint_controller.TestModelInstanceEndpointController.test_initialize_model" title="Permalink to this definition">¶</a></dt>
 <dd><p>Test case for initialize_model</p>
 <p>Initialize the model</p>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="mistk.model.server.test.test_model_instance_endpoint_controller.TestModelInstanceEndpointController.test_load_data">
 <code class="sig-name descname">test_load_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.test.test_model_instance_endpoint_controller.TestModelInstanceEndpointController.test_load_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Test case for load_data</p>
 <p>Loads data for the model</p>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="mistk.model.server.test.test_model_instance_endpoint_controller.TestModelInstanceEndpointController.test_pause">
 <code class="sig-name descname">test_pause</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.test.test_model_instance_endpoint_controller.TestModelInstanceEndpointController.test_pause" title="Permalink to this definition">¶</a></dt>
 <dd><p>Test case for pause</p>
 <p>Pause the model</p>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="mistk.model.server.test.test_model_instance_endpoint_controller.TestModelInstanceEndpointController.test_predict">
 <code class="sig-name descname">test_predict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.test.test_model_instance_endpoint_controller.TestModelInstanceEndpointController.test_predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Test case for predict</p>
 <p>Perform predictions with the model</p>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="mistk.model.server.test.test_model_instance_endpoint_controller.TestModelInstanceEndpointController.test_reset">
 <code class="sig-name descname">test_reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.test.test_model_instance_endpoint_controller.TestModelInstanceEndpointController.test_reset" title="Permalink to this definition">¶</a></dt>
 <dd><p>Test case for reset</p>
 <p>Resets the model</p>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="mistk.model.server.test.test_model_instance_endpoint_controller.TestModelInstanceEndpointController.test_resume_predict">
 <code class="sig-name descname">test_resume_predict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.test.test_model_instance_endpoint_controller.TestModelInstanceEndpointController.test_resume_predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Test case for resume_predict</p>
 <p>Resume predicitons on a paused model</p>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="mistk.model.server.test.test_model_instance_endpoint_controller.TestModelInstanceEndpointController.test_resume_training">
 <code class="sig-name descname">test_resume_training</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.test.test_model_instance_endpoint_controller.TestModelInstanceEndpointController.test_resume_training" title="Permalink to this definition">¶</a></dt>
 <dd><p>Test case for resume_training</p>
 <p>Resume training on a paused model</p>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="mistk.model.server.test.test_model_instance_endpoint_controller.TestModelInstanceEndpointController.test_save_generations">
 <code class="sig-name descname">test_save_generations</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.test.test_model_instance_endpoint_controller.TestModelInstanceEndpointController.test_save_generations" title="Permalink to this definition">¶</a></dt>
 <dd><p>Test case for save_generations</p>
 <p>Save the generations made by the model</p>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="mistk.model.server.test.test_model_instance_endpoint_controller.TestModelInstanceEndpointController.test_save_model">
 <code class="sig-name descname">test_save_model</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.test.test_model_instance_endpoint_controller.TestModelInstanceEndpointController.test_save_model" title="Permalink to this definition">¶</a></dt>
 <dd><p>Test case for save_model</p>
 <p>Save the model snapshot</p>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="mistk.model.server.test.test_model_instance_endpoint_controller.TestModelInstanceEndpointController.test_save_predictions">
 <code class="sig-name descname">test_save_predictions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.test.test_model_instance_endpoint_controller.TestModelInstanceEndpointController.test_save_predictions" title="Permalink to this definition">¶</a></dt>
 <dd><p>Test case for save_predictions</p>
 <p>Save the predictions made by the model</p>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="mistk.model.server.test.test_model_instance_endpoint_controller.TestModelInstanceEndpointController.test_stream_predict">
 <code class="sig-name descname">test_stream_predict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.test.test_model_instance_endpoint_controller.TestModelInstanceEndpointController.test_stream_predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Test case for stream_predict</p>
 <p>Perform streaming predictions with the model</p>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="mistk.model.server.test.test_model_instance_endpoint_controller.TestModelInstanceEndpointController.test_terminate">
 <code class="sig-name descname">test_terminate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.test.test_model_instance_endpoint_controller.TestModelInstanceEndpointController.test_terminate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Test case for terminate</p>
 <p>Shut down the model</p>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="mistk.model.server.test.test_model_instance_endpoint_controller.TestModelInstanceEndpointController.test_train">
 <code class="sig-name descname">test_train</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.test.test_model_instance_endpoint_controller.TestModelInstanceEndpointController.test_train" title="Permalink to this definition">¶</a></dt>
 <dd><p>Test case for train</p>
 <p>Train the model</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="mistk.model.server.test.test_model_instance_endpoint_controller.TestModelInstanceEndpointController.test_update_stream_properties">
+<code class="sig-name descname">test_update_stream_properties</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.test.test_model_instance_endpoint_controller.TestModelInstanceEndpointController.test_update_stream_properties" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test case for update_stream_properties</p>
+<p>Updates streaming properties with the model</p>
 </dd></dl>
 
 </dd></dl>
@@ -334,14 +339,7 @@
 
     </p>
   </div>
-    
-    
-    
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -352,6 +350,7 @@
 
   </div>
   
+
 
   <script type="text/javascript">
       jQuery(function () {

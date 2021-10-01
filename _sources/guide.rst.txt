@@ -81,15 +81,22 @@ the web endpoint service that is made available for every model implementation.
 	
 	:param dataPath: The path to which the generations should be saved. 
 
-**do_stream_predict** (data_map: dict)
+**do_stream_predict** (data_map: dict, details: bool)
     Perform predictions on the input dict of id's to base64 encoded data and
     return a dict of id's to predicted values.
     The underlying format of the base64 encoded data should be the native
     input format for the model.
 
     :param data_map: A dict of id's to base64 encoded data.
-    :return: A dict of id's to predicted values.
+    :param details: Optional parameter for the model to provide additional details in the returned dict. Default value is False.
+ 
+    :return: A dict of id's to predicted values. The id 'details' is a keyword used for additional details provided in Markdown or HTML.
 
+**do_update_stream_properties** (props: dict)
+    Updates the stream prediction properties for subsequent stream predict calls. 
+    
+    :param dict: A dict that can be used for streaming properties.
+    
 **do_save_model** (path)
     Save a checkpoint of the model to the supplied data path. Format of the saved
     file(s) is at the discretion of the model. The infrastructure associates
@@ -225,7 +232,28 @@ same values.
 All columns except `id` may contain whitespace-separated values as necessary.
 The confidence probabilities and bounds values are optional.
 
-Example
+* Example Prediction CSV line for only id and label:
+
+    mnist-test-00001,7
+
+* Example Prediction CSV line for id and a single label, confidence, and bounds:
+
+    ILSVRC2012_val_00000163,n03733805,.9,84 0 433 278
+    
+* Example Prediction CSV line for id and a single label, no confidence, and bounds:
+
+    ILSVRC2012_val_00000163,n03733805,,84 0 433 278
+
+* Example Prediction CSV line for id and multiple (3) label, confidence, and bounds:
+
+    ILSVRC2012_val_00004833,n03733805 n03733805 n03733805,.9 .8 .8,85 93 350 355 301 306 421 428 0 5 469 373
+
+* Example of *incorrect* Prediction CSV line where addition bounds and confidence will be ignored due to only 1 label:
+
+    ILSVRC2012_val_00004833,n03733805,.9 .8 .8,85 93 350 355 301 306 421 428 0 5 469 373
+    
+
+Example Model
 -------
 
 The following example code implements a logistic regression algorithm
@@ -350,13 +378,43 @@ An example for a metric:
 
 ::
 
-	"objectInfo": {
+	  {
+	  "objectInfo": {
 	      "kind": "Metric",
 	      "name": "sklearn.metrics.r2_score"
 	    },
 	    "imageId": "docker-registry:5000/sml-evaluators/sklearn",
 	    "assessmentTypes": ["Regression"]
 	  }
+
+
+The Metric values can optionally contain the following fields for accessing external metrics from other Python packages:
+
+            package: (str) The name of the package containing the implementation of this external metric.
+
+            method: (str) The name of the method from `package` to be called when executing the external metric.
+                        
+            defaultArgs: (dict) The default arguments passed to the method when the metric is called.  
+            These key/value pairs can also be used as properties for the metric.
+            
+An example for an external metric:
+
+::
+
+	  {
+	  "objectInfo": {
+	      "kind": "Metric",
+	      "name": "r2_score"
+	    },
+	    "imageId": "docker-registry:5000/sml-evaluators/sklearn",
+	    "assessmentTypes": ["Regression"],
+	    "package": "sklearn.metrics",
+	    "method": "r2_score",
+	    "defaultArgs": {
+	      "multioutput": "uniform_average"
+	    }
+	  }            
+        
 
 
 The Evaluation State Machine

@@ -4,7 +4,7 @@ Getting Started
 Prerequisites
 -------------
 
-* Python 3.6
+* Python 3.6-3.8
 * Python Pip
 * Docker
 
@@ -40,7 +40,7 @@ Assumptions
 
 MISTK developers are assumed to understand:
 
-* How to install Python 3.6 (`More Information`__)
+* How to install Python 3.6 - 3.8 (`More Information`__)
 
 .. __: https://www.python.org/downloads/release/python-368/
 

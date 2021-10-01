@@ -1,7 +1,8 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
@@ -11,18 +12,12 @@
   
 
   
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-
-  
   
   
   
 
   
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -34,6 +29,10 @@
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Testing" href="testing.html" />
@@ -51,7 +50,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> MISTK
+            <a href="index.html" class="icon icon-home"> MISTK
           
 
           
@@ -74,7 +73,6 @@
           
         </div>
 
-        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -96,19 +94,19 @@
 <li class="toctree-l3"><a class="reference internal" href="#loading-data">Loading Data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#model-status">Model Status</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#predictions-and-ground-truth">Predictions and Ground Truth</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#example">Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-model">Example Model</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#transfer-learning">Transfer learning</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#data-transformation-interface">Data Transformation Interface</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#the-transformation-state-machine">The Transformation State Machine</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id1">Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example">Example</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#evaluation-interface">Evaluation Interface</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#evaluation-metrics">Evaluation Metrics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#the-evaluation-state-machine">The Evaluation State Machine</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id2">Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Example</a></li>
 </ul>
 </li>
 </ul>
@@ -121,7 +119,6 @@
             
           
         </div>
-        
       </div>
     </nav>
 
@@ -160,7 +157,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="index.html">Docs</a> &raquo;</li>
         
       <li>Guide</li>
     
@@ -265,7 +262,7 @@ be saved as CSV with each row in the following format:</p>
 </dd>
 </dl>
 </dd>
-<dt><strong>do_stream_predict</strong> (data_map: dict)</dt><dd><p>Perform predictions on the input dict of id’s to base64 encoded data and
+<dt><strong>do_stream_predict</strong> (data_map: dict, details: bool)</dt><dd><p>Perform predictions on the input dict of id’s to base64 encoded data and
 return a dict of id’s to predicted values.
 The underlying format of the base64 encoded data should be the native
 input format for the model.</p>
@@ -273,8 +270,18 @@ input format for the model.</p>
 <dt class="field-odd">param data_map</dt>
 <dd class="field-odd"><p>A dict of id’s to base64 encoded data.</p>
 </dd>
-<dt class="field-even">return</dt>
-<dd class="field-even"><p>A dict of id’s to predicted values.</p>
+<dt class="field-even">param details</dt>
+<dd class="field-even"><p>Optional parameter for the model to provide additional details in the returned dict. Default value is False.</p>
+</dd>
+<dt class="field-odd">return</dt>
+<dd class="field-odd"><p>A dict of id’s to predicted values. The id ‘details’ is a keyword used for additional details provided in Markdown or HTML.</p>
+</dd>
+</dl>
+</dd>
+<dt><strong>do_update_stream_properties</strong> (props: dict)</dt><dd><p>Updates the stream prediction properties for subsequent stream predict calls.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param dict</dt>
+<dd class="field-odd"><p>A dict that can be used for streaming properties.</p>
 </dd>
 </dl>
 </dd>
@@ -407,9 +414,36 @@ corresponding dataset ground truth should be CSV-formatted as follows:</p>
 same values.
 All columns except <cite>id</cite> may contain whitespace-separated values as necessary.
 The confidence probabilities and bounds values are optional.</p>
+<ul>
+<li><p>Example Prediction CSV line for only id and label:</p>
+<blockquote>
+<div><p>mnist-test-00001,7</p>
+</div></blockquote>
+</li>
+<li><p>Example Prediction CSV line for id and a single label, confidence, and bounds:</p>
+<blockquote>
+<div><p>ILSVRC2012_val_00000163,n03733805,.9,84 0 433 278</p>
+</div></blockquote>
+</li>
+<li><p>Example Prediction CSV line for id and a single label, no confidence, and bounds:</p>
+<blockquote>
+<div><p>ILSVRC2012_val_00000163,n03733805,,84 0 433 278</p>
+</div></blockquote>
+</li>
+<li><p>Example Prediction CSV line for id and multiple (3) label, confidence, and bounds:</p>
+<blockquote>
+<div><p>ILSVRC2012_val_00004833,n03733805 n03733805 n03733805,.9 .8 .8,85 93 350 355 301 306 421 428 0 5 469 373</p>
+</div></blockquote>
+</li>
+<li><p>Example of <em>incorrect</em> Prediction CSV line where addition bounds and confidence will be ignored due to only 1 label:</p>
+<blockquote>
+<div><p>ILSVRC2012_val_00004833,n03733805,.9 .8 .8,85 93 350 355 301 306 421 428 0 5 469 373</p>
+</div></blockquote>
+</li>
+</ul>
 </div>
-<div class="section" id="example">
-<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="example-model">
+<h3>Example Model<a class="headerlink" href="#example-model" title="Permalink to this headline">¶</a></h3>
 <p>The following example code implements a logistic regression algorithm
 from scikit-learn with the MISTK model interface which operates on a common public dataset:</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
@@ -582,7 +616,39 @@ from scikit-learn with the MISTK model interface which operates on a common publ
 168
 169
 170
-171</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">##############################################################################</span>
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">##############################################################################</span>
 <span class="c1">#</span>
 <span class="c1">#    This program is free software: you can redistribute it and/or modify</span>
 <span class="c1">#    it under the terms of the GNU General Public License as published by</span>
@@ -617,17 +683,17 @@ from scikit-learn with the MISTK model interface which operates on a common publ
       <span class="n">AbstractModel</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
       <span class="c1"># initialize our model variables</span>
-      <span class="bp">self</span><span class="o">.</span><span class="n">_props</span> <span class="o">=</span> <span class="kc">None</span>
-      <span class="bp">self</span><span class="o">.</span><span class="n">_hparams</span> <span class="o">=</span> <span class="kc">None</span>
-      <span class="bp">self</span><span class="o">.</span><span class="n">_regr</span> <span class="o">=</span> <span class="kc">None</span>
-      <span class="bp">self</span><span class="o">.</span><span class="n">_X_train</span> <span class="o">=</span> <span class="kc">None</span>
-      <span class="bp">self</span><span class="o">.</span><span class="n">_Y_train</span> <span class="o">=</span> <span class="kc">None</span>
-      <span class="bp">self</span><span class="o">.</span><span class="n">_X_test</span> <span class="o">=</span> <span class="kc">None</span>
-      <span class="bp">self</span><span class="o">.</span><span class="n">_data_loaded</span> <span class="o">=</span> <span class="kc">False</span>
-      <span class="bp">self</span><span class="o">.</span><span class="n">_predictions</span> <span class="o">=</span> <span class="kc">None</span>
-      <span class="bp">self</span><span class="o">.</span><span class="n">_confidence</span> <span class="o">=</span> <span class="kc">None</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_props</span> <span class="o">=</span> <span class="bp">None</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_hparams</span> <span class="o">=</span> <span class="bp">None</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_regr</span> <span class="o">=</span> <span class="bp">None</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_X_train</span> <span class="o">=</span> <span class="bp">None</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_Y_train</span> <span class="o">=</span> <span class="bp">None</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_X_test</span> <span class="o">=</span> <span class="bp">None</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_data_loaded</span> <span class="o">=</span> <span class="bp">False</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_predictions</span> <span class="o">=</span> <span class="bp">None</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_confidence</span> <span class="o">=</span> <span class="bp">None</span>
       <span class="bp">self</span><span class="o">.</span><span class="n">_model_file_name</span> <span class="o">=</span> <span class="s1">&#39;scikit-logistic-regression-model.bin&#39;</span>
-      <span class="bp">self</span><span class="o">.</span><span class="n">_objectives</span> <span class="o">=</span> <span class="kc">None</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_objectives</span> <span class="o">=</span> <span class="bp">None</span>
 
   <span class="k">def</span> <span class="nf">do_initialize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">objectives</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">props</span> <span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">hparams</span> <span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
       <span class="bp">self</span><span class="o">.</span><span class="n">_props</span> <span class="o">=</span> <span class="n">props</span> <span class="ow">or</span> <span class="p">{}</span>
@@ -655,7 +721,7 @@ from scikit-learn with the MISTK model interface which operates on a common publ
           <span class="n">data_array</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">read_dataset</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">data_path</span> <span class="o">+</span> <span class="s1">&#39;/data.csv&#39;</span><span class="p">)</span>
           <span class="bp">self</span><span class="o">.</span><span class="n">_X_test</span> <span class="o">=</span> <span class="n">data_array</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 
-  <span class="k">def</span> <span class="nf">do_build_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+  <span class="k">def</span> <span class="nf">do_build_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
       <span class="k">if</span> <span class="n">path</span><span class="p">:</span>
           <span class="c1"># if we got a path to a saved model then load it</span>
           <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model_file_name</span><span class="p">)</span>
@@ -714,17 +780,49 @@ from scikit-learn with the MISTK model interface which operates on a common publ
               <span class="n">writer</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;,&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_predictions</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
                     <span class="o">+</span> <span class="s2">&quot;,&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_confidence</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 
-  <span class="k">def</span> <span class="nf">do_stream_predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data_map</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
+  <span class="k">def</span> <span class="nf">do_stream_predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data_map</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">details</span><span class="p">:</span> <span class="nb">bool</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
       <span class="c1"># stream prediction takes a dict of id&#39;s to base64 encoded data</span>
       <span class="c1"># and returns a dict of id&#39;s to predicted values</span>
       <span class="c1"># this model expects the underlying encoded data to be a JSON list of feature values</span>
       <span class="n">predictions</span> <span class="o">=</span> <span class="p">{}</span>
+      <span class="n">detailed_data</span> <span class="o">=</span> <span class="p">{}</span>
       <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">data_map</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
           <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;Predicting class for key &#39;</span> <span class="o">+</span> <span class="n">key</span><span class="p">)</span>
           <span class="n">data_row</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">base64</span><span class="o">.</span><span class="n">b64decode</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
           <span class="n">prediction</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_regr</span><span class="o">.</span><span class="n">predict</span><span class="p">([</span><span class="n">data_row</span><span class="p">])</span>
           <span class="n">predictions</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">prediction</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+          <span class="n">detailed_data</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_regr</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">([</span><span class="n">data_row</span><span class="p">])</span>
+          
+      <span class="k">if</span> <span class="n">details</span><span class="p">:</span>
+          <span class="c1"># additional details for predictions</span>
+          <span class="n">predictions</span><span class="p">[</span><span class="s2">&quot;details&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_format_stream_predict_details</span><span class="p">(</span><span class="n">predictions</span><span class="p">,</span> <span class="n">detailed_data</span><span class="p">)</span>
+              
       <span class="k">return</span> <span class="n">predictions</span>
+
+  <span class="k">def</span> <span class="nf">_format_stream_predict_details</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">predictions</span><span class="p">,</span> <span class="n">prediction_details</span><span class="p">):</span>
+      <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">      Format stream predict details in the form of NGX Markdown </span>
+<span class="sd">      :param predictions: predictions for each streaming image</span>
+<span class="sd">      :param prediction_details: prediction probabilities for each streaming image</span>
+<span class="sd">      &quot;&quot;&quot;</span>
+      
+      <span class="n">details</span> <span class="o">=</span> <span class="s2">&quot;#Logistic Regression Model Results&quot;</span>
+      <span class="n">details</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">These section contains details about the **Logistic Regression Model Results**.&lt;br/&gt;&lt;br/&gt;&quot;</span>
+      <span class="n">details</span> <span class="o">+=</span> <span class="s2">&quot;&lt;br/&gt;&lt;br/&gt;&quot;</span>
+      <span class="n">details</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Trained Model Streaming Results&quot;</span>
+      <span class="n">details</span> <span class="o">+=</span> <span class="s2">&quot;&lt;br/&gt;&lt;br/&gt;&quot;</span>
+        
+      <span class="k">for</span> <span class="n">image</span><span class="p">,</span> <span class="n">preds</span> <span class="ow">in</span> <span class="n">prediction_details</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+          <span class="n">details</span> <span class="o">+=</span> <span class="n">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#### For image {image} with prediction of {predictions[image]}&quot;</span>
+          <span class="n">details</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">| Class        | Probability |&quot;</span>
+          <span class="n">details</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">| ------------- |:-------------:|&quot;</span>
+          <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_regr</span><span class="o">.</span><span class="n">classes_</span><span class="p">)):</span> 
+              <span class="n">details</span> <span class="o">+=</span> <span class="n">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">| {self._regr.classes_[i]}        | {round(preds[0][i], 3)} |&quot;</span>
+          <span class="n">details</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+
+  <span class="k">def</span> <span class="nf">do_update_stream_properties</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">props</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
+      <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;do_update_stream_properties called&#39;</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_stream_props</span> <span class="o">=</span> <span class="n">props</span>
 
   <span class="k">def</span> <span class="nf">do_terminate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
       <span class="c1"># nothing to clean up for this model</span>
@@ -751,7 +849,7 @@ from scikit-learn with the MISTK model interface which operates on a common publ
   <span class="k">def</span> <span class="nf">read_dataset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data_path</span><span class="p">):</span>
       <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Loading dataset from </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">data_path</span><span class="p">)</span>
       <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">data_path</span><span class="p">)</span> <span class="k">as</span> <span class="n">reader</span><span class="p">:</span>
-          <span class="n">dataframe</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">reader</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+          <span class="n">dataframe</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">reader</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
       <span class="k">return</span> <span class="n">dataframe</span><span class="o">.</span><span class="n">values</span>
 </pre></div>
 </td></tr></table></div>
@@ -1177,7 +1275,11 @@ in this PyTorch implementation.</p>
 411
 412
 413
-414</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">##############################################################################</span>
+414
+415
+416
+417
+418</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">##############################################################################</span>
 <span class="c1">#</span>
 <span class="c1">#    This program is free software: you can redistribute it and/or modify</span>
 <span class="c1">#    it under the terms of the GNU General Public License as published by</span>
@@ -1202,7 +1304,7 @@ in this PyTorch implementation.</p>
 <span class="kn">import</span> <span class="nn">torch.nn</span>
 <span class="kn">import</span> <span class="nn">torch.autograd</span>
 <span class="kn">import</span> <span class="nn">torch.utils.data</span>
-<span class="kn">import</span> <span class="nn">torchvision.transforms</span> <span class="k">as</span> <span class="nn">transforms</span>
+<span class="kn">import</span> <span class="nn">torchvision.transforms</span> <span class="kn">as</span> <span class="nn">transforms</span>
 <span class="kn">from</span> <span class="nn">threading</span> <span class="kn">import</span> <span class="n">Event</span>
 <span class="kn">from</span> <span class="nn">mistk.abstract_model</span> <span class="kn">import</span> <span class="n">AbstractModel</span>
 <span class="kn">from</span> <span class="nn">.folder</span> <span class="kn">import</span> <span class="n">ImageFolder</span>
@@ -1212,17 +1314,17 @@ in this PyTorch implementation.</p>
 <span class="k">class</span> <span class="nc">PyTorchImageNetModel</span><span class="p">(</span><span class="n">AbstractModel</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">AbstractModel</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_props</span> <span class="o">=</span> <span class="kc">None</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_hparams</span> <span class="o">=</span> <span class="kc">None</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_objectives</span> <span class="o">=</span> <span class="kc">None</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_train_data_loader</span> <span class="o">=</span> <span class="kc">None</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_test_data_loader</span> <span class="o">=</span> <span class="kc">None</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_model</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_props</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_hparams</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_objectives</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_train_data_loader</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_test_data_loader</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_model</span> <span class="o">=</span> <span class="bp">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_start_epoch</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_epoch</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_learning_rate</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_train_classes</span> <span class="o">=</span> <span class="kc">None</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_test_classes</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_train_classes</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_test_classes</span> <span class="o">=</span> <span class="bp">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_predictions</span> <span class="o">=</span> <span class="p">{}</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_running</span> <span class="o">=</span> <span class="n">Event</span><span class="p">()</span>
@@ -1261,7 +1363,7 @@ in this PyTorch implementation.</p>
 </span><span class="hll">            <span class="bp">self</span><span class="o">.</span><span class="n">_test_data_loader</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_test_classes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_test_data_loader</span><span class="p">(</span><span class="n">te_data_path</span><span class="p">,</span>
 </span>                                                                <span class="n">labels_file</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">do_build_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">do_build_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="n">arch</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_props</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;arch&#39;</span><span class="p">,</span> <span class="s1">&#39;densenet161&#39;</span><span class="p">)</span>
         <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Loading new model for &quot;</span> <span class="o">+</span> <span class="n">arch</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="n">arch</span><span class="p">]()</span>
@@ -1271,13 +1373,13 @@ in this PyTorch implementation.</p>
         <span class="k">if</span> <span class="n">path</span> <span class="ow">and</span> <span class="s1">&#39;checkpoint_load_file&#39;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_props</span><span class="p">:</span>
             <span class="n">checkpoint_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_props</span><span class="p">[</span><span class="s1">&#39;checkpoint_load_file&#39;</span><span class="p">])</span>
             <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">checkpoint_path</span><span class="p">):</span>
-                <span class="n">have_checkpoint</span> <span class="o">=</span> <span class="kc">True</span>
+                <span class="n">have_checkpoint</span> <span class="o">=</span> <span class="bp">True</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s1">&#39;Specified checkpoint file is not valid, ignoring&#39;</span><span class="p">)</span>
-                <span class="n">have_checkpoint</span> <span class="o">=</span> <span class="kc">False</span>
+                <span class="n">have_checkpoint</span> <span class="o">=</span> <span class="bp">False</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;No checkpoint file specified&#39;</span><span class="p">)</span>
-            <span class="n">have_checkpoint</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="n">have_checkpoint</span> <span class="o">=</span> <span class="bp">False</span>
 
         <span class="k">if</span> <span class="n">have_checkpoint</span><span class="p">:</span>
             <span class="c1"># imagenet has 1000 labels and that is the assumed default</span>
@@ -1325,7 +1427,7 @@ in this PyTorch implementation.</p>
             <span class="k">if</span> <span class="s1">&#39;transfer_learning&#39;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_objectives</span><span class="p">:</span>
                 <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;Freezing hidden layers for transfer learning&#39;</span><span class="p">)</span>
                 <span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">parameters</span><span class="p">():</span>
-                    <span class="n">param</span><span class="o">.</span><span class="n">requires_grad</span> <span class="o">=</span> <span class="kc">False</span>
+                    <span class="n">param</span><span class="o">.</span><span class="n">requires_grad</span> <span class="o">=</span> <span class="bp">False</span>
                 <span class="c1"># imagenet has 1000 labels and that is the assumed default</span>
                 <span class="n">number_labels</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_props</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;number_labels&#39;</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
                 <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Setting number of labels to &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">number_labels</span><span class="p">))</span>
@@ -1385,8 +1487,8 @@ in this PyTorch implementation.</p>
             <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">_</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_train_data_loader</span><span class="p">):</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_running</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
 
-                <span class="n">target</span> <span class="o">=</span> <span class="n">target</span><span class="o">.</span><span class="n">cuda</span><span class="p">(</span><span class="k">async</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-                <span class="nb">input</span> <span class="o">=</span> <span class="nb">input</span><span class="o">.</span><span class="n">cuda</span><span class="p">(</span><span class="k">async</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                <span class="n">target</span> <span class="o">=</span> <span class="n">target</span><span class="o">.</span><span class="n">cuda</span><span class="p">(</span><span class="n">async</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+                <span class="nb">input</span> <span class="o">=</span> <span class="nb">input</span><span class="o">.</span><span class="n">cuda</span><span class="p">(</span><span class="n">async</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
                 <span class="n">input_var</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">autograd</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span>
                 <span class="n">target_var</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">autograd</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">target</span><span class="p">)</span>
 
@@ -1432,10 +1534,10 @@ in this PyTorch implementation.</p>
         <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_test_data_loader</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_running</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
 
-            <span class="n">input_var</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">autograd</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">volatile</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">input_var</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">autograd</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">volatile</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
             <span class="n">output</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="p">(</span><span class="n">input_var</span><span class="p">)</span>
 
-            <span class="n">_</span><span class="p">,</span> <span class="n">pred</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">topk</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+            <span class="n">_</span><span class="p">,</span> <span class="n">pred</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">topk</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
             <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">path</span><span class="p">)):</span>
                 <span class="n">filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">path</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
                 <span class="n">rowid</span> <span class="o">=</span> <span class="n">filename</span><span class="p">[:</span><span class="n">filename</span><span class="o">.</span><span class="n">rfind</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)]</span>
@@ -1445,15 +1547,15 @@ in this PyTorch implementation.</p>
             <span class="bp">self</span><span class="o">.</span><span class="n">update_status</span><span class="p">({</span><span class="s2">&quot;iteration&quot;</span><span class="p">:</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;total_iterations&quot;</span><span class="p">:</span> <span class="n">datalen</span><span class="p">})</span>
             <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;Test: [</span><span class="si">%i</span><span class="s1">/</span><span class="si">%i</span><span class="s1">]&#39;</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">datalen</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">do_stream_predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data_map</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">do_stream_predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data_map</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">details</span><span class="p">:</span> <span class="nb">bool</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="n">data_loader</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_stream_data_loader</span><span class="p">(</span><span class="n">data_map</span><span class="p">)</span>
         <span class="n">predictions</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
         <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">data_loader</span><span class="p">):</span>
-            <span class="n">input_var</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">autograd</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">volatile</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">input_var</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">autograd</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">volatile</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
             <span class="n">output</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="p">(</span><span class="n">input_var</span><span class="p">)</span>
 
-            <span class="n">_</span><span class="p">,</span> <span class="n">pred</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">topk</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+            <span class="n">_</span><span class="p">,</span> <span class="n">pred</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">topk</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
             <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">name</span><span class="p">)):</span>
                 <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;Predicted class is &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">pred</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
                 <span class="n">predictions</span><span class="p">[</span><span class="n">name</span><span class="p">[</span><span class="n">j</span><span class="p">]]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_train_classes</span><span class="p">[</span><span class="n">pred</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_train_classes</span> <span class="k">else</span> <span class="n">pred</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -1463,6 +1565,10 @@ in this PyTorch implementation.</p>
             <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;Test: [</span><span class="si">%i</span><span class="s1">/</span><span class="si">%i</span><span class="s1">]&#39;</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">datalen</span><span class="p">)</span>
 
         <span class="k">return</span> <span class="n">predictions</span>
+    
+    <span class="k">def</span> <span class="nf">do_update_stream_properties</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">props</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;do_update_stream_properties called&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_stream_props</span> <span class="o">=</span> <span class="n">props</span>
 
     <span class="k">def</span> <span class="nf">do_save_predictions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dataPath</span><span class="p">):</span>
         <span class="n">dataPath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dataPath</span><span class="p">,</span> <span class="s2">&quot;predictions.csv&quot;</span><span class="p">)</span>
@@ -1482,8 +1588,8 @@ in this PyTorch implementation.</p>
                 <span class="n">transforms</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">(),</span>
                 <span class="n">normalize</span><span class="p">,]))</span>
         <span class="n">loader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span>
-                <span class="n">dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_props</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;batch_size&#39;</span><span class="p">,</span> <span class="mi">16</span><span class="p">),</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-                <span class="n">num_workers</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_props</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;data_workers&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">pin_memory</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                <span class="n">dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_props</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;batch_size&#39;</span><span class="p">,</span> <span class="mi">16</span><span class="p">),</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+                <span class="n">num_workers</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_props</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;data_workers&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">pin_memory</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">loader</span><span class="p">,</span> <span class="n">dataset</span><span class="o">.</span><span class="n">classes</span>
 
     <span class="k">def</span> <span class="nf">do_reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -1498,14 +1604,14 @@ in this PyTorch implementation.</p>
                     <span class="n">transforms</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">(),</span>
                     <span class="n">normalize</span><span class="p">,]))</span>
         <span class="n">loader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span>
-                <span class="n">dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_props</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;batch_size&#39;</span><span class="p">,</span> <span class="mi">16</span><span class="p">),</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-                <span class="n">num_workers</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_props</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;data_workers&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">pin_memory</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                <span class="n">dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_props</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;batch_size&#39;</span><span class="p">,</span> <span class="mi">16</span><span class="p">),</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+                <span class="n">num_workers</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_props</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;data_workers&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">pin_memory</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">loader</span>
 
-    <span class="k">def</span> <span class="nf">create_test_data_loader</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data_path</span><span class="p">,</span> <span class="n">ground_truth_file</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">create_test_data_loader</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data_path</span><span class="p">,</span> <span class="n">ground_truth_file</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Loading test dataset from </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">data_path</span><span class="p">)</span>
         <span class="n">normalize</span> <span class="o">=</span> <span class="n">transforms</span><span class="o">.</span><span class="n">Normalize</span><span class="p">(</span><span class="n">mean</span><span class="o">=</span><span class="p">[</span><span class="mf">0.485</span><span class="p">,</span> <span class="mf">0.456</span><span class="p">,</span> <span class="mf">0.406</span><span class="p">],</span> <span class="n">std</span><span class="o">=</span><span class="p">[</span><span class="mf">0.229</span><span class="p">,</span> <span class="mf">0.224</span><span class="p">,</span> <span class="mf">0.225</span><span class="p">])</span>
-        <span class="k">if</span> <span class="n">ground_truth_file</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">ground_truth_file</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
             <span class="n">label_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
             <span class="n">path_to_label</span> <span class="o">=</span> <span class="p">{}</span>
             <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">ground_truth_file</span><span class="p">)</span> <span class="k">as</span> <span class="n">reader</span><span class="p">:</span>
@@ -1541,8 +1647,8 @@ in this PyTorch implementation.</p>
             <span class="n">classes</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">classes</span>
 
         <span class="n">loader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span>
-                <span class="n">dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_props</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;batch_size&#39;</span><span class="p">,</span> <span class="mi">16</span><span class="p">),</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-                <span class="n">num_workers</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_props</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;data_workers&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">pin_memory</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                <span class="n">dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_props</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;batch_size&#39;</span><span class="p">,</span> <span class="mi">16</span><span class="p">),</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+                <span class="n">num_workers</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_props</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;data_workers&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">pin_memory</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">loader</span><span class="p">,</span> <span class="n">classes</span>
 
     <span class="k">def</span> <span class="nf">load_state_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
@@ -1582,13 +1688,13 @@ in this PyTorch implementation.</p>
     <span class="n">maxk</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">topk</span><span class="p">)</span>
     <span class="n">batch_size</span> <span class="o">=</span> <span class="n">target</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
-    <span class="n">_</span><span class="p">,</span> <span class="n">pred</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">topk</span><span class="p">(</span><span class="n">maxk</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+    <span class="n">_</span><span class="p">,</span> <span class="n">pred</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">topk</span><span class="p">(</span><span class="n">maxk</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
     <span class="n">pred</span> <span class="o">=</span> <span class="n">pred</span><span class="o">.</span><span class="n">t</span><span class="p">()</span>
     <span class="n">correct</span> <span class="o">=</span> <span class="n">pred</span><span class="o">.</span><span class="n">eq</span><span class="p">(</span><span class="n">target</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">expand_as</span><span class="p">(</span><span class="n">pred</span><span class="p">))</span>
 
     <span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">topk</span><span class="p">:</span>
-        <span class="n">correct_k</span> <span class="o">=</span> <span class="n">correct</span><span class="p">[:</span><span class="n">k</span><span class="p">]</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">float</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">keepdim</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">correct_k</span> <span class="o">=</span> <span class="n">correct</span><span class="p">[:</span><span class="n">k</span><span class="p">]</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">float</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">keepdim</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
         <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">correct_k</span><span class="o">.</span><span class="n">mul_</span><span class="p">(</span><span class="mf">100.0</span> <span class="o">/</span> <span class="n">batch_size</span><span class="p">))</span>
     <span class="k">return</span> <span class="n">res</span>
 </pre></div>
@@ -1638,8 +1744,8 @@ container instance successfully starts up. After completing a transformation, it
 will return to the Ready state so that multiple transformations can be executed
 using the same container instance.</p>
 </div>
-<div class="section" id="id1">
-<h3>Example<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="example">
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
 <p>The following example code implements a ground truth transform for an MNIST formatted dataset
 with the MISTK data transformation interfacet:</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
@@ -1777,7 +1883,7 @@ with the MISTK data transformation interfacet:</p>
 <span class="c1">##############################################################################</span>
 <span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">gzip</span><span class="o">,</span> <span class="nn">glob</span>
 <span class="kn">import</span> <span class="nn">logging</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">mistk.transform.abstract_transform_plugin</span> <span class="kn">import</span> <span class="n">AbstractTransformPlugin</span>
 
 <span class="k">class</span> <span class="nc">ground_truth_transform</span><span class="p">(</span><span class="n">AbstractTransformPlugin</span><span class="p">):</span>
@@ -1813,8 +1919,8 @@ with the MISTK data transformation interfacet:</p>
 <span class="sd">        :param outputPath: The directory path where the output files will be stored. </span>
 <span class="sd">        &quot;&quot;&quot;</span> 
         <span class="k">try</span><span class="p">:</span>
-            <span class="n">_</span><span class="p">,</span> <span class="n">mnist_train_labels</span> <span class="o">=</span> <span class="n">load_data</span><span class="p">(</span><span class="n">inputPath</span><span class="p">,</span> <span class="n">is_training</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-            <span class="n">_</span><span class="p">,</span> <span class="n">mnist_test_labels</span> <span class="o">=</span> <span class="n">load_data</span><span class="p">(</span><span class="n">inputPath</span><span class="p">,</span> <span class="n">is_training</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+            <span class="n">_</span><span class="p">,</span> <span class="n">mnist_train_labels</span> <span class="o">=</span> <span class="n">load_data</span><span class="p">(</span><span class="n">inputPath</span><span class="p">,</span> <span class="n">is_training</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+            <span class="n">_</span><span class="p">,</span> <span class="n">mnist_test_labels</span> <span class="o">=</span> <span class="n">load_data</span><span class="p">(</span><span class="n">inputPath</span><span class="p">,</span> <span class="n">is_training</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
             
             <span class="n">output_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">outputPath</span><span class="p">,</span> <span class="s1">&#39;ground_truth.csv&#39;</span><span class="p">)</span>
             
@@ -1933,13 +2039,37 @@ fields are optional.</p>
 <p>assessment_types: The assessment type for the metric, e.g. MulticlassClassification.</p>
 </div></blockquote>
 <p>An example for a metric:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;objectInfo&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="s2">&quot;kind&quot;</span><span class="p">:</span> <span class="s2">&quot;Metric&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;sklearn.metrics.r2_score&quot;</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;imageId&quot;</span><span class="p">:</span> <span class="s2">&quot;docker-registry:5000/sml-evaluators/sklearn&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;assessmentTypes&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Regression&quot;</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="s2">&quot;objectInfo&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;kind&quot;</span><span class="p">:</span> <span class="s2">&quot;Metric&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;sklearn.metrics.r2_score&quot;</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;imageId&quot;</span><span class="p">:</span> <span class="s2">&quot;docker-registry:5000/sml-evaluators/sklearn&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;assessmentTypes&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Regression&quot;</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The Metric values can optionally contain the following fields for accessing external metrics from other Python packages:</p>
+<blockquote>
+<div><p>package: (str) The name of the package containing the implementation of this external metric.</p>
+<p>method: (str) The name of the method from <cite>package</cite> to be called when executing the external metric.</p>
+<p>defaultArgs: (dict) The default arguments passed to the method when the metric is called.
+These key/value pairs can also be used as properties for the metric.</p>
+</div></blockquote>
+<p>An example for an external metric:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="s2">&quot;objectInfo&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;kind&quot;</span><span class="p">:</span> <span class="s2">&quot;Metric&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;r2_score&quot;</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;imageId&quot;</span><span class="p">:</span> <span class="s2">&quot;docker-registry:5000/sml-evaluators/sklearn&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;assessmentTypes&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Regression&quot;</span><span class="p">],</span>
+  <span class="s2">&quot;package&quot;</span><span class="p">:</span> <span class="s2">&quot;sklearn.metrics&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;r2_score&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;defaultArgs&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;multioutput&quot;</span><span class="p">:</span> <span class="s2">&quot;uniform_average&quot;</span>
   <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -1957,8 +2087,8 @@ container instance successfully starts up. After completing a evaluation, it
 will return to the Ready state so that multiple evaluations can be executed
 using the same container instance.</p>
 </div>
-<div class="section" id="id2">
-<h3>Example<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id1">
+<h3>Example<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>The following example code implements a sklearn evaluation metrics with the MISTK evaluation metrics interfacet:</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
   2
@@ -2198,7 +2328,7 @@ using the same container instance.</p>
 
 <span class="kn">import</span> <span class="nn">importlib</span>
 <span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">json</span>
 <span class="kn">import</span> <span class="nn">time</span>
 
@@ -2214,8 +2344,8 @@ using the same container instance.</p>
 <span class="sd">        Constructor</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">AbstractEvaluationPlugin</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_props</span> <span class="o">=</span> <span class="kc">None</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_predictions</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_props</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_predictions</span> <span class="o">=</span> <span class="bp">None</span>
   
     <span class="k">def</span> <span class="nf">do_evaluate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">assessment_type</span><span class="p">,</span> <span class="n">metrics</span><span class="p">,</span> <span class="n">input_data_path</span><span class="p">,</span> <span class="n">evaluation_input_format</span><span class="p">,</span> <span class="n">ground_truth_path</span><span class="p">,</span> <span class="n">evaluation_path</span><span class="p">,</span> <span class="n">properties</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -2248,8 +2378,8 @@ using the same container instance.</p>
         <span class="n">truth_df</span> <span class="o">=</span> <span class="n">truth_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">truth_df</span><span class="p">[</span><span class="s1">&#39;rowid&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">results_df</span><span class="p">[</span><span class="s1">&#39;rowid&#39;</span><span class="p">])]</span>
             
         <span class="c1"># sort the rows by id</span>
-        <span class="n">results_df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;rowid&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-        <span class="n">truth_df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;rowid&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">results_df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;rowid&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        <span class="n">truth_df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;rowid&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
         
         <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;Running for metrics </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">metrics</span><span class="p">)</span>
             
@@ -2316,7 +2446,7 @@ using the same container instance.</p>
         <span class="k">for</span> <span class="n">counter</span><span class="p">,</span> <span class="n">metric</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">metrics</span><span class="p">):</span>
             <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">metric</span><span class="o">.</span><span class="n">package</span> <span class="o">+</span> <span class="s2">&quot; : &quot;</span> <span class="o">+</span>  <span class="n">metric</span><span class="o">.</span><span class="n">method</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">metric</span><span class="o">.</span><span class="n">package</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">modules_cache</span><span class="p">:</span>
-                <span class="n">module</span> <span class="o">=</span> <span class="kc">None</span>
+                <span class="n">module</span> <span class="o">=</span> <span class="bp">None</span>
                 <span class="n">name</span> <span class="o">=</span> <span class="n">metric</span><span class="o">.</span><span class="n">package</span>
                 <span class="k">try</span><span class="p">:</span>
                     <span class="n">importlib</span><span class="o">.</span><span class="n">invalidate_caches</span><span class="p">()</span>
@@ -2355,7 +2485,7 @@ using the same container instance.</p>
                 <span class="k">try</span><span class="p">:</span>
                     <span class="n">evalResult</span> <span class="o">=</span> <span class="n">method</span><span class="p">(</span><span class="o">**</span><span class="n">args</span><span class="p">)</span>
                 <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
-                    <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;Something bad happened calling &quot;</span> <span class="o">+</span> <span class="n">metric</span><span class="o">.</span><span class="n">method</span><span class="p">,</span> <span class="n">exc_info</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;Something bad happened calling &quot;</span> <span class="o">+</span> <span class="n">metric</span><span class="o">.</span><span class="n">method</span><span class="p">,</span> <span class="n">exc_info</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
                 <span class="k">else</span><span class="p">:</span>
                     <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Result is &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">evalResult</span><span class="p">))</span>
                     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">evalResult</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
@@ -2428,14 +2558,7 @@ using the same container instance.</p>
 
     </p>
   </div>
-    
-    
-    
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -2446,6 +2569,7 @@ using the same container instance.</p>
 
   </div>
   
+
 
   <script type="text/javascript">
       jQuery(function () {

@@ -1,7 +1,8 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
@@ -11,18 +12,12 @@
   
 
   
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-
-  
   
   
   
 
   
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -34,6 +29,10 @@
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="mistk.transform.server.models package" href="mistk.transform.server.models.html" />
@@ -51,7 +50,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> MISTK
+            <a href="../index.html" class="icon icon-home"> MISTK
           
 
           
@@ -74,7 +73,6 @@
           
         </div>
 
-        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -97,6 +95,7 @@
 <li class="toctree-l4"><a class="reference internal" href="mistk.log.html">mistk.log package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mistk.model.html">mistk.model package</a></li>
 <li class="toctree-l4 current"><a class="reference internal" href="mistk.transform.html">mistk.transform package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mistk.utils.html">mistk.utils package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mistk.watch.html">mistk.watch package</a></li>
 </ul>
 </li>
@@ -111,7 +110,6 @@
             
           
         </div>
-        
       </div>
     </nav>
 
@@ -150,7 +148,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="../index.html">Docs</a> &raquo;</li>
         
           <li><a href="index.html">MISTK API</a> &raquo;</li>
         
@@ -183,7 +181,7 @@
             
   <div class="section" id="module-mistk.transform.server.controllers.transform_plugin_endpoint_controller">
 <span id="mistk-transform-server-controllers-transform-plugin-endpoint-controller-module"></span><h1>mistk.transform.server.controllers.transform_plugin_endpoint_controller module<a class="headerlink" href="#module-mistk.transform.server.controllers.transform_plugin_endpoint_controller" title="Permalink to this headline">¶</a></h1>
-<dl class="py function">
+<dl class="function">
 <dt id="mistk.transform.server.controllers.transform_plugin_endpoint_controller.get_api_version">
 <code class="sig-prename descclassname">mistk.transform.server.controllers.transform_plugin_endpoint_controller.</code><code class="sig-name descname">get_api_version</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.transform.server.controllers.transform_plugin_endpoint_controller.get_api_version" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the version of the MISTK API</p>
@@ -195,9 +193,9 @@
 </dl>
 </dd></dl>
 
-<dl class="py function">
+<dl class="function">
 <dt id="mistk.transform.server.controllers.transform_plugin_endpoint_controller.get_status">
-<code class="sig-prename descclassname">mistk.transform.server.controllers.transform_plugin_endpoint_controller.</code><code class="sig-name descname">get_status</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">watch</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">resourceVersion</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.transform.server.controllers.transform_plugin_endpoint_controller.get_status" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mistk.transform.server.controllers.transform_plugin_endpoint_controller.</code><code class="sig-name descname">get_status</code><span class="sig-paren">(</span><em class="sig-param">watch=None</em>, <em class="sig-param">resourceVersion=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.transform.server.controllers.transform_plugin_endpoint_controller.get_status" title="Permalink to this definition">¶</a></dt>
 <dd><p>Retrieves the status of the transform plugin</p>
 <blockquote>
 <div><p># noqa: E501</p>
@@ -215,7 +213,7 @@
 </dl>
 </dd></dl>
 
-<dl class="py function">
+<dl class="function">
 <dt id="mistk.transform.server.controllers.transform_plugin_endpoint_controller.terminate">
 <code class="sig-prename descclassname">mistk.transform.server.controllers.transform_plugin_endpoint_controller.</code><code class="sig-name descname">terminate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.transform.server.controllers.transform_plugin_endpoint_controller.terminate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Shutdowns the transform plugin and cleans up any resources.</p>
@@ -229,9 +227,9 @@
 </dl>
 </dd></dl>
 
-<dl class="py function">
+<dl class="function">
 <dt id="mistk.transform.server.controllers.transform_plugin_endpoint_controller.transform">
-<code class="sig-prename descclassname">mistk.transform.server.controllers.transform_plugin_endpoint_controller.</code><code class="sig-name descname">transform</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">initParams</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.transform.server.controllers.transform_plugin_endpoint_controller.transform" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mistk.transform.server.controllers.transform_plugin_endpoint_controller.</code><code class="sig-name descname">transform</code><span class="sig-paren">(</span><em class="sig-param">initParams</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.transform.server.controllers.transform_plugin_endpoint_controller.transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Performs the transforms defined for this plugin</p>
 <blockquote>
 <div><p># noqa: E501</p>
@@ -271,14 +269,7 @@
 
     </p>
   </div>
-    
-    
-    
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -289,6 +280,7 @@
 
   </div>
   
+
 
   <script type="text/javascript">
       jQuery(function () {

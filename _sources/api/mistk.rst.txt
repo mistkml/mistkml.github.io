@@ -12,6 +12,7 @@ Subpackages
    mistk.log
    mistk.model
    mistk.transform
+   mistk.utils
    mistk.watch
 
 Submodules

@@ -1,7 +1,8 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
@@ -11,18 +12,12 @@
   
 
   
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-
-  
   
   
   
 
   
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -34,6 +29,10 @@
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="mistk.transform package" href="mistk.transform.html" />
@@ -51,7 +50,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> MISTK
+            <a href="../index.html" class="icon icon-home"> MISTK
           
 
           
@@ -74,7 +73,6 @@
           
         </div>
 
-        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -97,6 +95,7 @@
 <li class="toctree-l4"><a class="reference internal" href="mistk.log.html">mistk.log package</a></li>
 <li class="toctree-l4 current"><a class="reference internal" href="mistk.model.html">mistk.model package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mistk.transform.html">mistk.transform package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mistk.utils.html">mistk.utils package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mistk.watch.html">mistk.watch package</a></li>
 </ul>
 </li>
@@ -111,7 +110,6 @@
             
           
         </div>
-        
       </div>
     </nav>
 
@@ -150,7 +148,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="../index.html">Docs</a> &raquo;</li>
         
           <li><a href="index.html">MISTK API</a> &raquo;</li>
         
@@ -179,13 +177,13 @@
             
   <div class="section" id="module-mistk.model.service">
 <span id="mistk-model-service-module"></span><h1>mistk.model.service module<a class="headerlink" href="#module-mistk.model.service" title="Permalink to this headline">¶</a></h1>
-<dl class="py class">
+<dl class="class">
 <dt id="mistk.model.service.ModelInstanceEndpoint">
 <em class="property">class </em><code class="sig-prename descclassname">mistk.model.service.</code><code class="sig-name descname">ModelInstanceEndpoint</code><a class="headerlink" href="#mistk.model.service.ModelInstanceEndpoint" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<dl class="py method">
+<dl class="method">
 <dt id="mistk.model.service.ModelInstanceEndpoint.add_task">
-<code class="sig-name descname">add_task</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">task</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.service.ModelInstanceEndpoint.add_task" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">add_task</code><span class="sig-paren">(</span><em class="sig-param">task</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.service.ModelInstanceEndpoint.add_task" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adds a task to this ModelEndpointService and starts it using a pool of worker threads</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -197,9 +195,9 @@
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="mistk.model.service.ModelInstanceEndpoint.build_model">
-<code class="sig-name descname">build_model</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">modelPath</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.service.ModelInstanceEndpoint.build_model" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">build_model</code><span class="sig-paren">(</span><em class="sig-param">modelPath=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.service.ModelInstanceEndpoint.build_model" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates and returns a Task which builds the model using the modelPath provided</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -211,9 +209,9 @@
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="mistk.model.service.ModelInstanceEndpoint.delete_task">
-<code class="sig-name descname">delete_task</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">task</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.service.ModelInstanceEndpoint.delete_task" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">delete_task</code><span class="sig-paren">(</span><em class="sig-param">task</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.service.ModelInstanceEndpoint.delete_task" title="Permalink to this definition">¶</a></dt>
 <dd><p>Deletes the specified Task.
 This function is currently not supported</p>
 <dl class="field-list simple">
@@ -223,7 +221,7 @@ This function is currently not supported</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="mistk.model.service.ModelInstanceEndpoint.generate">
 <code class="sig-name descname">generate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.service.ModelInstanceEndpoint.generate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates and returns a Task which kicks off a generation activity</p>
@@ -234,7 +232,7 @@ This function is currently not supported</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="mistk.model.service.ModelInstanceEndpoint.get_api_version">
 <code class="sig-name descname">get_api_version</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.service.ModelInstanceEndpoint.get_api_version" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the version of the MISTK API</p>
@@ -245,9 +243,9 @@ This function is currently not supported</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="mistk.model.service.ModelInstanceEndpoint.get_status">
-<code class="sig-name descname">get_status</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">watch</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">resourceVersion</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.service.ModelInstanceEndpoint.get_status" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_status</code><span class="sig-paren">(</span><em class="sig-param">watch=None</em>, <em class="sig-param">resourceVersion=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.service.ModelInstanceEndpoint.get_status" title="Permalink to this definition">¶</a></dt>
 <dd><p>Retrieves the status of this ModelEndpointService</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -263,9 +261,9 @@ for watched status changes.</p></li>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="mistk.model.service.ModelInstanceEndpoint.initialize_model">
-<code class="sig-name descname">initialize_model</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">initializationParameters</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.service.ModelInstanceEndpoint.initialize_model" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">initialize_model</code><span class="sig-paren">(</span><em class="sig-param">initializationParameters</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.service.ModelInstanceEndpoint.initialize_model" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates and returns an Task which initializes the model with the 
 optional parameters provided</p>
 <dl class="field-list simple">
@@ -278,9 +276,9 @@ optional parameters provided</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="mistk.model.service.ModelInstanceEndpoint.load_data">
-<code class="sig-name descname">load_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">datasets</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.service.ModelInstanceEndpoint.load_data" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">load_data</code><span class="sig-paren">(</span><em class="sig-param">datasets</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.service.ModelInstanceEndpoint.load_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates and returns a Task which loads data into a model using the bindings provided</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -292,7 +290,7 @@ optional parameters provided</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="mistk.model.service.ModelInstanceEndpoint.model">
 <em class="property">property </em><code class="sig-name descname">model</code><a class="headerlink" href="#mistk.model.service.ModelInstanceEndpoint.model" title="Permalink to this definition">¶</a></dt>
 <dd><p>Retrieves the model associated with this ModelEndpointService</p>
@@ -303,14 +301,14 @@ optional parameters provided</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="mistk.model.service.ModelInstanceEndpoint.pause">
 <code class="sig-name descname">pause</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.service.ModelInstanceEndpoint.pause" title="Permalink to this definition">¶</a></dt>
 <dd><p>Pauses the model during its current operation
 This operation is currently not supported.</p>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="mistk.model.service.ModelInstanceEndpoint.predict">
 <code class="sig-name descname">predict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.service.ModelInstanceEndpoint.predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates and returns a Task which kicks off a prediction activity</p>
@@ -321,35 +319,35 @@ This operation is currently not supported.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="mistk.model.service.ModelInstanceEndpoint.put_response">
-<code class="sig-name descname">put_response</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">response</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.service.ModelInstanceEndpoint.put_response" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">put_response</code><span class="sig-paren">(</span><em class="sig-param">response</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.service.ModelInstanceEndpoint.put_response" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adds a response to the response queue</p>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="mistk.model.service.ModelInstanceEndpoint.reset">
 <code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.service.ModelInstanceEndpoint.reset" title="Permalink to this definition">¶</a></dt>
 <dd><p>Resets the model</p>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="mistk.model.service.ModelInstanceEndpoint.resume_predict">
 <code class="sig-name descname">resume_predict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.service.ModelInstanceEndpoint.resume_predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Resumes a paused model into its prediction operation
 This operation is currently not supported.</p>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="mistk.model.service.ModelInstanceEndpoint.resume_training">
 <code class="sig-name descname">resume_training</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.service.ModelInstanceEndpoint.resume_training" title="Permalink to this definition">¶</a></dt>
 <dd><p>Resumes a paused model into its training operation
 This operation is currently not supported.</p>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="mistk.model.service.ModelInstanceEndpoint.save_generations">
-<code class="sig-name descname">save_generations</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataPath</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.service.ModelInstanceEndpoint.save_generations" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">save_generations</code><span class="sig-paren">(</span><em class="sig-param">dataPath</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.service.ModelInstanceEndpoint.save_generations" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates and returns a Task which saves the generations generated by a model
 to the path specified</p>
 <dl class="field-list simple">
@@ -362,9 +360,9 @@ to the path specified</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="mistk.model.service.ModelInstanceEndpoint.save_model">
-<code class="sig-name descname">save_model</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">modelPath</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.service.ModelInstanceEndpoint.save_model" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">save_model</code><span class="sig-paren">(</span><em class="sig-param">modelPath</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.service.ModelInstanceEndpoint.save_model" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates and returns a Task which saves the model to the path provided</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -376,9 +374,9 @@ to the path specified</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="mistk.model.service.ModelInstanceEndpoint.save_predictions">
-<code class="sig-name descname">save_predictions</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataPath</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.service.ModelInstanceEndpoint.save_predictions" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">save_predictions</code><span class="sig-paren">(</span><em class="sig-param">dataPath</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.service.ModelInstanceEndpoint.save_predictions" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates and returns a Task which saves the predictions generated by a model
 to the path specified</p>
 <dl class="field-list simple">
@@ -391,9 +389,9 @@ to the path specified</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="mistk.model.service.ModelInstanceEndpoint.start_server">
-<code class="sig-name descname">start_server</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">port</span><span class="o">=</span><span class="default_value">8080</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.service.ModelInstanceEndpoint.start_server" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">start_server</code><span class="sig-paren">(</span><em class="sig-param">port=8080</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.service.ModelInstanceEndpoint.start_server" title="Permalink to this definition">¶</a></dt>
 <dd><p>Starts the http server of the Service</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -402,7 +400,7 @@ to the path specified</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="mistk.model.service.ModelInstanceEndpoint.state_machine">
 <em class="property">property </em><code class="sig-name descname">state_machine</code><a class="headerlink" href="#mistk.model.service.ModelInstanceEndpoint.state_machine" title="Permalink to this definition">¶</a></dt>
 <dd><p>Retrieves the state machine associated with this ModelEndpointService</p>
@@ -413,9 +411,9 @@ to the path specified</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="mistk.model.service.ModelInstanceEndpoint.stream_predict">
-<code class="sig-name descname">stream_predict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataMap</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.service.ModelInstanceEndpoint.stream_predict" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">stream_predict</code><span class="sig-paren">(</span><em class="sig-param">dataMap</em>, <em class="sig-param">details=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.service.ModelInstanceEndpoint.stream_predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a Task which kicks off a stream prediction activity</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -427,13 +425,13 @@ to the path specified</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="mistk.model.service.ModelInstanceEndpoint.terminate">
 <code class="sig-name descname">terminate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.service.ModelInstanceEndpoint.terminate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Shuts down the model and the endpoint service</p>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="mistk.model.service.ModelInstanceEndpoint.train">
 <code class="sig-name descname">train</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.service.ModelInstanceEndpoint.train" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates and returns a Task which kicks off a training activity</p>
@@ -444,9 +442,9 @@ to the path specified</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="mistk.model.service.ModelInstanceEndpoint.update_state">
-<code class="sig-name descname">update_state</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">state</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">payload</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.service.ModelInstanceEndpoint.update_state" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">update_state</code><span class="sig-paren">(</span><em class="sig-param">state=None</em>, <em class="sig-param">payload=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.service.ModelInstanceEndpoint.update_state" title="Permalink to this definition">¶</a></dt>
 <dd><p>Updates the state of the ModelEndpointService</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -458,18 +456,29 @@ to the path specified</p>
 </dl>
 </dd></dl>
 
+<dl class="method">
+<dt id="mistk.model.service.ModelInstanceEndpoint.update_stream_properties">
+<code class="sig-name descname">update_stream_properties</code><span class="sig-paren">(</span><em class="sig-param">props</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.service.ModelInstanceEndpoint.update_stream_properties" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a task for updating the streaming prediction properties.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>props</strong> – Dictionary of metadata properties to be used by the model</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="py class">
+</dd></dl>
+
+<dl class="class">
 <dt id="mistk.model.service.ModelInstanceTask">
-<em class="property">class </em><code class="sig-prename descclassname">mistk.model.service.</code><code class="sig-name descname">ModelInstanceTask</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">operation</span></em>, <em class="sig-param"><span class="n">parameters</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">submitted</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">completed</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">status</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">message</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.service.ModelInstanceTask" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">mistk.model.service.</code><code class="sig-name descname">ModelInstanceTask</code><span class="sig-paren">(</span><em class="sig-param">operation</em>, <em class="sig-param">parameters=None</em>, <em class="sig-param">submitted=None</em>, <em class="sig-param">completed=None</em>, <em class="sig-param">status=None</em>, <em class="sig-param">message=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.service.ModelInstanceTask" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>A task to be submitted to the Model Instance that will be performed and report status of.</p>
 </dd></dl>
 
-<dl class="py function">
+<dl class="function">
 <dt id="mistk.model.service.initializeEndpointController">
-<code class="sig-prename descclassname">mistk.model.service.</code><code class="sig-name descname">initializeEndpointController</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">handler</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">modules</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.service.initializeEndpointController" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mistk.model.service.</code><code class="sig-name descname">initializeEndpointController</code><span class="sig-paren">(</span><em class="sig-param">handler</em>, <em class="sig-param">*modules</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.service.initializeEndpointController" title="Permalink to this definition">¶</a></dt>
 <dd><p>This method iterates over the functions defined in the auto-generated flask modules
 And creates a function in this package which points bound member methods of the 
 handler</p>
@@ -509,14 +518,7 @@ otherwise have the same signature as those defined in the controller_modules</p>
 
     </p>
   </div>
-    
-    
-    
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -527,6 +529,7 @@ otherwise have the same signature as those defined in the controller_modules</p>
 
   </div>
   
+
 
   <script type="text/javascript">
       jQuery(function () {

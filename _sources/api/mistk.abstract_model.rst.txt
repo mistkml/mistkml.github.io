@@ -1,7 +1,7 @@
 mistk.abstract\_model module
 ============================
 
-.. automodule:: mistk.model.abstract_model
-    :members:
-    :undoc-members:
-    :show-inheritance:
+.. automodule:: mistk.abstract_model
+   :members:
+   :undoc-members:
+   :show-inheritance:

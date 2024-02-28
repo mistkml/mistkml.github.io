@@ -1,0 +1,19 @@
+mistk.agent package
+===================
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   mistk.agent.abstract_agent
+   mistk.agent.service
+
+Module contents
+---------------
+
+.. automodule:: mistk.agent
+   :members:
+   :undoc-members:
+   :show-inheritance:

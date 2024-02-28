@@ -1,0 +1,7 @@
+mistk.watch.wait module
+=======================
+
+.. automodule:: mistk.watch.wait
+   :members:
+   :undoc-members:
+   :show-inheritance:

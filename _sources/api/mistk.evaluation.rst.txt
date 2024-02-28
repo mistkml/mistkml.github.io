@@ -5,15 +5,15 @@ Subpackages
 -----------
 
 .. toctree::
+   :maxdepth: 4
 
-   mistk.evaluation.client
-   mistk.evaluation.server
    mistk.evaluation.util
 
 Submodules
 ----------
 
 .. toctree::
+   :maxdepth: 4
 
    mistk.evaluation.abstract_evaluation_plugin
    mistk.evaluation.plugin_manager

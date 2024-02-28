@@ -1,18 +1,11 @@
 mistk.model package
 ===================
 
-Subpackages
------------
-
-.. toctree::
-
-   mistk.model.client
-   mistk.model.server
-
 Submodules
 ----------
 
 .. toctree::
+   :maxdepth: 4
 
    mistk.model.abstract_model
    mistk.model.service

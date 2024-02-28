@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>mistk.agent.abstract_agent module &mdash; MISTK  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> MISTK
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guide.html">Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testing.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../deployment.html">Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">MISTK API</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MISTK</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">mistk.agent.abstract_agent module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/mistk.agent.abstract_agent.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-mistk.agent.abstract_agent">
+<span id="mistk-agent-abstract-agent-module"></span><h1>mistk.agent.abstract_agent module<a class="headerlink" href="#module-mistk.agent.abstract_agent" title="Permalink to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="mistk.agent.abstract_agent.AbstractAgent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mistk.agent.abstract_agent.</span></span><span class="sig-name descname"><span class="pre">AbstractAgent</span></span><a class="headerlink" href="#mistk.agent.abstract_agent.AbstractAgent" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The definition of an abstract Agent to be implemented by Agent
+developers.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.agent.abstract_agent.AbstractAgent.agent_registered">
+<span class="sig-name descname"><span class="pre">agent_registered</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">agent_cfg</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.agent.abstract_agent.AbstractAgent.agent_registered" title="Permalink to this definition"></a></dt>
+<dd><p>Triggers the agent to enter the agent_registering state. A subsequent call
+to do_agent_registered with the given parameters will be made as a result.</p>
+<p>This method should not be implemented or overwritten by subclasses.
+It will be created by the state machine.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>agent_cfg</strong> – A dictionary that maps string keys that contains
+information on the agent to run</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.agent.abstract_agent.AbstractAgent.build_model">
+<span class="sig-name descname"><span class="pre">build_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.agent.abstract_agent.AbstractAgent.build_model" title="Permalink to this definition"></a></dt>
+<dd><p>Triggers the agent to enter the building_model state.  A subsequent call to
+do_build_model with the given parameters will be made as a result.</p>
+<p>This method should not be implemented or overwritten by subclasses.  It will be
+created by the state machine.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>path</strong> – The path to the model file</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.agent.abstract_agent.AbstractAgent.do_agent_registered">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">do_agent_registered</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">agent_cfg</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.agent.abstract_agent.AbstractAgent.do_agent_registered" title="Permalink to this definition"></a></dt>
+<dd><p>Instructs the service that the agent has been registered to a orchestrator</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>agent_cfg</strong> – A dictionary for the agent configuration from the orchestrator</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.agent.abstract_agent.AbstractAgent.do_build_model">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">do_build_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.agent.abstract_agent.AbstractAgent.do_build_model" title="Permalink to this definition"></a></dt>
+<dd><p>Instructs the container to construct the model</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>path</strong> – The path to the model file</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.agent.abstract_agent.AbstractAgent.do_episode_started">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">do_episode_started</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">episode_cfg</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.agent.abstract_agent.AbstractAgent.do_episode_started" title="Permalink to this definition"></a></dt>
+<dd><p>Instructs the agent that the episode has started.
+This method must also include a way to reset the agent’s learner with
+the current observations, if the learner has this expectation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>episode_cfg</strong> – Dict with the episode’s config settings. A key
+must be <cite>obs</cite>, with a List of the env’s initial observation.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.agent.abstract_agent.AbstractAgent.do_episode_stopped">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">do_episode_stopped</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.agent.abstract_agent.AbstractAgent.do_episode_stopped" title="Permalink to this definition"></a></dt>
+<dd><p>Instructs the agent that the episode has stopped</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.agent.abstract_agent.AbstractAgent.do_get_action">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">do_get_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#mistk.agent.abstract_agent.AbstractAgent.do_get_action" title="Permalink to this definition"></a></dt>
+<dd><p>Gives the agent the observations to perform action(s)</p>
+<p>In normal operating conditions, this Agent class is only controlling
+one player/entity in your game/environment. In this situation, we
+assume both the input <cite>obs</cite> and output will be a dictionary containing
+that singular agent, whose name is self.agent_name, as defined in
+do_start_episode.</p>
+<p>However, if this Agent class is controlling multiple players/entities
+for some reason, the input &amp; output of this method would be a dict
+with each of those players/entities represented.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obs</strong> – A dictionary of each agent’s list of int or float
+observations. The keys of the dict are each agent’s name.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A dict of lists. Each list contains the int/float actions an
+agent should take.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.agent.abstract_agent.AbstractAgent.do_initialize">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">do_initialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">objectives</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">props</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hparams</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.agent.abstract_agent.AbstractAgent.do_initialize" title="Permalink to this definition"></a></dt>
+<dd><p>Called once the endpoint service has launched.
+This would typically be the first call made to the service.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>objectives</strong> – The objectives for the agent.
+Possible values include ‘learning’</p></li>
+<li><p><strong>props</strong> – A dictionary that is parsed from a JSON string.
+These are settings that are passed from the ecosystem,
+but are not really considered hyperparameters. They are not used
+by the agent, but rather the endpoint itself
+(e.g., where should heartbeats be sent and how often, etc).</p></li>
+<li><p><strong>hparams</strong> – A dictionary that is parsed from a JSON string.
+These are hyperparameters that are used by the agent’s learner.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.agent.abstract_agent.AbstractAgent.do_replay_action">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">do_replay_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.agent.abstract_agent.AbstractAgent.do_replay_action" title="Permalink to this definition"></a></dt>
+<dd><p>Reviews action that the agent taken against the env observations so
+the agent can learn.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obs</strong> – In general, this will be a dictionary of:
+prev_obs: A list of env observations prior to taking this step,
+rewards: A list of rewards for this agent on this turn,
+actions: A list of actions this agent took,
+new_obs: A list of env observations after taking this step
+done: Boolean if the game is over</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.agent.abstract_agent.AbstractAgent.do_reset">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">do_reset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unload_model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.agent.abstract_agent.AbstractAgent.do_reset" title="Permalink to this definition"></a></dt>
+<dd><p>Resets the model into its initial state</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>unload_model</strong> – Unload (reset) the built model or keep the current built model</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.agent.abstract_agent.AbstractAgent.do_save_model">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">do_save_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.agent.abstract_agent.AbstractAgent.do_save_model" title="Permalink to this definition"></a></dt>
+<dd><p>Instructs the container to serialize the model to the specified path</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>path</strong> – The path where to save the model file</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mistk.agent.abstract_agent.AbstractAgent.endpoint_service">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">endpoint_service</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="mistk.agent.service.html#mistk.agent.service.AgentInstanceEndpoint" title="mistk.agent.service.AgentInstanceEndpoint"><span class="pre">AgentInstanceEndpoint</span></a></em><a class="headerlink" href="#mistk.agent.abstract_agent.AbstractAgent.endpoint_service" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the endpoint service for this agent</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.agent.abstract_agent.AbstractAgent.episode_started">
+<span class="sig-name descname"><span class="pre">episode_started</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">episode_cfg</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.agent.abstract_agent.AbstractAgent.episode_started" title="Permalink to this definition"></a></dt>
+<dd><p>Triggers the agent to know the episode started. A subsequent call
+to do_episode_started with the given parameters will be made as a result.</p>
+<p>This method should not be implemented or overwritten by subclasses.
+It will be created by the state machine.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>episode_cfg</strong> – Dict with the episode’s config settings. A key
+must be <cite>obs</cite>, with a List of the env’s initial observation.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.agent.abstract_agent.AbstractAgent.episode_stopped">
+<span class="sig-name descname"><span class="pre">episode_stopped</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.agent.abstract_agent.AbstractAgent.episode_stopped" title="Permalink to this definition"></a></dt>
+<dd><p>Triggers the agent to stop the episode. A subsequent call
+to do_episode_stopped with the given parameters will be made as a result.</p>
+<p>This method should not be implemented or overwritten by subclasses.
+It will be created by the state machine.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.agent.abstract_agent.AbstractAgent.fail">
+<span class="sig-name descname"><span class="pre">fail</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reason</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.agent.abstract_agent.AbstractAgent.fail" title="Permalink to this definition"></a></dt>
+<dd><p>Triggers the agent to enter the failed state.</p>
+<p>This method should not be implemented or overwritten by subclasses.  It will be
+created by the state machine.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>reason</strong> – The reason why the state machine is transitioned into the failure state</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.agent.abstract_agent.AbstractAgent.get_action">
+<span class="sig-name descname"><span class="pre">get_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#mistk.agent.abstract_agent.AbstractAgent.get_action" title="Permalink to this definition"></a></dt>
+<dd><p>Triggers the agent to get an action.  A subsequent call to
+do_get_action with the given parameters will be made as a result.</p>
+<p>This method should not be implemented or overwritten by subclasses.  It will be
+created by the state machine.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obs</strong> – A dictionary of each agent’s list of int or float
+observations. The keys of the dict are each agent’s name.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.agent.abstract_agent.AbstractAgent.in_episode">
+<span class="sig-name descname"><span class="pre">in_episode</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.agent.abstract_agent.AbstractAgent.in_episode" title="Permalink to this definition"></a></dt>
+<dd><p>Triggers the agent to enter the in episode state.</p>
+<p>It is expected that this method will only be called by the
+implementing agent subclass.</p>
+<p>This method should not be implemented or overwritten by subclasses.
+It will be created by the state machine.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.agent.abstract_agent.AbstractAgent.initialize">
+<span class="sig-name descname"><span class="pre">initialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">objectives</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">props</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hparams</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.agent.abstract_agent.AbstractAgent.initialize" title="Permalink to this definition"></a></dt>
+<dd><p>Triggers the agent to enter the initializing state.</p>
+<p>A subsequent call to do_initialize with the given parameters will be
+made as a result.</p>
+<p>This method should not be implemented or overwritten by subclasses.
+It will be created by the state machine.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>objectives</strong> – The objectives of this agent.
+Possible values include ‘learning’.</p></li>
+<li><p><strong>props</strong> – A dictionary that is parsed from a JSON string.
+These are settings that are passed from the ecosystem,
+but are not really considered hyperparameters.  They are not used
+by the agent, but rather the endpoint itself
+(e.g., where should heartbeats be sent and how often, etc).</p></li>
+<li><p><strong>hparams</strong> – A dictionary that is parsed from a JSON string.
+These are the hyperparameters that are used by the agent.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.agent.abstract_agent.AbstractAgent.initialized">
+<span class="sig-name descname"><span class="pre">initialized</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.agent.abstract_agent.AbstractAgent.initialized" title="Permalink to this definition"></a></dt>
+<dd><p>Triggers the agent to enter the initialized state.</p>
+<p>It is expected that this method will only be called by the
+implementing agent subclass.</p>
+<p>This method should not be implemented or overwritten by subclasses.
+It will be created by the state machine.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.agent.abstract_agent.AbstractAgent.new_state_entered">
+<span class="sig-name descname"><span class="pre">new_state_entered</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.agent.abstract_agent.AbstractAgent.new_state_entered" title="Permalink to this definition"></a></dt>
+<dd><p>Notifies the endpoint service that the current state of the state machine has
+been updated</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>args</strong> – Optional non-keyworded variable length arguments to pass in</p></li>
+<li><p><strong>kwargs</strong> – Optional keyworded variable length arguments to pass in</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.agent.abstract_agent.AbstractAgent.ready">
+<span class="sig-name descname"><span class="pre">ready</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.agent.abstract_agent.AbstractAgent.ready" title="Permalink to this definition"></a></dt>
+<dd><p>Triggers the agent to enter the ready state.</p>
+<p>It is expected that this method will only be called by the
+implementing agent subclass.</p>
+<p>This method should not be implemented or overwritten by subclasses.
+It will be created by the state machine.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.agent.abstract_agent.AbstractAgent.replay_action">
+<span class="sig-name descname"><span class="pre">replay_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prev_obs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rewards</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">actions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_obs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.agent.abstract_agent.AbstractAgent.replay_action" title="Permalink to this definition"></a></dt>
+<dd><p>Triggers the agent to replay action.  A subsequent call to
+do_replay_action with the given parameters will be made as a result.</p>
+<p>This method should not be implemented or overwritten by subclasses.  It will be
+created by the state machine.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>prev_obs</strong> – A list of env observations prior to taking this step</p></li>
+<li><p><strong>rewards</strong> – A list of rewards for this agent on this turn</p></li>
+<li><p><strong>actions</strong> – A list of actions this agent took</p></li>
+<li><p><strong>new_obs</strong> – A list of env observations after taking this step</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.agent.abstract_agent.AbstractAgent.report_failure">
+<span class="sig-name descname"><span class="pre">report_failure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reason</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.agent.abstract_agent.AbstractAgent.report_failure" title="Permalink to this definition"></a></dt>
+<dd><p>Reports the failure of a agent during its operations</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>reason</strong> – Error message explaining why the agent failed.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.agent.abstract_agent.AbstractAgent.reset">
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unload_model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.agent.abstract_agent.AbstractAgent.reset" title="Permalink to this definition"></a></dt>
+<dd><p>Resets the agent container instance</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.agent.abstract_agent.AbstractAgent.save_model">
+<span class="sig-name descname"><span class="pre">save_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.agent.abstract_agent.AbstractAgent.save_model" title="Permalink to this definition"></a></dt>
+<dd><p>Triggers the agent to enter the saving_model state.  A subsequent call to
+do_save_model with the given parameters will be made as a result.</p>
+<p>This method should not be implemented or overwritten by subclasses.  It will be
+created by the state machine.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>path</strong> – The path where to save the agent model file</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.agent.abstract_agent.AbstractAgent.started">
+<span class="sig-name descname"><span class="pre">started</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.agent.abstract_agent.AbstractAgent.started" title="Permalink to this definition"></a></dt>
+<dd><p>Triggers the agent to enter the started state.</p>
+<p>It is expected that this method will only be called by the
+implementing agent subclass.</p>
+<p>This method should not be implemented or overwritten by subclasses.
+It will be created by the state machine.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.agent.abstract_agent.AbstractAgent.terminated">
+<span class="sig-name descname"><span class="pre">terminated</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.agent.abstract_agent.AbstractAgent.terminated" title="Permalink to this definition"></a></dt>
+<dd><p>Terminates the agent</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.agent.abstract_agent.AbstractAgent.update_status">
+<span class="sig-name descname"><span class="pre">update_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.agent.abstract_agent.AbstractAgent.update_status" title="Permalink to this definition"></a></dt>
+<dd><p>Provides additional details to the current state of the agent.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>payload</strong> – Extra information regarding the status update</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

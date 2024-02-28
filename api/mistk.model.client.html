@@ -1,67 +1,34 @@
-
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>mistk.model.client package &mdash; MISTK  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
-
-  
-  
-  
-  
-
-  
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="mistk.model.client.api package" href="mistk.model.client.api.html" />
-    <link rel="prev" title="mistk.model package" href="mistk.model.html" /> 
+    <link rel="search" title="Search" href="../search.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../index.html" class="icon icon-home"> MISTK
-          
-
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -69,121 +36,94 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">Contents:</span></p>
-<ul class="current">
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guide.html">Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../testing.html">Testing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../deployment.html">Deployment</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">MISTK API</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="mistk.html">mistk package</a><ul class="current">
-<li class="toctree-l3 current"><a class="reference internal" href="mistk.html#subpackages">Subpackages</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="mistk.cfg.html">mistk.cfg package</a></li>
-<li class="toctree-l4"><a class="reference internal" href="mistk.data.html">mistk.data package</a></li>
-<li class="toctree-l4"><a class="reference internal" href="mistk.evaluation.html">mistk.evaluation package</a></li>
-<li class="toctree-l4"><a class="reference internal" href="mistk.log.html">mistk.log package</a></li>
-<li class="toctree-l4 current"><a class="reference internal" href="mistk.model.html">mistk.model package</a></li>
-<li class="toctree-l4"><a class="reference internal" href="mistk.transform.html">mistk.transform package</a></li>
-<li class="toctree-l4"><a class="reference internal" href="mistk.utils.html">mistk.utils package</a></li>
-<li class="toctree-l4"><a class="reference internal" href="mistk.watch.html">mistk.watch package</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="mistk.html#submodules">Submodules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mistk.html#module-mistk">Module contents</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">MISTK API</a></li>
 </ul>
 
-            
-          
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">MISTK</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="../index.html">Docs</a> &raquo;</li>
-        
-          <li><a href="index.html">MISTK API</a> &raquo;</li>
-        
-          <li><a href="mistk.html">mistk package</a> &raquo;</li>
-        
-          <li><a href="mistk.model.html">mistk.model package</a> &raquo;</li>
-        
-      <li>mistk.model.client package</li>
-    
-    
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">mistk.model.client package</li>
       <li class="wy-breadcrumbs-aside">
-        
-            
             <a href="../_sources/api/mistk.model.client.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="mistk-model-client-package">
-<h1>mistk.model.client package<a class="headerlink" href="#mistk-model-client-package" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="subpackages">
-<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+             
+  <section id="mistk-model-client-package">
+<h1>mistk.model.client package<a class="headerlink" href="#mistk-model-client-package" title="Permalink to this heading"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this heading"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="mistk.model.client.api.html">mistk.model.client.api package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="mistk.model.client.api.html#submodules">Submodules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.api.model_instance_endpoint_api.html">mistk.model.client.api.model_instance_endpoint_api module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.api.model_instance_endpoint_api.html">mistk.model.client.api.model_instance_endpoint_api module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mistk.model.client.api.model_instance_endpoint_api.html#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi"><code class="docutils literal notranslate"><span class="pre">ModelInstanceEndpointApi</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.api.model_instance_endpoint_api.html#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.build_ensemble"><code class="docutils literal notranslate"><span class="pre">ModelInstanceEndpointApi.build_ensemble()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.api.model_instance_endpoint_api.html#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.build_ensemble_with_http_info"><code class="docutils literal notranslate"><span class="pre">ModelInstanceEndpointApi.build_ensemble_with_http_info()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.api.model_instance_endpoint_api.html#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.build_model"><code class="docutils literal notranslate"><span class="pre">ModelInstanceEndpointApi.build_model()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.api.model_instance_endpoint_api.html#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.build_model_with_http_info"><code class="docutils literal notranslate"><span class="pre">ModelInstanceEndpointApi.build_model_with_http_info()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.api.model_instance_endpoint_api.html#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.generate"><code class="docutils literal notranslate"><span class="pre">ModelInstanceEndpointApi.generate()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.api.model_instance_endpoint_api.html#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.generate_with_http_info"><code class="docutils literal notranslate"><span class="pre">ModelInstanceEndpointApi.generate_with_http_info()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.api.model_instance_endpoint_api.html#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.get_api_version"><code class="docutils literal notranslate"><span class="pre">ModelInstanceEndpointApi.get_api_version()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.api.model_instance_endpoint_api.html#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.get_api_version_with_http_info"><code class="docutils literal notranslate"><span class="pre">ModelInstanceEndpointApi.get_api_version_with_http_info()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.api.model_instance_endpoint_api.html#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.get_status"><code class="docutils literal notranslate"><span class="pre">ModelInstanceEndpointApi.get_status()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.api.model_instance_endpoint_api.html#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.get_status_with_http_info"><code class="docutils literal notranslate"><span class="pre">ModelInstanceEndpointApi.get_status_with_http_info()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.api.model_instance_endpoint_api.html#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.initialize_model"><code class="docutils literal notranslate"><span class="pre">ModelInstanceEndpointApi.initialize_model()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.api.model_instance_endpoint_api.html#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.initialize_model_with_http_info"><code class="docutils literal notranslate"><span class="pre">ModelInstanceEndpointApi.initialize_model_with_http_info()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.api.model_instance_endpoint_api.html#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.load_data"><code class="docutils literal notranslate"><span class="pre">ModelInstanceEndpointApi.load_data()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.api.model_instance_endpoint_api.html#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.load_data_with_http_info"><code class="docutils literal notranslate"><span class="pre">ModelInstanceEndpointApi.load_data_with_http_info()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.api.model_instance_endpoint_api.html#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.miniaturize"><code class="docutils literal notranslate"><span class="pre">ModelInstanceEndpointApi.miniaturize()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.api.model_instance_endpoint_api.html#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.miniaturize_with_http_info"><code class="docutils literal notranslate"><span class="pre">ModelInstanceEndpointApi.miniaturize_with_http_info()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.api.model_instance_endpoint_api.html#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.pause"><code class="docutils literal notranslate"><span class="pre">ModelInstanceEndpointApi.pause()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.api.model_instance_endpoint_api.html#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.pause_with_http_info"><code class="docutils literal notranslate"><span class="pre">ModelInstanceEndpointApi.pause_with_http_info()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.api.model_instance_endpoint_api.html#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.predict"><code class="docutils literal notranslate"><span class="pre">ModelInstanceEndpointApi.predict()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.api.model_instance_endpoint_api.html#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.predict_with_http_info"><code class="docutils literal notranslate"><span class="pre">ModelInstanceEndpointApi.predict_with_http_info()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.api.model_instance_endpoint_api.html#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.reset"><code class="docutils literal notranslate"><span class="pre">ModelInstanceEndpointApi.reset()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.api.model_instance_endpoint_api.html#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.reset_with_http_info"><code class="docutils literal notranslate"><span class="pre">ModelInstanceEndpointApi.reset_with_http_info()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.api.model_instance_endpoint_api.html#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.resume_predict"><code class="docutils literal notranslate"><span class="pre">ModelInstanceEndpointApi.resume_predict()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.api.model_instance_endpoint_api.html#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.resume_predict_with_http_info"><code class="docutils literal notranslate"><span class="pre">ModelInstanceEndpointApi.resume_predict_with_http_info()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.api.model_instance_endpoint_api.html#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.resume_training"><code class="docutils literal notranslate"><span class="pre">ModelInstanceEndpointApi.resume_training()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.api.model_instance_endpoint_api.html#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.resume_training_with_http_info"><code class="docutils literal notranslate"><span class="pre">ModelInstanceEndpointApi.resume_training_with_http_info()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.api.model_instance_endpoint_api.html#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.save_generations"><code class="docutils literal notranslate"><span class="pre">ModelInstanceEndpointApi.save_generations()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.api.model_instance_endpoint_api.html#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.save_generations_with_http_info"><code class="docutils literal notranslate"><span class="pre">ModelInstanceEndpointApi.save_generations_with_http_info()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.api.model_instance_endpoint_api.html#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.save_model"><code class="docutils literal notranslate"><span class="pre">ModelInstanceEndpointApi.save_model()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.api.model_instance_endpoint_api.html#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.save_model_with_http_info"><code class="docutils literal notranslate"><span class="pre">ModelInstanceEndpointApi.save_model_with_http_info()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.api.model_instance_endpoint_api.html#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.save_predictions"><code class="docutils literal notranslate"><span class="pre">ModelInstanceEndpointApi.save_predictions()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.api.model_instance_endpoint_api.html#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.save_predictions_with_http_info"><code class="docutils literal notranslate"><span class="pre">ModelInstanceEndpointApi.save_predictions_with_http_info()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.api.model_instance_endpoint_api.html#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.stream_predict"><code class="docutils literal notranslate"><span class="pre">ModelInstanceEndpointApi.stream_predict()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.api.model_instance_endpoint_api.html#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.stream_predict_with_http_info"><code class="docutils literal notranslate"><span class="pre">ModelInstanceEndpointApi.stream_predict_with_http_info()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.api.model_instance_endpoint_api.html#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.terminate"><code class="docutils literal notranslate"><span class="pre">ModelInstanceEndpointApi.terminate()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.api.model_instance_endpoint_api.html#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.terminate_with_http_info"><code class="docutils literal notranslate"><span class="pre">ModelInstanceEndpointApi.terminate_with_http_info()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.api.model_instance_endpoint_api.html#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.train"><code class="docutils literal notranslate"><span class="pre">ModelInstanceEndpointApi.train()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.api.model_instance_endpoint_api.html#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.train_with_http_info"><code class="docutils literal notranslate"><span class="pre">ModelInstanceEndpointApi.train_with_http_info()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.api.model_instance_endpoint_api.html#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.update_stream_properties"><code class="docutils literal notranslate"><span class="pre">ModelInstanceEndpointApi.update_stream_properties()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.api.model_instance_endpoint_api.html#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.update_stream_properties_with_http_info"><code class="docutils literal notranslate"><span class="pre">ModelInstanceEndpointApi.update_stream_properties_with_http_info()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="mistk.model.client.api.html#module-mistk.model.client.api">Module contents</a></li>
@@ -191,22 +131,247 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="mistk.model.client.models.html">mistk.model.client.models package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="mistk.model.client.models.html#submodules">Submodules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.models.data_record.html">mistk.model.client.models.data_record module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.models.dataset.html">mistk.model.client.models.dataset module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.models.dataset_statistics.html">mistk.model.client.models.dataset_statistics module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.models.metric.html">mistk.model.client.models.metric module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.models.metric_data_parameters.html">mistk.model.client.models.metric_data_parameters module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.models.mistk_data_record.html">mistk.model.client.models.mistk_data_record module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.models.mistk_dataset.html">mistk.model.client.models.mistk_dataset module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.models.mistk_metric.html">mistk.model.client.models.mistk_metric module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.models.mistk_metric_list.html">mistk.model.client.models.mistk_metric_list module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.models.mistk_watch_event.html">mistk.model.client.models.mistk_watch_event module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.models.model_instance_init_params.html">mistk.model.client.models.model_instance_init_params module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.models.model_instance_status.html">mistk.model.client.models.model_instance_status module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.models.object_info.html">mistk.model.client.models.object_info module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.models.object_reference.html">mistk.model.client.models.object_reference module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.models.service_error.html">mistk.model.client.models.service_error module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.models.watch_event.html">mistk.model.client.models.watch_event module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.models.data_record.html">mistk.model.client.models.data_record module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mistk.model.client.models.data_record.html#mistk.model.client.models.data_record.DataRecord"><code class="docutils literal notranslate"><span class="pre">DataRecord</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.data_record.html#mistk.model.client.models.data_record.DataRecord.attribute_map"><code class="docutils literal notranslate"><span class="pre">DataRecord.attribute_map</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.data_record.html#mistk.model.client.models.data_record.DataRecord.record_id"><code class="docutils literal notranslate"><span class="pre">DataRecord.record_id</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.data_record.html#mistk.model.client.models.data_record.DataRecord.reference_set_project"><code class="docutils literal notranslate"><span class="pre">DataRecord.reference_set_project</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.data_record.html#mistk.model.client.models.data_record.DataRecord.referenced_set_id"><code class="docutils literal notranslate"><span class="pre">DataRecord.referenced_set_id</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.data_record.html#mistk.model.client.models.data_record.DataRecord.swagger_types"><code class="docutils literal notranslate"><span class="pre">DataRecord.swagger_types</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.data_record.html#mistk.model.client.models.data_record.DataRecord.to_dict"><code class="docutils literal notranslate"><span class="pre">DataRecord.to_dict()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.data_record.html#mistk.model.client.models.data_record.DataRecord.to_str"><code class="docutils literal notranslate"><span class="pre">DataRecord.to_str()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.data_record.html#mistk.model.client.models.data_record.DataRecord.values"><code class="docutils literal notranslate"><span class="pre">DataRecord.values</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.models.dataset.html">mistk.model.client.models.dataset module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mistk.model.client.models.dataset.html#mistk.model.client.models.dataset.Dataset"><code class="docutils literal notranslate"><span class="pre">Dataset</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.dataset.html#mistk.model.client.models.dataset.Dataset.attribute_map"><code class="docutils literal notranslate"><span class="pre">Dataset.attribute_map</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.dataset.html#mistk.model.client.models.dataset.Dataset.datastash_id"><code class="docutils literal notranslate"><span class="pre">Dataset.datastash_id</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.dataset.html#mistk.model.client.models.dataset.Dataset.datastash_sub_dir"><code class="docutils literal notranslate"><span class="pre">Dataset.datastash_sub_dir</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.dataset.html#mistk.model.client.models.dataset.Dataset.default_ground_truth_set_reference"><code class="docutils literal notranslate"><span class="pre">Dataset.default_ground_truth_set_reference</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.dataset.html#mistk.model.client.models.dataset.Dataset.format"><code class="docutils literal notranslate"><span class="pre">Dataset.format</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.dataset.html#mistk.model.client.models.dataset.Dataset.modality"><code class="docutils literal notranslate"><span class="pre">Dataset.modality</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.dataset.html#mistk.model.client.models.dataset.Dataset.object_info"><code class="docutils literal notranslate"><span class="pre">Dataset.object_info</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.dataset.html#mistk.model.client.models.dataset.Dataset.statistics"><code class="docutils literal notranslate"><span class="pre">Dataset.statistics</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.dataset.html#mistk.model.client.models.dataset.Dataset.swagger_types"><code class="docutils literal notranslate"><span class="pre">Dataset.swagger_types</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.dataset.html#mistk.model.client.models.dataset.Dataset.to_dict"><code class="docutils literal notranslate"><span class="pre">Dataset.to_dict()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.dataset.html#mistk.model.client.models.dataset.Dataset.to_str"><code class="docutils literal notranslate"><span class="pre">Dataset.to_str()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.models.dataset_statistics.html">mistk.model.client.models.dataset_statistics module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mistk.model.client.models.dataset_statistics.html#mistk.model.client.models.dataset_statistics.DatasetStatistics"><code class="docutils literal notranslate"><span class="pre">DatasetStatistics</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.dataset_statistics.html#mistk.model.client.models.dataset_statistics.DatasetStatistics.attribute_map"><code class="docutils literal notranslate"><span class="pre">DatasetStatistics.attribute_map</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.dataset_statistics.html#mistk.model.client.models.dataset_statistics.DatasetStatistics.size"><code class="docutils literal notranslate"><span class="pre">DatasetStatistics.size</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.dataset_statistics.html#mistk.model.client.models.dataset_statistics.DatasetStatistics.swagger_types"><code class="docutils literal notranslate"><span class="pre">DatasetStatistics.swagger_types</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.dataset_statistics.html#mistk.model.client.models.dataset_statistics.DatasetStatistics.to_dict"><code class="docutils literal notranslate"><span class="pre">DatasetStatistics.to_dict()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.dataset_statistics.html#mistk.model.client.models.dataset_statistics.DatasetStatistics.to_str"><code class="docutils literal notranslate"><span class="pre">DatasetStatistics.to_str()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.models.metric.html">mistk.model.client.models.metric module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mistk.model.client.models.metric.html#mistk.model.client.models.metric.Metric"><code class="docutils literal notranslate"><span class="pre">Metric</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.metric.html#mistk.model.client.models.metric.Metric.assessment_types"><code class="docutils literal notranslate"><span class="pre">Metric.assessment_types</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.metric.html#mistk.model.client.models.metric.Metric.attribute_map"><code class="docutils literal notranslate"><span class="pre">Metric.attribute_map</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.metric.html#mistk.model.client.models.metric.Metric.data_parameters"><code class="docutils literal notranslate"><span class="pre">Metric.data_parameters</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.metric.html#mistk.model.client.models.metric.Metric.default_args"><code class="docutils literal notranslate"><span class="pre">Metric.default_args</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.metric.html#mistk.model.client.models.metric.Metric.implementation_reference"><code class="docutils literal notranslate"><span class="pre">Metric.implementation_reference</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.metric.html#mistk.model.client.models.metric.Metric.method"><code class="docutils literal notranslate"><span class="pre">Metric.method</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.metric.html#mistk.model.client.models.metric.Metric.object_info"><code class="docutils literal notranslate"><span class="pre">Metric.object_info</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.metric.html#mistk.model.client.models.metric.Metric.package"><code class="docutils literal notranslate"><span class="pre">Metric.package</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.metric.html#mistk.model.client.models.metric.Metric.properties"><code class="docutils literal notranslate"><span class="pre">Metric.properties</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.metric.html#mistk.model.client.models.metric.Metric.swagger_types"><code class="docutils literal notranslate"><span class="pre">Metric.swagger_types</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.metric.html#mistk.model.client.models.metric.Metric.to_dict"><code class="docutils literal notranslate"><span class="pre">Metric.to_dict()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.metric.html#mistk.model.client.models.metric.Metric.to_str"><code class="docutils literal notranslate"><span class="pre">Metric.to_str()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.metric.html#mistk.model.client.models.metric.Metric.version"><code class="docutils literal notranslate"><span class="pre">Metric.version</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.models.metric_data_parameters.html">mistk.model.client.models.metric_data_parameters module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mistk.model.client.models.metric_data_parameters.html#mistk.model.client.models.metric_data_parameters.MetricDataParameters"><code class="docutils literal notranslate"><span class="pre">MetricDataParameters</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.metric_data_parameters.html#mistk.model.client.models.metric_data_parameters.MetricDataParameters.attribute_map"><code class="docutils literal notranslate"><span class="pre">MetricDataParameters.attribute_map</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.metric_data_parameters.html#mistk.model.client.models.metric_data_parameters.MetricDataParameters.prediction_bounds"><code class="docutils literal notranslate"><span class="pre">MetricDataParameters.prediction_bounds</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.metric_data_parameters.html#mistk.model.client.models.metric_data_parameters.MetricDataParameters.prediction_labels"><code class="docutils literal notranslate"><span class="pre">MetricDataParameters.prediction_labels</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.metric_data_parameters.html#mistk.model.client.models.metric_data_parameters.MetricDataParameters.prediction_scores"><code class="docutils literal notranslate"><span class="pre">MetricDataParameters.prediction_scores</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.metric_data_parameters.html#mistk.model.client.models.metric_data_parameters.MetricDataParameters.swagger_types"><code class="docutils literal notranslate"><span class="pre">MetricDataParameters.swagger_types</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.metric_data_parameters.html#mistk.model.client.models.metric_data_parameters.MetricDataParameters.to_dict"><code class="docutils literal notranslate"><span class="pre">MetricDataParameters.to_dict()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.metric_data_parameters.html#mistk.model.client.models.metric_data_parameters.MetricDataParameters.to_str"><code class="docutils literal notranslate"><span class="pre">MetricDataParameters.to_str()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.metric_data_parameters.html#mistk.model.client.models.metric_data_parameters.MetricDataParameters.truth_bounds"><code class="docutils literal notranslate"><span class="pre">MetricDataParameters.truth_bounds</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.metric_data_parameters.html#mistk.model.client.models.metric_data_parameters.MetricDataParameters.truth_labels"><code class="docutils literal notranslate"><span class="pre">MetricDataParameters.truth_labels</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.models.mistk_data_record.html">mistk.model.client.models.mistk_data_record module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mistk.model.client.models.mistk_data_record.html#mistk.model.client.models.mistk_data_record.MistkDataRecord"><code class="docutils literal notranslate"><span class="pre">MistkDataRecord</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.mistk_data_record.html#mistk.model.client.models.mistk_data_record.MistkDataRecord.attribute_map"><code class="docutils literal notranslate"><span class="pre">MistkDataRecord.attribute_map</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.mistk_data_record.html#mistk.model.client.models.mistk_data_record.MistkDataRecord.record_id"><code class="docutils literal notranslate"><span class="pre">MistkDataRecord.record_id</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.mistk_data_record.html#mistk.model.client.models.mistk_data_record.MistkDataRecord.reference_set_project"><code class="docutils literal notranslate"><span class="pre">MistkDataRecord.reference_set_project</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.mistk_data_record.html#mistk.model.client.models.mistk_data_record.MistkDataRecord.referenced_set_id"><code class="docutils literal notranslate"><span class="pre">MistkDataRecord.referenced_set_id</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.mistk_data_record.html#mistk.model.client.models.mistk_data_record.MistkDataRecord.swagger_types"><code class="docutils literal notranslate"><span class="pre">MistkDataRecord.swagger_types</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.mistk_data_record.html#mistk.model.client.models.mistk_data_record.MistkDataRecord.to_dict"><code class="docutils literal notranslate"><span class="pre">MistkDataRecord.to_dict()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.mistk_data_record.html#mistk.model.client.models.mistk_data_record.MistkDataRecord.to_str"><code class="docutils literal notranslate"><span class="pre">MistkDataRecord.to_str()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.mistk_data_record.html#mistk.model.client.models.mistk_data_record.MistkDataRecord.values"><code class="docutils literal notranslate"><span class="pre">MistkDataRecord.values</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.models.mistk_dataset.html">mistk.model.client.models.mistk_dataset module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mistk.model.client.models.mistk_dataset.html#mistk.model.client.models.mistk_dataset.MistkDataset"><code class="docutils literal notranslate"><span class="pre">MistkDataset</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.mistk_dataset.html#mistk.model.client.models.mistk_dataset.MistkDataset.attribute_map"><code class="docutils literal notranslate"><span class="pre">MistkDataset.attribute_map</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.mistk_dataset.html#mistk.model.client.models.mistk_dataset.MistkDataset.data_path"><code class="docutils literal notranslate"><span class="pre">MistkDataset.data_path</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.mistk_dataset.html#mistk.model.client.models.mistk_dataset.MistkDataset.datastash_id"><code class="docutils literal notranslate"><span class="pre">MistkDataset.datastash_id</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.mistk_dataset.html#mistk.model.client.models.mistk_dataset.MistkDataset.datastash_sub_dir"><code class="docutils literal notranslate"><span class="pre">MistkDataset.datastash_sub_dir</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.mistk_dataset.html#mistk.model.client.models.mistk_dataset.MistkDataset.default_ground_truth_set_reference"><code class="docutils literal notranslate"><span class="pre">MistkDataset.default_ground_truth_set_reference</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.mistk_dataset.html#mistk.model.client.models.mistk_dataset.MistkDataset.format"><code class="docutils literal notranslate"><span class="pre">MistkDataset.format</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.mistk_dataset.html#mistk.model.client.models.mistk_dataset.MistkDataset.modality"><code class="docutils literal notranslate"><span class="pre">MistkDataset.modality</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.mistk_dataset.html#mistk.model.client.models.mistk_dataset.MistkDataset.object_info"><code class="docutils literal notranslate"><span class="pre">MistkDataset.object_info</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.mistk_dataset.html#mistk.model.client.models.mistk_dataset.MistkDataset.statistics"><code class="docutils literal notranslate"><span class="pre">MistkDataset.statistics</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.mistk_dataset.html#mistk.model.client.models.mistk_dataset.MistkDataset.swagger_types"><code class="docutils literal notranslate"><span class="pre">MistkDataset.swagger_types</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.mistk_dataset.html#mistk.model.client.models.mistk_dataset.MistkDataset.to_dict"><code class="docutils literal notranslate"><span class="pre">MistkDataset.to_dict()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.mistk_dataset.html#mistk.model.client.models.mistk_dataset.MistkDataset.to_str"><code class="docutils literal notranslate"><span class="pre">MistkDataset.to_str()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.models.mistk_metric.html">mistk.model.client.models.mistk_metric module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mistk.model.client.models.mistk_metric.html#mistk.model.client.models.mistk_metric.MistkMetric"><code class="docutils literal notranslate"><span class="pre">MistkMetric</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.mistk_metric.html#mistk.model.client.models.mistk_metric.MistkMetric.assessment_types"><code class="docutils literal notranslate"><span class="pre">MistkMetric.assessment_types</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.mistk_metric.html#mistk.model.client.models.mistk_metric.MistkMetric.attribute_map"><code class="docutils literal notranslate"><span class="pre">MistkMetric.attribute_map</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.mistk_metric.html#mistk.model.client.models.mistk_metric.MistkMetric.data_parameters"><code class="docutils literal notranslate"><span class="pre">MistkMetric.data_parameters</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.mistk_metric.html#mistk.model.client.models.mistk_metric.MistkMetric.default_args"><code class="docutils literal notranslate"><span class="pre">MistkMetric.default_args</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.mistk_metric.html#mistk.model.client.models.mistk_metric.MistkMetric.implementation_reference"><code class="docutils literal notranslate"><span class="pre">MistkMetric.implementation_reference</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.mistk_metric.html#mistk.model.client.models.mistk_metric.MistkMetric.method"><code class="docutils literal notranslate"><span class="pre">MistkMetric.method</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.mistk_metric.html#mistk.model.client.models.mistk_metric.MistkMetric.object_info"><code class="docutils literal notranslate"><span class="pre">MistkMetric.object_info</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.mistk_metric.html#mistk.model.client.models.mistk_metric.MistkMetric.package"><code class="docutils literal notranslate"><span class="pre">MistkMetric.package</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.mistk_metric.html#mistk.model.client.models.mistk_metric.MistkMetric.properties"><code class="docutils literal notranslate"><span class="pre">MistkMetric.properties</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.mistk_metric.html#mistk.model.client.models.mistk_metric.MistkMetric.swagger_types"><code class="docutils literal notranslate"><span class="pre">MistkMetric.swagger_types</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.mistk_metric.html#mistk.model.client.models.mistk_metric.MistkMetric.to_dict"><code class="docutils literal notranslate"><span class="pre">MistkMetric.to_dict()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.mistk_metric.html#mistk.model.client.models.mistk_metric.MistkMetric.to_str"><code class="docutils literal notranslate"><span class="pre">MistkMetric.to_str()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.mistk_metric.html#mistk.model.client.models.mistk_metric.MistkMetric.version"><code class="docutils literal notranslate"><span class="pre">MistkMetric.version</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.models.mistk_metric_list.html">mistk.model.client.models.mistk_metric_list module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mistk.model.client.models.mistk_metric_list.html#mistk.model.client.models.mistk_metric_list.MistkMetricList"><code class="docutils literal notranslate"><span class="pre">MistkMetricList</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.mistk_metric_list.html#mistk.model.client.models.mistk_metric_list.MistkMetricList.attribute_map"><code class="docutils literal notranslate"><span class="pre">MistkMetricList.attribute_map</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.mistk_metric_list.html#mistk.model.client.models.mistk_metric_list.MistkMetricList.continue_token"><code class="docutils literal notranslate"><span class="pre">MistkMetricList.continue_token</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.mistk_metric_list.html#mistk.model.client.models.mistk_metric_list.MistkMetricList.items"><code class="docutils literal notranslate"><span class="pre">MistkMetricList.items</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.mistk_metric_list.html#mistk.model.client.models.mistk_metric_list.MistkMetricList.swagger_types"><code class="docutils literal notranslate"><span class="pre">MistkMetricList.swagger_types</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.mistk_metric_list.html#mistk.model.client.models.mistk_metric_list.MistkMetricList.to_dict"><code class="docutils literal notranslate"><span class="pre">MistkMetricList.to_dict()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.mistk_metric_list.html#mistk.model.client.models.mistk_metric_list.MistkMetricList.to_str"><code class="docutils literal notranslate"><span class="pre">MistkMetricList.to_str()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.models.mistk_watch_event.html">mistk.model.client.models.mistk_watch_event module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mistk.model.client.models.mistk_watch_event.html#mistk.model.client.models.mistk_watch_event.MistkWatchEvent"><code class="docutils literal notranslate"><span class="pre">MistkWatchEvent</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.mistk_watch_event.html#mistk.model.client.models.mistk_watch_event.MistkWatchEvent.attribute_map"><code class="docutils literal notranslate"><span class="pre">MistkWatchEvent.attribute_map</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.mistk_watch_event.html#mistk.model.client.models.mistk_watch_event.MistkWatchEvent.event_type"><code class="docutils literal notranslate"><span class="pre">MistkWatchEvent.event_type</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.mistk_watch_event.html#mistk.model.client.models.mistk_watch_event.MistkWatchEvent.payload"><code class="docutils literal notranslate"><span class="pre">MistkWatchEvent.payload</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.mistk_watch_event.html#mistk.model.client.models.mistk_watch_event.MistkWatchEvent.swagger_types"><code class="docutils literal notranslate"><span class="pre">MistkWatchEvent.swagger_types</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.mistk_watch_event.html#mistk.model.client.models.mistk_watch_event.MistkWatchEvent.to_dict"><code class="docutils literal notranslate"><span class="pre">MistkWatchEvent.to_dict()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.mistk_watch_event.html#mistk.model.client.models.mistk_watch_event.MistkWatchEvent.to_str"><code class="docutils literal notranslate"><span class="pre">MistkWatchEvent.to_str()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.models.model_instance_init_params.html">mistk.model.client.models.model_instance_init_params module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mistk.model.client.models.model_instance_init_params.html#mistk.model.client.models.model_instance_init_params.ModelInstanceInitParams"><code class="docutils literal notranslate"><span class="pre">ModelInstanceInitParams</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.model_instance_init_params.html#mistk.model.client.models.model_instance_init_params.ModelInstanceInitParams.attribute_map"><code class="docutils literal notranslate"><span class="pre">ModelInstanceInitParams.attribute_map</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.model_instance_init_params.html#mistk.model.client.models.model_instance_init_params.ModelInstanceInitParams.hyperparameters"><code class="docutils literal notranslate"><span class="pre">ModelInstanceInitParams.hyperparameters</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.model_instance_init_params.html#mistk.model.client.models.model_instance_init_params.ModelInstanceInitParams.model_properties"><code class="docutils literal notranslate"><span class="pre">ModelInstanceInitParams.model_properties</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.model_instance_init_params.html#mistk.model.client.models.model_instance_init_params.ModelInstanceInitParams.objectives"><code class="docutils literal notranslate"><span class="pre">ModelInstanceInitParams.objectives</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.model_instance_init_params.html#mistk.model.client.models.model_instance_init_params.ModelInstanceInitParams.swagger_types"><code class="docutils literal notranslate"><span class="pre">ModelInstanceInitParams.swagger_types</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.model_instance_init_params.html#mistk.model.client.models.model_instance_init_params.ModelInstanceInitParams.to_dict"><code class="docutils literal notranslate"><span class="pre">ModelInstanceInitParams.to_dict()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.model_instance_init_params.html#mistk.model.client.models.model_instance_init_params.ModelInstanceInitParams.to_str"><code class="docutils literal notranslate"><span class="pre">ModelInstanceInitParams.to_str()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.models.model_instance_status.html">mistk.model.client.models.model_instance_status module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mistk.model.client.models.model_instance_status.html#mistk.model.client.models.model_instance_status.ModelInstanceStatus"><code class="docutils literal notranslate"><span class="pre">ModelInstanceStatus</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.model_instance_status.html#mistk.model.client.models.model_instance_status.ModelInstanceStatus.attribute_map"><code class="docutils literal notranslate"><span class="pre">ModelInstanceStatus.attribute_map</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.model_instance_status.html#mistk.model.client.models.model_instance_status.ModelInstanceStatus.object_info"><code class="docutils literal notranslate"><span class="pre">ModelInstanceStatus.object_info</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.model_instance_status.html#mistk.model.client.models.model_instance_status.ModelInstanceStatus.payload"><code class="docutils literal notranslate"><span class="pre">ModelInstanceStatus.payload</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.model_instance_status.html#mistk.model.client.models.model_instance_status.ModelInstanceStatus.state"><code class="docutils literal notranslate"><span class="pre">ModelInstanceStatus.state</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.model_instance_status.html#mistk.model.client.models.model_instance_status.ModelInstanceStatus.swagger_types"><code class="docutils literal notranslate"><span class="pre">ModelInstanceStatus.swagger_types</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.model_instance_status.html#mistk.model.client.models.model_instance_status.ModelInstanceStatus.to_dict"><code class="docutils literal notranslate"><span class="pre">ModelInstanceStatus.to_dict()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.model_instance_status.html#mistk.model.client.models.model_instance_status.ModelInstanceStatus.to_str"><code class="docutils literal notranslate"><span class="pre">ModelInstanceStatus.to_str()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.models.object_info.html">mistk.model.client.models.object_info module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mistk.model.client.models.object_info.html#mistk.model.client.models.object_info.ObjectInfo"><code class="docutils literal notranslate"><span class="pre">ObjectInfo</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.object_info.html#mistk.model.client.models.object_info.ObjectInfo.attribute_map"><code class="docutils literal notranslate"><span class="pre">ObjectInfo.attribute_map</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.object_info.html#mistk.model.client.models.object_info.ObjectInfo.creation_time"><code class="docutils literal notranslate"><span class="pre">ObjectInfo.creation_time</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.object_info.html#mistk.model.client.models.object_info.ObjectInfo.description"><code class="docutils literal notranslate"><span class="pre">ObjectInfo.description</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.object_info.html#mistk.model.client.models.object_info.ObjectInfo.display_name"><code class="docutils literal notranslate"><span class="pre">ObjectInfo.display_name</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.object_info.html#mistk.model.client.models.object_info.ObjectInfo.id"><code class="docutils literal notranslate"><span class="pre">ObjectInfo.id</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.object_info.html#mistk.model.client.models.object_info.ObjectInfo.kind"><code class="docutils literal notranslate"><span class="pre">ObjectInfo.kind</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.object_info.html#mistk.model.client.models.object_info.ObjectInfo.labels"><code class="docutils literal notranslate"><span class="pre">ObjectInfo.labels</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.object_info.html#mistk.model.client.models.object_info.ObjectInfo.modification_time"><code class="docutils literal notranslate"><span class="pre">ObjectInfo.modification_time</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.object_info.html#mistk.model.client.models.object_info.ObjectInfo.name"><code class="docutils literal notranslate"><span class="pre">ObjectInfo.name</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.object_info.html#mistk.model.client.models.object_info.ObjectInfo.owner"><code class="docutils literal notranslate"><span class="pre">ObjectInfo.owner</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.object_info.html#mistk.model.client.models.object_info.ObjectInfo.project"><code class="docutils literal notranslate"><span class="pre">ObjectInfo.project</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.object_info.html#mistk.model.client.models.object_info.ObjectInfo.public"><code class="docutils literal notranslate"><span class="pre">ObjectInfo.public</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.object_info.html#mistk.model.client.models.object_info.ObjectInfo.resource_version"><code class="docutils literal notranslate"><span class="pre">ObjectInfo.resource_version</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.object_info.html#mistk.model.client.models.object_info.ObjectInfo.resources"><code class="docutils literal notranslate"><span class="pre">ObjectInfo.resources</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.object_info.html#mistk.model.client.models.object_info.ObjectInfo.sharable"><code class="docutils literal notranslate"><span class="pre">ObjectInfo.sharable</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.object_info.html#mistk.model.client.models.object_info.ObjectInfo.summary"><code class="docutils literal notranslate"><span class="pre">ObjectInfo.summary</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.object_info.html#mistk.model.client.models.object_info.ObjectInfo.swagger_types"><code class="docutils literal notranslate"><span class="pre">ObjectInfo.swagger_types</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.object_info.html#mistk.model.client.models.object_info.ObjectInfo.to_dict"><code class="docutils literal notranslate"><span class="pre">ObjectInfo.to_dict()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.object_info.html#mistk.model.client.models.object_info.ObjectInfo.to_str"><code class="docutils literal notranslate"><span class="pre">ObjectInfo.to_str()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.models.object_reference.html">mistk.model.client.models.object_reference module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mistk.model.client.models.object_reference.html#mistk.model.client.models.object_reference.ObjectReference"><code class="docutils literal notranslate"><span class="pre">ObjectReference</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.object_reference.html#mistk.model.client.models.object_reference.ObjectReference.attribute_map"><code class="docutils literal notranslate"><span class="pre">ObjectReference.attribute_map</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.object_reference.html#mistk.model.client.models.object_reference.ObjectReference.id"><code class="docutils literal notranslate"><span class="pre">ObjectReference.id</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.object_reference.html#mistk.model.client.models.object_reference.ObjectReference.instance"><code class="docutils literal notranslate"><span class="pre">ObjectReference.instance</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.object_reference.html#mistk.model.client.models.object_reference.ObjectReference.kind"><code class="docutils literal notranslate"><span class="pre">ObjectReference.kind</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.object_reference.html#mistk.model.client.models.object_reference.ObjectReference.name"><code class="docutils literal notranslate"><span class="pre">ObjectReference.name</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.object_reference.html#mistk.model.client.models.object_reference.ObjectReference.project"><code class="docutils literal notranslate"><span class="pre">ObjectReference.project</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.object_reference.html#mistk.model.client.models.object_reference.ObjectReference.swagger_types"><code class="docutils literal notranslate"><span class="pre">ObjectReference.swagger_types</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.object_reference.html#mistk.model.client.models.object_reference.ObjectReference.to_dict"><code class="docutils literal notranslate"><span class="pre">ObjectReference.to_dict()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.object_reference.html#mistk.model.client.models.object_reference.ObjectReference.to_str"><code class="docutils literal notranslate"><span class="pre">ObjectReference.to_str()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.models.service_error.html">mistk.model.client.models.service_error module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mistk.model.client.models.service_error.html#mistk.model.client.models.service_error.ServiceError"><code class="docutils literal notranslate"><span class="pre">ServiceError</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.service_error.html#mistk.model.client.models.service_error.ServiceError.attribute_map"><code class="docutils literal notranslate"><span class="pre">ServiceError.attribute_map</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.service_error.html#mistk.model.client.models.service_error.ServiceError.code"><code class="docutils literal notranslate"><span class="pre">ServiceError.code</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.service_error.html#mistk.model.client.models.service_error.ServiceError.message"><code class="docutils literal notranslate"><span class="pre">ServiceError.message</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.service_error.html#mistk.model.client.models.service_error.ServiceError.swagger_types"><code class="docutils literal notranslate"><span class="pre">ServiceError.swagger_types</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.service_error.html#mistk.model.client.models.service_error.ServiceError.to_dict"><code class="docutils literal notranslate"><span class="pre">ServiceError.to_dict()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.service_error.html#mistk.model.client.models.service_error.ServiceError.to_str"><code class="docutils literal notranslate"><span class="pre">ServiceError.to_str()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.models.watch_event.html">mistk.model.client.models.watch_event module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mistk.model.client.models.watch_event.html#mistk.model.client.models.watch_event.WatchEvent"><code class="docutils literal notranslate"><span class="pre">WatchEvent</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.watch_event.html#mistk.model.client.models.watch_event.WatchEvent.attribute_map"><code class="docutils literal notranslate"><span class="pre">WatchEvent.attribute_map</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.watch_event.html#mistk.model.client.models.watch_event.WatchEvent.event_type"><code class="docutils literal notranslate"><span class="pre">WatchEvent.event_type</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.watch_event.html#mistk.model.client.models.watch_event.WatchEvent.payload"><code class="docutils literal notranslate"><span class="pre">WatchEvent.payload</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.watch_event.html#mistk.model.client.models.watch_event.WatchEvent.swagger_types"><code class="docutils literal notranslate"><span class="pre">WatchEvent.swagger_types</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.watch_event.html#mistk.model.client.models.watch_event.WatchEvent.to_dict"><code class="docutils literal notranslate"><span class="pre">WatchEvent.to_dict()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="mistk.model.client.models.watch_event.html#mistk.model.client.models.watch_event.WatchEvent.to_str"><code class="docutils literal notranslate"><span class="pre">WatchEvent.to_str()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="mistk.model.client.models.html#module-mistk.model.client.models">Module contents</a></li>
@@ -214,72 +379,103 @@
 </li>
 </ul>
 </div>
-</div>
-<div class="section" id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="mistk.model.client.api_client.html">mistk.model.client.api_client module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mistk.model.client.configuration.html">mistk.model.client.configuration module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mistk.model.client.rest.html">mistk.model.client.rest module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mistk.model.client.api_client.html">mistk.model.client.api_client module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mistk.model.client.api_client.html#mistk.model.client.api_client.ApiClient"><code class="docutils literal notranslate"><span class="pre">ApiClient</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.api_client.html#mistk.model.client.api_client.ApiClient.NATIVE_TYPES_MAPPING"><code class="docutils literal notranslate"><span class="pre">ApiClient.NATIVE_TYPES_MAPPING</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.api_client.html#mistk.model.client.api_client.ApiClient.PRIMITIVE_TYPES"><code class="docutils literal notranslate"><span class="pre">ApiClient.PRIMITIVE_TYPES</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.api_client.html#mistk.model.client.api_client.ApiClient.call_api"><code class="docutils literal notranslate"><span class="pre">ApiClient.call_api()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.api_client.html#mistk.model.client.api_client.ApiClient.deserialize"><code class="docutils literal notranslate"><span class="pre">ApiClient.deserialize()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.api_client.html#mistk.model.client.api_client.ApiClient.parameters_to_tuples"><code class="docutils literal notranslate"><span class="pre">ApiClient.parameters_to_tuples()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.api_client.html#mistk.model.client.api_client.ApiClient.pool"><code class="docutils literal notranslate"><span class="pre">ApiClient.pool</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.api_client.html#mistk.model.client.api_client.ApiClient.prepare_post_parameters"><code class="docutils literal notranslate"><span class="pre">ApiClient.prepare_post_parameters()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.api_client.html#mistk.model.client.api_client.ApiClient.request"><code class="docutils literal notranslate"><span class="pre">ApiClient.request()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.api_client.html#mistk.model.client.api_client.ApiClient.sanitize_for_serialization"><code class="docutils literal notranslate"><span class="pre">ApiClient.sanitize_for_serialization()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.api_client.html#mistk.model.client.api_client.ApiClient.select_header_accept"><code class="docutils literal notranslate"><span class="pre">ApiClient.select_header_accept()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.api_client.html#mistk.model.client.api_client.ApiClient.select_header_content_type"><code class="docutils literal notranslate"><span class="pre">ApiClient.select_header_content_type()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.api_client.html#mistk.model.client.api_client.ApiClient.set_default_header"><code class="docutils literal notranslate"><span class="pre">ApiClient.set_default_header()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.api_client.html#mistk.model.client.api_client.ApiClient.update_params_for_auth"><code class="docutils literal notranslate"><span class="pre">ApiClient.update_params_for_auth()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.api_client.html#mistk.model.client.api_client.ApiClient.user_agent"><code class="docutils literal notranslate"><span class="pre">ApiClient.user_agent</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mistk.model.client.configuration.html">mistk.model.client.configuration module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mistk.model.client.configuration.html#mistk.model.client.configuration.Configuration"><code class="docutils literal notranslate"><span class="pre">Configuration</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.configuration.html#mistk.model.client.configuration.Configuration.auth_settings"><code class="docutils literal notranslate"><span class="pre">Configuration.auth_settings()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.configuration.html#mistk.model.client.configuration.Configuration.debug"><code class="docutils literal notranslate"><span class="pre">Configuration.debug</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.configuration.html#mistk.model.client.configuration.Configuration.get_api_key_with_prefix"><code class="docutils literal notranslate"><span class="pre">Configuration.get_api_key_with_prefix()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.configuration.html#mistk.model.client.configuration.Configuration.get_basic_auth_token"><code class="docutils literal notranslate"><span class="pre">Configuration.get_basic_auth_token()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.configuration.html#mistk.model.client.configuration.Configuration.logger_file"><code class="docutils literal notranslate"><span class="pre">Configuration.logger_file</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.configuration.html#mistk.model.client.configuration.Configuration.logger_format"><code class="docutils literal notranslate"><span class="pre">Configuration.logger_format</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.configuration.html#mistk.model.client.configuration.Configuration.set_default"><code class="docutils literal notranslate"><span class="pre">Configuration.set_default()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.configuration.html#mistk.model.client.configuration.Configuration.to_debug_report"><code class="docutils literal notranslate"><span class="pre">Configuration.to_debug_report()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mistk.model.client.rest.html">mistk.model.client.rest module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mistk.model.client.rest.html#mistk.model.client.rest.ApiException"><code class="docutils literal notranslate"><span class="pre">ApiException</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mistk.model.client.rest.html#mistk.model.client.rest.RESTClientObject"><code class="docutils literal notranslate"><span class="pre">RESTClientObject</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.rest.html#mistk.model.client.rest.RESTClientObject.DELETE"><code class="docutils literal notranslate"><span class="pre">RESTClientObject.DELETE()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.rest.html#mistk.model.client.rest.RESTClientObject.GET"><code class="docutils literal notranslate"><span class="pre">RESTClientObject.GET()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.rest.html#mistk.model.client.rest.RESTClientObject.HEAD"><code class="docutils literal notranslate"><span class="pre">RESTClientObject.HEAD()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.rest.html#mistk.model.client.rest.RESTClientObject.OPTIONS"><code class="docutils literal notranslate"><span class="pre">RESTClientObject.OPTIONS()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.rest.html#mistk.model.client.rest.RESTClientObject.PATCH"><code class="docutils literal notranslate"><span class="pre">RESTClientObject.PATCH()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.rest.html#mistk.model.client.rest.RESTClientObject.POST"><code class="docutils literal notranslate"><span class="pre">RESTClientObject.POST()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.rest.html#mistk.model.client.rest.RESTClientObject.PUT"><code class="docutils literal notranslate"><span class="pre">RESTClientObject.PUT()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.rest.html#mistk.model.client.rest.RESTClientObject.request"><code class="docutils literal notranslate"><span class="pre">RESTClientObject.request()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mistk.model.client.rest.html#mistk.model.client.rest.RESTResponse"><code class="docutils literal notranslate"><span class="pre">RESTResponse</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.rest.html#mistk.model.client.rest.RESTResponse.getheader"><code class="docutils literal notranslate"><span class="pre">RESTResponse.getheader()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.model.client.rest.html#mistk.model.client.rest.RESTResponse.getheaders"><code class="docutils literal notranslate"><span class="pre">RESTResponse.getheaders()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </div>
-</div>
-<div class="section" id="module-mistk.model.client">
-<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-mistk.model.client" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-mistk.model.client">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-mistk.model.client" title="Permalink to this heading"></a></h2>
 <p>Model Integration Software ToolKit</p>
 <p>No description provided (generated by Swagger Codegen <a class="reference external" href="https://github.com/swagger-api/swagger-codegen">https://github.com/swagger-api/swagger-codegen</a>)  # noqa: E501</p>
-<p>OpenAPI spec version: 1.0.0</p>
+<p>OpenAPI spec version: 1.3.0</p>
 <p>Generated by: <a class="reference external" href="https://github.com/swagger-api/swagger-codegen.git">https://github.com/swagger-api/swagger-codegen.git</a></p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
-           
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="mistk.model.client.api.html" class="btn btn-neutral float-right" title="mistk.model.client.api package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="mistk.model.html" class="btn btn-neutral float-left" title="mistk.model package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-
-    </p>
+    <p></p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
-
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

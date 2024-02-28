@@ -1,18 +1,11 @@
 mistk.transform package
 =======================
 
-Subpackages
------------
-
-.. toctree::
-
-   mistk.transform.client
-   mistk.transform.server
-
 Submodules
 ----------
 
 .. toctree::
+   :maxdepth: 4
 
    mistk.transform.abstract_transform_plugin
    mistk.transform.service

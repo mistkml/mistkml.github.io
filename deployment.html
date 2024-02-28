@@ -1,67 +1,36 @@
-
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Deployment &mdash; MISTK  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
-
-  
-  
-  
-  
-
-  
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
-    
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-
-    
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="MISTK API" href="api/index.html" />
     <link rel="prev" title="Testing" href="testing.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="index.html" class="icon icon-home"> MISTK
-          
-
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -69,18 +38,8 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="guide.html">Guide</a></li>
@@ -92,120 +51,62 @@
 <li class="toctree-l1"><a class="reference internal" href="api/index.html">MISTK API</a></li>
 </ul>
 
-            
-          
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">MISTK</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="index.html">Docs</a> &raquo;</li>
-        
-      <li>Deployment</li>
-    
-    
+      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Deployment</li>
       <li class="wy-breadcrumbs-aside">
-        
-            
             <a href="_sources/deployment.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="deployment">
-<h1>Deployment<a class="headerlink" href="#deployment" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="containerization">
-<h2>Containerization<a class="headerlink" href="#containerization" title="Permalink to this headline">¶</a></h2>
+             
+  <section id="deployment">
+<h1>Deployment<a class="headerlink" href="#deployment" title="Permalink to this heading"></a></h1>
+<section id="containerization">
+<h2>Containerization<a class="headerlink" href="#containerization" title="Permalink to this heading"></a></h2>
 <p>All processes (including models) in the MISTK ecosystem run as Docker containers
 and require a <strong>Dockerfile</strong> to configure the runtime image.  The <strong>Dockerfile</strong>
 below runs the Logistic Regression model example.
 It includes the essentials for running within MISTK that can be used for any model,
 however models are free to add any customizations to their runtime image:</p>
-<div class="highlight-guess notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21</pre></div></td><td class="code"><div class="highlight"><pre><span></span># this model uses a generic python v3.6 base image
-FROM python:3.6
-
-# This downloads the latest MISTK wheel file from the Github releases page
-# Replace &lt;VERSION&gt; with the latest numbered version (ie. 0.4.0)
-RUN wget https://github.com/mistkml/mistk/releases/download/&lt;VERSION&gt;/mistk-&lt;VERSION&gt;-py3-none-any.whl
-# Install it via pip
-RUN pip install mistk-*-py3-none-any.whl
-
-# this line explicitly installs the model dependencies (optional)
-RUN pip install numpy pandas scikit-learn scipy
-
-# install the python code for our Logistic Regression model
-RUN mkdir -p /usr/src/models/scikit-basicmodels
-COPY . /usr/src/models/scikit-basicmodels
-RUN cd /usr/src/models/scikit-basicmodels &amp;&amp; python setup.py easy_install -Z .
-
-# these lines set up and run this model using the MISTK infrastructure
-EXPOSE 8080
-ENTRYPOINT [&quot;python3&quot;]
-CMD [&quot;-m&quot;, &quot;mistk&quot;, &quot;scikit_learn.logistic_regression&quot;, &quot;ScikitLearnLogisticRegressionModel&quot;]
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1"># this model uses a generic python v3.6 base image</span>
+<span class="linenos"> 2</span><span class="n">FROM</span><span class="w"> </span><span class="n">python</span><span class="p">:</span><span class="mf">3.6</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="c1"># This downloads the latest MISTK wheel file from the Github releases page</span>
+<span class="linenos"> 5</span><span class="c1"># Replace &lt;VERSION&gt; with the latest numbered version (ie. 0.4.0)</span>
+<span class="linenos"> 6</span><span class="n">RUN</span><span class="w"> </span><span class="n">wget</span><span class="w"> </span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">mistkml</span><span class="o">/</span><span class="n">mistk</span><span class="o">/</span><span class="n">releases</span><span class="o">/</span><span class="n">download</span><span class="o">/&lt;</span><span class="n">VERSION</span><span class="o">&gt;/</span><span class="n">mistk</span><span class="o">-&lt;</span><span class="n">VERSION</span><span class="o">&gt;-</span><span class="n">py3</span><span class="o">-</span><span class="n">none</span><span class="o">-</span><span class="n">any</span><span class="o">.</span><span class="n">whl</span>
+<span class="linenos"> 7</span><span class="c1"># Install it via pip</span>
+<span class="linenos"> 8</span><span class="n">RUN</span><span class="w"> </span><span class="n">pip</span><span class="w"> </span><span class="n">install</span><span class="w"> </span><span class="n">mistk</span><span class="o">-*-</span><span class="n">py3</span><span class="o">-</span><span class="n">none</span><span class="o">-</span><span class="n">any</span><span class="o">.</span><span class="n">whl</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="c1"># this line explicitly installs the model dependencies (optional)</span>
+<span class="linenos">11</span><span class="n">RUN</span><span class="w"> </span><span class="n">pip</span><span class="w"> </span><span class="n">install</span><span class="w"> </span><span class="n">numpy</span><span class="w"> </span><span class="n">pandas</span><span class="w"> </span><span class="n">scikit</span><span class="o">-</span><span class="n">learn</span><span class="w"> </span><span class="n">scipy</span>
+<span class="linenos">12</span>
+<span class="linenos">13</span><span class="c1"># install the python code for our Logistic Regression model</span>
+<span class="linenos">14</span><span class="n">RUN</span><span class="w"> </span><span class="n">mkdir</span><span class="w"> </span><span class="o">-</span><span class="n">p</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">models</span><span class="o">/</span><span class="n">scikit</span><span class="o">-</span><span class="n">basicmodels</span>
+<span class="linenos">15</span><span class="n">COPY</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">models</span><span class="o">/</span><span class="n">scikit</span><span class="o">-</span><span class="n">basicmodels</span>
+<span class="linenos">16</span><span class="n">RUN</span><span class="w"> </span><span class="n">cd</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">models</span><span class="o">/</span><span class="n">scikit</span><span class="o">-</span><span class="n">basicmodels</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">python</span><span class="w"> </span><span class="n">setup</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="n">easy_install</span><span class="w"> </span><span class="o">-</span><span class="n">Z</span><span class="w"> </span><span class="o">.</span>
+<span class="linenos">17</span>
+<span class="linenos">18</span><span class="c1"># these lines set up and run this model using the MISTK infrastructure</span>
+<span class="linenos">19</span><span class="n">EXPOSE</span><span class="w"> </span><span class="mi">8080</span>
+<span class="linenos">20</span><span class="n">ENTRYPOINT</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;python3&quot;</span><span class="p">]</span>
+<span class="linenos">21</span><span class="n">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;-m&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;mistk&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;scikit_learn.logistic_regression&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;ScikitLearnLogisticRegressionModel&quot;</span><span class="p">]</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 <p>The final CMD line starts the model and sets up its endpoints.  The third
 argument (<cite>scikit_learn.logistic_regression</cite>) is the package/module of our model
 and the fourth argument (<cite>ScikitLearnLogisticRegressionModel</cite>) is the model class name.</p>
@@ -214,88 +115,56 @@ on lines 14-16 and the model path and name on line 21. The MISTK package
 version denoted by &lt;VERSION&gt; must also be updated on line 6.</p>
 <p>The setup.py script referenced above is a standard python setup install script
 which lists the python package dependencies for the model:</p>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">setup</span><span class="p">,</span> <span class="n">find_packages</span>
-
-<span class="n">REQUIRES</span><span class="o">=</span><span class="p">[</span>
-<span class="s1">&#39;setuptools &gt;= 21.0.0&#39;</span><span class="p">,</span>
-<span class="s1">&#39;pandas &gt;= 0.20.3&#39;</span><span class="p">,</span>
-<span class="s1">&#39;scikit-learn &gt;= 0.19.1&#39;</span><span class="p">,</span>
-<span class="s1">&#39;numpy &gt;= 1.13.3&#39;</span><span class="p">,</span>
-<span class="s1">&#39;scipy &gt;= 1.0.0&#39;</span><span class="p">,</span>
-<span class="s1">&#39;mistk&#39;</span>
-<span class="p">]</span>
-
-<span class="n">setup</span><span class="p">(</span>
-<span class="n">install_requires</span><span class="o">=</span><span class="n">REQUIRES</span><span class="p">,</span>
-<span class="n">name</span><span class="o">=</span><span class="s1">&#39;scikit-basicmodels&#39;</span><span class="p">,</span>
-<span class="n">packages</span><span class="o">=</span><span class="n">find_packages</span><span class="p">()</span>
-<span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">setup</span><span class="p">,</span> <span class="n">find_packages</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="n">REQUIRES</span><span class="o">=</span><span class="p">[</span>
+<span class="linenos"> 4</span><span class="s1">&#39;setuptools &gt;= 21.0.0&#39;</span><span class="p">,</span>
+<span class="linenos"> 5</span><span class="s1">&#39;pandas &gt;= 0.20.3&#39;</span><span class="p">,</span>
+<span class="linenos"> 6</span><span class="s1">&#39;scikit-learn &gt;= 0.19.1&#39;</span><span class="p">,</span>
+<span class="linenos"> 7</span><span class="s1">&#39;numpy &gt;= 1.13.3&#39;</span><span class="p">,</span>
+<span class="linenos"> 8</span><span class="s1">&#39;scipy &gt;= 1.0.0&#39;</span><span class="p">,</span>
+<span class="linenos"> 9</span><span class="s1">&#39;mistk&#39;</span>
+<span class="linenos">10</span><span class="p">]</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span><span class="n">setup</span><span class="p">(</span>
+<span class="linenos">13</span><span class="n">install_requires</span><span class="o">=</span><span class="n">REQUIRES</span><span class="p">,</span>
+<span class="linenos">14</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;scikit-basicmodels&#39;</span><span class="p">,</span>
+<span class="linenos">15</span><span class="n">packages</span><span class="o">=</span><span class="n">find_packages</span><span class="p">()</span>
+<span class="linenos">16</span><span class="p">)</span>
 </pre></div>
-</td></tr></table></div>
 </div>
-</div>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="api/index.html" class="btn btn-neutral float-right" title="MISTK API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="testing.html" class="btn btn-neutral float-left" title="Testing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="testing.html" class="btn btn-neutral float-left" title="Testing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="api/index.html" class="btn btn-neutral float-right" title="MISTK API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-
-    </p>
+    <p></p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
-
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

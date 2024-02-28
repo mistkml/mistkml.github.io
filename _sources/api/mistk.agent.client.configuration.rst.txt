@@ -1,0 +1,7 @@
+mistk.agent.client.configuration module
+=======================================
+
+.. automodule:: mistk.agent.client.configuration
+   :members:
+   :undoc-members:
+   :show-inheritance:

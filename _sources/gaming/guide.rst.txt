@@ -1,0 +1,255 @@
+Guide
+=====
+
+Agent Interface
+---------------
+
+A MISTK agent implements the `mistk.agent.AbstractAgent` class. This class
+provides a set of abstract methods that represent the agent lifecycle and
+must be implemented by the new agent. Ultimately, these methods form the core of
+the web endpoint service that is made available for every agent implementation.
+
+**do_initialize** (props: dict, hparams: dict)
+    Called once the endpoint service has launched.  This would typically be the
+    first call made to the service. Perform any general setup and initialization.
+
+    :param props: A dictionary of settings or configuration values that are passed
+        from the ecosystem, but are not considered model hyperparameters.
+    :param hparams: A dictionary of hyperparameters that are used by the agent model.
+
+**do_build_model** (path: str = '')
+    Instructs the service to build all necessary data structures given the
+    selected initialized properties and hyperparameters.
+
+    :param path: The path to the model file or checkpoint that should be loaded, if you're using a pretrained one
+        Defaults to an empty String if no file was specified in this agent's definition.
+
+
+**do_save_model** (path: str = '')
+    Save a checkpoint of the model to the supplied data path. Format of the saved
+    file(s) is at the discretion of the agent. The infrastructure associates
+    this model checkpoint with this agent.
+
+    :param path: The path to which the model should be saved.
+
+**do_agent_registered** (agent_cfg: dict)
+    Instructs the service that the agent has been registered to a orchestrator
+
+    :param agent_cfg: A dictionary for the agent configuration from the orchestrator
+
+**do_episode_started** (episode_cfg: dict):
+    Instructs the agent that the episode has started.
+    This method must also include a way to reset the agent's learner with
+    the current observations, if the learner has this expectation.
+
+    :param episode_cfg: Dict with the episode's config settings. A key
+        must be `obs`, with a List of the env's initial observation.
+   
+**do_get_action** (obs: Dict[str, List[Union[int, float]]]) -> Dict[str, List[Union[int, float]]]:
+    Gives the agent the observations to perform action(s)
+
+    In normal operating conditions, this Agent class is only controlling
+    one player/entity in your game/environment. In this situation, we
+    assume both the input `obs` and output will be a dictionary containing
+    that singular agent, whose name is self.agent_name, as defined in
+    do_start_episode.
+
+    However, if this Agent class is controlling multiple players/entities
+    for some reason, the input & output of this method would be a dict
+    with each of those players/entities represented.
+
+    :param obs: A dictionary of each agent's list of int or float
+        observations. The keys of the dict are each agent's name.
+    :return: A dict of lists. Each list contains the int/float actions an agent should take.
+
+
+**do_replay_action** (obs: Dict[str, Union[List[Union[int, float]], bool]]):
+
+    Reviews action that the agent taken against the env observations so
+    the agent can learn.
+
+    :param obs: In general, this will be a dictionary of:
+                prev_obs: A list of env observations prior to taking this step,
+                rewards: A list of rewards for this agent on this turn,
+                actions: A list of actions this agent took,
+                new_obs: A list of env observations after taking this step
+                done: Boolean if the game is over
+
+**do_episode_stopped** ():
+    Instructs the agent that the episode has stopped
+
+
+**do_reset** (unload_model: bool = True):
+    Resets the model into its initial state
+
+    :param unload_model: Unload (reset) the built model or keep the current built model
+
+The Agent State Machine
+:::::::::::::::::::::::
+
+Model implementations follow a workflow lifecycle based on state machine
+transitions. The underlying MISTK infrastructure ensures that only legal
+transitions from one state to another can be made and that the appropriate
+model methods are called during those transitions. The image below illustrates
+the high-level state machine transitions and the model methods that may be
+called between them.
+
+.. image:: ../images/gaming_agent_state_machine.png
+
+The 'Terminated' state (and associated method 'do_terminate') is not
+pictured but is a valid transition from any of the states depicted above.
+Note that an internal 'Failed' state will be entered if the agent
+implementation throws an exception. No further model activities are permitted
+from the 'Failed' state.
+
+If a workflow enters the 'Failed' state, then the workflow will need to be restarted
+from the beginning. This is required in order to support various technologies 
+that may not have a methodology to reset/resume their state after a critical failure.
+
+Initializing an Agent
+:::::::::::::::::::::
+
+Initialization of an agent loads the hyperparameters and model properties associated
+with the agent. Hyperparameters are defined by the algorithm that an agent is based on.
+Agent properties are defined by a specific implementation. 
+Below are sample hyperparameters and model properties
+dictionaries that can be passed to an agents implementation's 'do_initialize' method.
+
+Hyperparameters
+###############
+
+::
+
+   {
+     "low": 0,
+     "high": 4,
+     "size": 1
+   }
+  
+
+Model Properties
+################
+
+::
+
+   {
+     "model_file_name": "test.pt"
+   }
+
+
+
+Please note, that when using the RESTful API directly, where the user would be
+submitting the JSON via the 'load_data' API call, the JSON keys would need to be
+in camelcase format rather than underscored (ie. object_info becomes objectInfo).
+
+
+Agent Status
+:::::::::::::::::::::
+
+Agent implementations are encouraged to report status pertaining to their
+current workflow state back to the MISTK infrastructure by calling the
+**update_status(dict)** method inherited from `AbstractAgent` (note this method
+is intended to be called by the agent, not overridden as the methods above).
+This method takes a dictionary object of key-value pairs defined by the agent.
+For example, the agent below updates its status with each step within a running episode.
+
+    
+Example Agent
+:::::::::::::
+
+The following example code implements a test random agent
+with the MISTK agent interface:
+
+.. literalinclude:: ../sample_gaming_files/agent.py
+    :linenos:
+    :language: python
+
+
+
+
+Orchestrator Interface
+----------------------
+
+The MISTK orchestrator interfaces with the actual game environment (e.g. Gynasium, Unity, Airlift Challenge).
+An orchestrator implements the `mistk.agent.AbstractOrchestrator` class. This class
+provides a set of abstract methods that represent the orchestrator lifecycle and
+must be implemented by the new orchestrator. Ultimately, these methods form the core of
+the web endpoint service that is made available for every orchestrator implementation.
+
+**do_initialize** (env: dict = {}, agents_needed: int = 1):
+    Called once the endpoint service has launched.
+    This would typically be the first call made to the service.
+
+    :param env: Dictionary which has keyword args that will
+       be used for the env's initialization method [Default = None]
+    :param agents_needed: Number of agents who'll play in
+       this game. [Default = 1]
+
+**do_register_agent** (agent_name: str, agent_url: str, skip_train: bool):
+   Instructs the service to register all of the agents this orchestrator
+   will work with.
+
+   :param agent_name: The name of the agent
+   :param agent_url: The URL to the agent
+   :param skip_train: If we shouldn't train this agent [Default = False]
+
+
+**do_start_episode** (episode_cfg: dict):
+    Begins starting the episode of playing the game
+
+    :param episode_cfg: Dictionary with the episode's config settings
+
+**do_save_episode** (path: str):
+    Saves the game episode's state and/or output
+
+    :param path: The path to save the game to
+
+**do_stop_episode**():
+    Stops all processing and releases any resources that are in use in
+    preparation for being shut down.
+    
+**do_reset**():
+    Resets the model into its initial state
+    
+
+The Orchestrator State Machine
+:::::::::::::::::::::::::::::::
+
+Orchestrator implementations follow a workflow lifecycle based on state machine
+transitions. The underlying MISTK infrastructure ensures that only legal
+transitions from one state to another can be made and that the appropriate
+Orchestrator methods are called during those transitions. The image below illustrates
+the high-level state machine transitions and the orchestrator methods
+that may be called between them.
+
+.. image:: ../images/gaming_orchestrator_state_machine.png
+
+A Orchestrator instance will automatically go to the Uninitialized state if its
+container instance successfully starts up. Once initialized, agents can be registered. Once 
+the defined amount of agents are registered, then the state will switch to ready where then a
+game episode can be started.
+
+
+Example Orchestrator
+::::::::::::::::::::
+
+The following example code implements a simple test orchestrator
+with the MISTK orchestrator interface:
+
+.. literalinclude:: ../sample_gaming_files/orchestrator.py
+    :linenos:
+    :language: python
+
+    
+
+
+Orchestrator and Agent Workflow
+-------------------------------
+
+The following sequence diagram shows the interactions between the Test Harness (SML), 
+the orchestrator, and a single agent for a single episode of play. 
+A larger version of the image can be viewed by clicking the image.
+
+.. image:: ../images/gaming_sequence.png
+   :scale: 40%
+    

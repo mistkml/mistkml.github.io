@@ -1,0 +1,7 @@
+mistk.orchestrator.server.controllers.orchestrator\_instance\_endpoint\_controller module
+=========================================================================================
+
+.. automodule:: mistk.orchestrator.server.controllers.orchestrator_instance_endpoint_controller
+   :members:
+   :undoc-members:
+   :show-inheritance:

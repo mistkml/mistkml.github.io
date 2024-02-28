@@ -5,6 +5,7 @@ Submodules
 ----------
 
 .. toctree::
+   :maxdepth: 4
 
    mistk.evaluation.client.api.evaluation_plugin_endpoint_api
 

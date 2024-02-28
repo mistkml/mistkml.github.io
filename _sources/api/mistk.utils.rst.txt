@@ -5,9 +5,12 @@ Submodules
 ----------
 
 .. toctree::
+   :maxdepth: 4
 
    mistk.utils.csv_utils
+   mistk.utils.file_utils
    mistk.utils.image_utils
+   mistk.utils.json_utils
 
 Module contents
 ---------------

@@ -1,0 +1,29 @@
+mistk.agent.server package
+==========================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   mistk.agent.server.controllers
+   mistk.agent.server.models
+   mistk.agent.server.test
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   mistk.agent.server.encoder
+   mistk.agent.server.util
+
+Module contents
+---------------
+
+.. automodule:: mistk.agent.server
+   :members:
+   :undoc-members:
+   :show-inheritance:

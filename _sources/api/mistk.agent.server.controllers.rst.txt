@@ -1,0 +1,18 @@
+mistk.agent.server.controllers package
+======================================
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   mistk.agent.server.controllers.agent_instance_endpoint_controller
+
+Module contents
+---------------
+
+.. automodule:: mistk.agent.server.controllers
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -5,6 +5,7 @@ Submodules
 ----------
 
 .. toctree::
+   :maxdepth: 4
 
    mistk.transform.client.models.dataset
    mistk.transform.client.models.dataset_statistics

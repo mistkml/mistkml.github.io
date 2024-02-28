@@ -1,0 +1,7 @@
+mistk.agent.client.rest module
+==============================
+
+.. automodule:: mistk.agent.client.rest
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -5,6 +5,7 @@ Submodules
 ----------
 
 .. toctree::
+   :maxdepth: 4
 
    mistk.model.server.test.test_model_instance_endpoint_controller
 

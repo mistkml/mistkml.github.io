@@ -5,6 +5,7 @@ Subpackages
 -----------
 
 .. toctree::
+   :maxdepth: 4
 
    mistk.evaluation.client.api
    mistk.evaluation.client.models
@@ -13,6 +14,7 @@ Submodules
 ----------
 
 .. toctree::
+   :maxdepth: 4
 
    mistk.evaluation.client.api_client
    mistk.evaluation.client.configuration

@@ -1,0 +1,11 @@
+*****
+Gaming
+*****
+
+.. toctree::
+   :maxdepth: 2
+   
+   gaming/guide.rst
+   gaming/testing.rst
+   gaming/deployment.rst
+   gaming/api.rst

@@ -1,0 +1,7 @@
+mistk.orchestrator.client.models.watch\_event module
+====================================================
+
+.. automodule:: mistk.orchestrator.client.models.watch_event
+   :members:
+   :undoc-members:
+   :show-inheritance:

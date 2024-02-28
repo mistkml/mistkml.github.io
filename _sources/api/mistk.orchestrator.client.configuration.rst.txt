@@ -1,0 +1,7 @@
+mistk.orchestrator.client.configuration module
+==============================================
+
+.. automodule:: mistk.orchestrator.client.configuration
+   :members:
+   :undoc-members:
+   :show-inheritance:

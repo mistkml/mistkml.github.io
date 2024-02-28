@@ -1,0 +1,27 @@
+mistk package
+=============
+
+Subpackages
+-----------
+
+.. toctree::
+
+   :maxdepth: 2
+
+   ../api/mistk.cfg
+   ../api/mistk.agent
+   ../api/mistk.orchestrator
+   ../api/mistk.data
+   ../api/mistk.log
+   ../api/mistk.utils
+   ../api/mistk.watch
+
+Submodules
+----------
+
+.. toctree::
+
+   :maxdepth: 2
+
+   ../api/mistk.agent.abstract_agent
+   ../api/mistk.orchestrator.abstract_orchestrator

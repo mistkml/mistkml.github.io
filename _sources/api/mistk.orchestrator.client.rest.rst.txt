@@ -1,0 +1,7 @@
+mistk.orchestrator.client.rest module
+=====================================
+
+.. automodule:: mistk.orchestrator.client.rest
+   :members:
+   :undoc-members:
+   :show-inheritance:

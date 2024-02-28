@@ -1,0 +1,30 @@
+Deployment
+==========
+
+Containerization
+----------------
+
+All processes (including agents and orchestrators) in the MISTK ecosystem run as Docker containers
+and require a **Dockerfile** to configure the runtime image.  The **Dockerfiles**
+below runs the Test Agent example.
+It includes the essentials for running within MISTK that can be used for any agent,
+however agents are free to add any customizations to their runtime image:
+
+.. literalinclude:: ../sample_gaming_files/Dockerfile
+    :linenos:
+    :language: guess
+
+The final CMD line starts the agent and sets up its endpoints.  The third
+argument (`test_agent.agent`) is the package/module of our agent
+and the fourth argument (`TestAgent`) is the agent class name.
+
+To update this Dockerfile for a new agent, a model developer would update the install path
+on lines 13-14 and the model path and name on line 18. The MISTK whl
+denoted on line 8 will need to be added to the folder where the Dockerfile is also.
+
+The setup.py script referenced above is a standard python setup install script
+which lists the python package dependencies for the agent:
+
+.. literalinclude:: ../sample_gaming_files/setup.py
+    :linenos:
+    :language: python

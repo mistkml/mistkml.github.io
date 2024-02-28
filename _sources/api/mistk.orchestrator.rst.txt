@@ -1,0 +1,29 @@
+mistk.orchestrator package
+==========================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   mistk.orchestrator.client
+   mistk.orchestrator.server
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   mistk.orchestrator.abstract_orchestrator
+   mistk.orchestrator.service
+   mistk.orchestrator.template_env
+
+Module contents
+---------------
+
+.. automodule:: mistk.orchestrator
+   :members:
+   :undoc-members:
+   :show-inheritance:

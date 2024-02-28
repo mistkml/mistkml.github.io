@@ -5,6 +5,7 @@ Subpackages
 -----------
 
 .. toctree::
+   :maxdepth: 4
 
    mistk.transform.client.api
    mistk.transform.client.models
@@ -13,6 +14,7 @@ Submodules
 ----------
 
 .. toctree::
+   :maxdepth: 4
 
    mistk.transform.client.api_client
    mistk.transform.client.configuration

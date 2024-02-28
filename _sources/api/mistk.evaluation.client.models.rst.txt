@@ -5,6 +5,7 @@ Submodules
 ----------
 
 .. toctree::
+   :maxdepth: 4
 
    mistk.evaluation.client.models.evaluation_instance_status
    mistk.evaluation.client.models.evaluation_specification_init_params

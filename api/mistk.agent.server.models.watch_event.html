@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>mistk.agent.server.models.watch_event module &mdash; MISTK  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="mistk.agent.server.test package" href="mistk.agent.server.test.html" />
+    <link rel="prev" title="mistk.agent.server.models.service_error module" href="mistk.agent.server.models.service_error.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> MISTK
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guide.html">Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testing.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../deployment.html">Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">MISTK API</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../gaming.html">Gaming</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../gaming/guide.html">Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gaming/testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gaming/deployment.html">Deployment</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../gaming/api.html">MISTK Gaming API</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../gaming/mistk.html">mistk package</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="../gaming/mistk.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gaming/mistk.html#submodules">Submodules</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MISTK</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../gaming.html">Gaming</a></li>
+          <li class="breadcrumb-item"><a href="../gaming/api.html">MISTK Gaming API</a></li>
+          <li class="breadcrumb-item"><a href="../gaming/mistk.html">mistk package</a></li>
+          <li class="breadcrumb-item"><a href="mistk.agent.html">mistk.agent package</a></li>
+          <li class="breadcrumb-item"><a href="mistk.agent.server.html">mistk.agent.server package</a></li>
+          <li class="breadcrumb-item"><a href="mistk.agent.server.models.html">mistk.agent.server.models package</a></li>
+      <li class="breadcrumb-item active">mistk.agent.server.models.watch_event module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/mistk.agent.server.models.watch_event.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-mistk.agent.server.models.watch_event">
+<span id="mistk-agent-server-models-watch-event-module"></span><h1>mistk.agent.server.models.watch_event module<a class="headerlink" href="#module-mistk.agent.server.models.watch_event" title="Permalink to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="mistk.agent.server.models.watch_event.WatchEvent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mistk.agent.server.models.watch_event.</span></span><span class="sig-name descname"><span class="pre">WatchEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">object</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.agent.server.models.watch_event.WatchEvent" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="mistk.agent.server.models.base_model_.html#mistk.agent.server.models.base_model_.Model" title="mistk.agent.server.models.base_model_.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></a></p>
+<p>NOTE: This class is auto generated by the swagger code generator program.</p>
+<p>Do not edit the class manually.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="mistk.agent.server.models.watch_event.WatchEvent.event_type">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">event_type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#mistk.agent.server.models.watch_event.WatchEvent.event_type" title="Permalink to this definition"></a></dt>
+<dd><p>Gets the event_type of this WatchEvent.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The event_type of this WatchEvent.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.agent.server.models.watch_event.WatchEvent.from_dict">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dikt</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#mistk.agent.server.models.watch_event.WatchEvent" title="mistk.agent.server.models.watch_event.WatchEvent"><span class="pre">WatchEvent</span></a></span></span><a class="headerlink" href="#mistk.agent.server.models.watch_event.WatchEvent.from_dict" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the dict as a model</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dikt</strong> – A dict.</p>
+</dd>
+<dt class="field-even">Type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The WatchEvent of this WatchEvent.  # noqa: E501</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#mistk.agent.server.models.watch_event.WatchEvent" title="mistk.agent.server.models.watch_event.WatchEvent">WatchEvent</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mistk.agent.server.models.watch_event.WatchEvent.payload">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">payload</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">object</span></em><a class="headerlink" href="#mistk.agent.server.models.watch_event.WatchEvent.payload" title="Permalink to this definition"></a></dt>
+<dd><p>Gets the payload of this WatchEvent.</p>
+<p>The object/resource which was changed. If the type of the event was <em>added</em> or <em>modified</em>, then this field is the new state of the resource.  If the field is <em>deleted</em> then the value is the state just before deletion.   # noqa: E501</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The payload of this WatchEvent.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>object</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="mistk.agent.server.models.service_error.html" class="btn btn-neutral float-left" title="mistk.agent.server.models.service_error module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="mistk.agent.server.test.html" class="btn btn-neutral float-right" title="mistk.agent.server.test package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

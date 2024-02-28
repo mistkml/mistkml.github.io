@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>mistk.agent.client.api.agent_instance_endpoint_api module &mdash; MISTK  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="mistk.agent.client.models package" href="mistk.agent.client.models.html" />
+    <link rel="prev" title="mistk.agent.client.api package" href="mistk.agent.client.api.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> MISTK
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guide.html">Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testing.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../deployment.html">Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">MISTK API</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../gaming.html">Gaming</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../gaming/guide.html">Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gaming/testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gaming/deployment.html">Deployment</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../gaming/api.html">MISTK Gaming API</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../gaming/mistk.html">mistk package</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="../gaming/mistk.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gaming/mistk.html#submodules">Submodules</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MISTK</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../gaming.html">Gaming</a></li>
+          <li class="breadcrumb-item"><a href="../gaming/api.html">MISTK Gaming API</a></li>
+          <li class="breadcrumb-item"><a href="../gaming/mistk.html">mistk package</a></li>
+          <li class="breadcrumb-item"><a href="mistk.agent.html">mistk.agent package</a></li>
+          <li class="breadcrumb-item"><a href="mistk.agent.client.html">mistk.agent.client package</a></li>
+          <li class="breadcrumb-item"><a href="mistk.agent.client.api.html">mistk.agent.client.api package</a></li>
+      <li class="breadcrumb-item active">mistk.agent.client.api.agent_instance_endpoint_api module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/mistk.agent.client.api.agent_instance_endpoint_api.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-mistk.agent.client.api.agent_instance_endpoint_api">
+<span id="mistk-agent-client-api-agent-instance-endpoint-api-module"></span><h1>mistk.agent.client.api.agent_instance_endpoint_api module<a class="headerlink" href="#module-mistk.agent.client.api.agent_instance_endpoint_api" title="Permalink to this heading"></a></h1>
+<p>Model Integration Software ToolKit - Agent</p>
+<p>No description provided (generated by Swagger Codegen <a class="reference external" href="https://github.com/swagger-api/swagger-codegen">https://github.com/swagger-api/swagger-codegen</a>)  # noqa: E501</p>
+<p>OpenAPI spec version: 1.4.0</p>
+<p>Generated by: <a class="reference external" href="https://github.com/swagger-api/swagger-codegen.git">https://github.com/swagger-api/swagger-codegen.git</a></p>
+<dl class="py class">
+<dt class="sig sig-object py" id="mistk.agent.client.api.agent_instance_endpoint_api.AgentInstanceEndpointApi">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mistk.agent.client.api.agent_instance_endpoint_api.</span></span><span class="sig-name descname"><span class="pre">AgentInstanceEndpointApi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_client</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.agent.client.api.agent_instance_endpoint_api.AgentInstanceEndpointApi" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>NOTE: This class is auto generated by the swagger code generator program.</p>
+<p>Do not edit the class manually.
+Ref: <a class="reference external" href="https://github.com/swagger-api/swagger-codegen">https://github.com/swagger-api/swagger-codegen</a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.agent.client.api.agent_instance_endpoint_api.AgentInstanceEndpointApi.agent_registered">
+<span class="sig-name descname"><span class="pre">agent_registered</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.agent.client.api.agent_instance_endpoint_api.AgentInstanceEndpointApi.agent_registered" title="Permalink to this definition"></a></dt>
+<dd><p>Agent registered  # noqa: E501</p>
+<p>Agent has been registered to a orchestrator  # noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True
+&gt;&gt;&gt; thread = api.agent_registered(async_req=True)
+&gt;&gt;&gt; result = thread.get()</p>
+<p>:param async_req bool
+:param object agent_cfg: A dictionary for the agent configuration from the orchestrator 
+:return: None</p>
+<blockquote>
+<div><p>If the method is called asynchronously,
+returns the request thread.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.agent.client.api.agent_instance_endpoint_api.AgentInstanceEndpointApi.agent_registered_with_http_info">
+<span class="sig-name descname"><span class="pre">agent_registered_with_http_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.agent.client.api.agent_instance_endpoint_api.AgentInstanceEndpointApi.agent_registered_with_http_info" title="Permalink to this definition"></a></dt>
+<dd><p>Agent registered  # noqa: E501</p>
+<p>Agent has been registered to a orchestrator  # noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True
+&gt;&gt;&gt; thread = api.agent_registered_with_http_info(async_req=True)
+&gt;&gt;&gt; result = thread.get()</p>
+<p>:param async_req bool
+:param object agent_cfg: A dictionary for the agent configuration from the orchestrator 
+:return: None</p>
+<blockquote>
+<div><p>If the method is called asynchronously,
+returns the request thread.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.agent.client.api.agent_instance_endpoint_api.AgentInstanceEndpointApi.build_model">
+<span class="sig-name descname"><span class="pre">build_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.agent.client.api.agent_instance_endpoint_api.AgentInstanceEndpointApi.build_model" title="Permalink to this definition"></a></dt>
+<dd><p>Build the model  # noqa: E501</p>
+<p>Instructs the container to construct the model  # noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True
+&gt;&gt;&gt; thread = api.build_model(async_req=True)
+&gt;&gt;&gt; result = thread.get()</p>
+<p>:param async_req bool
+:param str model_path: A path pointing to the directory where the model can be loaded from. 
+:return: None</p>
+<blockquote>
+<div><p>If the method is called asynchronously,
+returns the request thread.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.agent.client.api.agent_instance_endpoint_api.AgentInstanceEndpointApi.build_model_with_http_info">
+<span class="sig-name descname"><span class="pre">build_model_with_http_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.agent.client.api.agent_instance_endpoint_api.AgentInstanceEndpointApi.build_model_with_http_info" title="Permalink to this definition"></a></dt>
+<dd><p>Build the model  # noqa: E501</p>
+<p>Instructs the container to construct the model  # noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True
+&gt;&gt;&gt; thread = api.build_model_with_http_info(async_req=True)
+&gt;&gt;&gt; result = thread.get()</p>
+<p>:param async_req bool
+:param str model_path: A path pointing to the directory where the model can be loaded from. 
+:return: None</p>
+<blockquote>
+<div><p>If the method is called asynchronously,
+returns the request thread.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.agent.client.api.agent_instance_endpoint_api.AgentInstanceEndpointApi.episode_started">
+<span class="sig-name descname"><span class="pre">episode_started</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.agent.client.api.agent_instance_endpoint_api.AgentInstanceEndpointApi.episode_started" title="Permalink to this definition"></a></dt>
+<dd><p>Episode started  # noqa: E501</p>
+<p>Instructs the agent that the episode has started  # noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True
+&gt;&gt;&gt; thread = api.episode_started(async_req=True)
+&gt;&gt;&gt; result = thread.get()</p>
+<p>:param async_req bool
+:param object episode_cfg: A dict for the episode config from the orchestrator. One key must be <cite>obs</cite>. 
+:return: None</p>
+<blockquote>
+<div><p>If the method is called asynchronously,
+returns the request thread.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.agent.client.api.agent_instance_endpoint_api.AgentInstanceEndpointApi.episode_started_with_http_info">
+<span class="sig-name descname"><span class="pre">episode_started_with_http_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.agent.client.api.agent_instance_endpoint_api.AgentInstanceEndpointApi.episode_started_with_http_info" title="Permalink to this definition"></a></dt>
+<dd><p>Episode started  # noqa: E501</p>
+<p>Instructs the agent that the episode has started  # noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True
+&gt;&gt;&gt; thread = api.episode_started_with_http_info(async_req=True)
+&gt;&gt;&gt; result = thread.get()</p>
+<p>:param async_req bool
+:param object episode_cfg: A dict for the episode config from the orchestrator. One key must be <cite>obs</cite>. 
+:return: None</p>
+<blockquote>
+<div><p>If the method is called asynchronously,
+returns the request thread.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.agent.client.api.agent_instance_endpoint_api.AgentInstanceEndpointApi.episode_stopped">
+<span class="sig-name descname"><span class="pre">episode_stopped</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.agent.client.api.agent_instance_endpoint_api.AgentInstanceEndpointApi.episode_stopped" title="Permalink to this definition"></a></dt>
+<dd><p>Episode stopped  # noqa: E501</p>
+<p>Instructs the agent that the episode has stopped  # noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True
+&gt;&gt;&gt; thread = api.episode_stopped(async_req=True)
+&gt;&gt;&gt; result = thread.get()</p>
+<p>:param async_req bool
+:return: None</p>
+<blockquote>
+<div><p>If the method is called asynchronously,
+returns the request thread.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.agent.client.api.agent_instance_endpoint_api.AgentInstanceEndpointApi.episode_stopped_with_http_info">
+<span class="sig-name descname"><span class="pre">episode_stopped_with_http_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.agent.client.api.agent_instance_endpoint_api.AgentInstanceEndpointApi.episode_stopped_with_http_info" title="Permalink to this definition"></a></dt>
+<dd><p>Episode stopped  # noqa: E501</p>
+<p>Instructs the agent that the episode has stopped  # noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True
+&gt;&gt;&gt; thread = api.episode_stopped_with_http_info(async_req=True)
+&gt;&gt;&gt; result = thread.get()</p>
+<p>:param async_req bool
+:return: None</p>
+<blockquote>
+<div><p>If the method is called asynchronously,
+returns the request thread.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.agent.client.api.agent_instance_endpoint_api.AgentInstanceEndpointApi.get_action">
+<span class="sig-name descname"><span class="pre">get_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.agent.client.api.agent_instance_endpoint_api.AgentInstanceEndpointApi.get_action" title="Permalink to this definition"></a></dt>
+<dd><p>Get action(s) from agent  # noqa: E501</p>
+<p>Gives the agent the observations to perform some action(s)  # noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True
+&gt;&gt;&gt; thread = api.get_action(obs, async_req=True)
+&gt;&gt;&gt; result = thread.get()</p>
+<p>:param async_req bool
+:param object obs: A dict for each agent’s environmental observations it has observed  (required)
+:return: object</p>
+<blockquote>
+<div><p>If the method is called asynchronously,
+returns the request thread.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.agent.client.api.agent_instance_endpoint_api.AgentInstanceEndpointApi.get_action_with_http_info">
+<span class="sig-name descname"><span class="pre">get_action_with_http_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.agent.client.api.agent_instance_endpoint_api.AgentInstanceEndpointApi.get_action_with_http_info" title="Permalink to this definition"></a></dt>
+<dd><p>Get action(s) from agent  # noqa: E501</p>
+<p>Gives the agent the observations to perform some action(s)  # noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True
+&gt;&gt;&gt; thread = api.get_action_with_http_info(obs, async_req=True)
+&gt;&gt;&gt; result = thread.get()</p>
+<p>:param async_req bool
+:param object obs: A dict for each agent’s environmental observations it has observed  (required)
+:return: object</p>
+<blockquote>
+<div><p>If the method is called asynchronously,
+returns the request thread.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.agent.client.api.agent_instance_endpoint_api.AgentInstanceEndpointApi.get_api_version">
+<span class="sig-name descname"><span class="pre">get_api_version</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.agent.client.api.agent_instance_endpoint_api.AgentInstanceEndpointApi.get_api_version" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the version of the MISTK API  # noqa: E501</p>
+<p>Returns the version of the MISTK API  # noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True
+&gt;&gt;&gt; thread = api.get_api_version(async_req=True)
+&gt;&gt;&gt; result = thread.get()</p>
+<p>:param async_req bool
+:return: str</p>
+<blockquote>
+<div><p>If the method is called asynchronously,
+returns the request thread.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.agent.client.api.agent_instance_endpoint_api.AgentInstanceEndpointApi.get_api_version_with_http_info">
+<span class="sig-name descname"><span class="pre">get_api_version_with_http_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.agent.client.api.agent_instance_endpoint_api.AgentInstanceEndpointApi.get_api_version_with_http_info" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the version of the MISTK API  # noqa: E501</p>
+<p>Returns the version of the MISTK API  # noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True
+&gt;&gt;&gt; thread = api.get_api_version_with_http_info(async_req=True)
+&gt;&gt;&gt; result = thread.get()</p>
+<p>:param async_req bool
+:return: str</p>
+<blockquote>
+<div><p>If the method is called asynchronously,
+returns the request thread.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.agent.client.api.agent_instance_endpoint_api.AgentInstanceEndpointApi.get_status">
+<span class="sig-name descname"><span class="pre">get_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.agent.client.api.agent_instance_endpoint_api.AgentInstanceEndpointApi.get_status" title="Permalink to this definition"></a></dt>
+<dd><p>Get the status of the model  # noqa: E501</p>
+<p>Retrieves the current status of the model  # noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True
+&gt;&gt;&gt; thread = api.get_status(async_req=True)
+&gt;&gt;&gt; result = thread.get()</p>
+<p>:param async_req bool
+:param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. 
+:param int resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. 
+:return: AgentInstanceStatus</p>
+<blockquote>
+<div><p>If the method is called asynchronously,
+returns the request thread.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.agent.client.api.agent_instance_endpoint_api.AgentInstanceEndpointApi.get_status_with_http_info">
+<span class="sig-name descname"><span class="pre">get_status_with_http_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.agent.client.api.agent_instance_endpoint_api.AgentInstanceEndpointApi.get_status_with_http_info" title="Permalink to this definition"></a></dt>
+<dd><p>Get the status of the model  # noqa: E501</p>
+<p>Retrieves the current status of the model  # noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True
+&gt;&gt;&gt; thread = api.get_status_with_http_info(async_req=True)
+&gt;&gt;&gt; result = thread.get()</p>
+<p>:param async_req bool
+:param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. 
+:param int resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. 
+:return: AgentInstanceStatus</p>
+<blockquote>
+<div><p>If the method is called asynchronously,
+returns the request thread.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.agent.client.api.agent_instance_endpoint_api.AgentInstanceEndpointApi.initialize_agent">
+<span class="sig-name descname"><span class="pre">initialize_agent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">initialization_parameters</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.agent.client.api.agent_instance_endpoint_api.AgentInstanceEndpointApi.initialize_agent" title="Permalink to this definition"></a></dt>
+<dd><p>Initialize the model  # noqa: E501</p>
+<p>Instructs the model instance to initialize.  # noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True
+&gt;&gt;&gt; thread = api.initialize_agent(initialization_parameters, async_req=True)
+&gt;&gt;&gt; result = thread.get()</p>
+<p>:param async_req bool
+:param AgentInstanceInitParams initialization_parameters: Initialization parameters for the agent including properties, and hparams. Properties are a dictionary of properties for this agent instance. Hparams are a dictionary of hyperparameters for this agent instance.  (required)
+:return: None</p>
+<blockquote>
+<div><p>If the method is called asynchronously,
+returns the request thread.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.agent.client.api.agent_instance_endpoint_api.AgentInstanceEndpointApi.initialize_agent_with_http_info">
+<span class="sig-name descname"><span class="pre">initialize_agent_with_http_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">initialization_parameters</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.agent.client.api.agent_instance_endpoint_api.AgentInstanceEndpointApi.initialize_agent_with_http_info" title="Permalink to this definition"></a></dt>
+<dd><p>Initialize the model  # noqa: E501</p>
+<p>Instructs the model instance to initialize.  # noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True
+&gt;&gt;&gt; thread = api.initialize_agent_with_http_info(initialization_parameters, async_req=True)
+&gt;&gt;&gt; result = thread.get()</p>
+<p>:param async_req bool
+:param AgentInstanceInitParams initialization_parameters: Initialization parameters for the agent including properties, and hparams. Properties are a dictionary of properties for this agent instance. Hparams are a dictionary of hyperparameters for this agent instance.  (required)
+:return: None</p>
+<blockquote>
+<div><p>If the method is called asynchronously,
+returns the request thread.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.agent.client.api.agent_instance_endpoint_api.AgentInstanceEndpointApi.replay_action">
+<span class="sig-name descname"><span class="pre">replay_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.agent.client.api.agent_instance_endpoint_api.AgentInstanceEndpointApi.replay_action" title="Permalink to this definition"></a></dt>
+<dd><p>Replay an action from agent  # noqa: E501</p>
+<p>Gives the agent the observations to replay an action for learning  # noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True
+&gt;&gt;&gt; thread = api.replay_action(obs, async_req=True)
+&gt;&gt;&gt; result = thread.get()</p>
+<p>:param async_req bool
+:param object obs: A dictionary with the keys for prev_obs, rewards, actions, &amp; new_obs  (required)
+:return: None</p>
+<blockquote>
+<div><p>If the method is called asynchronously,
+returns the request thread.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.agent.client.api.agent_instance_endpoint_api.AgentInstanceEndpointApi.replay_action_with_http_info">
+<span class="sig-name descname"><span class="pre">replay_action_with_http_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.agent.client.api.agent_instance_endpoint_api.AgentInstanceEndpointApi.replay_action_with_http_info" title="Permalink to this definition"></a></dt>
+<dd><p>Replay an action from agent  # noqa: E501</p>
+<p>Gives the agent the observations to replay an action for learning  # noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True
+&gt;&gt;&gt; thread = api.replay_action_with_http_info(obs, async_req=True)
+&gt;&gt;&gt; result = thread.get()</p>
+<p>:param async_req bool
+:param object obs: A dictionary with the keys for prev_obs, rewards, actions, &amp; new_obs  (required)
+:return: None</p>
+<blockquote>
+<div><p>If the method is called asynchronously,
+returns the request thread.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.agent.client.api.agent_instance_endpoint_api.AgentInstanceEndpointApi.reset">
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unload_model</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.agent.client.api.agent_instance_endpoint_api.AgentInstanceEndpointApi.reset" title="Permalink to this definition"></a></dt>
+<dd><p>Resets the model  # noqa: E501</p>
+<p>Resets the model  # noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True
+&gt;&gt;&gt; thread = api.reset(unload_model, async_req=True)
+&gt;&gt;&gt; result = thread.get()</p>
+<p>:param async_req bool
+:param bool unload_model: Unload (reset) the built model or keep the current built model  (required)
+:return: None</p>
+<blockquote>
+<div><p>If the method is called asynchronously,
+returns the request thread.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.agent.client.api.agent_instance_endpoint_api.AgentInstanceEndpointApi.reset_with_http_info">
+<span class="sig-name descname"><span class="pre">reset_with_http_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unload_model</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.agent.client.api.agent_instance_endpoint_api.AgentInstanceEndpointApi.reset_with_http_info" title="Permalink to this definition"></a></dt>
+<dd><p>Resets the model  # noqa: E501</p>
+<p>Resets the model  # noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True
+&gt;&gt;&gt; thread = api.reset_with_http_info(unload_model, async_req=True)
+&gt;&gt;&gt; result = thread.get()</p>
+<p>:param async_req bool
+:param bool unload_model: Unload (reset) the built model or keep the current built model  (required)
+:return: None</p>
+<blockquote>
+<div><p>If the method is called asynchronously,
+returns the request thread.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.agent.client.api.agent_instance_endpoint_api.AgentInstanceEndpointApi.save_model">
+<span class="sig-name descname"><span class="pre">save_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_path</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.agent.client.api.agent_instance_endpoint_api.AgentInstanceEndpointApi.save_model" title="Permalink to this definition"></a></dt>
+<dd><p>Save the model snapshot  # noqa: E501</p>
+<p>Instructs the container to serialize the model to the specified path   # noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True
+&gt;&gt;&gt; thread = api.save_model(model_path, async_req=True)
+&gt;&gt;&gt; result = thread.get()</p>
+<p>:param async_req bool
+:param str model_path: A path pointing to the directory where the model is to be saved.  (required)
+:return: None</p>
+<blockquote>
+<div><p>If the method is called asynchronously,
+returns the request thread.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.agent.client.api.agent_instance_endpoint_api.AgentInstanceEndpointApi.save_model_with_http_info">
+<span class="sig-name descname"><span class="pre">save_model_with_http_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_path</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.agent.client.api.agent_instance_endpoint_api.AgentInstanceEndpointApi.save_model_with_http_info" title="Permalink to this definition"></a></dt>
+<dd><p>Save the model snapshot  # noqa: E501</p>
+<p>Instructs the container to serialize the model to the specified path   # noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True
+&gt;&gt;&gt; thread = api.save_model_with_http_info(model_path, async_req=True)
+&gt;&gt;&gt; result = thread.get()</p>
+<p>:param async_req bool
+:param str model_path: A path pointing to the directory where the model is to be saved.  (required)
+:return: None</p>
+<blockquote>
+<div><p>If the method is called asynchronously,
+returns the request thread.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.agent.client.api.agent_instance_endpoint_api.AgentInstanceEndpointApi.terminate">
+<span class="sig-name descname"><span class="pre">terminate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.agent.client.api.agent_instance_endpoint_api.AgentInstanceEndpointApi.terminate" title="Permalink to this definition"></a></dt>
+<dd><p>Shut down the agent  # noqa: E501</p>
+<p>Shuts down the agent  # noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True
+&gt;&gt;&gt; thread = api.terminate(async_req=True)
+&gt;&gt;&gt; result = thread.get()</p>
+<p>:param async_req bool
+:return: None</p>
+<blockquote>
+<div><p>If the method is called asynchronously,
+returns the request thread.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.agent.client.api.agent_instance_endpoint_api.AgentInstanceEndpointApi.terminate_with_http_info">
+<span class="sig-name descname"><span class="pre">terminate_with_http_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.agent.client.api.agent_instance_endpoint_api.AgentInstanceEndpointApi.terminate_with_http_info" title="Permalink to this definition"></a></dt>
+<dd><p>Shut down the agent  # noqa: E501</p>
+<p>Shuts down the agent  # noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True
+&gt;&gt;&gt; thread = api.terminate_with_http_info(async_req=True)
+&gt;&gt;&gt; result = thread.get()</p>
+<p>:param async_req bool
+:return: None</p>
+<blockquote>
+<div><p>If the method is called asynchronously,
+returns the request thread.</p>
+</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="mistk.agent.client.api.html" class="btn btn-neutral float-left" title="mistk.agent.client.api package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="mistk.agent.client.models.html" class="btn btn-neutral float-right" title="mistk.agent.client.models package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

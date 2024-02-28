@@ -5,13 +5,16 @@ Submodules
 ----------
 
 .. toctree::
+   :maxdepth: 4
 
    mistk.model.client.models.data_record
+   mistk.model.client.models.data_record_list
    mistk.model.client.models.dataset
    mistk.model.client.models.dataset_statistics
    mistk.model.client.models.metric
    mistk.model.client.models.metric_data_parameters
    mistk.model.client.models.mistk_data_record
+   mistk.model.client.models.mistk_data_record_list
    mistk.model.client.models.mistk_dataset
    mistk.model.client.models.mistk_metric
    mistk.model.client.models.mistk_metric_list

@@ -1,67 +1,36 @@
-
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>mistk.evaluation package &mdash; MISTK  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
-
-  
-  
-  
-  
-
-  
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="mistk.evaluation.client package" href="mistk.evaluation.client.html" />
+    <link rel="next" title="mistk.evaluation.util package" href="mistk.evaluation.util.html" />
     <link rel="prev" title="mistk.data.utils module" href="mistk.data.utils.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../index.html" class="icon icon-home"> MISTK
-          
-
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -69,18 +38,8 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guide.html">Guide</a></li>
@@ -105,163 +64,53 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../gaming.html">Gaming</a></li>
 </ul>
 
-            
-          
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">MISTK</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="../index.html">Docs</a> &raquo;</li>
-        
-          <li><a href="index.html">MISTK API</a> &raquo;</li>
-        
-          <li><a href="mistk.html">mistk package</a> &raquo;</li>
-        
-      <li>mistk.evaluation package</li>
-    
-    
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">MISTK API</a></li>
+          <li class="breadcrumb-item"><a href="mistk.html">mistk package</a></li>
+      <li class="breadcrumb-item active">mistk.evaluation package</li>
       <li class="wy-breadcrumbs-aside">
-        
-            
             <a href="../_sources/api/mistk.evaluation.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="mistk-evaluation-package">
-<h1>mistk.evaluation package<a class="headerlink" href="#mistk-evaluation-package" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="subpackages">
-<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+             
+  <section id="mistk-evaluation-package">
+<h1>mistk.evaluation package<a class="headerlink" href="#mistk-evaluation-package" title="Permalink to this heading"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this heading"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="mistk.evaluation.client.html">mistk.evaluation.client package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="mistk.evaluation.client.html#subpackages">Subpackages</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="mistk.evaluation.client.api.html">mistk.evaluation.client.api package</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="mistk.evaluation.client.api.html#submodules">Submodules</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="mistk.evaluation.client.api.evaluation_plugin_endpoint_api.html">mistk.evaluation.client.api.evaluation_plugin_endpoint_api module</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="mistk.evaluation.client.api.html#module-mistk.evaluation.client.api">Module contents</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="mistk.evaluation.client.models.html">mistk.evaluation.client.models package</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="mistk.evaluation.client.models.html#submodules">Submodules</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="mistk.evaluation.client.models.evaluation_instance_status.html">mistk.evaluation.client.models.evaluation_instance_status module</a></li>
-<li class="toctree-l5"><a class="reference internal" href="mistk.evaluation.client.models.evaluation_specification_init_params.html">mistk.evaluation.client.models.evaluation_specification_init_params module</a></li>
-<li class="toctree-l5"><a class="reference internal" href="mistk.evaluation.client.models.metric.html">mistk.evaluation.client.models.metric module</a></li>
-<li class="toctree-l5"><a class="reference internal" href="mistk.evaluation.client.models.metric_data_parameters.html">mistk.evaluation.client.models.metric_data_parameters module</a></li>
-<li class="toctree-l5"><a class="reference internal" href="mistk.evaluation.client.models.mistk_metric.html">mistk.evaluation.client.models.mistk_metric module</a></li>
-<li class="toctree-l5"><a class="reference internal" href="mistk.evaluation.client.models.object_info.html">mistk.evaluation.client.models.object_info module</a></li>
-<li class="toctree-l5"><a class="reference internal" href="mistk.evaluation.client.models.object_reference.html">mistk.evaluation.client.models.object_reference module</a></li>
-<li class="toctree-l5"><a class="reference internal" href="mistk.evaluation.client.models.service_error.html">mistk.evaluation.client.models.service_error module</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="mistk.evaluation.client.models.html#module-mistk.evaluation.client.models">Module contents</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="mistk.evaluation.client.html#submodules">Submodules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="mistk.evaluation.client.api_client.html">mistk.evaluation.client.api_client module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mistk.evaluation.client.configuration.html">mistk.evaluation.client.configuration module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mistk.evaluation.client.rest.html">mistk.evaluation.client.rest module</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="mistk.evaluation.client.html#module-mistk.evaluation.client">Module contents</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="mistk.evaluation.server.html">mistk.evaluation.server package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="mistk.evaluation.server.html#subpackages">Subpackages</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="mistk.evaluation.server.controllers.html">mistk.evaluation.server.controllers package</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="mistk.evaluation.server.controllers.html#submodules">Submodules</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="mistk.evaluation.server.controllers.evaluation_plugin_endpoint_controller.html">mistk.evaluation.server.controllers.evaluation_plugin_endpoint_controller module</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="mistk.evaluation.server.controllers.html#module-mistk.evaluation.server.controllers">Module contents</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="mistk.evaluation.server.models.html">mistk.evaluation.server.models package</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="mistk.evaluation.server.models.html#submodules">Submodules</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="mistk.evaluation.server.models.base_model_.html">mistk.evaluation.server.models.base_model_ module</a></li>
-<li class="toctree-l5"><a class="reference internal" href="mistk.evaluation.server.models.evaluation_instance_status.html">mistk.evaluation.server.models.evaluation_instance_status module</a></li>
-<li class="toctree-l5"><a class="reference internal" href="mistk.evaluation.server.models.evaluation_specification_init_params.html">mistk.evaluation.server.models.evaluation_specification_init_params module</a></li>
-<li class="toctree-l5"><a class="reference internal" href="mistk.evaluation.server.models.metric.html">mistk.evaluation.server.models.metric module</a></li>
-<li class="toctree-l5"><a class="reference internal" href="mistk.evaluation.server.models.metric_data_parameters.html">mistk.evaluation.server.models.metric_data_parameters module</a></li>
-<li class="toctree-l5"><a class="reference internal" href="mistk.evaluation.server.models.mistk_metric.html">mistk.evaluation.server.models.mistk_metric module</a></li>
-<li class="toctree-l5"><a class="reference internal" href="mistk.evaluation.server.models.object_info.html">mistk.evaluation.server.models.object_info module</a></li>
-<li class="toctree-l5"><a class="reference internal" href="mistk.evaluation.server.models.object_reference.html">mistk.evaluation.server.models.object_reference module</a></li>
-<li class="toctree-l5"><a class="reference internal" href="mistk.evaluation.server.models.service_error.html">mistk.evaluation.server.models.service_error module</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="mistk.evaluation.server.models.html#module-mistk.evaluation.server.models">Module contents</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="mistk.evaluation.server.test.html">mistk.evaluation.server.test package</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="mistk.evaluation.server.test.html#submodules">Submodules</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="mistk.evaluation.server.test.test_evaluation_plugin_endpoint_controller.html">mistk.evaluation.server.test.test_evaluation_plugin_endpoint_controller module</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="mistk.evaluation.server.test.html#module-mistk.evaluation.server.test">Module contents</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="mistk.evaluation.server.html#submodules">Submodules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="mistk.evaluation.server.encoder.html">mistk.evaluation.server.encoder module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mistk.evaluation.server.util.html">mistk.evaluation.server.util module</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="mistk.evaluation.server.html#module-mistk.evaluation.server">Module contents</a></li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="mistk.evaluation.util.html">mistk.evaluation.util package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="mistk.evaluation.util.html#submodules">Submodules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="mistk.evaluation.util.convert.html">mistk.evaluation.util.convert module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.evaluation.util.convert.html">mistk.evaluation.util.convert module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mistk.evaluation.util.convert.html#mistk.evaluation.util.convert.csv_groundtruth_to_dataframe"><code class="docutils literal notranslate"><span class="pre">csv_groundtruth_to_dataframe()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mistk.evaluation.util.convert.html#mistk.evaluation.util.convert.csv_groundtruth_to_mistk_data_records"><code class="docutils literal notranslate"><span class="pre">csv_groundtruth_to_mistk_data_records()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mistk.evaluation.util.convert.html#mistk.evaluation.util.convert.csv_has_header"><code class="docutils literal notranslate"><span class="pre">csv_has_header()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mistk.evaluation.util.convert.html#mistk.evaluation.util.convert.csv_predictions_to_dataframe"><code class="docutils literal notranslate"><span class="pre">csv_predictions_to_dataframe()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mistk.evaluation.util.convert.html#mistk.evaluation.util.convert.csv_predictions_to_mistk_data_records"><code class="docutils literal notranslate"><span class="pre">csv_predictions_to_mistk_data_records()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mistk.evaluation.util.convert.html#mistk.evaluation.util.convert.json_groundtruth_to_dataframe"><code class="docutils literal notranslate"><span class="pre">json_groundtruth_to_dataframe()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mistk.evaluation.util.convert.html#mistk.evaluation.util.convert.json_predictions_to_dataframe"><code class="docutils literal notranslate"><span class="pre">json_predictions_to_dataframe()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="mistk.evaluation.util.html#module-mistk.evaluation.util">Module contents</a></li>
@@ -269,68 +118,97 @@
 </li>
 </ul>
 </div>
-</div>
-<div class="section" id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="mistk.evaluation.abstract_evaluation_plugin.html">mistk.evaluation.abstract_evaluation_plugin module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mistk.evaluation.plugin_manager.html">mistk.evaluation.plugin_manager module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mistk.evaluation.service.html">mistk.evaluation.service module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mistk.evaluation.abstract_evaluation_plugin.html">mistk.evaluation.abstract_evaluation_plugin module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mistk.evaluation.abstract_evaluation_plugin.html#mistk.evaluation.abstract_evaluation_plugin.AbstractEvaluationPlugin"><code class="docutils literal notranslate"><span class="pre">AbstractEvaluationPlugin</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mistk.evaluation.abstract_evaluation_plugin.html#mistk.evaluation.abstract_evaluation_plugin.AbstractEvaluationPlugin.assessment_types"><code class="docutils literal notranslate"><span class="pre">AbstractEvaluationPlugin.assessment_types()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.evaluation.abstract_evaluation_plugin.html#mistk.evaluation.abstract_evaluation_plugin.AbstractEvaluationPlugin.do_evaluate"><code class="docutils literal notranslate"><span class="pre">AbstractEvaluationPlugin.do_evaluate()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.evaluation.abstract_evaluation_plugin.html#mistk.evaluation.abstract_evaluation_plugin.AbstractEvaluationPlugin.do_terminate"><code class="docutils literal notranslate"><span class="pre">AbstractEvaluationPlugin.do_terminate()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.evaluation.abstract_evaluation_plugin.html#mistk.evaluation.abstract_evaluation_plugin.AbstractEvaluationPlugin.endpoint_service"><code class="docutils literal notranslate"><span class="pre">AbstractEvaluationPlugin.endpoint_service</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.evaluation.abstract_evaluation_plugin.html#mistk.evaluation.abstract_evaluation_plugin.AbstractEvaluationPlugin.evaluate"><code class="docutils literal notranslate"><span class="pre">AbstractEvaluationPlugin.evaluate()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.evaluation.abstract_evaluation_plugin.html#mistk.evaluation.abstract_evaluation_plugin.AbstractEvaluationPlugin.fail"><code class="docutils literal notranslate"><span class="pre">AbstractEvaluationPlugin.fail()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.evaluation.abstract_evaluation_plugin.html#mistk.evaluation.abstract_evaluation_plugin.AbstractEvaluationPlugin.metrics"><code class="docutils literal notranslate"><span class="pre">AbstractEvaluationPlugin.metrics()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.evaluation.abstract_evaluation_plugin.html#mistk.evaluation.abstract_evaluation_plugin.AbstractEvaluationPlugin.new_state_entered"><code class="docutils literal notranslate"><span class="pre">AbstractEvaluationPlugin.new_state_entered()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.evaluation.abstract_evaluation_plugin.html#mistk.evaluation.abstract_evaluation_plugin.AbstractEvaluationPlugin.ready"><code class="docutils literal notranslate"><span class="pre">AbstractEvaluationPlugin.ready()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.evaluation.abstract_evaluation_plugin.html#mistk.evaluation.abstract_evaluation_plugin.AbstractEvaluationPlugin.report_failure"><code class="docutils literal notranslate"><span class="pre">AbstractEvaluationPlugin.report_failure()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.evaluation.abstract_evaluation_plugin.html#mistk.evaluation.abstract_evaluation_plugin.AbstractEvaluationPlugin.terminated"><code class="docutils literal notranslate"><span class="pre">AbstractEvaluationPlugin.terminated()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.evaluation.abstract_evaluation_plugin.html#mistk.evaluation.abstract_evaluation_plugin.AbstractEvaluationPlugin.update_status"><code class="docutils literal notranslate"><span class="pre">AbstractEvaluationPlugin.update_status()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mistk.evaluation.plugin_manager.html">mistk.evaluation.plugin_manager module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mistk.evaluation.plugin_manager.html#mistk.evaluation.plugin_manager.EREPluginManager"><code class="docutils literal notranslate"><span class="pre">EREPluginManager</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mistk.evaluation.plugin_manager.html#mistk.evaluation.plugin_manager.EREPluginManager.get_default_metrics_list"><code class="docutils literal notranslate"><span class="pre">EREPluginManager.get_default_metrics_list()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.evaluation.plugin_manager.html#mistk.evaluation.plugin_manager.EREPluginManager.get_metrics_list"><code class="docutils literal notranslate"><span class="pre">EREPluginManager.get_metrics_list()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.evaluation.plugin_manager.html#mistk.evaluation.plugin_manager.EREPluginManager.get_object_for_metric"><code class="docutils literal notranslate"><span class="pre">EREPluginManager.get_object_for_metric()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.evaluation.plugin_manager.html#mistk.evaluation.plugin_manager.EREPluginManager.get_plugin"><code class="docutils literal notranslate"><span class="pre">EREPluginManager.get_plugin()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.evaluation.plugin_manager.html#mistk.evaluation.plugin_manager.EREPluginManager.reload"><code class="docutils literal notranslate"><span class="pre">EREPluginManager.reload()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mistk.evaluation.service.html">mistk.evaluation.service module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mistk.evaluation.service.html#mistk.evaluation.service.EvaluationPluginEndpoint"><code class="docutils literal notranslate"><span class="pre">EvaluationPluginEndpoint</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mistk.evaluation.service.html#mistk.evaluation.service.EvaluationPluginEndpoint.add_task"><code class="docutils literal notranslate"><span class="pre">EvaluationPluginEndpoint.add_task()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.evaluation.service.html#mistk.evaluation.service.EvaluationPluginEndpoint.delete_task"><code class="docutils literal notranslate"><span class="pre">EvaluationPluginEndpoint.delete_task()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.evaluation.service.html#mistk.evaluation.service.EvaluationPluginEndpoint.evaluate"><code class="docutils literal notranslate"><span class="pre">EvaluationPluginEndpoint.evaluate()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.evaluation.service.html#mistk.evaluation.service.EvaluationPluginEndpoint.evaluation_plugin"><code class="docutils literal notranslate"><span class="pre">EvaluationPluginEndpoint.evaluation_plugin</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.evaluation.service.html#mistk.evaluation.service.EvaluationPluginEndpoint.get_api_version"><code class="docutils literal notranslate"><span class="pre">EvaluationPluginEndpoint.get_api_version()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.evaluation.service.html#mistk.evaluation.service.EvaluationPluginEndpoint.get_metrics"><code class="docutils literal notranslate"><span class="pre">EvaluationPluginEndpoint.get_metrics()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.evaluation.service.html#mistk.evaluation.service.EvaluationPluginEndpoint.get_status"><code class="docutils literal notranslate"><span class="pre">EvaluationPluginEndpoint.get_status()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.evaluation.service.html#mistk.evaluation.service.EvaluationPluginEndpoint.load_metrics_spec"><code class="docutils literal notranslate"><span class="pre">EvaluationPluginEndpoint.load_metrics_spec()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.evaluation.service.html#mistk.evaluation.service.EvaluationPluginEndpoint.start_server"><code class="docutils literal notranslate"><span class="pre">EvaluationPluginEndpoint.start_server()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.evaluation.service.html#mistk.evaluation.service.EvaluationPluginEndpoint.state_machine"><code class="docutils literal notranslate"><span class="pre">EvaluationPluginEndpoint.state_machine</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.evaluation.service.html#mistk.evaluation.service.EvaluationPluginEndpoint.terminate"><code class="docutils literal notranslate"><span class="pre">EvaluationPluginEndpoint.terminate()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mistk.evaluation.service.html#mistk.evaluation.service.EvaluationPluginEndpoint.update_state"><code class="docutils literal notranslate"><span class="pre">EvaluationPluginEndpoint.update_state()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mistk.evaluation.service.html#mistk.evaluation.service.EvaluationPluginTask"><code class="docutils literal notranslate"><span class="pre">EvaluationPluginTask</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mistk.evaluation.service.html#mistk.evaluation.service.initializeEndpointController"><code class="docutils literal notranslate"><span class="pre">initializeEndpointController()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </div>
-</div>
-<div class="section" id="module-mistk.evaluation">
-<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-mistk.evaluation" title="Permalink to this headline">¶</a></h2>
-</div>
-</div>
+</section>
+<section id="module-mistk.evaluation">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-mistk.evaluation" title="Permalink to this heading"></a></h2>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="mistk.evaluation.client.html" class="btn btn-neutral float-right" title="mistk.evaluation.client package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="mistk.data.utils.html" class="btn btn-neutral float-left" title="mistk.data.utils module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="mistk.data.utils.html" class="btn btn-neutral float-left" title="mistk.data.utils module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="mistk.evaluation.util.html" class="btn btn-neutral float-right" title="mistk.evaluation.util package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-
-    </p>
+    <p></p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
-
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

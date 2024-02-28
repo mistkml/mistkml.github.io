@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guide &mdash; MISTK  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Testing" href="testing.html" />
+    <link rel="prev" title="Gaming" href="../gaming.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> MISTK
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guide.html">Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testing.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../deployment.html">Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">MISTK API</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../gaming.html">Gaming</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#agent-interface">Agent Interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#the-agent-state-machine">The Agent State Machine</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#initializing-an-agent">Initializing an Agent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agent-status">Agent Status</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example-agent">Example Agent</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#orchestrator-interface">Orchestrator Interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#the-orchestrator-state-machine">The Orchestrator State Machine</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example-orchestrator">Example Orchestrator</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#orchestrator-and-agent-workflow">Orchestrator and Agent Workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deployment.html">Deployment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html">MISTK Gaming API</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MISTK</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../gaming.html">Gaming</a></li>
+      <li class="breadcrumb-item active">Guide</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/gaming/guide.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="guide">
+<h1>Guide<a class="headerlink" href="#guide" title="Permalink to this heading"></a></h1>
+<section id="agent-interface">
+<h2>Agent Interface<a class="headerlink" href="#agent-interface" title="Permalink to this heading"></a></h2>
+<p>A MISTK agent implements the <cite>mistk.agent.AbstractAgent</cite> class. This class
+provides a set of abstract methods that represent the agent lifecycle and
+must be implemented by the new agent. Ultimately, these methods form the core of
+the web endpoint service that is made available for every agent implementation.</p>
+<dl>
+<dt><strong>do_initialize</strong> (props: dict, hparams: dict)</dt><dd><p>Called once the endpoint service has launched.  This would typically be the
+first call made to the service. Perform any general setup and initialization.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param props<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A dictionary of settings or configuration values that are passed
+from the ecosystem, but are not considered model hyperparameters.</p>
+</dd>
+<dt class="field-even">param hparams<span class="colon">:</span></dt>
+<dd class="field-even"><p>A dictionary of hyperparameters that are used by the agent model.</p>
+</dd>
+</dl>
+</dd>
+<dt><strong>do_build_model</strong> (path: str = ‘’)</dt><dd><p>Instructs the service to build all necessary data structures given the
+selected initialized properties and hyperparameters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param path<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The path to the model file or checkpoint that should be loaded, if you’re using a pretrained one
+Defaults to an empty String if no file was specified in this agent’s definition.</p>
+</dd>
+</dl>
+</dd>
+<dt><strong>do_save_model</strong> (path: str = ‘’)</dt><dd><p>Save a checkpoint of the model to the supplied data path. Format of the saved
+file(s) is at the discretion of the agent. The infrastructure associates
+this model checkpoint with this agent.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param path<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The path to which the model should be saved.</p>
+</dd>
+</dl>
+</dd>
+<dt><strong>do_agent_registered</strong> (agent_cfg: dict)</dt><dd><p>Instructs the service that the agent has been registered to a orchestrator</p>
+<dl class="field-list simple">
+<dt class="field-odd">param agent_cfg<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A dictionary for the agent configuration from the orchestrator</p>
+</dd>
+</dl>
+</dd>
+<dt><strong>do_episode_started</strong> (episode_cfg: dict):</dt><dd><p>Instructs the agent that the episode has started.
+This method must also include a way to reset the agent’s learner with
+the current observations, if the learner has this expectation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param episode_cfg<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Dict with the episode’s config settings. A key
+must be <cite>obs</cite>, with a List of the env’s initial observation.</p>
+</dd>
+</dl>
+</dd>
+<dt><strong>do_get_action</strong> (obs: Dict[str, List[Union[int, float]]]) -&gt; Dict[str, List[Union[int, float]]]:</dt><dd><p>Gives the agent the observations to perform action(s)</p>
+<p>In normal operating conditions, this Agent class is only controlling
+one player/entity in your game/environment. In this situation, we
+assume both the input <cite>obs</cite> and output will be a dictionary containing
+that singular agent, whose name is self.agent_name, as defined in
+do_start_episode.</p>
+<p>However, if this Agent class is controlling multiple players/entities
+for some reason, the input &amp; output of this method would be a dict
+with each of those players/entities represented.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param obs<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A dictionary of each agent’s list of int or float
+observations. The keys of the dict are each agent’s name.</p>
+</dd>
+<dt class="field-even">return<span class="colon">:</span></dt>
+<dd class="field-even"><p>A dict of lists. Each list contains the int/float actions an agent should take.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p><strong>do_replay_action</strong> (obs: Dict[str, Union[List[Union[int, float]], bool]]):</p>
+<blockquote>
+<div><p>Reviews action that the agent taken against the env observations so
+the agent can learn.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param obs<span class="colon">:</span></dt>
+<dd class="field-odd"><p>In general, this will be a dictionary of:
+prev_obs: A list of env observations prior to taking this step,
+rewards: A list of rewards for this agent on this turn,
+actions: A list of actions this agent took,
+new_obs: A list of env observations after taking this step
+done: Boolean if the game is over</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="simple">
+<dt><strong>do_episode_stopped</strong> ():</dt><dd><p>Instructs the agent that the episode has stopped</p>
+</dd>
+<dt><strong>do_reset</strong> (unload_model: bool = True):</dt><dd><p>Resets the model into its initial state</p>
+<dl class="field-list simple">
+<dt class="field-odd">param unload_model<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Unload (reset) the built model or keep the current built model</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<section id="the-agent-state-machine">
+<h3>The Agent State Machine<a class="headerlink" href="#the-agent-state-machine" title="Permalink to this heading"></a></h3>
+<p>Model implementations follow a workflow lifecycle based on state machine
+transitions. The underlying MISTK infrastructure ensures that only legal
+transitions from one state to another can be made and that the appropriate
+model methods are called during those transitions. The image below illustrates
+the high-level state machine transitions and the model methods that may be
+called between them.</p>
+<img alt="../_images/gaming_agent_state_machine.png" src="../_images/gaming_agent_state_machine.png" />
+<p>The ‘Terminated’ state (and associated method ‘do_terminate’) is not
+pictured but is a valid transition from any of the states depicted above.
+Note that an internal ‘Failed’ state will be entered if the agent
+implementation throws an exception. No further model activities are permitted
+from the ‘Failed’ state.</p>
+<p>If a workflow enters the ‘Failed’ state, then the workflow will need to be restarted
+from the beginning. This is required in order to support various technologies
+that may not have a methodology to reset/resume their state after a critical failure.</p>
+</section>
+<section id="initializing-an-agent">
+<h3>Initializing an Agent<a class="headerlink" href="#initializing-an-agent" title="Permalink to this heading"></a></h3>
+<p>Initialization of an agent loads the hyperparameters and model properties associated
+with the agent. Hyperparameters are defined by the algorithm that an agent is based on.
+Agent properties are defined by a specific implementation.
+Below are sample hyperparameters and model properties
+dictionaries that can be passed to an agents implementation’s ‘do_initialize’ method.</p>
+<section id="hyperparameters">
+<h4>Hyperparameters<a class="headerlink" href="#hyperparameters" title="Permalink to this heading"></a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;low&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="s2">&quot;high&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+  <span class="s2">&quot;size&quot;</span><span class="p">:</span> <span class="mi">1</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="model-properties">
+<h4>Model Properties<a class="headerlink" href="#model-properties" title="Permalink to this heading"></a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;model_file_name&quot;</span><span class="p">:</span> <span class="s2">&quot;test.pt&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Please note, that when using the RESTful API directly, where the user would be
+submitting the JSON via the ‘load_data’ API call, the JSON keys would need to be
+in camelcase format rather than underscored (ie. object_info becomes objectInfo).</p>
+</section>
+</section>
+<section id="agent-status">
+<h3>Agent Status<a class="headerlink" href="#agent-status" title="Permalink to this heading"></a></h3>
+<p>Agent implementations are encouraged to report status pertaining to their
+current workflow state back to the MISTK infrastructure by calling the
+<strong>update_status(dict)</strong> method inherited from <cite>AbstractAgent</cite> (note this method
+is intended to be called by the agent, not overridden as the methods above).
+This method takes a dictionary object of key-value pairs defined by the agent.
+For example, the agent below updates its status with each step within a running episode.</p>
+</section>
+<section id="example-agent">
+<h3>Example Agent<a class="headerlink" href="#example-agent" title="Permalink to this heading"></a></h3>
+<p>The following example code implements a test random agent
+with the MISTK agent interface:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">  1</span><span class="c1">##############################################################################</span>
+<span class="linenos">  2</span><span class="c1">#</span>
+<span class="linenos">  3</span><span class="c1">#    This program is free software: you can redistribute it and/or modify</span>
+<span class="linenos">  4</span><span class="c1">#    it under the terms of the GNU General Public License as published by</span>
+<span class="linenos">  5</span><span class="c1">#    the Free Software Foundation, either version 3 of the License, or</span>
+<span class="linenos">  6</span><span class="c1">#    (at your option) any later version.</span>
+<span class="linenos">  7</span><span class="c1">#</span>
+<span class="linenos">  8</span><span class="c1">#    This program is distributed in the hope that it will be useful,</span>
+<span class="linenos">  9</span><span class="c1">#    but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<span class="linenos"> 10</span><span class="c1">#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<span class="linenos"> 11</span><span class="c1">#    GNU General Public License for more details.</span>
+<span class="linenos"> 12</span><span class="c1">#</span>
+<span class="linenos"> 13</span><span class="c1">#    You should have received a copy of the GNU General Public License</span>
+<span class="linenos"> 14</span><span class="c1">#    along with this program.  If not, see &lt;https://www.gnu.org/licenses/&gt;.</span>
+<span class="linenos"> 15</span><span class="c1">#</span>
+<span class="linenos"> 16</span><span class="c1">##############################################################################</span>
+<span class="linenos"> 17</span>
+<span class="linenos"> 18</span><span class="kn">import</span> <span class="nn">os</span>
+<span class="linenos"> 19</span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="linenos"> 20</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="linenos"> 21</span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Union</span>
+<span class="linenos"> 22</span>
+<span class="linenos"> 23</span><span class="c1"># To import any learners in this directory</span>
+<span class="linenos"> 24</span><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">realpath</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)))</span>
+<span class="linenos"> 25</span>
+<span class="linenos"> 26</span><span class="kn">from</span> <span class="nn">mistk.agent.abstract_agent</span> <span class="kn">import</span> <span class="n">AbstractAgent</span>
+<span class="linenos"> 27</span><span class="kn">import</span> <span class="nn">mistk.log</span>
+<span class="linenos"> 28</span><span class="n">logger</span> <span class="o">=</span> <span class="n">mistk</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">get_logger</span><span class="p">()</span>
+<span class="linenos"> 29</span>
+<span class="linenos"> 30</span><span class="k">class</span> <span class="nc">TestAgent</span> <span class="p">(</span><span class="n">AbstractAgent</span><span class="p">):</span>
+<span class="linenos"> 31</span><span class="w">    </span><span class="sd">&quot;&quot;&quot; Agent that produces random integers</span>
+<span class="linenos"> 32</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos"> 33</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos"> 34</span>        <span class="n">AbstractAgent</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+<span class="linenos"> 35</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_props</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="linenos"> 36</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_model_file_name</span> <span class="o">=</span> <span class="s1">&#39;test-agent.mdl&#39;</span>
+<span class="linenos"> 37</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_training_data</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="linenos"> 38</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_testing_data</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="linenos"> 39</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_predictions</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="linenos"> 40</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_generations</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="linenos"> 41</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_stream_props</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="linenos"> 42</span>
+<span class="linenos"> 43</span>        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Agent started&quot;</span><span class="p">)</span>
+<span class="linenos"> 44</span>
+<span class="linenos"> 45</span>    <span class="k">def</span> <span class="nf">do_initialize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">props</span> <span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">hparams</span> <span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
+<span class="linenos"> 46</span><span class="w">        </span><span class="sd">&quot;&quot;&quot; Initializes the Random Learner</span>
+<span class="linenos"> 47</span>
+<span class="linenos"> 48</span><span class="sd">        Learner Args (put these in hparams):</span>
+<span class="linenos"> 49</span><span class="sd">            &#39;low&#39;: Set this to the lowest int that can be returned</span>
+<span class="linenos"> 50</span><span class="sd">            &#39;high&#39;: Set this to the highest int that will not be returned.</span>
+<span class="linenos"> 51</span><span class="sd">                In other words if this is 2, we may return 1, but never 2.</span>
+<span class="linenos"> 52</span><span class="sd">            &#39;size&#39;: How many ints should be returned.</span>
+<span class="linenos"> 53</span>
+<span class="linenos"> 54</span><span class="sd">        Args:</span>
+<span class="linenos"> 55</span><span class="sd">            props (dict): Not used.</span>
+<span class="linenos"> 56</span><span class="sd">            hparams (dict): Parameters for the learner. Args defined above.</span>
+<span class="linenos"> 57</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos"> 58</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_props</span> <span class="o">=</span> <span class="n">props</span> <span class="ow">or</span> <span class="p">{}</span>
+<span class="linenos"> 59</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_hparams</span> <span class="o">=</span> <span class="n">hparams</span> <span class="ow">or</span> <span class="p">{}</span>
+<span class="linenos"> 60</span>        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;do_initialize called for the Test Agent with: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_props</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 61</span>
+<span class="linenos"> 62</span>    <span class="k">def</span> <span class="nf">do_build_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">):</span>
+<span class="linenos"> 63</span>        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;do_build_model called&quot;</span><span class="p">)</span>
+<span class="linenos"> 64</span>
+<span class="linenos"> 65</span>    <span class="k">def</span> <span class="nf">do_save_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+<span class="linenos"> 66</span>        <span class="k">if</span> <span class="n">path</span><span class="p">:</span>
+<span class="linenos"> 67</span>            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;we cannot save a Random Learner&quot;</span><span class="p">)</span>
+<span class="linenos"> 68</span>
+<span class="linenos"> 69</span>    <span class="k">def</span> <span class="nf">do_agent_registered</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">agent_cfg</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
+<span class="linenos"> 70</span>        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;do_agent_registered called&quot;</span><span class="p">)</span>
+<span class="linenos"> 71</span>        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;agent config: </span><span class="si">{</span><span class="n">agent_cfg</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 72</span>
+<span class="linenos"> 73</span>    <span class="k">def</span> <span class="nf">do_episode_started</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">episode_cfg</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
+<span class="linenos"> 74</span>        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;do_episode_started called&quot;</span><span class="p">)</span>
+<span class="linenos"> 75</span>        <span class="c1"># If the learner must be reset with the current obs, it needs to happen</span>
+<span class="linenos"> 76</span>        <span class="c1"># here. The current obs will be in `episode_cfg[&#39;obs&#39;]`</span>
+<span class="linenos"> 77</span>        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;episode config: </span><span class="si">{</span><span class="n">episode_cfg</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 78</span>        <span class="k">pass</span>
+<span class="linenos"> 79</span>
+<span class="linenos"> 80</span>    <span class="k">def</span> <span class="nf">do_get_action</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obs</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">]]])</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]:</span>
+<span class="linenos"> 81</span>        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;do_get_action for a Random Learner called with obs=</span><span class="si">{</span><span class="n">obs</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 82</span>        <span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span>
+<span class="linenos"> 83</span>        <span class="n">rng_ints</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">integers</span><span class="p">(</span><span class="n">low</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_hparams</span><span class="p">[</span><span class="s1">&#39;low&#39;</span><span class="p">],</span>
+<span class="linenos"> 84</span>                                <span class="n">high</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_hparams</span><span class="p">[</span><span class="s1">&#39;high&#39;</span><span class="p">],</span>
+<span class="linenos"> 85</span>                                <span class="n">size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_hparams</span><span class="p">[</span><span class="s1">&#39;size&#39;</span><span class="p">])</span>
+<span class="linenos"> 86</span>        <span class="n">action</span> <span class="o">=</span> <span class="p">{</span><span class="bp">self</span><span class="o">.</span><span class="n">agent_name</span><span class="p">:</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">rng_ints</span><span class="p">]}</span>
+<span class="linenos"> 87</span>        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The random learner will return: </span><span class="si">{</span><span class="n">action</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 88</span>        <span class="k">return</span> <span class="n">action</span>
+<span class="linenos"> 89</span>
+<span class="linenos"> 90</span>    <span class="k">def</span> <span class="nf">do_replay_action</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obs</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">]],</span> <span class="nb">bool</span><span class="p">]]):</span>
+<span class="linenos"> 91</span>        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;do_replay_action called&quot;</span><span class="p">)</span>
+<span class="linenos"> 92</span>        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;observations: </span><span class="si">{</span><span class="n">obs</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 93</span>
+<span class="linenos"> 94</span>    <span class="k">def</span> <span class="nf">do_episode_stopped</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos"> 95</span>        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;do_episode_stopped called&quot;</span><span class="p">)</span>
+<span class="linenos"> 96</span>
+<span class="linenos"> 97</span>    <span class="k">def</span> <span class="nf">do_pause</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos"> 98</span>        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;do_pause called&quot;</span><span class="p">)</span>
+<span class="linenos"> 99</span>
+<span class="linenos">100</span>    <span class="k">def</span> <span class="nf">do_terminate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos">101</span>        <span class="k">pass</span>
+<span class="linenos">102</span>
+<span class="linenos">103</span>    <span class="k">def</span> <span class="nf">do_reset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unload_model</span><span class="p">):</span>
+<span class="linenos">104</span>        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;do_reset called&quot;</span><span class="p">)</span>
+<span class="linenos">105</span>        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;unload_model: </span><span class="si">{</span><span class="n">unload_model</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">106</span>        <span class="k">pass</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="orchestrator-interface">
+<h2>Orchestrator Interface<a class="headerlink" href="#orchestrator-interface" title="Permalink to this heading"></a></h2>
+<p>The MISTK orchestrator interfaces with the actual game environment (e.g. Gynasium, Unity, Airlift Challenge).
+An orchestrator implements the <cite>mistk.agent.AbstractOrchestrator</cite> class. This class
+provides a set of abstract methods that represent the orchestrator lifecycle and
+must be implemented by the new orchestrator. Ultimately, these methods form the core of
+the web endpoint service that is made available for every orchestrator implementation.</p>
+<dl class="simple">
+<dt><strong>do_initialize</strong> (env: dict = {}, agents_needed: int = 1):</dt><dd><p>Called once the endpoint service has launched.
+This would typically be the first call made to the service.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param env<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Dictionary which has keyword args that will
+be used for the env’s initialization method [Default = None]</p>
+</dd>
+<dt class="field-even">param agents_needed<span class="colon">:</span></dt>
+<dd class="field-even"><p>Number of agents who’ll play in
+this game. [Default = 1]</p>
+</dd>
+</dl>
+</dd>
+<dt><strong>do_register_agent</strong> (agent_name: str, agent_url: str, skip_train: bool):</dt><dd><p>Instructs the service to register all of the agents this orchestrator
+will work with.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param agent_name<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The name of the agent</p>
+</dd>
+<dt class="field-even">param agent_url<span class="colon">:</span></dt>
+<dd class="field-even"><p>The URL to the agent</p>
+</dd>
+<dt class="field-odd">param skip_train<span class="colon">:</span></dt>
+<dd class="field-odd"><p>If we shouldn’t train this agent [Default = False]</p>
+</dd>
+</dl>
+</dd>
+<dt><strong>do_start_episode</strong> (episode_cfg: dict):</dt><dd><p>Begins starting the episode of playing the game</p>
+<dl class="field-list simple">
+<dt class="field-odd">param episode_cfg<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Dictionary with the episode’s config settings</p>
+</dd>
+</dl>
+</dd>
+<dt><strong>do_save_episode</strong> (path: str):</dt><dd><p>Saves the game episode’s state and/or output</p>
+<dl class="field-list simple">
+<dt class="field-odd">param path<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The path to save the game to</p>
+</dd>
+</dl>
+</dd>
+<dt><a href="#id1"><span class="problematic" id="id2">**</span></a>do_stop_episode**():</dt><dd><p>Stops all processing and releases any resources that are in use in
+preparation for being shut down.</p>
+</dd>
+<dt><a href="#id3"><span class="problematic" id="id4">**</span></a>do_reset**():</dt><dd><p>Resets the model into its initial state</p>
+</dd>
+</dl>
+<section id="the-orchestrator-state-machine">
+<h3>The Orchestrator State Machine<a class="headerlink" href="#the-orchestrator-state-machine" title="Permalink to this heading"></a></h3>
+<p>Orchestrator implementations follow a workflow lifecycle based on state machine
+transitions. The underlying MISTK infrastructure ensures that only legal
+transitions from one state to another can be made and that the appropriate
+Orchestrator methods are called during those transitions. The image below illustrates
+the high-level state machine transitions and the orchestrator methods
+that may be called between them.</p>
+<img alt="../_images/gaming_orchestrator_state_machine.png" src="../_images/gaming_orchestrator_state_machine.png" />
+<p>A Orchestrator instance will automatically go to the Uninitialized state if its
+container instance successfully starts up. Once initialized, agents can be registered. Once
+the defined amount of agents are registered, then the state will switch to ready where then a
+game episode can be started.</p>
+</section>
+<section id="example-orchestrator">
+<h3>Example Orchestrator<a class="headerlink" href="#example-orchestrator" title="Permalink to this heading"></a></h3>
+<p>The following example code implements a simple test orchestrator
+with the MISTK orchestrator interface:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">  1</span><span class="c1">##############################################################################</span>
+<span class="linenos">  2</span><span class="c1">#</span>
+<span class="linenos">  3</span><span class="c1">#    This program is free software: you can redistribute it and/or modify</span>
+<span class="linenos">  4</span><span class="c1">#    it under the terms of the GNU General Public License as published by</span>
+<span class="linenos">  5</span><span class="c1">#    the Free Software Foundation, either version 3 of the License, or</span>
+<span class="linenos">  6</span><span class="c1">#    (at your option) any later version.</span>
+<span class="linenos">  7</span><span class="c1">#</span>
+<span class="linenos">  8</span><span class="c1">#    This program is distributed in the hope that it will be useful,</span>
+<span class="linenos">  9</span><span class="c1">#    but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<span class="linenos"> 10</span><span class="c1">#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<span class="linenos"> 11</span><span class="c1">#    GNU General Public License for more details.</span>
+<span class="linenos"> 12</span><span class="c1">#</span>
+<span class="linenos"> 13</span><span class="c1">#    You should have received a copy of the GNU General Public License</span>
+<span class="linenos"> 14</span><span class="c1">#    along with this program.  If not, see &lt;https://www.gnu.org/licenses/&gt;.</span>
+<span class="linenos"> 15</span><span class="c1">#</span>
+<span class="linenos"> 16</span><span class="c1">##############################################################################</span>
+<span class="linenos"> 17</span>
+<span class="linenos"> 18</span><span class="kn">from</span> <span class="nn">mistk.orchestrator.abstract_orchestrator</span> <span class="kn">import</span> <span class="n">AbstractOrchestrator</span>
+<span class="linenos"> 19</span><span class="kn">from</span> <span class="nn">mistk.watch.wait</span> <span class="kn">import</span> <span class="n">wait_for_state</span>
+<span class="linenos"> 20</span><span class="kn">import</span> <span class="nn">mistk.log</span>
+<span class="linenos"> 21</span><span class="n">logger</span> <span class="o">=</span> <span class="n">mistk</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">get_logger</span><span class="p">()</span>
+<span class="linenos"> 22</span>
+<span class="linenos"> 23</span><span class="k">class</span> <span class="nc">TestOrchestrator</span> <span class="p">(</span><span class="n">AbstractOrchestrator</span><span class="p">):</span>
+<span class="linenos"> 24</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos"> 25</span>        <span class="n">AbstractOrchestrator</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+<span class="linenos"> 26</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_props</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="linenos"> 27</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_orchestrator_file_name</span> <span class="o">=</span> <span class="s1">&#39;test-orchestrator.mdl&#39;</span>
+<span class="linenos"> 28</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_agents_needed</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="linenos"> 29</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_default_env</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="linenos"> 30</span>
+<span class="linenos"> 31</span>        <span class="bp">self</span><span class="o">.</span><span class="n">step_num</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos"> 32</span>
+<span class="linenos"> 33</span>        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Orchestrator started&quot;</span><span class="p">)</span>
+<span class="linenos"> 34</span>
+<span class="linenos"> 35</span>    <span class="k">def</span> <span class="nf">do_initialize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">env</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{},</span> <span class="n">agents_needed</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
+<span class="linenos"> 36</span><span class="w">        </span><span class="sd">&quot;&quot;&quot; This initializes Airlift Orchestrator</span>
+<span class="linenos"> 37</span>
+<span class="linenos"> 38</span><span class="sd">        Args:</span>
+<span class="linenos"> 39</span><span class="sd">            env (dict, optional): Dictionary which has keyword args that will</span>
+<span class="linenos"> 40</span><span class="sd">                be used for the env&#39;s initialization method [Default = None]</span>
+<span class="linenos"> 41</span><span class="sd">            agents_needed (int, optional): Number of agents who&#39;ll play in</span>
+<span class="linenos"> 42</span><span class="sd">                this game. [Default = 1]</span>
+<span class="linenos"> 43</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos"> 44</span>        <span class="n">env_dict</span> <span class="o">=</span> <span class="n">env</span> <span class="k">if</span> <span class="n">env</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">_default_env</span>
+<span class="linenos"> 45</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_agents_needed</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">agents_needed</span><span class="p">)</span>
+<span class="linenos"> 46</span>
+<span class="linenos"> 47</span>        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;do_initialize called&quot;</span><span class="p">)</span>
+<span class="linenos"> 48</span>        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Initializing the Test Orchestrator with:  </span><span class="si">{</span><span class="n">env_dict</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 49</span>
+<span class="linenos"> 50</span>        <span class="c1"># TODO: Call Initialize Method to Environment</span>
+<span class="linenos"> 51</span>        <span class="c1"># TODO: Call Reset Method to Environment</span>
+<span class="linenos"> 52</span>
+<span class="linenos"> 53</span>    <span class="k">def</span> <span class="nf">do_register_agent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">agent_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">agent_url</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+<span class="linenos"> 54</span>                          <span class="n">skip_train</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+<span class="linenos"> 55</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos"> 56</span><span class="sd">        Instructs the service to register all of the agents this orchestrator</span>
+<span class="linenos"> 57</span><span class="sd">        will work with.</span>
+<span class="linenos"> 58</span>
+<span class="linenos"> 59</span><span class="sd">        :param agent_name: The name of the agent</span>
+<span class="linenos"> 60</span><span class="sd">        :param agent_url: The agent URL</span>
+<span class="linenos"> 61</span><span class="sd">        :param skip_train: If we shouldn&#39;t train this agent [Default = False]</span>
+<span class="linenos"> 62</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos"> 63</span>        <span class="k">pass</span>
+<span class="linenos"> 64</span>
+<span class="linenos"> 65</span>    <span class="k">def</span> <span class="nf">do_start_episode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">episode_cfg</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
+<span class="linenos"> 66</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos"> 67</span><span class="sd">        Begins starting the episode of playing the game</span>
+<span class="linenos"> 68</span>
+<span class="linenos"> 69</span><span class="sd">        :param episode_cfg: Dictionary with the episode&#39;s config settings</span>
+<span class="linenos"> 70</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos"> 71</span>        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Starting episode&quot;</span><span class="p">)</span>
+<span class="linenos"> 72</span>        <span class="k">for</span> <span class="n">agent</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_agents</span><span class="p">:</span>  <span class="c1"># Tells each agent to start an episode</span>
+<span class="linenos"> 73</span>            <span class="k">try</span><span class="p">:</span>
+<span class="linenos"> 74</span>                <span class="n">episode_cfg</span><span class="p">[</span><span class="s1">&#39;obs&#39;</span><span class="p">]</span> <span class="o">=</span>  <span class="p">{</span><span class="n">agent</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">]}</span>
+<span class="linenos"> 75</span>                <span class="bp">self</span><span class="o">.</span><span class="n">_agents</span><span class="p">[</span><span class="n">agent</span><span class="p">]</span><span class="o">.</span><span class="n">episode_started</span><span class="p">(</span><span class="n">episode_cfg</span><span class="o">=</span><span class="n">episode_cfg</span><span class="p">)</span>
+<span class="linenos"> 76</span>                <span class="n">wait_for_state</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_agents</span><span class="p">[</span><span class="n">agent</span><span class="p">],</span> <span class="s1">&#39;episode_started&#39;</span><span class="p">,</span> <span class="s1">&#39;in_episode&#39;</span><span class="p">)</span>
+<span class="linenos"> 77</span>            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>  <span class="c1">#pylint: disable=broad-except</span>
+<span class="linenos"> 78</span>                <span class="n">logger</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s2">&quot;Unable to start episode for Agent </span><span class="si">{agent}</span><span class="s2"> in do_start_episode&quot;</span><span class="p">)</span>
+<span class="linenos"> 79</span>                <span class="bp">self</span><span class="o">.</span><span class="n">fail</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">ex</span><span class="p">))</span>
+<span class="linenos"> 80</span>
+<span class="linenos"> 81</span>        <span class="c1"># Loop between each step to play the game</span>
+<span class="linenos"> 82</span>        <span class="k">for</span> <span class="n">step_num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_steps</span><span class="p">):</span>
+<span class="linenos"> 83</span>            <span class="bp">self</span><span class="o">.</span><span class="n">step_num</span> <span class="o">=</span> <span class="n">step_num</span>
+<span class="linenos"> 84</span>            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Running step number </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">step_num</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 85</span>            <span class="bp">self</span><span class="o">.</span><span class="n">update_status</span><span class="p">({</span><span class="s2">&quot;step&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">step_num</span><span class="p">})</span>
+<span class="linenos"> 86</span>
+<span class="linenos"> 87</span>            <span class="c1"># Gets each agent&#39;s desired actions based on current observations</span>
+<span class="linenos"> 88</span>            <span class="c1"># TODO: Convert actions to an array of float types</span>
+<span class="linenos"> 89</span>            <span class="k">for</span> <span class="n">agent</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_agents</span><span class="p">:</span>
+<span class="linenos"> 90</span>                <span class="n">agent_obs</span> <span class="o">=</span> <span class="p">{</span><span class="n">agent</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">obs</span><span class="p">[</span><span class="n">agent</span><span class="p">]}</span>
+<span class="linenos"> 91</span>                <span class="k">try</span><span class="p">:</span>
+<span class="linenos"> 92</span>                    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[</span><span class="si">{</span><span class="n">step_num</span><span class="si">}</span><span class="s2">] Getting actions for </span><span class="si">{</span><span class="n">agent</span><span class="si">}</span><span class="s2"> with obs </span><span class="si">{</span><span class="n">agent_obs</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 93</span>                    <span class="n">action</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_agents</span><span class="p">[</span><span class="n">agent</span><span class="p">]</span><span class="o">.</span><span class="n">get_action</span><span class="p">(</span><span class="n">obs</span><span class="o">=</span><span class="n">agent_obs</span><span class="p">)</span>
+<span class="linenos"> 94</span>                    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[</span><span class="si">{</span><span class="n">step_num</span><span class="si">}</span><span class="s2">] Got actions for </span><span class="si">{</span><span class="n">agent</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">action</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 95</span>                <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>  <span class="c1">#pylint: disable=broad-except</span>
+<span class="linenos"> 96</span>                    <span class="n">logger</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s2">&quot;Unable to get actions from Agent </span><span class="si">{agent}</span><span class="s2"> in do_start_episode&quot;</span><span class="p">)</span>
+<span class="linenos"> 97</span>                    <span class="bp">self</span><span class="o">.</span><span class="n">fail</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">ex</span><span class="p">))</span>
+<span class="linenos"> 98</span>                <span class="n">wait_for_state</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_agents</span><span class="p">[</span><span class="n">agent</span><span class="p">],</span> <span class="s1">&#39;get_action&#39;</span><span class="p">,</span> <span class="s1">&#39;in_episode&#39;</span><span class="p">)</span>
+<span class="linenos"> 99</span>                <span class="bp">self</span><span class="o">.</span><span class="n">actions</span><span class="p">[</span><span class="n">agent</span><span class="p">]</span> <span class="o">=</span> <span class="n">action</span><span class="p">[</span><span class="n">agent</span><span class="p">]</span>
+<span class="linenos">100</span>
+<span class="linenos">101</span>            <span class="c1"># TODO: Need to add step method to the Environment</span>
+<span class="linenos">102</span>            <span class="c1"># TODO: And with that, deal with obs/rewards</span>
+<span class="linenos">103</span>
+<span class="linenos">104</span>            <span class="c1"># Trains each agent from the outcome of the current step</span>
+<span class="linenos">105</span>            <span class="k">for</span> <span class="n">agent</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_agents</span><span class="p">:</span>
+<span class="linenos">106</span>                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_skip_train</span><span class="p">[</span><span class="n">agent</span><span class="p">]:</span>
+<span class="linenos">107</span>                    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[</span><span class="si">{</span><span class="n">step_num</span><span class="si">}</span><span class="s2">] Skip replaying </span><span class="si">{</span><span class="n">agent</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">108</span>                <span class="k">else</span><span class="p">:</span>
+<span class="linenos">109</span>                    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[</span><span class="si">{</span><span class="n">step_num</span><span class="si">}</span><span class="s2">] Replaying actions for </span><span class="si">{</span><span class="n">agent</span><span class="si">}</span><span class="s2"> with actions </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">actions</span><span class="p">[</span><span class="n">agent</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">110</span>                    <span class="k">try</span><span class="p">:</span>
+<span class="linenos">111</span>                        <span class="n">step_data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;prev_obs&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">obs</span><span class="p">[</span><span class="n">agent</span><span class="p">],</span>
+<span class="linenos">112</span>                                     <span class="s1">&#39;rewards&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">rewards</span><span class="p">[</span><span class="n">agent</span><span class="p">],</span>
+<span class="linenos">113</span>                                     <span class="s1">&#39;actions&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">actions</span><span class="p">[</span><span class="n">agent</span><span class="p">],</span>
+<span class="linenos">114</span>                                     <span class="s1">&#39;new_obs&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">obs</span><span class="p">[</span><span class="n">agent</span><span class="p">]}</span>
+<span class="linenos">115</span>                    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>  <span class="c1">#pylint: disable=broad-except</span>
+<span class="linenos">116</span>                        <span class="n">logger</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s2">&quot;Unable to get data to replay action for Agent </span><span class="si">{agent}</span><span class="s2"> in do_start_episode&quot;</span><span class="p">)</span>
+<span class="linenos">117</span>                        <span class="bp">self</span><span class="o">.</span><span class="n">fail</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">ex</span><span class="p">))</span>
+<span class="linenos">118</span>                    <span class="k">try</span><span class="p">:</span>
+<span class="linenos">119</span>                        <span class="bp">self</span><span class="o">.</span><span class="n">_agents</span><span class="p">[</span><span class="n">agent</span><span class="p">]</span><span class="o">.</span><span class="n">replay_action</span><span class="p">(</span><span class="n">obs</span><span class="o">=</span><span class="n">step_data</span><span class="p">)</span>
+<span class="linenos">120</span>                        <span class="n">wait_for_state</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_agents</span><span class="p">[</span><span class="n">agent</span><span class="p">],</span> <span class="s1">&#39;replay_action&#39;</span><span class="p">,</span>
+<span class="linenos">121</span>                                       <span class="s1">&#39;in_episode&#39;</span><span class="p">)</span>
+<span class="linenos">122</span>                    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>  <span class="c1">#pylint: disable=broad-except</span>
+<span class="linenos">123</span>                        <span class="n">logger</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s2">&quot;Unable to replay action for Agent </span><span class="si">{agent}</span><span class="s2"> in do_start_episode&quot;</span><span class="p">)</span>
+<span class="linenos">124</span>                        <span class="bp">self</span><span class="o">.</span><span class="n">fail</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">ex</span><span class="p">))</span>
+<span class="linenos">125</span>
+<span class="linenos">126</span>    <span class="k">def</span> <span class="nf">do_get_status</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos">127</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">128</span><span class="sd">        Gets the status of the currently running orchestrator</span>
+<span class="linenos">129</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos">130</span>        <span class="k">pass</span>
+<span class="linenos">131</span>
+<span class="linenos">132</span>    <span class="k">def</span> <span class="nf">do_stop_episode</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos">133</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">134</span><span class="sd">        Stops all processing and releases any resources that are in use in</span>
+<span class="linenos">135</span><span class="sd">        preparation for being shut down.</span>
+<span class="linenos">136</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos">137</span>        <span class="k">pass</span>
+<span class="linenos">138</span>
+<span class="linenos">139</span>    <span class="k">def</span> <span class="nf">do_reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos">140</span>        <span class="c1"># TODO: Call reset method on environment</span>
+<span class="linenos">141</span>        <span class="k">pass</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="orchestrator-and-agent-workflow">
+<h2>Orchestrator and Agent Workflow<a class="headerlink" href="#orchestrator-and-agent-workflow" title="Permalink to this heading"></a></h2>
+<p>The following sequence diagram shows the interactions between the Test Harness (SML),
+the orchestrator, and a single agent for a single episode of play.
+A larger version of the image can be viewed by clicking the image.</p>
+<a class="reference internal image-reference" href="../_images/gaming_sequence.png"><img alt="../_images/gaming_sequence.png" src="../_images/gaming_sequence.png" style="width: 536.4px; height: 442.8px;" /></a>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../gaming.html" class="btn btn-neutral float-left" title="Gaming" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="testing.html" class="btn btn-neutral float-right" title="Testing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+mistk.agent.client package
+==========================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   mistk.agent.client.api
+   mistk.agent.client.models
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   mistk.agent.client.api_client
+   mistk.agent.client.configuration
+   mistk.agent.client.rest
+
+Module contents
+---------------
+
+.. automodule:: mistk.agent.client
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,67 +1,36 @@
-
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>mistk.model.server.models.dataset module &mdash; MISTK  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
-
-  
-  
-  
-  
-
-  
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="mistk.model.server.models.dataset_statistics module" href="mistk.model.server.models.dataset_statistics.html" />
-    <link rel="prev" title="mistk.model.server.models.data_record module" href="mistk.model.server.models.data_record.html" /> 
+    <link rel="prev" title="mistk.model.server.models.data_record_list module" href="mistk.model.server.models.data_record_list.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../index.html" class="icon icon-home"> MISTK
-          
-
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -69,18 +38,8 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guide.html">Guide</a></li>
@@ -105,261 +64,202 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../gaming.html">Gaming</a></li>
 </ul>
 
-            
-          
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">MISTK</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="../index.html">Docs</a> &raquo;</li>
-        
-          <li><a href="index.html">MISTK API</a> &raquo;</li>
-        
-          <li><a href="mistk.html">mistk package</a> &raquo;</li>
-        
-          <li><a href="mistk.model.html">mistk.model package</a> &raquo;</li>
-        
-          <li><a href="mistk.model.server.html">mistk.model.server package</a> &raquo;</li>
-        
-          <li><a href="mistk.model.server.models.html">mistk.model.server.models package</a> &raquo;</li>
-        
-      <li>mistk.model.server.models.dataset module</li>
-    
-    
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">MISTK API</a></li>
+          <li class="breadcrumb-item"><a href="mistk.html">mistk package</a></li>
+          <li class="breadcrumb-item"><a href="mistk.model.html">mistk.model package</a></li>
+          <li class="breadcrumb-item"><a href="mistk.model.server.html">mistk.model.server package</a></li>
+          <li class="breadcrumb-item"><a href="mistk.model.server.models.html">mistk.model.server.models package</a></li>
+      <li class="breadcrumb-item active">mistk.model.server.models.dataset module</li>
       <li class="wy-breadcrumbs-aside">
-        
-            
             <a href="../_sources/api/mistk.model.server.models.dataset.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="module-mistk.model.server.models.dataset">
-<span id="mistk-model-server-models-dataset-module"></span><h1>mistk.model.server.models.dataset module<a class="headerlink" href="#module-mistk.model.server.models.dataset" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
-<dt id="mistk.model.server.models.dataset.Dataset">
-<em class="property">class </em><code class="sig-prename descclassname">mistk.model.server.models.dataset.</code><code class="sig-name descname">Dataset</code><span class="sig-paren">(</span><em class="sig-param">object_info: mistk.model.server.models.object_info.ObjectInfo = None</em>, <em class="sig-param">datastash_id: str = None</em>, <em class="sig-param">datastash_sub_dir: str = None</em>, <em class="sig-param">modality: str = None</em>, <em class="sig-param">format: str = None</em>, <em class="sig-param">statistics: mistk.model.server.models.dataset_statistics.DatasetStatistics = None</em>, <em class="sig-param">default_ground_truth_set_reference: mistk.model.server.models.object_reference.ObjectReference = None</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.models.dataset.Dataset" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="mistk.model.server.models.base_model_.html#mistk.model.server.models.base_model_.Model" title="mistk.model.server.models.base_model_.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">mistk.model.server.models.base_model_.Model</span></code></a></p>
+             
+  <section id="module-mistk.model.server.models.dataset">
+<span id="mistk-model-server-models-dataset-module"></span><h1>mistk.model.server.models.dataset module<a class="headerlink" href="#module-mistk.model.server.models.dataset" title="Permalink to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="mistk.model.server.models.dataset.Dataset">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mistk.model.server.models.dataset.</span></span><span class="sig-name descname"><span class="pre">Dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">object_info</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="mistk.model.server.models.object_info.html#mistk.model.server.models.object_info.ObjectInfo" title="mistk.model.server.models.object_info.ObjectInfo"><span class="pre">ObjectInfo</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datastash_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datastash_sub_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modality</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">statistics</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="mistk.model.server.models.dataset_statistics.html#mistk.model.server.models.dataset_statistics.DatasetStatistics" title="mistk.model.server.models.dataset_statistics.DatasetStatistics"><span class="pre">DatasetStatistics</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_ground_truth_set_reference</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="mistk.model.server.models.object_reference.html#mistk.model.server.models.object_reference.ObjectReference" title="mistk.model.server.models.object_reference.ObjectReference"><span class="pre">ObjectReference</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.models.dataset.Dataset" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="mistk.model.server.models.base_model_.html#mistk.model.server.models.base_model_.Model" title="mistk.model.server.models.base_model_.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></a></p>
 <p>NOTE: This class is auto generated by the swagger code generator program.</p>
 <p>Do not edit the class manually.</p>
-<dl class="method">
-<dt id="mistk.model.server.models.dataset.Dataset.datastash_id">
-<em class="property">property </em><code class="sig-name descname">datastash_id</code><a class="headerlink" href="#mistk.model.server.models.dataset.Dataset.datastash_id" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="mistk.model.server.models.dataset.Dataset.datastash_id">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">datastash_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#mistk.model.server.models.dataset.Dataset.datastash_id" title="Permalink to this definition"></a></dt>
 <dd><p>Gets the datastash_id of this Dataset.</p>
 <p>The id of the datastash associated with this dataset where all of its files will be stored.   # noqa: E501</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The datastash_id of this Dataset.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>str</p>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="mistk.model.server.models.dataset.Dataset.datastash_sub_dir">
-<em class="property">property </em><code class="sig-name descname">datastash_sub_dir</code><a class="headerlink" href="#mistk.model.server.models.dataset.Dataset.datastash_sub_dir" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="mistk.model.server.models.dataset.Dataset.datastash_sub_dir">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">datastash_sub_dir</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#mistk.model.server.models.dataset.Dataset.datastash_sub_dir" title="Permalink to this definition"></a></dt>
 <dd><p>Gets the datastash_sub_dir of this Dataset.</p>
 <p>This field denotes the sub path within the datastash where this dataset’s data resides.   # noqa: E501</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The datastash_sub_dir of this Dataset.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>str</p>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="mistk.model.server.models.dataset.Dataset.default_ground_truth_set_reference">
-<em class="property">property </em><code class="sig-name descname">default_ground_truth_set_reference</code><a class="headerlink" href="#mistk.model.server.models.dataset.Dataset.default_ground_truth_set_reference" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="mistk.model.server.models.dataset.Dataset.default_ground_truth_set_reference">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">default_ground_truth_set_reference</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="mistk.model.server.models.object_reference.html#mistk.model.server.models.object_reference.ObjectReference" title="mistk.model.server.models.object_reference.ObjectReference"><span class="pre">ObjectReference</span></a></em><a class="headerlink" href="#mistk.model.server.models.dataset.Dataset.default_ground_truth_set_reference" title="Permalink to this definition"></a></dt>
 <dd><p>Gets the default_ground_truth_set_reference of this Dataset.</p>
-<p>A reference to the default ground truth set that is associated with this dataset        # noqa: E501</p>
+<p>A reference to the default ground truth set that is associated with this dataset   # noqa: E501</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The default_ground_truth_set_reference of this Dataset.</p>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference internal" href="mistk.evaluation.client.models.object_reference.html#mistk.evaluation.client.models.object_reference.ObjectReference" title="mistk.evaluation.client.models.object_reference.ObjectReference">ObjectReference</a></p>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="mistk.agent.client.models.object_reference.html#mistk.agent.client.models.object_reference.ObjectReference" title="mistk.agent.client.models.object_reference.ObjectReference">ObjectReference</a></p>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="mistk.model.server.models.dataset.Dataset.format">
-<em class="property">property </em><code class="sig-name descname">format</code><a class="headerlink" href="#mistk.model.server.models.dataset.Dataset.format" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="mistk.model.server.models.dataset.Dataset.format">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">format</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#mistk.model.server.models.dataset.Dataset.format" title="Permalink to this definition"></a></dt>
 <dd><p>Gets the format of this Dataset.</p>
 <p>A string representing the name of the format of the dataset. This should be sufficient to ensure that models and transforms  are able to read and parse the data.   # noqa: E501</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The format of this Dataset.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>str</p>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="mistk.model.server.models.dataset.Dataset.from_dict">
-<em class="property">classmethod </em><code class="sig-name descname">from_dict</code><span class="sig-paren">(</span><em class="sig-param">dikt</em><span class="sig-paren">)</span> &#x2192; mistk.model.server.models.dataset.Dataset<a class="headerlink" href="#mistk.model.server.models.dataset.Dataset.from_dict" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.model.server.models.dataset.Dataset.from_dict">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dikt</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#mistk.model.server.models.dataset.Dataset" title="mistk.model.server.models.dataset.Dataset"><span class="pre">Dataset</span></a></span></span><a class="headerlink" href="#mistk.model.server.models.dataset.Dataset.from_dict" title="Permalink to this definition"></a></dt>
 <dd><p>Returns the dict as a model</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>dikt</strong> – A dict.</p>
 </dd>
-<dt class="field-even">Type</dt>
+<dt class="field-even">Type<span class="colon">:</span></dt>
 <dd class="field-even"><p>dict</p>
 </dd>
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The Dataset of this Dataset.  # noqa: E501</p>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference internal" href="mistk.model.client.models.dataset.html#mistk.model.client.models.dataset.Dataset" title="mistk.model.client.models.dataset.Dataset">Dataset</a></p>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#mistk.model.server.models.dataset.Dataset" title="mistk.model.server.models.dataset.Dataset">Dataset</a></p>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="mistk.model.server.models.dataset.Dataset.modality">
-<em class="property">property </em><code class="sig-name descname">modality</code><a class="headerlink" href="#mistk.model.server.models.dataset.Dataset.modality" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="mistk.model.server.models.dataset.Dataset.modality">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">modality</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#mistk.model.server.models.dataset.Dataset.modality" title="Permalink to this definition"></a></dt>
 <dd><p>Gets the modality of this Dataset.</p>
 <p>The type of the data supported by this implementation, one of image, audio, video, text, etc. This does not specify the format of the data. Available modalities can be found using the “global/meta/dataModalities” endpoint   # noqa: E501</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The modality of this Dataset.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>str</p>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="mistk.model.server.models.dataset.Dataset.object_info">
-<em class="property">property </em><code class="sig-name descname">object_info</code><a class="headerlink" href="#mistk.model.server.models.dataset.Dataset.object_info" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="mistk.model.server.models.dataset.Dataset.object_info">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">object_info</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="mistk.model.server.models.object_info.html#mistk.model.server.models.object_info.ObjectInfo" title="mistk.model.server.models.object_info.ObjectInfo"><span class="pre">ObjectInfo</span></a></em><a class="headerlink" href="#mistk.model.server.models.dataset.Dataset.object_info" title="Permalink to this definition"></a></dt>
 <dd><p>Gets the object_info of this Dataset.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The object_info of this Dataset.</p>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference internal" href="mistk.evaluation.client.models.object_info.html#mistk.evaluation.client.models.object_info.ObjectInfo" title="mistk.evaluation.client.models.object_info.ObjectInfo">ObjectInfo</a></p>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="mistk.agent.client.models.object_info.html#mistk.agent.client.models.object_info.ObjectInfo" title="mistk.agent.client.models.object_info.ObjectInfo">ObjectInfo</a></p>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="mistk.model.server.models.dataset.Dataset.statistics">
-<em class="property">property </em><code class="sig-name descname">statistics</code><a class="headerlink" href="#mistk.model.server.models.dataset.Dataset.statistics" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="mistk.model.server.models.dataset.Dataset.statistics">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">statistics</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="mistk.model.server.models.dataset_statistics.html#mistk.model.server.models.dataset_statistics.DatasetStatistics" title="mistk.model.server.models.dataset_statistics.DatasetStatistics"><span class="pre">DatasetStatistics</span></a></em><a class="headerlink" href="#mistk.model.server.models.dataset.Dataset.statistics" title="Permalink to this definition"></a></dt>
 <dd><p>Gets the statistics of this Dataset.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The statistics of this Dataset.</p>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference internal" href="mistk.model.client.models.dataset_statistics.html#mistk.model.client.models.dataset_statistics.DatasetStatistics" title="mistk.model.client.models.dataset_statistics.DatasetStatistics">DatasetStatistics</a></p>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="mistk.agent.client.models.dataset_statistics.html#mistk.agent.client.models.dataset_statistics.DatasetStatistics" title="mistk.agent.client.models.dataset_statistics.DatasetStatistics">DatasetStatistics</a></p>
 </dd>
 </dl>
 </dd></dl>
 
 </dd></dl>
 
-</div>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="mistk.model.server.models.dataset_statistics.html" class="btn btn-neutral float-right" title="mistk.model.server.models.dataset_statistics module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="mistk.model.server.models.data_record.html" class="btn btn-neutral float-left" title="mistk.model.server.models.data_record module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="mistk.model.server.models.data_record_list.html" class="btn btn-neutral float-left" title="mistk.model.server.models.data_record_list module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="mistk.model.server.models.dataset_statistics.html" class="btn btn-neutral float-right" title="mistk.model.server.models.dataset_statistics module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-
-    </p>
+    <p></p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
-
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

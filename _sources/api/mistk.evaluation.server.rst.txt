@@ -5,6 +5,7 @@ Subpackages
 -----------
 
 .. toctree::
+   :maxdepth: 4
 
    mistk.evaluation.server.controllers
    mistk.evaluation.server.models
@@ -14,6 +15,7 @@ Submodules
 ----------
 
 .. toctree::
+   :maxdepth: 4
 
    mistk.evaluation.server.encoder
    mistk.evaluation.server.util

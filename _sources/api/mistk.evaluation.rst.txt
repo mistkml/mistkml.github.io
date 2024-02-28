@@ -6,8 +6,6 @@ Subpackages
 
 .. toctree::
 
-   mistk.evaluation.client
-   mistk.evaluation.server
    mistk.evaluation.util
 
 Submodules

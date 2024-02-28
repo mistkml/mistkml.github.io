@@ -1,14 +1,6 @@
 mistk.transform package
 =======================
 
-Subpackages
------------
-
-.. toctree::
-
-   mistk.transform.client
-   mistk.transform.server
-
 Submodules
 ----------
 

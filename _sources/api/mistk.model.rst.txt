@@ -1,14 +1,6 @@
 mistk.model package
 ===================
 
-Subpackages
------------
-
-.. toctree::
-
-   mistk.model.client
-   mistk.model.server
-
 Submodules
 ----------
 

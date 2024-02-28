@@ -50,6 +50,15 @@ the web endpoint service that is made available for every model implementation.
     :param path: The path to the model file or checkpoint that should be loaded.
         Defaults to None if no file was specified in this model's definition.
 
+**do_build_ensemble** (ensemble_path=None, model_paths: dict=None)
+    Instructs the service to build all necessary models used for the ensemble model.
+
+    :param ensemble_path: The directory path to the model file or checkpoint that should be loaded.
+        Defaults to None if no file was specified in this model's definition.
+        
+    :param model_paths: The directory paths to the model files in a dictionary. 
+        The key is the model name with the value being the model path.
+
 **do_train** ()
     Perform training with the previously supplied data.
 
@@ -58,6 +67,13 @@ the web endpoint service that is made available for every model implementation.
 
 **do_generate** ()
 	Perform generations with the previously supplied data.
+	
+**do_miniaturize** (dataPath, includeHalfPrecision)
+	Perform miniaturization with the supplied data.
+	
+	:param dataPath: The path to which the miniaturized model should be saved. 
+    
+    :param includeHalfPrecision: Miniaturize using half point precision format (FP16) for the model
 
 **do_pause** ()
     Pause the current training or testing.
@@ -142,14 +158,21 @@ dictionaries that can be passed to a model implementation's 'do_initialize' meth
 
 Hyperparameters
 :::::::::::::::
+
+::
+
   {
     'learning_rate': 0.001,
     'weight_decay': 0.004
     'momentum': 0.9
   }
+  
 
 Model Properties
 ::::::::::::::::
+
+::
+
   {
     'arch': 'densenet',
     'num_labels': 1000,
@@ -254,7 +277,7 @@ The confidence probabilities and bounds values are optional.
     
 
 Example Model
--------
+-------------
 
 The following example code implements a logistic regression algorithm
 from scikit-learn with the MISTK model interface which operates on a common public dataset:
@@ -280,6 +303,25 @@ in this PyTorch implementation.
 
 Model developers will need to specify in their model properties that they are performing
 transfer learning when using this model for that purpose.
+
+
+Ensemble Models
+---------------
+Model support for building ensemble models uses the **do_build_ensemble(ensemble_path=None, model_paths: dict=None)**
+
+Building of an ensemble model provides a way to ensemble individual models defined in the **model_paths** 
+parameter. The model paths dictionary is based on the model name (key) and the directory path (value) 
+for each model's files. Below is a sample the ensembled model properties
+dictionaries that can be passed to a model implementation's 'do_build_ensemble' method.
+
+Model Paths:
+
+::
+
+  {
+    'model1': /path/to/model1
+    'model2': /path/to/model2
+  }
 
 
 Data Transformation Interface

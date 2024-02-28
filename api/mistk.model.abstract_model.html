@@ -36,7 +36,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="mistk.model.service module" href="mistk.model.service.html" />
-    <link rel="prev" title="mistk.model.server.util module" href="mistk.model.server.util.html" /> 
+    <link rel="prev" title="mistk.model package" href="mistk.model.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -183,6 +183,23 @@
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>The definition of an abstract Model to be implemented by Model developers.</p>
 <dl class="method">
+<dt id="mistk.model.abstract_model.AbstractModel.build_ensemble">
+<code class="sig-name descname">build_ensemble</code><span class="sig-paren">(</span><em class="sig-param">ensemble_path=None</em>, <em class="sig-param">model_paths: dict = None</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.abstract_model.AbstractModel.build_ensemble" title="Permalink to this definition">¶</a></dt>
+<dd><p>Triggers the model to enter the building_ensemble state.  A subsequent call to
+do_build_ensemble with the given parameters will be made as a result.</p>
+<p>This method should not be implemented or overwritten by subclasses.  It will be 
+created by the state machine.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ensemble_path</strong> – The path to the ensemble model file</p></li>
+<li><p><strong>model_paths</strong> – The paths to the model files in a dictionary. The key is the model name with the value being the model path.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
 <dt id="mistk.model.abstract_model.AbstractModel.build_model">
 <code class="sig-name descname">build_model</code><span class="sig-paren">(</span><em class="sig-param">path=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.abstract_model.AbstractModel.build_model" title="Permalink to this definition">¶</a></dt>
 <dd><p>Triggers the model to enter the building_model state.  A subsequent call to
@@ -197,12 +214,26 @@ created by the state machine.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="mistk.model.abstract_model.AbstractModel.do_build_ensemble">
+<code class="sig-name descname">do_build_ensemble</code><span class="sig-paren">(</span><em class="sig-param">ensemble_path=None</em>, <em class="sig-param">model_paths: dict = None</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.abstract_model.AbstractModel.do_build_ensemble" title="Permalink to this definition">¶</a></dt>
+<dd><p>Instructs the service to build all necessary ensemble data structures given the architecture and selected hyperparameters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ensemble_path</strong> – The path to the ensemble model file</p></li>
+<li><p><strong>model_paths</strong> – The paths to the model files in a dictionary. The key is the model name with the value being the model path.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
 <dt id="mistk.model.abstract_model.AbstractModel.do_build_model">
 <em class="property">abstract </em><code class="sig-name descname">do_build_model</code><span class="sig-paren">(</span><em class="sig-param">path=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.abstract_model.AbstractModel.do_build_model" title="Permalink to this definition">¶</a></dt>
 <dd><p>Instructs the service to build all necessary data structures given the architecture and selected hyperparameters.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>path</strong> – The path to the model file</p>
+<dd class="field-odd"><p><strong>path</strong> – The directory path to the model file</p>
 </dd>
 </dl>
 </dd></dl>
@@ -210,8 +241,7 @@ created by the state machine.</p>
 <dl class="method">
 <dt id="mistk.model.abstract_model.AbstractModel.do_generate">
 <em class="property">abstract </em><code class="sig-name descname">do_generate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.abstract_model.AbstractModel.do_generate" title="Permalink to this definition">¶</a></dt>
-<dd><p>Executes/resumes the generate activity
-This operation is currently not supported.</p>
+<dd><p>Executes/resumes the generate activity</p>
 </dd></dl>
 
 <dl class="method">
@@ -245,6 +275,20 @@ Dataset object that contains information on the dataset to load</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="mistk.model.abstract_model.AbstractModel.do_miniaturize">
+<code class="sig-name descname">do_miniaturize</code><span class="sig-paren">(</span><em class="sig-param">dataPath</em>, <em class="sig-param">includeHalfPrecision</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.abstract_model.AbstractModel.do_miniaturize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Executes/resumes the miniaturize activity</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dataPath</strong> – The path to which the miniaturized model should be saved.</p></li>
+<li><p><strong>includeHalfPrecision</strong> – Miniaturize using half point precision format (FP16) for the model</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
 <dt id="mistk.model.abstract_model.AbstractModel.do_pause">
 <em class="property">abstract </em><code class="sig-name descname">do_pause</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.abstract_model.AbstractModel.do_pause" title="Permalink to this definition">¶</a></dt>
 <dd><p>Pauses the current activity (training or prediction).
@@ -254,8 +298,7 @@ This operation is currently not supported.</p>
 <dl class="method">
 <dt id="mistk.model.abstract_model.AbstractModel.do_predict">
 <em class="property">abstract </em><code class="sig-name descname">do_predict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.abstract_model.AbstractModel.do_predict" title="Permalink to this definition">¶</a></dt>
-<dd><p>Executes/resumes the prediction activity
-This operation is currently not supported.</p>
+<dd><p>Executes/resumes the prediction activity</p>
 </dd></dl>
 
 <dl class="method">
@@ -421,6 +464,23 @@ created by the state machine.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>dataset_map</strong> – A dictionary that maps string keys {train, test, generation} to a
 Dataset object that contains information on the dataset to load</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="mistk.model.abstract_model.AbstractModel.miniaturize">
+<code class="sig-name descname">miniaturize</code><span class="sig-paren">(</span><em class="sig-param">dataPath</em>, <em class="sig-param">includeHalfPrecision</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.abstract_model.AbstractModel.miniaturize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Triggers the model to enter the miniaturize state.  A subsequent call to
+do_miniaturize with the given parameters will be made as a result.</p>
+<p>This method should not be implemented or overwritten by subclasses.  It will be
+created by the state machine.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dataPath</strong> – miniaturized model with be saved</p></li>
+<li><p><strong>includeHalfPrecision</strong> – a flag to indicate whether to use half precision for the miniaturized model</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -613,7 +673,7 @@ created by the state machine.</p>
         <a href="mistk.model.service.html" class="btn btn-neutral float-right" title="mistk.model.service module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="mistk.model.server.util.html" class="btn btn-neutral float-left" title="mistk.model.server.util module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="mistk.model.html" class="btn btn-neutral float-left" title="mistk.model package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

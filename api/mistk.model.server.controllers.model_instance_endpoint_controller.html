@@ -34,9 +34,7 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="mistk.model.server.models package" href="mistk.model.server.models.html" />
-    <link rel="prev" title="mistk.model.server.controllers package" href="mistk.model.server.controllers.html" /> 
+    <link rel="search" title="Search" href="../search.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -81,30 +79,12 @@
             
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guide.html">Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../testing.html">Testing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../deployment.html">Deployment</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">MISTK API</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="mistk.html">mistk package</a><ul class="current">
-<li class="toctree-l3 current"><a class="reference internal" href="mistk.html#subpackages">Subpackages</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="mistk.cfg.html">mistk.cfg package</a></li>
-<li class="toctree-l4"><a class="reference internal" href="mistk.data.html">mistk.data package</a></li>
-<li class="toctree-l4"><a class="reference internal" href="mistk.evaluation.html">mistk.evaluation package</a></li>
-<li class="toctree-l4"><a class="reference internal" href="mistk.log.html">mistk.log package</a></li>
-<li class="toctree-l4 current"><a class="reference internal" href="mistk.model.html">mistk.model package</a></li>
-<li class="toctree-l4"><a class="reference internal" href="mistk.transform.html">mistk.transform package</a></li>
-<li class="toctree-l4"><a class="reference internal" href="mistk.utils.html">mistk.utils package</a></li>
-<li class="toctree-l4"><a class="reference internal" href="mistk.watch.html">mistk.watch package</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="mistk.html#submodules">Submodules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mistk.html#module-mistk">Module contents</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">MISTK API</a></li>
 </ul>
 
             
@@ -150,16 +130,6 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="index.html">MISTK API</a> &raquo;</li>
-        
-          <li><a href="mistk.html">mistk package</a> &raquo;</li>
-        
-          <li><a href="mistk.model.html">mistk.model package</a> &raquo;</li>
-        
-          <li><a href="mistk.model.server.html">mistk.model.server package</a> &raquo;</li>
-        
-          <li><a href="mistk.model.server.controllers.html">mistk.model.server.controllers package</a> &raquo;</li>
-        
       <li>mistk.model.server.controllers.model_instance_endpoint_controller module</li>
     
     
@@ -181,6 +151,24 @@
             
   <div class="section" id="module-mistk.model.server.controllers.model_instance_endpoint_controller">
 <span id="mistk-model-server-controllers-model-instance-endpoint-controller-module"></span><h1>mistk.model.server.controllers.model_instance_endpoint_controller module<a class="headerlink" href="#module-mistk.model.server.controllers.model_instance_endpoint_controller" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="mistk.model.server.controllers.model_instance_endpoint_controller.build_ensemble">
+<code class="sig-prename descclassname">mistk.model.server.controllers.model_instance_endpoint_controller.</code><code class="sig-name descname">build_ensemble</code><span class="sig-paren">(</span><em class="sig-param">ensemblePath=None</em>, <em class="sig-param">modelPaths=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.controllers.model_instance_endpoint_controller.build_ensemble" title="Permalink to this definition">¶</a></dt>
+<dd><p>Build the ensemble</p>
+<p>Instructs the container to construct the ensemble # noqa: E501</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ensemblePath</strong> (<em>str</em>) – The absolute path to the directory where the ensemble's checkpoint/snapshot file can be found.</p></li>
+<li><p><strong>modelPaths</strong> – A dictionary mapping model names to their associated model directories. The dictionary  key is the individual model name with the value being the absolute path to the directories  where the individual models' checkpoint/snapshot files can be found.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="function">
 <dt id="mistk.model.server.controllers.model_instance_endpoint_controller.build_model">
 <code class="sig-prename descclassname">mistk.model.server.controllers.model_instance_endpoint_controller.</code><code class="sig-name descname">build_model</code><span class="sig-paren">(</span><em class="sig-param">modelPath=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.controllers.model_instance_endpoint_controller.build_model" title="Permalink to this definition">¶</a></dt>
@@ -245,7 +233,7 @@
 <p>Instructs the model instance to initialize. # noqa: E501</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>initializationParameters</strong> (<em>dict | bytes</em>) – Initialization parameters for the model including the objectives, properties, and hparams. Objectives are a list of objectives for this model instance from the following options  {train, predict, stream_predict, generate, transfer_learning}. Properties are a dictionary of properties for this model instance.  Hparams are a dictionary of hyperparameters for this model instance.</p>
+<dd class="field-odd"><p><strong>initializationParameters</strong> (<em>dict | bytes</em>) – Initialization parameters for the model including the objectives, properties, and hparams. Objectives are a list of objectives for this model instance from the following options  ['training', 'prediction', 'streaming_prediction', 'transfer_learning', 'generation', 'miniaturization']. Properties are a dictionary of properties for this model instance.  Hparams are a dictionary of hyperparameters for this model instance.</p>
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p>None</p>
@@ -261,6 +249,24 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>datasets</strong> – A dictionary mapping objectives to MistkDataset objects.  Dictionary keys must be one of the following {train, test, generate}</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="mistk.model.server.controllers.model_instance_endpoint_controller.miniaturize">
+<code class="sig-prename descclassname">mistk.model.server.controllers.model_instance_endpoint_controller.</code><code class="sig-name descname">miniaturize</code><span class="sig-paren">(</span><em class="sig-param">dataPath</em>, <em class="sig-param">includeHalfPrecision</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.server.controllers.model_instance_endpoint_controller.miniaturize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Miniaturize the model</p>
+<p>Instructs the model instance to miniaturize. # noqa: E501</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dataPath</strong> (<em>str</em>) – A path pointing to the directory where the miniaturized model should be saved.</p></li>
+<li><p><strong>includeHalfPrecision</strong> (<em>bool</em>) – Whether to attempt to reduce to half point precision format (FP16) when miniaturizing the model</p></li>
+</ul>
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p>None</p>
@@ -437,15 +443,6 @@
            
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="mistk.model.server.models.html" class="btn btn-neutral float-right" title="mistk.model.server.models package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="mistk.model.server.controllers.html" class="btn btn-neutral float-left" title="mistk.model.server.controllers package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>

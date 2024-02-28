@@ -196,6 +196,23 @@
 </dd></dl>
 
 <dl class="method">
+<dt id="mistk.model.service.ModelInstanceEndpoint.build_ensemble">
+<code class="sig-name descname">build_ensemble</code><span class="sig-paren">(</span><em class="sig-param">ensemblePath=None</em>, <em class="sig-param">modelPaths=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.service.ModelInstanceEndpoint.build_ensemble" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates and returns a Task which builds the ensemble using the ensemble_path and model_paths provided</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ensemble_path</strong> – The path to the ensemble model file</p></li>
+<li><p><strong>model_paths</strong> – The paths to the model files in a dictionary. The key is the model name with the value being the model path.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The created Task object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
 <dt id="mistk.model.service.ModelInstanceEndpoint.build_model">
 <code class="sig-name descname">build_model</code><span class="sig-paren">(</span><em class="sig-param">modelPath=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.service.ModelInstanceEndpoint.build_model" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates and returns a Task which builds the model using the modelPath provided</p>
@@ -288,6 +305,13 @@ optional parameters provided</p>
 <dd class="field-even"><p>The create Task object</p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="mistk.model.service.ModelInstanceEndpoint.miniaturize">
+<code class="sig-name descname">miniaturize</code><span class="sig-paren">(</span><em class="sig-param">dataPath</em>, <em class="sig-param">includeHalfPrecision</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.service.ModelInstanceEndpoint.miniaturize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates and returns a Task which kicks off a miniaturize activity
+:return: The created Task object</p>
 </dd></dl>
 
 <dl class="method">

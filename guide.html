@@ -96,6 +96,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#predictions-and-ground-truth">Predictions and Ground Truth</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#example-model">Example Model</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#transfer-learning">Transfer learning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ensemble-models">Ensemble Models</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#data-transformation-interface">Data Transformation Interface</a><ul>
@@ -234,11 +235,37 @@ Defaults to None if no file was specified in this model’s definition.</p>
 </dd>
 </dl>
 </dd>
+<dt><strong>do_build_ensemble</strong> (ensemble_path=None, model_paths: dict=None)</dt><dd><p>Instructs the service to build all necessary models used for the ensemble model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param ensemble_path</dt>
+<dd class="field-odd"><p>The directory path to the model file or checkpoint that should be loaded.
+Defaults to None if no file was specified in this model’s definition.</p>
+</dd>
+<dt class="field-even">param model_paths</dt>
+<dd class="field-even"><p>The directory paths to the model files in a dictionary.
+The key is the model name with the value being the model path.</p>
+</dd>
+</dl>
+</dd>
 <dt><strong>do_train</strong> ()</dt><dd><p>Perform training with the previously supplied data.</p>
 </dd>
 <dt><strong>do_predict</strong> ()</dt><dd><p>Perform predictions with the previously supplied data.</p>
 </dd>
 <dt><strong>do_generate</strong> ()</dt><dd><p>Perform generations with the previously supplied data.</p>
+</dd>
+<dt><strong>do_miniaturize</strong> (dataPath, includeHalfPrecision)</dt><dd><blockquote>
+<div><p>Perform miniaturization with the supplied data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param dataPath</dt>
+<dd class="field-odd"><p>The path to which the miniaturized model should be saved.</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">param includeHalfPrecision</dt>
+<dd class="field-odd"><p>Miniaturize using half point precision format (FP16) for the model</p>
+</dd>
+</dl>
 </dd>
 <dt><strong>do_pause</strong> ()</dt><dd><p>Pause the current training or testing.</p>
 </dd>
@@ -326,27 +353,23 @@ Tensorflow implementation). Below are sample hyperparameters and model propertie
 dictionaries that can be passed to a model implementation’s ‘do_initialize’ method.</p>
 <div class="section" id="hyperparameters">
 <h4>Hyperparameters<a class="headerlink" href="#hyperparameters" title="Permalink to this headline">¶</a></h4>
-<blockquote>
-<div><dl class="simple">
-<dt>{</dt><dd><p>‘learning_rate’: 0.001,
-‘weight_decay’: 0.004
-‘momentum’: 0.9</p>
-</dd>
-</dl>
-<p>}</p>
-</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s1">&#39;learning_rate&#39;</span><span class="p">:</span> <span class="mf">0.001</span><span class="p">,</span>
+  <span class="s1">&#39;weight_decay&#39;</span><span class="p">:</span> <span class="mf">0.004</span>
+  <span class="s1">&#39;momentum&#39;</span><span class="p">:</span> <span class="mf">0.9</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="model-properties">
 <h4>Model Properties<a class="headerlink" href="#model-properties" title="Permalink to this headline">¶</a></h4>
-<blockquote>
-<div><dl class="simple">
-<dt>{</dt><dd><p>‘arch’: ‘densenet’,
-‘num_labels’: 1000,
-‘model_load_file’: ‘checkpoint.pth’</p>
-</dd>
-</dl>
-<p>}</p>
-</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s1">&#39;arch&#39;</span><span class="p">:</span> <span class="s1">&#39;densenet&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;num_labels&#39;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+  <span class="s1">&#39;model_load_file&#39;</span><span class="p">:</span> <span class="s1">&#39;checkpoint.pth&#39;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="loading-data">
@@ -1701,6 +1724,21 @@ in this PyTorch implementation.</p>
 </td></tr></table></div>
 <p>Model developers will need to specify in their model properties that they are performing
 transfer learning when using this model for that purpose.</p>
+</div>
+<div class="section" id="ensemble-models">
+<h3>Ensemble Models<a class="headerlink" href="#ensemble-models" title="Permalink to this headline">¶</a></h3>
+<p>Model support for building ensemble models uses the <strong>do_build_ensemble(ensemble_path=None, model_paths: dict=None)</strong></p>
+<p>Building of an ensemble model provides a way to ensemble individual models defined in the <strong>model_paths</strong>
+parameter. The model paths dictionary is based on the model name (key) and the directory path (value)
+for each model’s files. Below is a sample the ensembled model properties
+dictionaries that can be passed to a model implementation’s ‘do_build_ensemble’ method.</p>
+<p>Model Paths:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s1">&#39;model1&#39;</span><span class="p">:</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">model1</span>
+  <span class="s1">&#39;model2&#39;</span><span class="p">:</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">model2</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="data-transformation-interface">

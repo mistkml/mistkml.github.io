@@ -1,67 +1,34 @@
-
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>mistk.evaluation.client.api_client module &mdash; MISTK  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
-
-  
-  
-  
-  
-
-  
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="mistk.evaluation.client.configuration module" href="mistk.evaluation.client.configuration.html" />
-    <link rel="prev" title="mistk.evaluation.client.models.service_error module" href="mistk.evaluation.client.models.service_error.html" /> 
+    <link rel="search" title="Search" href="../search.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../index.html" class="icon icon-home"> MISTK
-          
-
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -69,123 +36,49 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">Contents:</span></p>
-<ul class="current">
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guide.html">Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../testing.html">Testing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../deployment.html">Deployment</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">MISTK API</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="mistk.html">mistk package</a><ul class="current">
-<li class="toctree-l3 current"><a class="reference internal" href="mistk.html#subpackages">Subpackages</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="mistk.cfg.html">mistk.cfg package</a></li>
-<li class="toctree-l4"><a class="reference internal" href="mistk.data.html">mistk.data package</a></li>
-<li class="toctree-l4 current"><a class="reference internal" href="mistk.evaluation.html">mistk.evaluation package</a></li>
-<li class="toctree-l4"><a class="reference internal" href="mistk.log.html">mistk.log package</a></li>
-<li class="toctree-l4"><a class="reference internal" href="mistk.model.html">mistk.model package</a></li>
-<li class="toctree-l4"><a class="reference internal" href="mistk.transform.html">mistk.transform package</a></li>
-<li class="toctree-l4"><a class="reference internal" href="mistk.utils.html">mistk.utils package</a></li>
-<li class="toctree-l4"><a class="reference internal" href="mistk.watch.html">mistk.watch package</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="mistk.html#submodules">Submodules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mistk.html#module-mistk">Module contents</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">MISTK API</a></li>
 </ul>
 
-            
-          
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">MISTK</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="../index.html">Docs</a> &raquo;</li>
-        
-          <li><a href="index.html">MISTK API</a> &raquo;</li>
-        
-          <li><a href="mistk.html">mistk package</a> &raquo;</li>
-        
-          <li><a href="mistk.evaluation.html">mistk.evaluation package</a> &raquo;</li>
-        
-          <li><a href="mistk.evaluation.client.html">mistk.evaluation.client package</a> &raquo;</li>
-        
-      <li>mistk.evaluation.client.api_client module</li>
-    
-    
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">mistk.evaluation.client.api_client module</li>
       <li class="wy-breadcrumbs-aside">
-        
-            
             <a href="../_sources/api/mistk.evaluation.client.api_client.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="module-mistk.evaluation.client.api_client">
-<span id="mistk-evaluation-client-api-client-module"></span><h1>mistk.evaluation.client.api_client module<a class="headerlink" href="#module-mistk.evaluation.client.api_client" title="Permalink to this headline">¶</a></h1>
+             
+  <section id="module-mistk.evaluation.client.api_client">
+<span id="mistk-evaluation-client-api-client-module"></span><h1>mistk.evaluation.client.api_client module<a class="headerlink" href="#module-mistk.evaluation.client.api_client" title="Permalink to this heading"></a></h1>
 <p>Model Integration Software ToolKit - Metric Evaluation</p>
 <p>No description provided (generated by Swagger Codegen <a class="reference external" href="https://github.com/swagger-api/swagger-codegen">https://github.com/swagger-api/swagger-codegen</a>)  # noqa: E501</p>
-<p>OpenAPI spec version: 1.0.0</p>
+<p>OpenAPI spec version: 1.2.0</p>
 <p>Generated by: <a class="reference external" href="https://github.com/swagger-api/swagger-codegen.git">https://github.com/swagger-api/swagger-codegen.git</a></p>
-<dl class="class">
-<dt id="mistk.evaluation.client.api_client.ApiClient">
-<em class="property">class </em><code class="sig-prename descclassname">mistk.evaluation.client.api_client.</code><code class="sig-name descname">ApiClient</code><span class="sig-paren">(</span><em class="sig-param">configuration=None</em>, <em class="sig-param">header_name=None</em>, <em class="sig-param">header_value=None</em>, <em class="sig-param">cookie=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.evaluation.client.api_client.ApiClient" title="Permalink to this definition">¶</a></dt>
+<dl class="py class">
+<dt class="sig sig-object py" id="mistk.evaluation.client.api_client.ApiClient">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mistk.evaluation.client.api_client.</span></span><span class="sig-name descname"><span class="pre">ApiClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">configuration</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">header_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">header_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cookie</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.evaluation.client.api_client.ApiClient" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Generic API client for Swagger client library builds.</p>
 <p>Swagger generic API client. This client handles the client-
@@ -196,7 +89,7 @@ templates.</p>
 Ref: <a class="reference external" href="https://github.com/swagger-api/swagger-codegen">https://github.com/swagger-api/swagger-codegen</a>
 Do not edit the class manually.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>configuration</strong> – .Configuration object for this client</p></li>
 <li><p><strong>header_name</strong> – a header to pass when making calls to the API.</p></li>
@@ -207,23 +100,23 @@ to the API</p></li>
 </ul>
 </dd>
 </dl>
-<dl class="attribute">
-<dt id="mistk.evaluation.client.api_client.ApiClient.NATIVE_TYPES_MAPPING">
-<code class="sig-name descname">NATIVE_TYPES_MAPPING</code><em class="property"> = {'bool': &lt;class 'bool'&gt;, 'date': &lt;class 'datetime.date'&gt;, 'datetime': &lt;class 'datetime.datetime'&gt;, 'float': &lt;class 'float'&gt;, 'int': &lt;class 'int'&gt;, 'long': &lt;class 'int'&gt;, 'object': &lt;class 'object'&gt;, 'str': &lt;class 'str'&gt;}</em><a class="headerlink" href="#mistk.evaluation.client.api_client.ApiClient.NATIVE_TYPES_MAPPING" title="Permalink to this definition">¶</a></dt>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mistk.evaluation.client.api_client.ApiClient.NATIVE_TYPES_MAPPING">
+<span class="sig-name descname"><span class="pre">NATIVE_TYPES_MAPPING</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'bool':</span> <span class="pre">&lt;class</span> <span class="pre">'bool'&gt;,</span> <span class="pre">'date':</span> <span class="pre">&lt;class</span> <span class="pre">'datetime.date'&gt;,</span> <span class="pre">'datetime':</span> <span class="pre">&lt;class</span> <span class="pre">'datetime.datetime'&gt;,</span> <span class="pre">'float':</span> <span class="pre">&lt;class</span> <span class="pre">'float'&gt;,</span> <span class="pre">'int':</span> <span class="pre">&lt;class</span> <span class="pre">'int'&gt;,</span> <span class="pre">'long':</span> <span class="pre">&lt;class</span> <span class="pre">'int'&gt;,</span> <span class="pre">'object':</span> <span class="pre">&lt;class</span> <span class="pre">'object'&gt;,</span> <span class="pre">'str':</span> <span class="pre">&lt;class</span> <span class="pre">'str'&gt;}</span></em><a class="headerlink" href="#mistk.evaluation.client.api_client.ApiClient.NATIVE_TYPES_MAPPING" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
-<dt id="mistk.evaluation.client.api_client.ApiClient.PRIMITIVE_TYPES">
-<code class="sig-name descname">PRIMITIVE_TYPES</code><em class="property"> = (&lt;class 'float'&gt;, &lt;class 'bool'&gt;, &lt;class 'bytes'&gt;, &lt;class 'str'&gt;, &lt;class 'int'&gt;)</em><a class="headerlink" href="#mistk.evaluation.client.api_client.ApiClient.PRIMITIVE_TYPES" title="Permalink to this definition">¶</a></dt>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mistk.evaluation.client.api_client.ApiClient.PRIMITIVE_TYPES">
+<span class="sig-name descname"><span class="pre">PRIMITIVE_TYPES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">(&lt;class</span> <span class="pre">'float'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'bool'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'bytes'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'str'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'int'&gt;)</span></em><a class="headerlink" href="#mistk.evaluation.client.api_client.ApiClient.PRIMITIVE_TYPES" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
-<dl class="method">
-<dt id="mistk.evaluation.client.api_client.ApiClient.call_api">
-<code class="sig-name descname">call_api</code><span class="sig-paren">(</span><em class="sig-param">resource_path</em>, <em class="sig-param">method</em>, <em class="sig-param">path_params=None</em>, <em class="sig-param">query_params=None</em>, <em class="sig-param">header_params=None</em>, <em class="sig-param">body=None</em>, <em class="sig-param">post_params=None</em>, <em class="sig-param">files=None</em>, <em class="sig-param">response_type=None</em>, <em class="sig-param">auth_settings=None</em>, <em class="sig-param">async_req=None</em>, <em class="sig-param">_return_http_data_only=None</em>, <em class="sig-param">collection_formats=None</em>, <em class="sig-param">_preload_content=True</em>, <em class="sig-param">_request_timeout=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.evaluation.client.api_client.ApiClient.call_api" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.evaluation.client.api_client.ApiClient.call_api">
+<span class="sig-name descname"><span class="pre">call_api</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resource_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">header_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">post_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">files</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">response_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auth_settings</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">async_req</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_return_http_data_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">collection_formats</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_preload_content</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_request_timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.evaluation.client.api_client.ApiClient.call_api" title="Permalink to this definition"></a></dt>
 <dd><p>Makes the HTTP request (synchronous) and returns deserialized data.</p>
 <p>To make an async request, set the async_req parameter.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>resource_path</strong> – Path to method endpoint.</p></li>
 <li><p><strong>method</strong> – Method to call.</p></li>
@@ -252,7 +145,7 @@ timeout. It can also be a pair (tuple) of
 (connection, read) timeouts.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>If async_req parameter is True,
 the request will be called asynchronously.
 The method will return the request thread.
@@ -262,72 +155,72 @@ then the method will return the response directly.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="mistk.evaluation.client.api_client.ApiClient.deserialize">
-<code class="sig-name descname">deserialize</code><span class="sig-paren">(</span><em class="sig-param">response</em>, <em class="sig-param">response_type</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.evaluation.client.api_client.ApiClient.deserialize" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.evaluation.client.api_client.ApiClient.deserialize">
+<span class="sig-name descname"><span class="pre">deserialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">response</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">response_type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.evaluation.client.api_client.ApiClient.deserialize" title="Permalink to this definition"></a></dt>
 <dd><p>Deserializes response into an object.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>response</strong> – RESTResponse object to be deserialized.</p></li>
 <li><p><strong>response_type</strong> – class literal for
 deserialized object, or string of class name.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>deserialized object.</p>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="mistk.evaluation.client.api_client.ApiClient.parameters_to_tuples">
-<code class="sig-name descname">parameters_to_tuples</code><span class="sig-paren">(</span><em class="sig-param">params</em>, <em class="sig-param">collection_formats</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.evaluation.client.api_client.ApiClient.parameters_to_tuples" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.evaluation.client.api_client.ApiClient.parameters_to_tuples">
+<span class="sig-name descname"><span class="pre">parameters_to_tuples</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">collection_formats</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.evaluation.client.api_client.ApiClient.parameters_to_tuples" title="Permalink to this definition"></a></dt>
 <dd><p>Get parameters as list of tuples, formatting collections.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>params</strong> – Parameters as dict or list of two-tuples</p></li>
 <li><p><strong>collection_formats</strong> (<em>dict</em>) – Parameter collection formats</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Parameters as list of tuples, collections formatted</p>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="mistk.evaluation.client.api_client.ApiClient.pool">
-<em class="property">property </em><code class="sig-name descname">pool</code><a class="headerlink" href="#mistk.evaluation.client.api_client.ApiClient.pool" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="mistk.evaluation.client.api_client.ApiClient.pool">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">pool</span></span><a class="headerlink" href="#mistk.evaluation.client.api_client.ApiClient.pool" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
-<dl class="method">
-<dt id="mistk.evaluation.client.api_client.ApiClient.prepare_post_parameters">
-<code class="sig-name descname">prepare_post_parameters</code><span class="sig-paren">(</span><em class="sig-param">post_params=None</em>, <em class="sig-param">files=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.evaluation.client.api_client.ApiClient.prepare_post_parameters" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.evaluation.client.api_client.ApiClient.prepare_post_parameters">
+<span class="sig-name descname"><span class="pre">prepare_post_parameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">post_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">files</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.evaluation.client.api_client.ApiClient.prepare_post_parameters" title="Permalink to this definition"></a></dt>
 <dd><p>Builds form parameters.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>post_params</strong> – Normal form parameters.</p></li>
 <li><p><strong>files</strong> – File parameters.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Form parameters with files.</p>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="mistk.evaluation.client.api_client.ApiClient.request">
-<code class="sig-name descname">request</code><span class="sig-paren">(</span><em class="sig-param">method</em>, <em class="sig-param">url</em>, <em class="sig-param">query_params=None</em>, <em class="sig-param">headers=None</em>, <em class="sig-param">post_params=None</em>, <em class="sig-param">body=None</em>, <em class="sig-param">_preload_content=True</em>, <em class="sig-param">_request_timeout=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.evaluation.client.api_client.ApiClient.request" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.evaluation.client.api_client.ApiClient.request">
+<span class="sig-name descname"><span class="pre">request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">headers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">post_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_preload_content</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_request_timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.evaluation.client.api_client.ApiClient.request" title="Permalink to this definition"></a></dt>
 <dd><p>Makes the HTTP request using RESTClient.</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="mistk.evaluation.client.api_client.ApiClient.sanitize_for_serialization">
-<code class="sig-name descname">sanitize_for_serialization</code><span class="sig-paren">(</span><em class="sig-param">obj</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.evaluation.client.api_client.ApiClient.sanitize_for_serialization" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.evaluation.client.api_client.ApiClient.sanitize_for_serialization">
+<span class="sig-name descname"><span class="pre">sanitize_for_serialization</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.evaluation.client.api_client.ApiClient.sanitize_for_serialization" title="Permalink to this definition"></a></dt>
 <dd><p>Builds a JSON POST object.</p>
 <p>If obj is None, return None.
 If obj is str, int, long, float, bool, return directly.
@@ -339,54 +232,54 @@ If obj is datetime.datetime, datetime.date</p>
 If obj is dict, return the dict.
 If obj is swagger model, return the properties dict.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>obj</strong> – The data to serialize.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The serialized form of data.</p>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="mistk.evaluation.client.api_client.ApiClient.select_header_accept">
-<code class="sig-name descname">select_header_accept</code><span class="sig-paren">(</span><em class="sig-param">accepts</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.evaluation.client.api_client.ApiClient.select_header_accept" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.evaluation.client.api_client.ApiClient.select_header_accept">
+<span class="sig-name descname"><span class="pre">select_header_accept</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">accepts</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.evaluation.client.api_client.ApiClient.select_header_accept" title="Permalink to this definition"></a></dt>
 <dd><p>Returns <cite>Accept</cite> based on an array of accepts provided.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>accepts</strong> – List of headers.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Accept (e.g. application/json).</p>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="mistk.evaluation.client.api_client.ApiClient.select_header_content_type">
-<code class="sig-name descname">select_header_content_type</code><span class="sig-paren">(</span><em class="sig-param">content_types</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.evaluation.client.api_client.ApiClient.select_header_content_type" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.evaluation.client.api_client.ApiClient.select_header_content_type">
+<span class="sig-name descname"><span class="pre">select_header_content_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content_types</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.evaluation.client.api_client.ApiClient.select_header_content_type" title="Permalink to this definition"></a></dt>
 <dd><p>Returns <cite>Content-Type</cite> based on an array of content_types provided.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>content_types</strong> – List of content-types.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Content-Type (e.g. application/json).</p>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="mistk.evaluation.client.api_client.ApiClient.set_default_header">
-<code class="sig-name descname">set_default_header</code><span class="sig-paren">(</span><em class="sig-param">header_name</em>, <em class="sig-param">header_value</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.evaluation.client.api_client.ApiClient.set_default_header" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.evaluation.client.api_client.ApiClient.set_default_header">
+<span class="sig-name descname"><span class="pre">set_default_header</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">header_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">header_value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.evaluation.client.api_client.ApiClient.set_default_header" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
-<dl class="method">
-<dt id="mistk.evaluation.client.api_client.ApiClient.update_params_for_auth">
-<code class="sig-name descname">update_params_for_auth</code><span class="sig-paren">(</span><em class="sig-param">headers</em>, <em class="sig-param">querys</em>, <em class="sig-param">auth_settings</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.evaluation.client.api_client.ApiClient.update_params_for_auth" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.evaluation.client.api_client.ApiClient.update_params_for_auth">
+<span class="sig-name descname"><span class="pre">update_params_for_auth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">headers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">querys</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auth_settings</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.evaluation.client.api_client.ApiClient.update_params_for_auth" title="Permalink to this definition"></a></dt>
 <dd><p>Updates header and query params based on authentication setting.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>headers</strong> – Header parameters dict to be updated.</p></li>
 <li><p><strong>querys</strong> – Query parameters tuple list to be updated.</p></li>
@@ -396,62 +289,42 @@ If obj is swagger model, return the properties dict.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="mistk.evaluation.client.api_client.ApiClient.user_agent">
-<em class="property">property </em><code class="sig-name descname">user_agent</code><a class="headerlink" href="#mistk.evaluation.client.api_client.ApiClient.user_agent" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="mistk.evaluation.client.api_client.ApiClient.user_agent">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">user_agent</span></span><a class="headerlink" href="#mistk.evaluation.client.api_client.ApiClient.user_agent" title="Permalink to this definition"></a></dt>
 <dd><p>User agent for this API client</p>
 </dd></dl>
 
 </dd></dl>
 
-</div>
+</section>
 
 
            </div>
-           
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="mistk.evaluation.client.configuration.html" class="btn btn-neutral float-right" title="mistk.evaluation.client.configuration module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="mistk.evaluation.client.models.service_error.html" class="btn btn-neutral float-left" title="mistk.evaluation.client.models.service_error module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-
-    </p>
+    <p></p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
-
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

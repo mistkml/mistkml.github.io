@@ -1,0 +1,7 @@
+mistk.utils.file\_utils module
+==============================
+
+.. automodule:: mistk.utils.file_utils
+   :members:
+   :undoc-members:
+   :show-inheritance:

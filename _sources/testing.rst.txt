@@ -105,13 +105,20 @@ also has the capabilities to perform data transformations as well as evaluating 
 The parameters and example usage are below, and can also be retrieved by running the Test Harness
 with the '-h' option::
 
-  usage: python -m mistk_test_harness [-h] [--model MODEL] [--train PATH]
+  usage: python -m mistk_test_harness [-h] [--model MODEL] 
+                                    [--train PATH]
                                     [--transfer-learning] 
-                                    [--predict PATH] [--generate PATH]
+                                    [--predict PATH] 
                                     [--predictions-path PATH]
                                     [--model-path PATH]
                                     [--model-save-path PATH]
-                                    [--model-props FILE] [--hyperparams FILE]
+                                    [--model-props FILE] 
+                                    [--hyperparams FILE]
+                                    [--generate]
+                                    [--generations-path PATH]
+                                    [--miniaturize PATH]
+                                    [--include-half-precision]
+                                    [--ensemble-model-paths FILE]
                                     [--stream-predict FILE]
                                     [--stream-properties FILE]
                                     [--transform TRANSFORM]
@@ -126,7 +133,9 @@ with the '-h' option::
                                     [--evaluation-output-path PATH]
                                     [--evaluation-properties FILE]
                                     [--metrics METRIC]
-                                    [--disable-container-shutdown] [--logs]
+                                    [--port PORT]
+                                    [--disable-container-shutdown] 
+                                    [--logs]
 
   Test harness for validating model implementations
   
@@ -138,7 +147,6 @@ with the '-h' option::
     --transfer-learning   Flag indicating that the training operation will be
                           performing transfer learning
     --predict PATH        Run predictions over the dataset at the local path
-    --generate            Run generations using the model
     --predictions-path PATH
                           Local folder path to save/load model predictions, used
                           with the --predict and --evaluate options
@@ -151,12 +159,29 @@ with the '-h' option::
                           properties
     --hyperparams FILE    Local file containing json dictionary of model
                           hyperparameters
+    --generate            Run generations using the model
+    --generations-path PATH
+                          Local folder path to save/load model generations, used 
+                          with the --generate option
+    --ensemble-model-paths FILE
+                          Local file containing json dictionary of model names (key) 
+                          and folder paths (value) to load model files (e.g. checkpoints), 
+                          used with the --train or --predict options
     --stream-predict FILE
                           Local file containing json dictionary of ids to base64
                           encoded input data
     --stream-properties FILE
                           Local file containing json dictionary of streaming properties,
                           used with --stream-predict options
+    
+    --miniaturize PATH
+                          Run miniaturize with local folder path to save model 
+                          miniaturized checkpoint
+
+	--include-half-precision
+                          Miniaturize using half point precision format (FP16) for the model,
+                          used with the --miniaturize option
+    
     --transform TRANSFORM
                           Transform module/package, service endpoint URL, or
                           Docker image
@@ -193,7 +218,7 @@ with the '-h' option::
                           properties
     --metrics METRIC      Comma delimited list of metric names for metrics to be
                           evaluated
-    --port PORT           Web server port to use, defaults to 8080
+    --port PORT           Web server port to use when starting a Docker container, defaults to 8080
     --disable-container-shutdown
                           Disables automatic shutdown of the model or transform
                           docker container
@@ -203,6 +228,7 @@ with the '-h' option::
   python -m mistk_test_harness --train /my/dataset/folder --model-path /my/model/folder --model-save-path /my/trained/model/folder --model mymodel.MyImplementedModel
   python -m mistk_test_harness --train /my/dataset/folder --model-path /my/model/folder --model-save-path /my/trained/model/folder --model http://localhost:8080
   python -m mistk_test_harness --train /my/dataset/folder --model-path /my/model/folder --model-save-path /my/trained/model/folder --model repo/mymodelimpl
+  python -m mistk_test_harness --train /my/dataset/folder --model-path /my/model/folder --model-save-path /my/trained/model/folder --model repo/mymodelimpl --port 8078
   python -m mistk_test_harness --predict /my/dataset/folder --model-path /my/model/folder --predictions-path /my/predictions/folder
     --ground-truth-path /ground/truth/folder --evaluate BinaryClassification --model mymodel.MyImplementedModel
   python -m mistk_test_harness --evaluate BinaryClassification --predictions-path /my/predictions/folder --ground-truth-path /ground/truth/folder 

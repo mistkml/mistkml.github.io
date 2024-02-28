@@ -1,67 +1,34 @@
-
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>mistk.model.client.api.model_instance_endpoint_api module &mdash; MISTK  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
-
-  
-  
-  
-  
-
-  
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="mistk.model.client.models package" href="mistk.model.client.models.html" />
-    <link rel="prev" title="mistk.model.client.api package" href="mistk.model.client.api.html" /> 
+    <link rel="search" title="Search" href="../search.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../index.html" class="icon icon-home"> MISTK
-          
-
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -69,132 +36,94 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">Contents:</span></p>
-<ul class="current">
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guide.html">Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../testing.html">Testing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../deployment.html">Deployment</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">MISTK API</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="mistk.html">mistk package</a><ul class="current">
-<li class="toctree-l3 current"><a class="reference internal" href="mistk.html#subpackages">Subpackages</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="mistk.cfg.html">mistk.cfg package</a></li>
-<li class="toctree-l4"><a class="reference internal" href="mistk.data.html">mistk.data package</a></li>
-<li class="toctree-l4"><a class="reference internal" href="mistk.evaluation.html">mistk.evaluation package</a></li>
-<li class="toctree-l4"><a class="reference internal" href="mistk.log.html">mistk.log package</a></li>
-<li class="toctree-l4 current"><a class="reference internal" href="mistk.model.html">mistk.model package</a></li>
-<li class="toctree-l4"><a class="reference internal" href="mistk.transform.html">mistk.transform package</a></li>
-<li class="toctree-l4"><a class="reference internal" href="mistk.utils.html">mistk.utils package</a></li>
-<li class="toctree-l4"><a class="reference internal" href="mistk.watch.html">mistk.watch package</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="mistk.html#submodules">Submodules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mistk.html#module-mistk">Module contents</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">MISTK API</a></li>
 </ul>
 
-            
-          
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">MISTK</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="../index.html">Docs</a> &raquo;</li>
-        
-          <li><a href="index.html">MISTK API</a> &raquo;</li>
-        
-          <li><a href="mistk.html">mistk package</a> &raquo;</li>
-        
-          <li><a href="mistk.model.html">mistk.model package</a> &raquo;</li>
-        
-          <li><a href="mistk.model.client.html">mistk.model.client package</a> &raquo;</li>
-        
-          <li><a href="mistk.model.client.api.html">mistk.model.client.api package</a> &raquo;</li>
-        
-      <li>mistk.model.client.api.model_instance_endpoint_api module</li>
-    
-    
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">mistk.model.client.api.model_instance_endpoint_api module</li>
       <li class="wy-breadcrumbs-aside">
-        
-            
             <a href="../_sources/api/mistk.model.client.api.model_instance_endpoint_api.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="module-mistk.model.client.api.model_instance_endpoint_api">
-<span id="mistk-model-client-api-model-instance-endpoint-api-module"></span><h1>mistk.model.client.api.model_instance_endpoint_api module<a class="headerlink" href="#module-mistk.model.client.api.model_instance_endpoint_api" title="Permalink to this headline">¶</a></h1>
+             
+  <section id="module-mistk.model.client.api.model_instance_endpoint_api">
+<span id="mistk-model-client-api-model-instance-endpoint-api-module"></span><h1>mistk.model.client.api.model_instance_endpoint_api module<a class="headerlink" href="#module-mistk.model.client.api.model_instance_endpoint_api" title="Permalink to this heading"></a></h1>
 <p>Model Integration Software ToolKit</p>
 <p>No description provided (generated by Swagger Codegen <a class="reference external" href="https://github.com/swagger-api/swagger-codegen">https://github.com/swagger-api/swagger-codegen</a>)  # noqa: E501</p>
-<p>OpenAPI spec version: 1.0.0</p>
+<p>OpenAPI spec version: 1.2.0</p>
 <p>Generated by: <a class="reference external" href="https://github.com/swagger-api/swagger-codegen.git">https://github.com/swagger-api/swagger-codegen.git</a></p>
-<dl class="class">
-<dt id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi">
-<em class="property">class </em><code class="sig-prename descclassname">mistk.model.client.api.model_instance_endpoint_api.</code><code class="sig-name descname">ModelInstanceEndpointApi</code><span class="sig-paren">(</span><em class="sig-param">api_client=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi" title="Permalink to this definition">¶</a></dt>
+<dl class="py class">
+<dt class="sig sig-object py" id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mistk.model.client.api.model_instance_endpoint_api.</span></span><span class="sig-name descname"><span class="pre">ModelInstanceEndpointApi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_client</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>NOTE: This class is auto generated by the swagger code generator program.</p>
 <p>Do not edit the class manually.
 Ref: <a class="reference external" href="https://github.com/swagger-api/swagger-codegen">https://github.com/swagger-api/swagger-codegen</a></p>
-<dl class="method">
-<dt id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.build_model">
-<code class="sig-name descname">build_model</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.build_model" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.build_ensemble">
+<span class="sig-name descname"><span class="pre">build_ensemble</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.build_ensemble" title="Permalink to this definition"></a></dt>
+<dd><p>Build the ensemble  # noqa: E501</p>
+<p>Instructs the container to construct the ensemble  # noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True
+&gt;&gt;&gt; thread = api.build_ensemble(async_req=True)
+&gt;&gt;&gt; result = thread.get()</p>
+<p>:param async_req bool
+:param str ensemble_path: The absolute path to the directory where the ensemble’s checkpoint/snapshot file can be found.  
+:param object model_paths: A dictionary mapping model names to their associated model directories. The dictionary  key is the individual model name with the value being the absolute path to the directories  where the individual models’ checkpoint/snapshot files can be found.  
+:return: None</p>
+<blockquote>
+<div><p>If the method is called asynchronously,
+returns the request thread.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.build_ensemble_with_http_info">
+<span class="sig-name descname"><span class="pre">build_ensemble_with_http_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.build_ensemble_with_http_info" title="Permalink to this definition"></a></dt>
+<dd><p>Build the ensemble  # noqa: E501</p>
+<p>Instructs the container to construct the ensemble  # noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True
+&gt;&gt;&gt; thread = api.build_ensemble_with_http_info(async_req=True)
+&gt;&gt;&gt; result = thread.get()</p>
+<p>:param async_req bool
+:param str ensemble_path: The absolute path to the directory where the ensemble’s checkpoint/snapshot file can be found.  
+:param object model_paths: A dictionary mapping model names to their associated model directories. The dictionary  key is the individual model name with the value being the absolute path to the directories  where the individual models’ checkpoint/snapshot files can be found.  
+:return: None</p>
+<blockquote>
+<div><p>If the method is called asynchronously,
+returns the request thread.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.build_model">
+<span class="sig-name descname"><span class="pre">build_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.build_model" title="Permalink to this definition"></a></dt>
 <dd><p>Build the model  # noqa: E501</p>
 <p>Instructs the container to construct the model  # noqa: E501
 This method makes a synchronous HTTP request by default. To make an
@@ -210,9 +139,9 @@ returns the request thread.</p>
 </div></blockquote>
 </dd></dl>
 
-<dl class="method">
-<dt id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.build_model_with_http_info">
-<code class="sig-name descname">build_model_with_http_info</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.build_model_with_http_info" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.build_model_with_http_info">
+<span class="sig-name descname"><span class="pre">build_model_with_http_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.build_model_with_http_info" title="Permalink to this definition"></a></dt>
 <dd><p>Build the model  # noqa: E501</p>
 <p>Instructs the container to construct the model  # noqa: E501
 This method makes a synchronous HTTP request by default. To make an
@@ -228,9 +157,9 @@ returns the request thread.</p>
 </div></blockquote>
 </dd></dl>
 
-<dl class="method">
-<dt id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.generate">
-<code class="sig-name descname">generate</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.generate" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.generate">
+<span class="sig-name descname"><span class="pre">generate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.generate" title="Permalink to this definition"></a></dt>
 <dd><p>Perform generations with the model  # noqa: E501</p>
 <p>Perform generations with the model  # noqa: E501
 This method makes a synchronous HTTP request by default. To make an
@@ -245,9 +174,9 @@ returns the request thread.</p>
 </div></blockquote>
 </dd></dl>
 
-<dl class="method">
-<dt id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.generate_with_http_info">
-<code class="sig-name descname">generate_with_http_info</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.generate_with_http_info" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.generate_with_http_info">
+<span class="sig-name descname"><span class="pre">generate_with_http_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.generate_with_http_info" title="Permalink to this definition"></a></dt>
 <dd><p>Perform generations with the model  # noqa: E501</p>
 <p>Perform generations with the model  # noqa: E501
 This method makes a synchronous HTTP request by default. To make an
@@ -262,9 +191,9 @@ returns the request thread.</p>
 </div></blockquote>
 </dd></dl>
 
-<dl class="method">
-<dt id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.get_api_version">
-<code class="sig-name descname">get_api_version</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.get_api_version" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.get_api_version">
+<span class="sig-name descname"><span class="pre">get_api_version</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.get_api_version" title="Permalink to this definition"></a></dt>
 <dd><p>Returns the version of the MISTK API  # noqa: E501</p>
 <p>Returns the version of the MISTK API  # noqa: E501
 This method makes a synchronous HTTP request by default. To make an
@@ -279,9 +208,9 @@ returns the request thread.</p>
 </div></blockquote>
 </dd></dl>
 
-<dl class="method">
-<dt id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.get_api_version_with_http_info">
-<code class="sig-name descname">get_api_version_with_http_info</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.get_api_version_with_http_info" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.get_api_version_with_http_info">
+<span class="sig-name descname"><span class="pre">get_api_version_with_http_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.get_api_version_with_http_info" title="Permalink to this definition"></a></dt>
 <dd><p>Returns the version of the MISTK API  # noqa: E501</p>
 <p>Returns the version of the MISTK API  # noqa: E501
 This method makes a synchronous HTTP request by default. To make an
@@ -296,9 +225,9 @@ returns the request thread.</p>
 </div></blockquote>
 </dd></dl>
 
-<dl class="method">
-<dt id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.get_status">
-<code class="sig-name descname">get_status</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.get_status" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.get_status">
+<span class="sig-name descname"><span class="pre">get_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.get_status" title="Permalink to this definition"></a></dt>
 <dd><p>Get the status of the model  # noqa: E501</p>
 <p>Retrieves the current status of the model  # noqa: E501
 This method makes a synchronous HTTP request by default. To make an
@@ -315,9 +244,9 @@ returns the request thread.</p>
 </div></blockquote>
 </dd></dl>
 
-<dl class="method">
-<dt id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.get_status_with_http_info">
-<code class="sig-name descname">get_status_with_http_info</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.get_status_with_http_info" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.get_status_with_http_info">
+<span class="sig-name descname"><span class="pre">get_status_with_http_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.get_status_with_http_info" title="Permalink to this definition"></a></dt>
 <dd><p>Get the status of the model  # noqa: E501</p>
 <p>Retrieves the current status of the model  # noqa: E501
 This method makes a synchronous HTTP request by default. To make an
@@ -334,9 +263,9 @@ returns the request thread.</p>
 </div></blockquote>
 </dd></dl>
 
-<dl class="method">
-<dt id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.initialize_model">
-<code class="sig-name descname">initialize_model</code><span class="sig-paren">(</span><em class="sig-param">initialization_parameters</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.initialize_model" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.initialize_model">
+<span class="sig-name descname"><span class="pre">initialize_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">initialization_parameters</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.initialize_model" title="Permalink to this definition"></a></dt>
 <dd><p>Initialize the model  # noqa: E501</p>
 <p>Instructs the model instance to initialize.  # noqa: E501
 This method makes a synchronous HTTP request by default. To make an
@@ -344,7 +273,7 @@ asynchronous HTTP request, please pass async_req=True
 &gt;&gt;&gt; thread = api.initialize_model(initialization_parameters, async_req=True)
 &gt;&gt;&gt; result = thread.get()</p>
 <p>:param async_req bool
-:param ModelInstanceInitParams initialization_parameters: Initialization parameters for the model including the objectives, properties, and hparams. Objectives are a list of objectives for this model instance from the following options  {train, predict, stream_predict, generate, transfer_learning}. Properties are a dictionary of properties for this model instance.  Hparams are a dictionary of hyperparameters for this model instance.  (required)
+:param ModelInstanceInitParams initialization_parameters: Initialization parameters for the model including the objectives, properties, and hparams. Objectives are a list of objectives for this model instance from the following options  [‘training’, ‘prediction’, ‘streaming_prediction’, ‘transfer_learning’, ‘generation’, ‘miniaturization’]. Properties are a dictionary of properties for this model instance.  Hparams are a dictionary of hyperparameters for this model instance.  (required)
 :return: None</p>
 <blockquote>
 <div><p>If the method is called asynchronously,
@@ -352,9 +281,9 @@ returns the request thread.</p>
 </div></blockquote>
 </dd></dl>
 
-<dl class="method">
-<dt id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.initialize_model_with_http_info">
-<code class="sig-name descname">initialize_model_with_http_info</code><span class="sig-paren">(</span><em class="sig-param">initialization_parameters</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.initialize_model_with_http_info" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.initialize_model_with_http_info">
+<span class="sig-name descname"><span class="pre">initialize_model_with_http_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">initialization_parameters</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.initialize_model_with_http_info" title="Permalink to this definition"></a></dt>
 <dd><p>Initialize the model  # noqa: E501</p>
 <p>Instructs the model instance to initialize.  # noqa: E501
 This method makes a synchronous HTTP request by default. To make an
@@ -362,7 +291,7 @@ asynchronous HTTP request, please pass async_req=True
 &gt;&gt;&gt; thread = api.initialize_model_with_http_info(initialization_parameters, async_req=True)
 &gt;&gt;&gt; result = thread.get()</p>
 <p>:param async_req bool
-:param ModelInstanceInitParams initialization_parameters: Initialization parameters for the model including the objectives, properties, and hparams. Objectives are a list of objectives for this model instance from the following options  {train, predict, stream_predict, generate, transfer_learning}. Properties are a dictionary of properties for this model instance.  Hparams are a dictionary of hyperparameters for this model instance.  (required)
+:param ModelInstanceInitParams initialization_parameters: Initialization parameters for the model including the objectives, properties, and hparams. Objectives are a list of objectives for this model instance from the following options  [‘training’, ‘prediction’, ‘streaming_prediction’, ‘transfer_learning’, ‘generation’, ‘miniaturization’]. Properties are a dictionary of properties for this model instance.  Hparams are a dictionary of hyperparameters for this model instance.  (required)
 :return: None</p>
 <blockquote>
 <div><p>If the method is called asynchronously,
@@ -370,9 +299,9 @@ returns the request thread.</p>
 </div></blockquote>
 </dd></dl>
 
-<dl class="method">
-<dt id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.load_data">
-<code class="sig-name descname">load_data</code><span class="sig-paren">(</span><em class="sig-param">datasets</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.load_data" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.load_data">
+<span class="sig-name descname"><span class="pre">load_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datasets</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.load_data" title="Permalink to this definition"></a></dt>
 <dd><p>Loads data for the model  # noqa: E501</p>
 <p>Loads data onto a staging area for use by the model  # noqa: E501
 This method makes a synchronous HTTP request by default. To make an
@@ -388,9 +317,9 @@ returns the request thread.</p>
 </div></blockquote>
 </dd></dl>
 
-<dl class="method">
-<dt id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.load_data_with_http_info">
-<code class="sig-name descname">load_data_with_http_info</code><span class="sig-paren">(</span><em class="sig-param">datasets</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.load_data_with_http_info" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.load_data_with_http_info">
+<span class="sig-name descname"><span class="pre">load_data_with_http_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datasets</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.load_data_with_http_info" title="Permalink to this definition"></a></dt>
 <dd><p>Loads data for the model  # noqa: E501</p>
 <p>Loads data onto a staging area for use by the model  # noqa: E501
 This method makes a synchronous HTTP request by default. To make an
@@ -406,9 +335,47 @@ returns the request thread.</p>
 </div></blockquote>
 </dd></dl>
 
-<dl class="method">
-<dt id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.pause">
-<code class="sig-name descname">pause</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.pause" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.miniaturize">
+<span class="sig-name descname"><span class="pre">miniaturize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_half_precision</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.miniaturize" title="Permalink to this definition"></a></dt>
+<dd><p>Miniaturize the model  # noqa: E501</p>
+<p>Instructs the model instance to miniaturize.  # noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True
+&gt;&gt;&gt; thread = api.miniaturize(data_path, include_half_precision, async_req=True)
+&gt;&gt;&gt; result = thread.get()</p>
+<p>:param async_req bool
+:param str data_path: A path pointing to the directory where the miniaturized model should be saved.  (required)
+:param bool include_half_precision: Whether to attempt to reduce to half point precision format (FP16) when miniaturizing the model (required)
+:return: None</p>
+<blockquote>
+<div><p>If the method is called asynchronously,
+returns the request thread.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.miniaturize_with_http_info">
+<span class="sig-name descname"><span class="pre">miniaturize_with_http_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_half_precision</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.miniaturize_with_http_info" title="Permalink to this definition"></a></dt>
+<dd><p>Miniaturize the model  # noqa: E501</p>
+<p>Instructs the model instance to miniaturize.  # noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True
+&gt;&gt;&gt; thread = api.miniaturize_with_http_info(data_path, include_half_precision, async_req=True)
+&gt;&gt;&gt; result = thread.get()</p>
+<p>:param async_req bool
+:param str data_path: A path pointing to the directory where the miniaturized model should be saved.  (required)
+:param bool include_half_precision: Whether to attempt to reduce to half point precision format (FP16) when miniaturizing the model (required)
+:return: None</p>
+<blockquote>
+<div><p>If the method is called asynchronously,
+returns the request thread.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.pause">
+<span class="sig-name descname"><span class="pre">pause</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.pause" title="Permalink to this definition"></a></dt>
 <dd><p>Pause the model  # noqa: E501</p>
 <p>Instructs the container to pause the current training or  prediction activity   # noqa: E501
 This method makes a synchronous HTTP request by default. To make an
@@ -423,9 +390,9 @@ returns the request thread.</p>
 </div></blockquote>
 </dd></dl>
 
-<dl class="method">
-<dt id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.pause_with_http_info">
-<code class="sig-name descname">pause_with_http_info</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.pause_with_http_info" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.pause_with_http_info">
+<span class="sig-name descname"><span class="pre">pause_with_http_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.pause_with_http_info" title="Permalink to this definition"></a></dt>
 <dd><p>Pause the model  # noqa: E501</p>
 <p>Instructs the container to pause the current training or  prediction activity   # noqa: E501
 This method makes a synchronous HTTP request by default. To make an
@@ -440,9 +407,9 @@ returns the request thread.</p>
 </div></blockquote>
 </dd></dl>
 
-<dl class="method">
-<dt id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.predict">
-<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.predict" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.predict">
+<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.predict" title="Permalink to this definition"></a></dt>
 <dd><p>Perform predictions with the model  # noqa: E501</p>
 <p>Perform predictions with the test dataset previously loaded  # noqa: E501
 This method makes a synchronous HTTP request by default. To make an
@@ -457,9 +424,9 @@ returns the request thread.</p>
 </div></blockquote>
 </dd></dl>
 
-<dl class="method">
-<dt id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.predict_with_http_info">
-<code class="sig-name descname">predict_with_http_info</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.predict_with_http_info" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.predict_with_http_info">
+<span class="sig-name descname"><span class="pre">predict_with_http_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.predict_with_http_info" title="Permalink to this definition"></a></dt>
 <dd><p>Perform predictions with the model  # noqa: E501</p>
 <p>Perform predictions with the test dataset previously loaded  # noqa: E501
 This method makes a synchronous HTTP request by default. To make an
@@ -474,9 +441,9 @@ returns the request thread.</p>
 </div></blockquote>
 </dd></dl>
 
-<dl class="method">
-<dt id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.reset">
-<code class="sig-name descname">reset</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.reset" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.reset">
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.reset" title="Permalink to this definition"></a></dt>
 <dd><p>Resets the model  # noqa: E501</p>
 <p>Resets the model  # noqa: E501
 This method makes a synchronous HTTP request by default. To make an
@@ -491,9 +458,9 @@ returns the request thread.</p>
 </div></blockquote>
 </dd></dl>
 
-<dl class="method">
-<dt id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.reset_with_http_info">
-<code class="sig-name descname">reset_with_http_info</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.reset_with_http_info" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.reset_with_http_info">
+<span class="sig-name descname"><span class="pre">reset_with_http_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.reset_with_http_info" title="Permalink to this definition"></a></dt>
 <dd><p>Resets the model  # noqa: E501</p>
 <p>Resets the model  # noqa: E501
 This method makes a synchronous HTTP request by default. To make an
@@ -508,9 +475,9 @@ returns the request thread.</p>
 </div></blockquote>
 </dd></dl>
 
-<dl class="method">
-<dt id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.resume_predict">
-<code class="sig-name descname">resume_predict</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.resume_predict" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.resume_predict">
+<span class="sig-name descname"><span class="pre">resume_predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.resume_predict" title="Permalink to this definition"></a></dt>
 <dd><p>Resume predicitons on a paused model  # noqa: E501</p>
 <p>Resumes the training activity   # noqa: E501
 This method makes a synchronous HTTP request by default. To make an
@@ -525,9 +492,9 @@ returns the request thread.</p>
 </div></blockquote>
 </dd></dl>
 
-<dl class="method">
-<dt id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.resume_predict_with_http_info">
-<code class="sig-name descname">resume_predict_with_http_info</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.resume_predict_with_http_info" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.resume_predict_with_http_info">
+<span class="sig-name descname"><span class="pre">resume_predict_with_http_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.resume_predict_with_http_info" title="Permalink to this definition"></a></dt>
 <dd><p>Resume predicitons on a paused model  # noqa: E501</p>
 <p>Resumes the training activity   # noqa: E501
 This method makes a synchronous HTTP request by default. To make an
@@ -542,9 +509,9 @@ returns the request thread.</p>
 </div></blockquote>
 </dd></dl>
 
-<dl class="method">
-<dt id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.resume_training">
-<code class="sig-name descname">resume_training</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.resume_training" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.resume_training">
+<span class="sig-name descname"><span class="pre">resume_training</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.resume_training" title="Permalink to this definition"></a></dt>
 <dd><p>Resume training on a paused model  # noqa: E501</p>
 <p>Resumes the training activity   # noqa: E501
 This method makes a synchronous HTTP request by default. To make an
@@ -559,9 +526,9 @@ returns the request thread.</p>
 </div></blockquote>
 </dd></dl>
 
-<dl class="method">
-<dt id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.resume_training_with_http_info">
-<code class="sig-name descname">resume_training_with_http_info</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.resume_training_with_http_info" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.resume_training_with_http_info">
+<span class="sig-name descname"><span class="pre">resume_training_with_http_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.resume_training_with_http_info" title="Permalink to this definition"></a></dt>
 <dd><p>Resume training on a paused model  # noqa: E501</p>
 <p>Resumes the training activity   # noqa: E501
 This method makes a synchronous HTTP request by default. To make an
@@ -576,9 +543,9 @@ returns the request thread.</p>
 </div></blockquote>
 </dd></dl>
 
-<dl class="method">
-<dt id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.save_generations">
-<code class="sig-name descname">save_generations</code><span class="sig-paren">(</span><em class="sig-param">data_path</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.save_generations" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.save_generations">
+<span class="sig-name descname"><span class="pre">save_generations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_path</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.save_generations" title="Permalink to this definition"></a></dt>
 <dd><p>Save the generations made by the model  # noqa: E501</p>
 <p>Instructs the container to save the generations to the specified path   # noqa: E501
 This method makes a synchronous HTTP request by default. To make an
@@ -594,9 +561,9 @@ returns the request thread.</p>
 </div></blockquote>
 </dd></dl>
 
-<dl class="method">
-<dt id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.save_generations_with_http_info">
-<code class="sig-name descname">save_generations_with_http_info</code><span class="sig-paren">(</span><em class="sig-param">data_path</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.save_generations_with_http_info" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.save_generations_with_http_info">
+<span class="sig-name descname"><span class="pre">save_generations_with_http_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_path</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.save_generations_with_http_info" title="Permalink to this definition"></a></dt>
 <dd><p>Save the generations made by the model  # noqa: E501</p>
 <p>Instructs the container to save the generations to the specified path   # noqa: E501
 This method makes a synchronous HTTP request by default. To make an
@@ -612,9 +579,9 @@ returns the request thread.</p>
 </div></blockquote>
 </dd></dl>
 
-<dl class="method">
-<dt id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.save_model">
-<code class="sig-name descname">save_model</code><span class="sig-paren">(</span><em class="sig-param">model_path</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.save_model" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.save_model">
+<span class="sig-name descname"><span class="pre">save_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_path</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.save_model" title="Permalink to this definition"></a></dt>
 <dd><p>Save the model snapshot  # noqa: E501</p>
 <p>Instructs the container to serialize the model to the specified path   # noqa: E501
 This method makes a synchronous HTTP request by default. To make an
@@ -630,9 +597,9 @@ returns the request thread.</p>
 </div></blockquote>
 </dd></dl>
 
-<dl class="method">
-<dt id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.save_model_with_http_info">
-<code class="sig-name descname">save_model_with_http_info</code><span class="sig-paren">(</span><em class="sig-param">model_path</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.save_model_with_http_info" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.save_model_with_http_info">
+<span class="sig-name descname"><span class="pre">save_model_with_http_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_path</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.save_model_with_http_info" title="Permalink to this definition"></a></dt>
 <dd><p>Save the model snapshot  # noqa: E501</p>
 <p>Instructs the container to serialize the model to the specified path   # noqa: E501
 This method makes a synchronous HTTP request by default. To make an
@@ -648,9 +615,9 @@ returns the request thread.</p>
 </div></blockquote>
 </dd></dl>
 
-<dl class="method">
-<dt id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.save_predictions">
-<code class="sig-name descname">save_predictions</code><span class="sig-paren">(</span><em class="sig-param">data_path</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.save_predictions" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.save_predictions">
+<span class="sig-name descname"><span class="pre">save_predictions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_path</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.save_predictions" title="Permalink to this definition"></a></dt>
 <dd><p>Save the predictions made by the model  # noqa: E501</p>
 <p>Instructs the container to save the predictions to the specified path   # noqa: E501
 This method makes a synchronous HTTP request by default. To make an
@@ -666,9 +633,9 @@ returns the request thread.</p>
 </div></blockquote>
 </dd></dl>
 
-<dl class="method">
-<dt id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.save_predictions_with_http_info">
-<code class="sig-name descname">save_predictions_with_http_info</code><span class="sig-paren">(</span><em class="sig-param">data_path</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.save_predictions_with_http_info" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.save_predictions_with_http_info">
+<span class="sig-name descname"><span class="pre">save_predictions_with_http_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_path</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.save_predictions_with_http_info" title="Permalink to this definition"></a></dt>
 <dd><p>Save the predictions made by the model  # noqa: E501</p>
 <p>Instructs the container to save the predictions to the specified path   # noqa: E501
 This method makes a synchronous HTTP request by default. To make an
@@ -684,9 +651,9 @@ returns the request thread.</p>
 </div></blockquote>
 </dd></dl>
 
-<dl class="method">
-<dt id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.stream_predict">
-<code class="sig-name descname">stream_predict</code><span class="sig-paren">(</span><em class="sig-param">data_map</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.stream_predict" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.stream_predict">
+<span class="sig-name descname"><span class="pre">stream_predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_map</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.stream_predict" title="Permalink to this definition"></a></dt>
 <dd><p>Perform streaming predictions with the model  # noqa: E501</p>
 <p>Perform predictions with the test dataset previously loaded  # noqa: E501
 This method makes a synchronous HTTP request by default. To make an
@@ -703,9 +670,9 @@ returns the request thread.</p>
 </div></blockquote>
 </dd></dl>
 
-<dl class="method">
-<dt id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.stream_predict_with_http_info">
-<code class="sig-name descname">stream_predict_with_http_info</code><span class="sig-paren">(</span><em class="sig-param">data_map</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.stream_predict_with_http_info" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.stream_predict_with_http_info">
+<span class="sig-name descname"><span class="pre">stream_predict_with_http_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_map</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.stream_predict_with_http_info" title="Permalink to this definition"></a></dt>
 <dd><p>Perform streaming predictions with the model  # noqa: E501</p>
 <p>Perform predictions with the test dataset previously loaded  # noqa: E501
 This method makes a synchronous HTTP request by default. To make an
@@ -722,9 +689,9 @@ returns the request thread.</p>
 </div></blockquote>
 </dd></dl>
 
-<dl class="method">
-<dt id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.terminate">
-<code class="sig-name descname">terminate</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.terminate" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.terminate">
+<span class="sig-name descname"><span class="pre">terminate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.terminate" title="Permalink to this definition"></a></dt>
 <dd><p>Shut down the model  # noqa: E501</p>
 <p>Shuts down the model  # noqa: E501
 This method makes a synchronous HTTP request by default. To make an
@@ -739,9 +706,9 @@ returns the request thread.</p>
 </div></blockquote>
 </dd></dl>
 
-<dl class="method">
-<dt id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.terminate_with_http_info">
-<code class="sig-name descname">terminate_with_http_info</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.terminate_with_http_info" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.terminate_with_http_info">
+<span class="sig-name descname"><span class="pre">terminate_with_http_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.terminate_with_http_info" title="Permalink to this definition"></a></dt>
 <dd><p>Shut down the model  # noqa: E501</p>
 <p>Shuts down the model  # noqa: E501
 This method makes a synchronous HTTP request by default. To make an
@@ -756,9 +723,9 @@ returns the request thread.</p>
 </div></blockquote>
 </dd></dl>
 
-<dl class="method">
-<dt id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.train">
-<code class="sig-name descname">train</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.train" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.train">
+<span class="sig-name descname"><span class="pre">train</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.train" title="Permalink to this definition"></a></dt>
 <dd><p>Train the model  # noqa: E501</p>
 <p>Trains the model with the training dataset previously loaded  # noqa: E501
 This method makes a synchronous HTTP request by default. To make an
@@ -773,9 +740,9 @@ returns the request thread.</p>
 </div></blockquote>
 </dd></dl>
 
-<dl class="method">
-<dt id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.train_with_http_info">
-<code class="sig-name descname">train_with_http_info</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.train_with_http_info" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.train_with_http_info">
+<span class="sig-name descname"><span class="pre">train_with_http_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.train_with_http_info" title="Permalink to this definition"></a></dt>
 <dd><p>Train the model  # noqa: E501</p>
 <p>Trains the model with the training dataset previously loaded  # noqa: E501
 This method makes a synchronous HTTP request by default. To make an
@@ -790,9 +757,9 @@ returns the request thread.</p>
 </div></blockquote>
 </dd></dl>
 
-<dl class="method">
-<dt id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.update_stream_properties">
-<code class="sig-name descname">update_stream_properties</code><span class="sig-paren">(</span><em class="sig-param">props</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.update_stream_properties" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.update_stream_properties">
+<span class="sig-name descname"><span class="pre">update_stream_properties</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">props</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.update_stream_properties" title="Permalink to this definition"></a></dt>
 <dd><p>Updates streaming properties with the model  # noqa: E501</p>
 <p>Update streaming properties  # noqa: E501
 This method makes a synchronous HTTP request by default. To make an
@@ -808,9 +775,9 @@ returns the request thread.</p>
 </div></blockquote>
 </dd></dl>
 
-<dl class="method">
-<dt id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.update_stream_properties_with_http_info">
-<code class="sig-name descname">update_stream_properties_with_http_info</code><span class="sig-paren">(</span><em class="sig-param">props</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.update_stream_properties_with_http_info" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.update_stream_properties_with_http_info">
+<span class="sig-name descname"><span class="pre">update_stream_properties_with_http_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">props</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mistk.model.client.api.model_instance_endpoint_api.ModelInstanceEndpointApi.update_stream_properties_with_http_info" title="Permalink to this definition"></a></dt>
 <dd><p>Updates streaming properties with the model  # noqa: E501</p>
 <p>Update streaming properties  # noqa: E501
 This method makes a synchronous HTTP request by default. To make an
@@ -828,54 +795,34 @@ returns the request thread.</p>
 
 </dd></dl>
 
-</div>
+</section>
 
 
            </div>
-           
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="mistk.model.client.models.html" class="btn btn-neutral float-right" title="mistk.model.client.models package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="mistk.model.client.api.html" class="btn btn-neutral float-left" title="mistk.model.client.api package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-
-    </p>
+    <p></p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
-
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>
